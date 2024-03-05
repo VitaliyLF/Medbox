@@ -1,7 +1,6 @@
-// import { Analytics } from '@vercel/analytics/react'
-// import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from '@vercel/analytics/react'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import localFont from 'next/font/local'
-// import { Inter } from 'next/font/google'
 import './globals.scss'
 
 export const GilroyFont = localFont({
@@ -16,18 +15,16 @@ export const GilroyFont = localFont({
   variable: '--font-family-base',
 })
 
-// const inter = Inter({ subsets: ['latin'] })
-
 const RootLayout = async ({ children }) => {
   return (
     <html lang="en" className={`page ${GilroyFont.variable}`}>
       <body className="page__body">
         <a className="skiplink" href="#main">
-          Skip to content
+          Go to content
         </a>
         {children}
-        {/* <Analytics />
-        <GoogleAnalytics gaId="" /> */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

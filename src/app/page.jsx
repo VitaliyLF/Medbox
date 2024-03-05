@@ -5,7 +5,7 @@ import Footer from '@/components/footer/Footer'
 
 export const metadata = {
   title: {
-    default: 'default title',
+    default: 'Medbox',
     template: '%s - default title',
   },
   description: 'description site',
