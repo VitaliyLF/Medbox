@@ -1,0 +1,22 @@
+@mixin updown {
+  @keyframes updown {
+    50% {
+      transform: translateY(-8px);
+    }
+
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+@mixin fillAnimation {
+  @keyframes fillAnimation {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+}

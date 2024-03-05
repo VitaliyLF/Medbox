@@ -1,0 +1,24 @@
+:root {
+  // border-radius
+  --border-radius-small: 5px;
+  --border-radius-huge: 100px;
+
+  // border-color
+  --border-color-gray: var(--color-gray);
+
+  // outline
+  --outline-offset: 2px;
+
+  // transition
+  --timing: 0.3s;
+  --transition-burger-nav: cubic-bezier(0.7, 0, 0.2, 1);
+
+  // z-index-
+  --preloader-z-index: 1001;
+  --burger-z-index: 500;
+  --overlay-z-index: 100;
+  --nav-list-z-index: 101;
+
+  // overlay
+  --overlay-shadow: rgba(0, 0, 0, 0.6);
+}
