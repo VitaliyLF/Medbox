@@ -1,0 +1,224 @@
+.header {
+  --header-height: 85px;
+
+  padding-top: var(--offset-medium-small);
+
+  &--homepage {
+    background-color: var(--color-light-mint);
+    padding-bottom: var(--offset-medium);
+
+    @include big-desktop {
+      padding-bottom: 0;
+    }
+  }
+
+  @include big-desktop {
+    padding-top: 0;
+  }
+
+  &__container {
+    @include big-desktop {
+      padding-inline: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+    border-radius: var(--border-radius-all-tiny);
+    border: 1px solid var(--border-mint-color);
+    padding: var(--offset-small) calc((var(--offset-small) * 2));
+    background-color: var(--color-light);
+
+    @include big-desktop {
+      min-height: var(--header-height);
+      border: none;
+    }
+
+    @include mobile {
+      padding: var(--offset-small);
+    }
+  }
+
+  &__logo {
+    @include focus;
+  }
+
+  &__nav {
+    @include big-desktop {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      width: 100vw;
+      height: calc(100dvh - var(--header-height));
+      background-color: var(--color-light-mint);
+      translate: -120% 0;
+      transition: translate var(--timing-burger-nav) var(--burger-nav-animation);
+      overflow-y: auto;
+      z-index: var(--header-nav-z-index);
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+
+      &--active {
+        translate: 0;
+      }
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 10px;
+
+    @include big-desktop {
+      margin-block: 45px;
+      flex-direction: column;
+      flex-grow: 1;
+      row-gap: 0;
+    }
+  }
+
+  &__nav-item {
+    @include marginRight(var(--offset-medium-small));
+
+    @include big-desktop {
+      @include marginRight(0);
+
+      @include marginBottom(var(--offset-medium));
+
+      flex-grow: 1;
+    }
+  }
+
+  &__nav-link {
+    @include fz18-atkinson;
+
+    display: block;
+    color: var(--color-black-green);
+
+    @include big-desktop {
+      @include fz26-atkinson;
+    }
+  }
+
+  &__mobile {
+    display: none;
+
+    @include big-desktop {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--color-light);
+      padding: 15px 25px;
+      border-top: 1px solid var(--color-mint-green);
+    }
+
+    @include small-mobile {
+      padding: 12px 15px;
+    }
+  }
+
+  &__mobile-btn {
+    @include mobile {
+      @include fz18-dmsans;
+
+      padding: 12px 15px;
+    }
+
+    @include small-mobile {
+      @include fz16-dmsans;
+    }
+  }
+
+  &__btn {
+    @include big-desktop {
+      display: none;
+    }
+  }
+
+  &__burger {
+    --burger-width: 43px;
+    --burger-height: 43px;
+    --burger-line-height: 3px;
+
+    display: none;
+
+    &-line {
+      position: relative;
+      width: var(--burger-width);
+      height: var(--burger-height);
+      color: var(--color-light);
+      background-color: var(--color-medbox-green);
+      border-radius: 50%;
+      z-index: 10;
+      cursor: pointer;
+      transition: background-color var(--timing) ease-out, color var(--timing) ease-out;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: var(--burger-line-height);
+        background-color: currentColor;
+        border-radius: var(--border-radius-all-small);
+        transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+      }
+
+      &::before {
+        top: calc(50% - var(--burger-line-height) - 5px);
+      }
+
+      &::after {
+        top: calc(50% + 5px);
+      }
+    }
+
+    &--active {
+      & .header__burger-line {
+        background-color: transparent;
+        color: var(--color-medbox-green);
+        --burger-line-height: 2px;
+
+        &::before {
+          width: 30px;
+          top: 48%;
+          transform: translateX(-50%) rotate(45deg);
+          transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+        }
+
+        &::after {
+          width: 30px;
+          top: 48%;
+          transform: translateX(-50%) rotate(-45deg);
+          transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+        }
+      }
+    }
+
+    @include big-desktop {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  &__burger-info {
+    @include fz22-dmsans;
+
+    color: var(--color-dark-green);
+    transition: opacity var(--timing) ease-out, visibility var(--timing) ease-out;
+
+    &.is-hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}

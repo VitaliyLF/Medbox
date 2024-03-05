@@ -1,24 +1,38 @@
 :root {
-  // border-radius
-  --border-radius-small: 5px;
-  --border-radius-huge: 100px;
+  // base
+  --font-family-base: 'Agrandir', sans-serif;
+  --font-family-accent: 'AtkinsonHyperlegible', sans-serif;
+  --font-family-additional: 'DMSans', sans-serif;
 
-  // border-color
-  --border-color-gray: var(--color-gray);
+  // border
+  --border-mint-color: var(--color-mint-green);
+  --border-mexbox-color: var(--color-medbox-green);
+
+  // border-radius-size
+  --border-radius-all-large: 40px;
+  --border-radius-all-small: 20px;
+  --border-radius-all-tiny: 10px;
+  --border-radius-top-right: 0px 100px 0px 0px;
+  --border-radius-top-left: 100px 0px 0px 0px;
+
+  // transition-speed
+  --timing: 0.3s;
+  --timing-burger-nav: 1s;
+  --timing-preloader: 2s;
+
+  // transition-animation
+  --burger-nav-animation: cubic-bezier(0.7, 0, 0.2, 1);
 
   // outline
   --outline-offset: 2px;
 
-  // transition
-  --timing: 0.3s;
-  --transition-burger-nav: cubic-bezier(0.7, 0, 0.2, 1);
-
   // z-index-
   --preloader-z-index: 1001;
-  --burger-z-index: 500;
-  --overlay-z-index: 100;
-  --nav-list-z-index: 101;
+  --header-nav-z-index: 10;
 
-  // overlay
-  --overlay-shadow: rgba(0, 0, 0, 0.6);
+  // letter-spacing
+  --letter-spacing1-9: 1.9px;
+  --letter-spacing1-6: 1.6px;
+  --letter-spacing0-35: 0.35px;
+  --letter-spacing-0-6: -0.6px;
 }

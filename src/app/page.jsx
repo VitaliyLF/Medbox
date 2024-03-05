@@ -31,9 +31,9 @@ const HomePage = async () => {
     <div className="site-container">
       <Header />
       <main className="homepage" id="main">
-        <Hero />
+        {/* <Hero /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

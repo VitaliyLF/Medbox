@@ -1,97 +1,29 @@
-.link {
-  display: inline-flex;
-  align-items: center;
-  font-weight: 600;
-  font-size: 16px;
-  line-height: 1.875;
-  text-transform: uppercase;
-  padding: 11px 30px;
-  color: var(--color-black);
-  border-radius: var(--border-radius-small);
-  background-color: var(--color-lemon);
-  border: 1px solid transparent;
-  user-select: none;
-  white-space: nowrap;
-  transition: scale var(--timing) ease, color var(--timing) ease,
-    border var(--timing) ease;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
+.title-section {
+  @include fz19-atkinson;
 
-  &::after {
-    content: '';
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: var(--border-radius-small);
-    background-color: var(--color-midnight);
-    transform: scaleY(0);
-    transform-origin: 50% 100%;
-    transition: transform var(--timing) ease;
-  }
-
-  @include focus;
-
-  @include hover {
-    color: var(--color-lemon);
-    border: 1px solid currentColor;
-
-    &::after {
-      transform: scaleY(1);
-    }
-  }
-
-  @include active;
-
-  @include small-tablet {
-    font-size: 16px;
-    line-height: 1;
-    padding: 20px 30px;
-  }
+  font-weight: 400;
 
   @include mobile {
-    padding: 12px 10px;
-    font-size: 14px;
+    @include fz16-atkinson;
   }
 }
 
-.section-title {
-  font-weight: 700;
-  font-size: 46px;
-  line-height: 1.17391;
-  text-transform: capitalize;
-  color: var(--color-midnight);
+.subtitle-section {
+  @include fz50-agrandir;
 
-  @include small-tablet {
-    font-size: 34px;
-    line-height: 1.29412;
+  &--homepage {
+    @include fz70-agrandir;
+
+    @include mobile {
+      @include fz50-agrandir-mobile;
+    }
   }
 }
 
-.section-subtitle {
-  font-weight: 700;
-  font-size: 34px;
-  line-height: 1.29412;
-  text-transform: capitalize;
-  color: var(--color-black);
+.text-section {
+  @include fz22-atkinson;
 
-  @include small-tablet {
-    font-size: 24px;
-    line-height: 1;
-  }
-}
-
-.section-text {
-  font-weight: 500;
-  font-size: 17px;
-  line-height: 1.70588;
-  color: var(--color-section-text-gray);
-
-  @include small-tablet {
-    font-size: 16px;
-    line-height: 1.5;
+  @include mobile {
+    @include fz20-atkinson-mobile;
   }
 }

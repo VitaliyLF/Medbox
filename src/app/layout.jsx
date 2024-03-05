@@ -3,10 +3,39 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import localFont from 'next/font/local'
 import './globals.scss'
 
-export const GilroyFont = localFont({
+export const AgrandirFont = localFont({
   src: [
     {
-      path: './fonts/GilroyRegular.woff2',
+      path: './fonts/AgrandirRegular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-family-base',
+})
+
+export const AtkinsonHyperlegibleFont = localFont({
+  src: [
+    {
+      path: './fonts/AtkinsonHyperlegibleRegular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: './fonts/AtkinsonHyperlegibleBold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  display: 'swap',
+  variable: '--font-family-base',
+})
+
+export const DMSansFont = localFont({
+  src: [
+    {
+      path: './fonts/DMSansRegular.woff2',
       weight: '400',
       style: 'normal',
     },
@@ -17,7 +46,10 @@ export const GilroyFont = localFont({
 
 const RootLayout = async ({ children }) => {
   return (
-    <html lang="en" className={`page ${GilroyFont.variable}`}>
+    <html
+      lang="en"
+      className={`page ${AgrandirFont.variable} ${AtkinsonHyperlegibleFont.variable} ${DMSansFont.variable}`}
+    >
       <body className="page__body">
         <a className="skiplink" href="#main">
           Go to content
