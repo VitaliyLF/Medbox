@@ -1,54 +1,36 @@
+import { urlFor } from '@/app/lib/sanity'
+import Image from 'next/image'
+import Link from 'next/link'
+
 const Header = ({ headerContent }) => {
   return (
     <header className="header header--homepage">
       <div className="header__container container">
         <div className="header__wrapper">
-          <a className="header__logo" href="#">
-            {/* <img  className="header__logo-img" src="img/main-logo.svg" alt="Home" width="144" height="41"> */}
-          </a>
+          <Link className="header__logo" href="#" title="Homepage">
+            <Image
+              className="header__logo-img"
+              src={urlFor(headerContent.headerLogo).url()}
+              alt="Medbox Logo"
+              width={144}
+              height={41}
+            />
+          </Link>
           <nav className="header__nav" aria-label="Main navigation">
             <ul className="header__nav-list">
-              <li className="header__nav-item">
-                <a href="#" className="header__nav-link link ">
-                  What is Medbox
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a href="#" className="header__nav-link link ">
-                  How it works
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a href="#" className="header__nav-link link ">
-                  Providers
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a href="#" className="header__nav-link link ">
-                  Reviews
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a href="#" className="header__nav-link link ">
-                  FAQs
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a href="#" className="header__nav-link link ">
-                  Resources
-                </a>
-              </li>
-              <li className="header__nav-item">
-                <a href="#" className="header__nav-link link ">
-                  Contact Us
-                </a>
-              </li>
+              {headerContent.headerLinks.map((link, index) => (
+                <li className="header__nav-item" key={index}>
+                  <Link className="header__nav-link link" href="#">
+                    {link.headerLinksText}
+                  </Link>
+                </li>
+              ))}
             </ul>
             <div className="header__mobile">
               <button className="header__mobile-btn btn" type="button" aria-hidden="true">
                 Check My Coverage
               </button>
-              <a className="header__mobile-link btn btn--phone" href="tel: 8663537856" aria-hidden="true">
+              <a className="header__mobile-link btn btn--phone" href="tel:8663537856" aria-hidden="true">
                 Call Us
               </a>
             </div>

@@ -72,24 +72,18 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    row-gap: var(--offset-tiny);
+    gap: var(--offset-medium-small);
 
     @include big-desktop {
       margin-block: var(--offset-large);
       flex-direction: column;
       flex-grow: 1;
-      row-gap: 0;
+      gap: 0;
     }
   }
 
   &__nav-item {
-    @include marginRight(var(--offset-medium-small));
-
     @include big-desktop {
-      @include marginRight(0);
-
-      @include marginBottom(var(--offset-medium));
-
       flex-grow: 1;
     }
   }
