@@ -4,7 +4,7 @@ const Header = ({ headerContent }) => {
       <div className="header__container container">
         <div className="header__wrapper">
           <a className="header__logo" href="#">
-            {/* <img  className="header__logo-img" src="img/main-logo.svg" alt="Medbox logo" loading="lazy" width="144" height="41"> */}
+            {/* <img  className="header__logo-img" src="img/main-logo.svg" alt="Home" width="144" height="41"> */}
           </a>
           <nav className="header__nav" aria-label="Main navigation">
             <ul className="header__nav-list">

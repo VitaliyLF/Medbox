@@ -4,10 +4,6 @@
   --font-family-accent: 'AtkinsonHyperlegible', sans-serif;
   --font-family-additional: 'DMSans', sans-serif;
 
-  // border
-  --border-mint-color: var(--color-mint-green);
-  --border-mexbox-color: var(--color-medbox-green);
-
   // border-radius-size
   --border-radius-all-large: 40px;
   --border-radius-all-small: 20px;
@@ -31,8 +27,8 @@
   --header-nav-z-index: 10;
 
   // letter-spacing
-  --letter-spacing1-9: 1.9px;
-  --letter-spacing1-6: 1.6px;
-  --letter-spacing0-35: 0.35px;
-  --letter-spacing-0-6: -0.6px;
+  --letter-spacing-medium-small: 1.9px;
+  --letter-spacing-small: 1.6px;
+  --letter-spacing-tiny: 0.35px;
+  --letter-spacing-negative-tiny: -0.6px;
 }

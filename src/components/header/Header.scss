@@ -26,10 +26,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: 20px;
+    column-gap: var(--offset-small);
     border-radius: var(--border-radius-all-tiny);
-    border: 1px solid var(--border-mint-color);
-    padding: var(--offset-small) calc((var(--offset-small) * 2));
+    border: 1px solid var(--color-mint-green);
+    padding: var(--offset-small) var(--offset-large);
     background-color: var(--color-light);
 
     @include big-desktop {
@@ -72,10 +72,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    row-gap: 10px;
+    row-gap: var(--offset-tiny);
 
     @include big-desktop {
-      margin-block: 45px;
+      margin-block: var(--offset-large);
       flex-direction: column;
       flex-grow: 1;
       row-gap: 0;
@@ -112,14 +112,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
+      gap: var(--offset-tiny);
       background-color: var(--color-light);
-      padding: 15px 25px;
+      padding: var(--offset-tiny) var(--offset-medium-small);
       border-top: 1px solid var(--color-mint-green);
     }
 
     @include small-mobile {
-      padding: 12px 15px;
+      padding: var(--offset-tiny);
     }
   }
 
@@ -127,7 +127,7 @@
     @include mobile {
       @include fz18-dmsans;
 
-      padding: 12px 15px;
+      padding: var(--offset-tiny);
     }
 
     @include small-mobile {
@@ -206,7 +206,7 @@
     @include big-desktop {
       display: flex;
       align-items: center;
-      gap: 15px;
+      gap: var(--offset-tiny);
     }
   }
 

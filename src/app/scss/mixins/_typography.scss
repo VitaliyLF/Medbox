@@ -22,7 +22,7 @@
 @mixin fz35-agrandir {
   font-size: 35px;
   line-height: 1.4;
-  letter-spacing: var(--letter-spacing0-35);
+  letter-spacing: var(--letter-spacing-tiny);
 }
 
 @mixin fz28-agrandir {
@@ -51,7 +51,7 @@
   font-family: var(--font-family-accent);
   font-size: 20px;
   line-height: 1.2;
-  letter-spacing: var(--letter-spacing1-9);
+  letter-spacing: var(--letter-spacing-medium-small);
 }
 
 @mixin fz20-atkinson-mobile {
@@ -64,7 +64,7 @@
   font-family: var(--font-family-accent);
   font-size: 19px;
   line-height: 1.2;
-  letter-spacing: var(--letter-spacing1-9);
+  letter-spacing: var(--letter-spacing-medium-small);
 }
 
 @mixin fz18-atkinson {
@@ -77,14 +77,14 @@
   font-family: var(--font-family-accent);
   font-size: 16px;
   line-height: 1.2;
-  letter-spacing: var(--letter-spacing1-6);
+  letter-spacing: var(--letter-spacing-small);
 }
 
 @mixin fz30-dmsans {
   font-family: var(--font-family-additional);
   font-size: 30px;
   line-height: 1.05;
-  letter-spacing: var(--letter-spacing-0-6);
+  letter-spacing: var(--letter-spacing-negative-tiny);
 }
 
 @mixin fz22-dmsans {
