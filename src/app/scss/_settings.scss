@@ -21,7 +21,7 @@
   min-height: 100vh;
 }
 
-.dis-scroll {
+.scroll-lock {
   overflow: hidden;
 }
 
@@ -44,42 +44,44 @@
   width: min(var(--content-max-width), 100% - (var(--padding-inline) * 2));
 }
 
-.js-focus-visible :focus:not(.focus-visible) {
-  outline: none;
-}
-
 .skiplink {
   --skiplink-offset: 20px;
 
   position: absolute;
-  top: -200px;
-  left: var(--skiplink-offset);
-  transition: top var(--timing) ease;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  font-family: inherit;
+  font-size: var(--skiplink-offset);
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.6);
   color: var(--color-black);
+  z-index: var(--skiplink-z-index);
+  pointer-events: none;
+
+  &__text {
+    position: relative;
+    top: var(--skiplink-offset);
+    left: var(--skiplink-offset);
+    padding: var(--skiplink-offset);
+    border-radius: var(--skiplink-offset);
+    background-color: var(--color-light);
+    border: 2px solid var(--color-black-green);
+    display: inline-flex;
+    gap: var(--skiplink-offset);
+    align-items: center;
+    justify-content: center;
+
+    &::after {
+      content: url(../img/skiplink-enter-icon.svg);
+      width: var(--skiplink-offset);
+      height: var(--skiplink-offset);
+    }
+  }
 
   &:focus {
-    top: var(--skiplink-offset);
-    outline: 2px solid currentColor;
-    outline-offset: 4px;
-  }
-}
-
-.overlay {
-  @include big-desktop {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity var(--timing) ease, visibility var(--timing) ease;
-    z-index: var(--overlay-z-index);
-
-    &--active {
-      position: fixed;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      background-color: var(--overlay-shadow);
-      opacity: 1;
-      visibility: visible;
-    }
+    opacity: 1;
   }
 }
 

@@ -75,11 +75,11 @@
     color: var(--color-medbox-green);
     white-space: nowrap;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     column-gap: calc(var(--icon-phone-size) / 2);
 
     &::before {
-      // content: url(../img/icon-header-phone.svg);
+      content: url(../img/icon-header-phone.svg);
       width: var(--icon-phone-size);
       height: var(--icon-phone-size);
     }

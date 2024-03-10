@@ -1,0 +1,69 @@
+.hero {
+  &--homepage {
+    background-color: var(--color-light-mint);
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 55px;
+    padding-bottom: 75px;
+
+    @include big-desktop {
+      flex-direction: column;
+    }
+
+    @include tablet {
+      column-gap: 0;
+      row-gap: 70px;
+    }
+
+    @include mobile {
+      padding-bottom: 0;
+    }
+  }
+
+  &__info {
+    max-width: 475px;
+    padding-top: 45px;
+
+    @include big-desktop {
+      max-width: 100%;
+      padding-top: var(--offset-large);
+    }
+  }
+
+  &__title {
+    @include marginBottom(var(--offset-medium-large));
+
+    text-transform: uppercase;
+
+    @include mobile {
+      @include marginBottom(var(--offset-small));
+    }
+  }
+
+  &__subtitle {
+    @include marginBottom(var(--offset-small));
+  }
+
+  &__text {
+    @include marginBottom(var(--offset-medium-large));
+
+    max-width: 436px;
+
+    @include big-desktop {
+      max-width: 100%;
+    }
+
+    @include mobile {
+      @include marginBottom(var(--offset-medium));
+    }
+  }
+
+  &__img {
+    @include big-desktop {
+      max-width: 100%;
+    }
+  }
+}

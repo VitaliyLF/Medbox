@@ -16,7 +16,7 @@ const HomePage = async () => {
     <div className="site-container">
       <Header headerContent={dataHomePage} />
       <main className="homepage" id="main">
-        {/* <Hero /> */}
+        <Hero heroContent={dataHomePage} />
       </main>
       {/* <Footer /> */}
     </div>

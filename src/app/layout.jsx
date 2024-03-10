@@ -52,7 +52,7 @@ const RootLayout = async ({ children }) => {
     >
       <body className="page__body">
         <a className="skiplink" href="#main">
-          Skip to Menu
+          <span className="skiplink__text"> Skip to Content</span>
         </a>
         {children}
         <Analytics />

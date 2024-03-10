@@ -7,6 +7,13 @@ export async function getDataHomePage() {
       headerLinks [] {
         headerLinksText
       },
+      headerBtnText,
+      headerMobileBtnText,
+      heroTitle,
+      heroSubtitle,
+      heroText,
+      heroBtnText,
+      heroImage,
     }
   `
 

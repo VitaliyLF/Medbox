@@ -26,5 +26,48 @@ export default {
         },
       ],
     },
+    {
+      name: 'headerBtnText',
+      type: 'string',
+      title: 'header Button text',
+    },
+    {
+      name: 'headerMobileBtnText',
+      type: 'string',
+      title: 'header mobile Button text',
+    },
+    {
+      name: 'heroTitle',
+      type: 'string',
+      title: 'Hero main Title',
+    },
+    {
+      name: 'heroSlug',
+      type: 'slug',
+      title: 'Slug of homepage',
+      options: {
+        source: 'heroTitle',
+      },
+    },
+    {
+      name: 'heroSubtitle',
+      type: 'string',
+      title: 'Hero subTitle',
+    },
+    {
+      name: 'heroText',
+      type: 'text',
+      title: 'Hero paragraph',
+    },
+    {
+      name: 'heroBtnText',
+      type: 'string',
+      title: 'Hero button text',
+    },
+    {
+      name: 'heroImage',
+      type: 'image',
+      title: 'Header Image',
+    },
   ],
 }

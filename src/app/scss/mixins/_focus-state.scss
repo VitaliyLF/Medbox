@@ -1,6 +1,7 @@
 @mixin focus {
   &:focus-visible {
-    outline: var(--outline-offset) solid var(--color-light);
+    transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+    outline: var(--outline-offset) solid var(--color-deep-green);
     outline-offset: calc(var(--outline-offset) * 2);
   }
 }

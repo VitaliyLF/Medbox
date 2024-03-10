@@ -18,7 +18,7 @@
 
   &__container {
     @include big-desktop {
-      padding-inline: 0;
+      width: 100%;
     }
   }
 
@@ -34,6 +34,7 @@
 
     @include big-desktop {
       min-height: var(--header-height);
+      border-radius: var(--border-radius-bottom--right-left);
       border: none;
     }
 
@@ -78,7 +79,7 @@
       margin-block: var(--offset-large);
       flex-direction: column;
       flex-grow: 1;
-      gap: 0;
+      gap: var(--offset-medium);
     }
   }
 
