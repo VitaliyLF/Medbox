@@ -6,7 +6,7 @@ export default {
     {
       name: 'headerLogo',
       type: 'image',
-      title: 'Header logo Image',
+      title: 'Header logo Image'
     },
     {
       name: 'headerLinks',
@@ -20,54 +20,75 @@ export default {
               name: 'headerLinksText',
               type: 'string',
               title: 'Header link text',
-              description: 'Enter link text',
-            },
-          ],
-        },
-      ],
+              description: 'Enter link text'
+            }
+          ]
+        }
+      ]
     },
     {
       name: 'headerBtnText',
       type: 'string',
-      title: 'header Button text',
+      title: 'header Button text'
     },
     {
       name: 'headerMobileBtnText',
       type: 'string',
-      title: 'header mobile Button text',
+      title: 'header mobile Button text'
     },
     {
       name: 'heroTitle',
       type: 'string',
-      title: 'Hero main Title',
+      title: 'Hero main Title'
     },
     {
       name: 'heroSlug',
       type: 'slug',
       title: 'Slug of homepage',
       options: {
-        source: 'heroTitle',
-      },
+        source: 'heroTitle'
+      }
     },
     {
       name: 'heroSubtitle',
       type: 'string',
-      title: 'Hero subTitle',
+      title: 'Hero subTitle'
     },
     {
       name: 'heroText',
       type: 'text',
-      title: 'Hero paragraph',
+      title: 'Hero paragraph'
     },
     {
       name: 'heroBtnText',
       type: 'string',
-      title: 'Hero button text',
+      title: 'Hero button text'
     },
     {
-      name: 'heroImage',
-      type: 'image',
-      title: 'Header Image',
-    },
-  ],
+      name: 'heroImages',
+      type: 'array',
+      title: 'Hero images',
+      of: [
+        {
+          type: 'document',
+          fields: [
+            {
+              name: 'heroImage',
+              type: 'image',
+              title: 'Hero Image'
+            },
+            {
+              name: 'herosAltImageText',
+              type: 'string',
+              title: 'Descriptive label for screen readers & SEO',
+              description: '⚡️ Optional but highly encouraged to make the content more accessible',
+              options: {
+                isHighlighted: true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

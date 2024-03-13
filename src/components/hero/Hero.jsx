@@ -12,14 +12,17 @@ const Hero = ({ heroContent }) => {
             <p className="hero__text text-section">{heroContent.heroText}</p>
             <button className="hero__btn btn btn--hero-section">{heroContent.heroBtnText}</button>
           </div>
-          <Image
-            className="hero__img"
-            src={urlFor(heroContent.heroImage).url()}
-            alt="Pill packets, some of them open and pills are falling out of them"
-            width={750}
-            height={507}
-            priority={true}
-          />
+          {heroContent.heroImages?.map((image, index) => (
+            <Image
+              key={index}
+              className="hero__img"
+              src={urlFor(image.heroImage).url()}
+              alt={image.herosAltImageText || ''}
+              width={750}
+              height={507}
+              priority={true}
+            />
+          ))}
         </div>
       </div>
     </section>

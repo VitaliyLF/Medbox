@@ -8,11 +8,11 @@ export const AgrandirFont = localFont({
     {
       path: './fonts/AgrandirRegular.woff2',
       weight: '400',
-      style: 'normal',
-    },
+      style: 'normal'
+    }
   ],
   display: 'swap',
-  variable: '--font-family-base',
+  variable: '--font-family-base'
 })
 
 export const AtkinsonHyperlegibleFont = localFont({
@@ -20,16 +20,16 @@ export const AtkinsonHyperlegibleFont = localFont({
     {
       path: './fonts/AtkinsonHyperlegibleRegular.woff2',
       weight: '400',
-      style: 'normal',
+      style: 'normal'
     },
     {
       path: './fonts/AtkinsonHyperlegibleBold.woff2',
       weight: '700',
-      style: 'normal',
-    },
+      style: 'normal'
+    }
   ],
   display: 'swap',
-  variable: '--font-family-base',
+  variable: '--font-family-base'
 })
 
 export const DMSansFont = localFont({
@@ -37,11 +37,11 @@ export const DMSansFont = localFont({
     {
       path: './fonts/DMSansRegular.woff2',
       weight: '400',
-      style: 'normal',
-    },
+      style: 'normal'
+    }
   ],
   display: 'swap',
-  variable: '--font-family-base',
+  variable: '--font-family-base'
 })
 
 const RootLayout = async ({ children }) => {

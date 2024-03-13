@@ -1,12 +1,12 @@
 import { getDataHomePage } from './lib/getDataHomePage'
 import Header from '@/components/header/Header'
 import Hero from '@/components/hero/Hero'
-import Footer from '@/components/footer/Footer'
+import VideoBlock from '@/components/videoBlock/VideoBlock'
 
 export const metadata = {
   title: {
-    default: 'Medbox',
-  },
+    default: 'Medbox'
+  }
 }
 
 const HomePage = async () => {
@@ -17,8 +17,8 @@ const HomePage = async () => {
       <Header headerContent={dataHomePage} />
       <main className="homepage" id="main">
         <Hero heroContent={dataHomePage} />
+        <VideoBlock videoBlockContent={dataHomePage} />
       </main>
-      {/* <Footer /> */}
     </div>
   )
 }

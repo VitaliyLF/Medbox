@@ -47,7 +47,7 @@ const Header = ({ headerContent }) => {
             title="Use to navigation"
           >
             <ul className="header__nav-list">
-              {headerContent.headerLinks.map((link, index) => (
+              {headerContent.headerLinks?.map((link, index) => (
                 <li className="header__nav-item" key={index}>
                   <Link className="header__nav-link link" href="#">
                     {link.headerLinksText}

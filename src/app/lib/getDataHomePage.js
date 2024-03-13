@@ -13,7 +13,10 @@ export async function getDataHomePage() {
       heroSubtitle,
       heroText,
       heroBtnText,
-      heroImage,
+      heroImages [] {
+        heroImage,
+        herosAltImageText,
+      },
     }
   `
 
