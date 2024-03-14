@@ -1,2 +1,16 @@
 .videoblock {
+  position: relative;
+  width: 100%;
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+
+    @include big-desktop {
+      height: auto;
+    }
+  }
 }

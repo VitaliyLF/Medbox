@@ -17,6 +17,12 @@ export async function getDataHomePage() {
         heroImage,
         herosAltImageText,
       },
+      videoBlock {
+        asset->{
+          url
+        },
+        videoBlockPoster
+      },
     }
   `
 

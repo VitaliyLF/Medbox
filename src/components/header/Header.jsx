@@ -36,8 +36,8 @@ const Header = ({ headerContent }) => {
               src={urlFor(headerContent.headerLogo).url()}
               alt="Medbox Logo"
               title="Homepage"
-              width={144}
-              height={41}
+              width="144"
+              height="41"
               priority={true}
             />
           </Link>

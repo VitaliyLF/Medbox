@@ -89,6 +89,23 @@ export default {
           ]
         }
       ]
+    },
+    {
+      name: 'videoBlock',
+      type: 'file',
+      title: 'Video content Homepage',
+      fields: [
+        {
+          name: 'videoBlockPoster',
+          type: 'image',
+          title: 'Video block poster'
+        }
+      ]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'heroTitle'
+    }
+  }
 }

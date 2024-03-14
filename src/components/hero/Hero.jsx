@@ -18,8 +18,8 @@ const Hero = ({ heroContent }) => {
               className="hero__img"
               src={urlFor(image.heroImage).url()}
               alt={image.herosAltImageText || ''}
-              width={750}
-              height={507}
+              width="750"
+              height="507"
               priority={true}
             />
           ))}
