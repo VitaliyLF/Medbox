@@ -7,7 +7,7 @@ const VideoBlock = ({ videoBlockContent }) => {
 
   const videoUrl = videoBlockContent.videoBlock.asset.url
 
-  const videoType = () => {
+  const videoType = (() => {
     const fileExtension = videoUrl.split('.').pop().toLowerCase()
     if (fileExtension === 'mp4') {
       return 'video/mp4'
@@ -16,7 +16,7 @@ const VideoBlock = ({ videoBlockContent }) => {
     } else {
       return ''
     }
-  }
+  })()
 
   const poster = videoBlockContent?.videoBlock?.videoBlockPoster
     ? urlFor(videoBlockContent.videoBlock.videoBlockPoster).url()
@@ -34,9 +34,8 @@ const VideoBlock = ({ videoBlockContent }) => {
           autoPlay
           loop
           muted
-          playsInline
-        >
-          <source src={videoUrl} type={videoType()} />
+          playsInline>
+          <source src={videoUrl} type={videoType} />
         </video>
       </div>
     </section>

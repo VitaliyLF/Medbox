@@ -3,19 +3,23 @@ import { client } from './sanity'
 export async function getDataHomePage() {
   const query = `
     *[_type == 'homepage'] [0] {
+      header {
       headerLogo,
       headerLinks [] {
         headerLinksText
       },
       headerBtnText,
       headerMobileBtnText,
+      },
+      hero {
       heroTitle,
       heroSubtitle,
       heroText,
       heroBtnText,
-      heroImages [] {
+      heroWrapperImage {
         heroImage,
-        herosAltImageText,
+        herosAltImageText
+      },
       },
       videoBlock {
         asset->{

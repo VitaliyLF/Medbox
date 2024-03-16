@@ -7,7 +7,7 @@ import { useState } from 'react'
 const Header = ({ headerContent }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
 
-  const toggleMenu = () => {
+  const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
     !isMenuOpen ? disableScroll() : enableScroll()
   }
@@ -30,24 +30,25 @@ const Header = ({ headerContent }) => {
     <header className="header header--homepage">
       <div className="header__container container">
         <div className="header__wrapper">
-          <Link className="header__logo" href="/">
-            <Image
-              className="header__logo-img"
-              src={urlFor(headerContent.headerLogo).url()}
-              alt="Medbox Logo"
-              title="Homepage"
-              width="144"
-              height="41"
-              priority={true}
-            />
-          </Link>
+          {headerContent.header.headerLogo && (
+            <Link className="header__logo" href="/">
+              <Image
+                className="header__logo-img"
+                src={urlFor(headerContent.header.headerLogo).url()}
+                alt="Medbox Logo"
+                title="Homepage"
+                width="144"
+                height="41"
+                priority={true}
+              />
+            </Link>
+          )}
           <nav
             className={`header__nav ${isMenuOpen ? 'header__nav--active' : ''}`}
             aria-label="Main navigation"
-            title="Use to navigation"
-          >
+            title="Use to navigation">
             <ul className="header__nav-list">
-              {headerContent.headerLinks?.map((link, index) => (
+              {headerContent.header?.headerLinks?.map((link, index) => (
                 <li className="header__nav-item" key={index}>
                   <Link className="header__nav-link link" href="#">
                     {link.headerLinksText}
@@ -56,24 +57,29 @@ const Header = ({ headerContent }) => {
               ))}
             </ul>
             <div className="header__mobile">
-              <button className="header__mobile-btn btn" type="button" aria-hidden="true">
-                {headerContent.headerBtnText}
-              </button>
-              <a className="header__mobile-link btn btn--phone" href="tel:8663537856" aria-hidden="true">
-                {headerContent.headerMobileBtnText}
-              </a>
+              {headerContent.header.headerBtnText && (
+                <button className="header__mobile-btn btn" type="button" aria-hidden="true">
+                  {headerContent.header.headerBtnText}
+                </button>
+              )}
+              {headerContent.header.headerMobileBtnText && (
+                <Link className="header__mobile-link btn btn--phone" href="tel:8663537856" aria-hidden="true">
+                  {headerContent.header.headerMobileBtnText}
+                </Link>
+              )}
             </div>
           </nav>
-          <button className="header__btn btn" type="button">
-            {headerContent.headerBtnText}
-          </button>
+          {headerContent.header.headerBtnText && (
+            <button className="header__btn btn" type="button">
+              {headerContent.header.headerBtnText}
+            </button>
+          )}
           <button
             className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
             type="button"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen ? 'true' : 'false'}
-            onClick={toggleMenu}
-          >
+            onClick={toggleMenuVisibility}>
             <span className="header__burger-info" aria-hidden="true">
               Menu
             </span>

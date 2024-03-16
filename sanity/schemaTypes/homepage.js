@@ -4,87 +4,104 @@ export default {
   title: 'Homepage',
   fields: [
     {
-      name: 'headerLogo',
-      type: 'image',
-      title: 'Header logo Image'
-    },
-    {
-      name: 'headerLinks',
-      type: 'array',
-      title: 'Header navigation links',
-      of: [
+      name: 'header',
+      type: 'object',
+      title: 'Header',
+      fields: [
         {
-          type: 'document',
-          fields: [
+          name: 'headerLogo',
+          type: 'image',
+          title: 'Header logo Image'
+        },
+        {
+          name: 'headerLinks',
+          type: 'array',
+          title: 'Header navigation links',
+          of: [
             {
-              name: 'headerLinksText',
-              type: 'string',
-              title: 'Header link text',
-              description: 'Enter link text'
+              type: 'document',
+              fields: [
+                {
+                  name: 'headerLinksText',
+                  type: 'string',
+                  title: 'Header link text',
+                  description: 'Enter link text'
+                }
+              ]
             }
           ]
+        },
+        {
+          name: 'headerBtnText',
+          type: 'string',
+          title: 'Header Button text'
+        },
+        {
+          name: 'headerMobileBtnText',
+          type: 'string',
+          title: 'Header mobile Button text'
         }
       ]
     },
     {
-      name: 'headerBtnText',
-      type: 'string',
-      title: 'header Button text'
-    },
-    {
-      name: 'headerMobileBtnText',
-      type: 'string',
-      title: 'header mobile Button text'
-    },
-    {
-      name: 'heroTitle',
-      type: 'string',
-      title: 'Hero main Title'
-    },
-    {
-      name: 'heroSlug',
-      type: 'slug',
-      title: 'Slug of homepage',
-      options: {
-        source: 'heroTitle'
-      }
-    },
-    {
-      name: 'heroSubtitle',
-      type: 'string',
-      title: 'Hero subTitle'
-    },
-    {
-      name: 'heroText',
-      type: 'text',
-      title: 'Hero paragraph'
-    },
-    {
-      name: 'heroBtnText',
-      type: 'string',
-      title: 'Hero button text'
-    },
-    {
-      name: 'heroImages',
-      type: 'array',
-      title: 'Hero images',
-      of: [
+      name: 'hero',
+      type: 'object',
+      title: 'Hero section',
+      fields: [
         {
+          name: 'heroTitle',
+          type: 'string',
+          title: 'Hero main Title'
+        },
+        {
+          name: 'heroSlug',
+          type: 'slug',
+          title: 'Slug of homepage',
+          options: {
+            source: 'heroTitle'
+          }
+        },
+        {
+          name: 'heroSubtitle',
+          type: 'string',
+          title: 'Hero subTitle'
+        },
+        {
+          name: 'heroText',
+          type: 'array',
+          title: 'Hero paragraph',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'heroBtnText',
+          type: 'string',
+          title: 'Hero button text',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' }
+            ]
+          }
+        },
+        {
+          name: 'heroWrapperImage',
           type: 'document',
+          title: 'Hero image',
           fields: [
             {
               name: 'heroImage',
               type: 'image',
-              title: 'Hero Image'
+              title: 'image'
             },
             {
               name: 'herosAltImageText',
               type: 'string',
               title: 'Descriptive label for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible',
-              options: {
-                isHighlighted: true
-              }
+              description: '⚡️ Optional but highly encouraged to make the content more accessible'
             }
           ]
         }
@@ -93,7 +110,10 @@ export default {
     {
       name: 'videoBlock',
       type: 'file',
-      title: 'Video content Homepage',
+      title: 'Video section',
+      options: {
+        accept: 'video/*'
+      },
       fields: [
         {
           name: 'videoBlockPoster',
@@ -105,7 +125,9 @@ export default {
   ],
   preview: {
     select: {
-      title: 'heroTitle'
+      title: 'hero.heroTitle',
+      subtitle: 'hero.heroSubtitle',
+      media: 'header.headerLogo'
     }
   }
 }

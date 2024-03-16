@@ -47,10 +47,8 @@
 .skiplink {
   --skiplink-offset: 20px;
 
-  position: absolute;
+  position: fixed;
   inset: 0;
-  width: 100%;
-  height: auto;
   opacity: 0;
   font-family: inherit;
   font-size: var(--skiplink-offset);
