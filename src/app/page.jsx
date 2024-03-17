@@ -2,7 +2,7 @@ import { getDataHomePage } from './lib/getDataHomePage'
 import Header from '@/components/header/Header'
 import Hero from '@/components/hero/Hero'
 import VideoBlock from '@/components/videoBlock/VideoBlock'
-import ListLine from '@/components/listLine/listLine'
+import ListLine from '@/components/listLine/ListLine'
 
 export const metadata = {
   title: {
