@@ -1,4 +1,4 @@
-import { client } from './sanity'
+import { client } from './clientSanity'
 
 export async function getDataHomePage() {
   const query = `
@@ -27,6 +27,11 @@ export async function getDataHomePage() {
         },
         videoBlockPoster
       },
+      listLine {
+        listLineSubtitle,
+        listLineText,
+        listLineLink
+      }
     }
   `
 

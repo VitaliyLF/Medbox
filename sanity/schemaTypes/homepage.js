@@ -121,6 +121,33 @@ export default {
           title: 'Video block poster'
         }
       ]
+    },
+    {
+      name: 'listLine',
+      type: 'object',
+      title: 'List line block',
+      fields: [
+        {
+          name: 'listLineSubtitle',
+          type: 'string',
+          title: 'List line Subtitle'
+        },
+        {
+          name: 'listLineText',
+          type: 'array',
+          title: 'List line paragraph',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'listLineLink',
+          type: 'string',
+          title: 'List line link text'
+        }
+      ]
     }
   ],
   preview: {

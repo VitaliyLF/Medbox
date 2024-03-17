@@ -1,4 +1,4 @@
-import { urlFor } from '@/app/lib/sanity'
+import { urlFor } from '@/app/lib/clientSanity'
 
 const VideoBlock = ({ videoBlockContent }) => {
   if (!videoBlockContent) {
@@ -24,20 +24,18 @@ const VideoBlock = ({ videoBlockContent }) => {
 
   return (
     <section className="videoblock">
-      <div className="container">
-        <video
-          className="videoblock__content"
-          poster={poster}
-          width="1440"
-          height="720"
-          preload="auto"
-          autoPlay
-          loop
-          muted
-          playsInline>
-          <source src={videoUrl} type={videoType} />
-        </video>
-      </div>
+      <video
+        className="videoblock__content"
+        poster={poster}
+        width="1440"
+        height="720"
+        preload="auto"
+        autoPlay
+        loop
+        muted
+        playsInline>
+        <source src={videoUrl} type={videoType} />
+      </video>
     </section>
   )
 }

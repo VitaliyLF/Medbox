@@ -1,0 +1,17 @@
+.list-line {
+  padding-block: 200px;
+
+  &__info {
+    max-width: 550px;
+  }
+
+  &__subtitle {
+    @include marginBottom(var(--offset-small));
+  }
+
+  &__text {
+    @include marginBottom(var(--offset-medium-large));
+
+    max-width: 475px;
+  }
+}

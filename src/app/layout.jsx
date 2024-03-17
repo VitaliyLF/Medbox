@@ -48,8 +48,7 @@ const RootLayout = async ({ children }) => {
   return (
     <html
       lang="en"
-      className={`page ${AgrandirFont.variable} ${AtkinsonHyperlegibleFont.variable} ${DMSansFont.variable}`}
-    >
+      className={`page ${AgrandirFont.variable} ${AtkinsonHyperlegibleFont.variable} ${DMSansFont.variable}`}>
       <body className="page__body">
         <a className="skiplink" href="#main">
           <span className="skiplink__text"> Skip to Content</span>

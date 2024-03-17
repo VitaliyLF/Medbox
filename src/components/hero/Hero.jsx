@@ -1,4 +1,4 @@
-import { urlFor } from '@/app/lib/sanity'
+import { urlFor } from '@/app/lib/clientSanity'
 import { PortableText } from 'next-sanity'
 import Image from 'next/image'
 
