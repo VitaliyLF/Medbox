@@ -28,7 +28,7 @@ const VideoBlock = ({ videoBlockContent }) => {
         className="videoblock__content"
         poster={poster}
         width="1440"
-        height="720"
+        height="900"
         preload="auto"
         autoPlay
         loop

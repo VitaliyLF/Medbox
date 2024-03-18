@@ -29,7 +29,7 @@ export const AtkinsonHyperlegibleFont = localFont({
     }
   ],
   display: 'swap',
-  variable: '--font-family-base'
+  variable: '--font-family-accent'
 })
 
 export const DMSansFont = localFont({
@@ -41,7 +41,7 @@ export const DMSansFont = localFont({
     }
   ],
   display: 'swap',
-  variable: '--font-family-base'
+  variable: '--font-family-additional'
 })
 
 const RootLayout = async ({ children }) => {
@@ -51,7 +51,9 @@ const RootLayout = async ({ children }) => {
       className={`page ${AgrandirFont.variable} ${AtkinsonHyperlegibleFont.variable} ${DMSansFont.variable}`}>
       <body className="page__body">
         <a className="skiplink" href="#main">
-          <span className="skiplink__text"> Skip to Content</span>
+          <span className="skiplink__text" data-title="Enter">
+            Skip to Content
+          </span>
         </a>
         {children}
         <Analytics />

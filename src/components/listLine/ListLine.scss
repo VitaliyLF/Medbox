@@ -1,6 +1,10 @@
 .list-line {
   padding-block: 200px;
 
+  &__container {
+    display: flex;
+  }
+
   &__info {
     max-width: 550px;
   }
