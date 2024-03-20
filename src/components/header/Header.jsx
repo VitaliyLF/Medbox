@@ -5,13 +5,9 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const Header = ({ headerContent }) => {
-  if (!headerContent) {
-    return null
-  }
+  const [isMenuOpen, setMenuOpen] = useState(false)
 
   const { headerLogo, headerLinks, headerBtnText, headerMobileBtnText } = headerContent
-
-  const [isMenuOpen, setMenuOpen] = useState(false)
 
   const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
