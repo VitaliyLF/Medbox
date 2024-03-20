@@ -5,37 +5,29 @@ const VideoBlock = ({ videoBlockContent }) => {
     return null
   }
 
-  const videoUrl = videoBlockContent.videoBlock.asset.url
+  const { videoFile, videoBlockHiddenTitle, videoBlockPoster } = videoBlockContent
 
-  const videoType = (() => {
-    const fileExtension = videoUrl.split('.').pop().toLowerCase()
-    if (fileExtension === 'mp4') {
-      return 'video/mp4'
-    } else if (fileExtension === 'webm') {
-      return 'video/webm'
-    } else {
-      return ''
-    }
-  })()
+  const videoUrl = videoFile.asset.url
 
-  const poster = videoBlockContent?.videoBlock?.videoBlockPoster
-    ? urlFor(videoBlockContent.videoBlock.videoBlockPoster).url()
-    : ''
+  const videoType = videoUrl ? `video/${videoUrl.split('.').pop().toLowerCase()}` : ''
 
   return (
     <section className="videoblock">
-      <video
-        className="videoblock__content"
-        poster={poster}
-        width="1440"
-        height="900"
-        preload="auto"
-        autoPlay
-        loop
-        muted
-        playsInline>
-        <source src={videoUrl} type={videoType} />
-      </video>
+      <h2 className="visually-hidden">{videoBlockHiddenTitle}</h2>
+      {videoUrl && (
+        <video
+          className="videoblock__content"
+          poster={videoBlockPoster ? urlFor(videoBlockPoster).url() : ''}
+          width="1440"
+          height="900"
+          preload="auto"
+          autoPlay
+          loop
+          muted
+          playsInline>
+          <source src={videoUrl} type={videoType} />
+        </video>
+      )}
     </section>
   )
 }

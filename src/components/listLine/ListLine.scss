@@ -1,8 +1,19 @@
 .list-line {
-  padding-block: 200px;
+  position: relative;
+  padding-top: 100px;
+
+  &::before {
+    content: url(../../app/img/list-line-wave.svg);
+    position: absolute;
+    top: -25px;
+    right: 0;
+  }
 
   &__container {
     display: flex;
+    justify-content: space-between;
+    column-gap: 155px;
+    padding-bottom: 100px;
   }
 
   &__info {
@@ -10,12 +21,57 @@
   }
 
   &__subtitle {
-    @include marginBottom(var(--offset-small));
+    @include marginBottom(var(--offset-tiny-medium));
   }
 
   &__text {
-    @include marginBottom(var(--offset-medium-large));
+    @include marginBottom(var(--offset-medium));
 
     max-width: 475px;
+  }
+
+  &__items {
+    max-width: 570px;
+    padding-top: var(--offset-double-extra-large);
+  }
+
+  &__item {
+    @include fz35-agrandir;
+
+    @include marginBottom(var(--offset-large-medium));
+
+    position: relative;
+    // opacity: 0;
+    // translate: 0 100px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: calc(100% + 25px);
+      translate: 0 -50%;
+      border-radius: 50%;
+      width: var(--offset-medium);
+      aspect-ratio: 1;
+      background: url(../../app/img/block-list-checkmark.svg) center/22px 22px no-repeat var(--color-dark-green);
+    }
+  }
+
+  &__wave {
+    position: relative;
+
+    &::before {
+      content: url(../../app/img/list-line-wave.svg);
+      position: absolute;
+      top: -70px;
+      left: 0;
+      rotate: 180deg;
+    }
+  }
+
+  &__image {
+    display: block;
+    object-fit: cover;
+    width: 100%;
   }
 }

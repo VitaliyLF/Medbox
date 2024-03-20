@@ -21,16 +21,23 @@ export async function getDataHomePage() {
         herosAltImageText
       },
       },
-      videoBlock {
-        asset->{
-          url
+      videoSection {
+        videoFile {
+          asset-> {
+            url
+          }
         },
-        videoBlockPoster
+        videoBlockPoster,
+        videoBlockHiddenTitle,
       },
       listLine {
         listLineSubtitle,
         listLineText,
-        listLineLink
+        listLineLink,
+        listLineItems [] {
+          listLineItem
+        },
+        listLineImage,
       }
     }
   `

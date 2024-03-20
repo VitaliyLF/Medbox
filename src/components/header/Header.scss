@@ -1,11 +1,11 @@
 .header {
   --header-height: 85px;
 
-  padding-top: var(--offset-medium-small);
+  padding-top: var(--offset-small);
 
   &--homepage {
     background-color: var(--color-light-mint);
-    padding-bottom: var(--offset-medium);
+    padding-bottom: var(--offset-small-medium);
 
     @include big-desktop {
       padding-bottom: 0;
@@ -26,10 +26,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: var(--offset-small);
+    column-gap: var(--offset-tiny-medium);
     border-radius: var(--border-radius-all-tiny);
     border: 1px solid var(--color-mint-green);
-    padding: var(--offset-small) var(--offset-large);
+    padding: var(--offset-tiny-medium) var(--offset-medium-large);
     background-color: var(--color-light);
 
     @include big-desktop {
@@ -39,7 +39,7 @@
     }
 
     @include mobile {
-      padding: var(--offset-small);
+      padding: var(--offset-tiny-medium);
     }
   }
 
@@ -73,13 +73,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--offset-medium-small);
+    gap: var(--offset-small);
 
     @include big-desktop {
-      margin-block: var(--offset-large);
+      margin-block: var(--offset-medium-large);
       flex-direction: column;
       flex-grow: 1;
-      gap: var(--offset-medium);
+      gap: var(--offset-small-medium);
     }
   }
 
@@ -109,7 +109,7 @@
       justify-content: center;
       gap: var(--offset-tiny);
       background-color: var(--color-light);
-      padding: var(--offset-tiny) var(--offset-medium-small);
+      padding: var(--offset-tiny) var(--offset-small);
       border-top: 1px solid var(--color-mint-green);
     }
 

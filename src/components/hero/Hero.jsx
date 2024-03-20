@@ -3,33 +3,37 @@ import { PortableText } from 'next-sanity'
 import Image from 'next/image'
 
 const Hero = ({ heroContent }) => {
+  if (!heroContent) {
+    return null
+  }
+
+  const { heroTitle, heroSubtitle, heroText, heroBtnText, heroWrapperImage } = heroContent
+
   return (
     <section className="hero hero--homepage">
       <div className="hero__container container">
         <div className="hero__wrapper">
           <div className="hero__info">
-            {heroContent.hero.heroTitle && <h1 className="hero__title title-section">{heroContent.hero.heroTitle}</h1>}
-            {heroContent.hero.heroSubtitle && (
-              <h2 className="hero__subtitle subtitle-section subtitle-section--homepage">
-                {heroContent.hero.heroSubtitle}
-              </h2>
+            {heroTitle && <h1 className="hero__title title-section">{heroTitle}</h1>}
+            {heroSubtitle && (
+              <h2 className="hero__subtitle subtitle-section subtitle-section--homepage">{heroSubtitle}</h2>
             )}
-            {heroContent.hero.heroText && (
+            {heroText && (
               <div className="hero__text text-section">
-                <PortableText value={heroContent.hero.heroText}></PortableText>
+                <PortableText value={heroText} />
               </div>
             )}
-            {heroContent.hero.heroBtnText && (
+            {heroBtnText && (
               <button className="hero__btn btn btn--hero-section" type="button">
-                {heroContent.hero.heroBtnText}
+                {heroBtnText}
               </button>
             )}
           </div>
-          {heroContent.hero.heroWrapperImage.heroImage && (
+          {heroWrapperImage?.heroImage && (
             <Image
               className="hero__img"
-              src={urlFor(heroContent.hero.heroWrapperImage.heroImage).url()}
-              alt={heroContent.hero.heroWrapperImage.herosAltImageText || ''}
+              src={urlFor(heroWrapperImage.heroImage).url()}
+              alt={heroWrapperImage.herosAltImageText || ''}
               width="750"
               height="507"
               priority={true}

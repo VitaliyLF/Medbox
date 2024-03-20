@@ -32,7 +32,7 @@
 
   display: inline-flex;
   align-items: center;
-  padding: var(--offset-tiny) var(--offset-small);
+  padding: var(--offset-tiny) var(--offset-tiny-medium);
   color: var(--color-light);
   border-radius: var(--border-radius-all-large);
   background-color: var(--color-medbox-green);
@@ -96,7 +96,7 @@
   &--hero-section {
     @include fz30-dmsans;
 
-    padding-inline: var(--offset-medium-small);
+    padding-inline: var(--offset-small);
   }
 }
 

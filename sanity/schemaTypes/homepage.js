@@ -108,13 +108,23 @@ export default {
       ]
     },
     {
-      name: 'videoBlock',
-      type: 'file',
+      name: 'videoSection',
+      type: 'object',
       title: 'Video section',
-      options: {
-        accept: 'video/*'
-      },
       fields: [
+        {
+          name: 'videoFile',
+          type: 'file',
+          title: 'Video File',
+          options: {
+            accept: 'video/*'
+          }
+        },
+        {
+          name: 'videoBlockHiddenTitle',
+          type: 'string',
+          title: '⚡️ Descriptive label for screen readers & SEO'
+        },
         {
           name: 'videoBlockPoster',
           type: 'image',
@@ -125,7 +135,7 @@ export default {
     {
       name: 'listLine',
       type: 'object',
-      title: 'List line block',
+      title: 'List line section',
       fields: [
         {
           name: 'listLineSubtitle',
@@ -146,6 +156,28 @@ export default {
           name: 'listLineLink',
           type: 'string',
           title: 'List line link text'
+        },
+        {
+          name: 'listLineItems',
+          type: 'array',
+          title: 'List line items',
+          of: [
+            {
+              type: 'document',
+              fields: [
+                {
+                  name: 'listLineItem',
+                  type: 'string',
+                  title: 'List line item text'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: 'listLineImage',
+          type: 'image',
+          title: 'List line image'
         }
       ]
     }

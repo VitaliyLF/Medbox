@@ -6,8 +6,8 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
-    column-gap: 55px;
-    padding-bottom: 75px;
+    column-gap: var(--offset-extra-large);
+    padding-bottom: var(--offset-triple-extra-large);
 
     @include big-desktop {
       flex-direction: column;
@@ -15,7 +15,7 @@
 
     @include tablet {
       column-gap: 0;
-      row-gap: 70px;
+      row-gap: var(--offset-double-extra-large-medium);
     }
 
     @include mobile {
@@ -25,30 +25,30 @@
 
   &__info {
     max-width: 475px;
-    padding-top: 45px;
+    padding-top: var(--offset-large);
 
     @include big-desktop {
       max-width: 100%;
-      padding-top: var(--offset-large);
+      padding-top: var(--offset-medium-large);
     }
   }
 
   &__title {
-    @include marginBottom(var(--offset-medium-large));
+    @include marginBottom(var(--offset-medium));
 
     text-transform: uppercase;
 
     @include mobile {
-      @include marginBottom(var(--offset-small));
+      @include marginBottom(var(--offset-tiny-medium));
     }
   }
 
   &__subtitle {
-    @include marginBottom(var(--offset-small));
+    @include marginBottom(var(--offset-tiny-medium));
   }
 
   &__text {
-    @include marginBottom(var(--offset-medium-large));
+    @include marginBottom(var(--offset-medium));
 
     max-width: 436px;
 
@@ -57,7 +57,7 @@
     }
 
     @include mobile {
-      @include marginBottom(var(--offset-medium));
+      @include marginBottom(var(--offset-small-medium));
     }
   }
 

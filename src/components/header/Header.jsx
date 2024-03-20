@@ -5,6 +5,12 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 const Header = ({ headerContent }) => {
+  if (!headerContent) {
+    return null
+  }
+
+  const { headerLogo, headerLinks, headerBtnText, headerMobileBtnText } = headerContent
+
   const [isMenuOpen, setMenuOpen] = useState(false)
 
   const toggleMenuVisibility = () => {
@@ -30,11 +36,11 @@ const Header = ({ headerContent }) => {
     <header className="header header--homepage">
       <div className="header__container container">
         <div className="header__wrapper">
-          {headerContent.header.headerLogo && (
+          {headerLogo && (
             <Link className="header__logo" href="/">
               <Image
                 className="header__logo-img"
-                src={urlFor(headerContent.header.headerLogo).url()}
+                src={urlFor(headerLogo).url()}
                 alt="Medbox Logo"
                 title="Homepage"
                 width="144"
@@ -48,7 +54,7 @@ const Header = ({ headerContent }) => {
             aria-label="Main navigation"
             title="Use to navigation">
             <ul className="header__nav-list">
-              {headerContent.header?.headerLinks?.map((link, index) => (
+              {headerLinks?.map((link, index) => (
                 <li className="header__nav-item" key={index}>
                   <Link className="header__nav-link link" href="#">
                     {link.headerLinksText}
@@ -57,21 +63,21 @@ const Header = ({ headerContent }) => {
               ))}
             </ul>
             <div className="header__mobile">
-              {headerContent.header.headerBtnText && (
+              {headerBtnText && (
                 <button className="header__mobile-btn btn" type="button" aria-hidden="true">
-                  {headerContent.header.headerBtnText}
+                  {headerBtnText}
                 </button>
               )}
-              {headerContent.header.headerMobileBtnText && (
+              {headerMobileBtnText && (
                 <Link className="header__mobile-link btn btn--phone" href="tel:8663537856" aria-hidden="true">
-                  {headerContent.header.headerMobileBtnText}
+                  {headerMobileBtnText}
                 </Link>
               )}
             </div>
           </nav>
-          {headerContent.header.headerBtnText && (
+          {headerBtnText && (
             <button className="header__btn btn" type="button">
-              {headerContent.header.headerBtnText}
+              {headerBtnText}
             </button>
           )}
           <button

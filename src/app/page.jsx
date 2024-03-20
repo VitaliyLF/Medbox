@@ -15,11 +15,11 @@ const HomePage = async () => {
 
   return (
     <div className="site-container">
-      <Header headerContent={dataHomePage} />
+      <Header headerContent={dataHomePage?.header} />
       <main className="homepage" id="main">
-        <Hero heroContent={dataHomePage} />
-        <VideoBlock videoBlockContent={dataHomePage} />
-        <ListLine listLineContent={dataHomePage} />
+        <Hero heroContent={dataHomePage?.hero} />
+        <VideoBlock videoBlockContent={dataHomePage?.videoSection} />
+        <ListLine listLineContent={dataHomePage?.listLine} />
       </main>
     </div>
   )
