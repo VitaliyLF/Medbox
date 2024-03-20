@@ -7,6 +7,10 @@ import { useState } from 'react'
 const Header = ({ headerContent }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
 
+  if (!headerContent) {
+    return null
+  }
+
   const { headerLogo, headerLinks, headerBtnText, headerMobileBtnText } = headerContent
 
   const toggleMenuVisibility = () => {
