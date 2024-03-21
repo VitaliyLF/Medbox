@@ -38,6 +38,14 @@ export async function getDataHomePage() {
           listLineItem
         },
         listLineImage,
+        listLineStar [] {
+          listLineStarItem
+        },
+        listLineSocialIcon,
+        listLineBlockquote {
+          listLineBlockquoteText,
+          listLineBlockquoteAuthor
+        },
       }
     }
   `

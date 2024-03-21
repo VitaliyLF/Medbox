@@ -8,7 +8,16 @@ const ListLine = ({ listLineContent }) => {
     return null
   }
 
-  const { listLineSubtitle, listLineText, listLineLink, listLineItems, listLineImage } = listLineContent
+  const {
+    listLineSubtitle,
+    listLineText,
+    listLineLink,
+    listLineItems,
+    listLineImage,
+    listLineStar,
+    listLineSocialIcon,
+    listLineBlockquote
+  } = listLineContent
 
   return (
     <section className="list-line">
@@ -34,8 +43,8 @@ const ListLine = ({ listLineContent }) => {
           ))}
         </ul>
       </div>
-      {listLineImage && (
-        <div className="list-line__wave">
+      <div className="list-line__wave">
+        {listLineImage && (
           <Image
             className="list-line__image"
             src={urlFor(listLineImage).url()}
@@ -44,8 +53,49 @@ const ListLine = ({ listLineContent }) => {
             height="720"
             aria-hidden="true"
           />
+        )}
+        <div className="list-line__wrapper container">
+          <div className="list-line__review">
+            <div className="list-line__top">
+              <ul className="list-line__star">
+                {listLineStar?.map((star, index) => (
+                  <li className="list-line__star-item" key={index}>
+                    <Image
+                      className="list-line__star-image"
+                      src={urlFor(star.listLineStarItem).url()}
+                      alt="5 out of 5 stars"
+                      width="24"
+                      height="24"
+                      aria-hidden="true"
+                    />
+                  </li>
+                ))}
+              </ul>
+              <Link className="list-line__social-link" href="/" target="_blank">
+                {listLineSocialIcon && (
+                  <Image
+                    className="list-line__social-image"
+                    src={urlFor(listLineSocialIcon).url()}
+                    alt="Facebook socail link"
+                    width="24"
+                    height="24"
+                    aria-label="Facebook socail link || New window"
+                    title="Facebook socail link || New window"
+                  />
+                )}
+              </Link>
+            </div>
+            {listLineBlockquote.listLineBlockquoteText && (
+              <blockquote className="list-line__blockquote">
+                {listLineBlockquote.listLineBlockquoteText}
+                <footer className="list-line__footer">
+                  <cite className="list-line__author"> {listLineBlockquote.listLineBlockquoteAuthor}</cite>
+                </footer>
+              </blockquote>
+            )}
+          </div>
         </div>
-      )}
+      </div>
     </section>
   )
 }

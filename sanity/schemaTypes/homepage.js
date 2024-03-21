@@ -178,6 +178,45 @@ export default {
           name: 'listLineImage',
           type: 'image',
           title: 'List line image'
+        },
+        {
+          name: 'listLineStar',
+          type: 'array',
+          title: 'List line start list',
+          of: [
+            {
+              type: 'document',
+              fields: [
+                {
+                  name: 'listLineStarItem',
+                  type: 'image',
+                  title: 'List line start item'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: 'listLineSocialIcon',
+          type: 'image',
+          title: 'List line social icon'
+        },
+        {
+          name: 'listLineBlockquote',
+          type: 'object',
+          title: 'List line Blockquote',
+          fields: [
+            {
+              name: 'listLineBlockquoteText',
+              type: 'string',
+              title: 'List line Blockquote text'
+            },
+            {
+              name: 'listLineBlockquoteAuthor',
+              type: 'string',
+              title: 'List line Blockquote author'
+            }
+          ]
         }
       ]
     }
