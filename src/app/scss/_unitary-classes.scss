@@ -103,15 +103,25 @@
 .title-section {
   @include fz19-atkinson;
 
+  @include marginBottom(var(--offset-medium));
+
   font-weight: 400;
+  text-transform: uppercase;
+  text-wrap: balance;
 
   @include mobile {
     @include fz16-atkinson;
+
+    @include marginBottom(var(--offset-tiny-medium));
   }
 }
 
 .subtitle-section {
   @include fz50-agrandir;
+
+  @include marginBottom(var(--offset-tiny-medium));
+
+  text-wrap: balance;
 
   &--homepage {
     @include fz70-agrandir;
@@ -125,7 +135,23 @@
 .text-section {
   @include fz22-atkinson;
 
+  @include marginBottom(var(--offset-medium));
+
+  text-wrap: balance;
+
+  @include big-desktop {
+    max-width: 100%;
+  }
+
   @include mobile {
     @include fz20-atkinson-mobile;
+
+    @include marginBottom(var(--offset-small-medium));
   }
+}
+
+.text-section-medium {
+  @include fz18-atkinson;
+
+  text-wrap: balance;
 }

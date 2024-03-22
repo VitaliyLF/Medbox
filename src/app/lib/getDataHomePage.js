@@ -42,10 +42,19 @@ export async function getDataHomePage() {
           listLineStarItem
         },
         listLineSocialIcon,
+        listLineSocialIconAlt,
+        listLineSocialUrl,
         listLineBlockquote {
           listLineBlockquoteText,
           listLineBlockquoteAuthor
         },
+      },
+      benefits {
+        benefitsTitle,
+        benefitsSubtitle,
+        benefitsText,
+        benefitsBtnText,
+        benefitsImage
       }
     }
   `

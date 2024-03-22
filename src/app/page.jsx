@@ -3,6 +3,7 @@ import Header from '@/components/header/Header'
 import Hero from '@/components/hero/Hero'
 import VideoBlock from '@/components/videoBlock/VideoBlock'
 import ListLine from '@/components/listLine/ListLine'
+import Benefits from '@/components/benefits/Benefits'
 
 export const metadata = {
   title: {
@@ -20,6 +21,7 @@ const HomePage = async () => {
         <Hero heroContent={dataHomePage?.hero} />
         <VideoBlock videoBlockContent={dataHomePage?.videoSection} />
         <ListLine listLineContent={dataHomePage?.listLine} />
+        <Benefits benefitsContent={dataHomePage?.benefits} />
       </main>
     </div>
   )

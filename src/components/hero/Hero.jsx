@@ -14,12 +14,10 @@ const Hero = ({ heroContent }) => {
       <div className="hero__container container">
         <div className="hero__wrapper">
           <div className="hero__info">
-            {heroTitle && <h1 className="hero__title title-section">{heroTitle}</h1>}
-            {heroSubtitle && (
-              <h2 className="hero__subtitle subtitle-section subtitle-section--homepage">{heroSubtitle}</h2>
-            )}
+            {heroTitle && <h1 className="title-section">{heroTitle}</h1>}
+            {heroSubtitle && <h2 className="subtitle-section subtitle-section--homepage">{heroSubtitle}</h2>}
             {heroText && (
-              <div className="hero__text text-section">
+              <div className="text-section">
                 <PortableText value={heroText} />
               </div>
             )}

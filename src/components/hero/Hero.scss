@@ -33,32 +33,8 @@
     }
   }
 
-  &__title {
-    @include marginBottom(var(--offset-medium));
-
-    text-transform: uppercase;
-
-    @include mobile {
-      @include marginBottom(var(--offset-tiny-medium));
-    }
-  }
-
-  &__subtitle {
-    @include marginBottom(var(--offset-tiny-medium));
-  }
-
   &__text {
-    @include marginBottom(var(--offset-medium));
-
     max-width: 436px;
-
-    @include big-desktop {
-      max-width: 100%;
-    }
-
-    @include mobile {
-      @include marginBottom(var(--offset-small-medium));
-    }
   }
 
   &__img {

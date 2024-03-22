@@ -16,21 +16,23 @@ const ListLine = ({ listLineContent }) => {
     listLineImage,
     listLineStar,
     listLineSocialIcon,
-    listLineBlockquote
+    listLineBlockquote,
+    listLineSocialUrl,
+    listLineSocialIconAlt
   } = listLineContent
 
   return (
     <section className="list-line">
       <div className="list-line__container container">
         <div className="list-line__info">
-          {listLineSubtitle && <h2 className="list-line__subtitle subtitle-section">{listLineSubtitle}</h2>}
+          {listLineSubtitle && <h2 className="subtitle-section">{listLineSubtitle}</h2>}
           {listLineText && (
             <div className="list-line__text text-section">
-              <PortableText value={listLineText}></PortableText>
+              <PortableText value={listLineText} />
             </div>
           )}
           {listLineLink && (
-            <Link className="list-line__link btn" href="/">
+            <Link className="btn" href="/">
               {listLineLink}
             </Link>
           )}
@@ -45,56 +47,60 @@ const ListLine = ({ listLineContent }) => {
       </div>
       <div className="list-line__wave">
         {listLineImage && (
-          <Image
-            className="list-line__image"
-            src={urlFor(listLineImage).url()}
-            alt=""
-            width="1440"
-            height="720"
-            aria-hidden="true"
-          />
-        )}
-        <div className="list-line__wrapper container">
-          <div className="list-line__review">
-            <div className="list-line__top">
-              <ul className="list-line__star">
-                {listLineStar?.map((star, index) => (
-                  <li className="list-line__star-item" key={index}>
-                    <Image
-                      className="list-line__star-image"
-                      src={urlFor(star.listLineStarItem).url()}
-                      alt="5 out of 5 stars"
-                      width="24"
-                      height="24"
-                      aria-hidden="true"
-                    />
-                  </li>
-                ))}
-              </ul>
-              <Link className="list-line__social-link" href="/" target="_blank">
-                {listLineSocialIcon && (
-                  <Image
-                    className="list-line__social-image"
-                    src={urlFor(listLineSocialIcon).url()}
-                    alt="Facebook socail link"
-                    width="24"
-                    height="24"
-                    aria-label="Facebook socail link || New window"
-                    title="Facebook socail link || New window"
-                  />
+          <>
+            <Image
+              className="list-line__image"
+              src={urlFor(listLineImage).url()}
+              alt=""
+              width="1440"
+              height="720"
+              aria-hidden="true"
+              loading="lazy"
+            />
+            <div className="list-line__wrapper container">
+              <div className="list-line__review">
+                <div className="list-line__review-top">
+                  <ul className="list-line__stars">
+                    {listLineStar?.map((star, index) => (
+                      <li className="list-line__star" key={index}>
+                        <Image
+                          className="list-line__star-image"
+                          src={urlFor(star.listLineStarItem).url()}
+                          alt={index === 0 ? `${listLineStar.length} out of ${listLineStar.length} stars` : ''}
+                          width="24"
+                          height="24"
+                          aria-hidden={index === 0 ? 'false' : 'true'}
+                          loading="lazy"
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                  <Link className="list-line__social-link" href={listLineSocialUrl} target="_blank">
+                    {listLineSocialIcon && (
+                      <Image
+                        className="list-line__social-image"
+                        src={urlFor(listLineSocialIcon).url()}
+                        alt={listLineSocialIconAlt}
+                        width="45"
+                        height="45"
+                        title={`${listLineSocialIconAlt} || New window`}
+                        loading="lazy"
+                      />
+                    )}
+                  </Link>
+                </div>
+                {listLineBlockquote.listLineBlockquoteText && (
+                  <blockquote className="list-line__blockquote text-section-medium">
+                    {listLineBlockquote.listLineBlockquoteText}
+                    <footer className="list-line__footer">
+                      <cite className="list-line__author"> {listLineBlockquote.listLineBlockquoteAuthor}</cite>
+                    </footer>
+                  </blockquote>
                 )}
-              </Link>
+              </div>
             </div>
-            {listLineBlockquote.listLineBlockquoteText && (
-              <blockquote className="list-line__blockquote">
-                {listLineBlockquote.listLineBlockquoteText}
-                <footer className="list-line__footer">
-                  <cite className="list-line__author"> {listLineBlockquote.listLineBlockquoteAuthor}</cite>
-                </footer>
-              </blockquote>
-            )}
-          </div>
-        </div>
+          </>
+        )}
       </div>
     </section>
   )

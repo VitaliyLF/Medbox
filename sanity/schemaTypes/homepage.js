@@ -202,6 +202,18 @@ export default {
           title: 'List line social icon'
         },
         {
+          name: 'listLineSocialIconAlt',
+          type: 'string',
+          title: 'List line social icon description for screen readers & SEO',
+          description: '⚡️ Optional but highly encouraged to make the content more accessible'
+        },
+        {
+          name: 'listLineSocialUrl',
+          type: 'url',
+          title: 'List line social url',
+          validation: (Rule) => Rule.required()
+        },
+        {
           name: 'listLineBlockquote',
           type: 'object',
           title: 'List line Blockquote',
@@ -217,6 +229,43 @@ export default {
               title: 'List line Blockquote author'
             }
           ]
+        }
+      ]
+    },
+    {
+      name: 'benefits',
+      type: 'object',
+      title: 'Benefits section',
+      fields: [
+        {
+          name: 'benefitsTitle',
+          type: 'string',
+          title: 'Benefits title'
+        },
+        {
+          name: 'benefitsSubtitle',
+          type: 'string',
+          title: 'Benefits subtitle'
+        },
+        {
+          name: 'benefitsText',
+          type: 'array',
+          title: 'Benefits paragraph',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'benefitsBtnText',
+          type: 'string',
+          title: 'Benefits buttton text'
+        },
+        {
+          name: 'benefitsImage',
+          type: 'image',
+          title: 'Benefits Image'
         }
       ]
     }
