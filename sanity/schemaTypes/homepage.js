@@ -88,7 +88,7 @@ export default {
           }
         },
         {
-          name: 'heroWrapperImage',
+          name: 'heroImageAndAlt',
           type: 'document',
           title: 'Hero image',
           fields: [
@@ -263,9 +263,39 @@ export default {
           title: 'Benefits buttton text'
         },
         {
-          name: 'benefitsImage',
-          type: 'image',
-          title: 'Benefits Image'
+          name: 'benefitsImageAndAlt',
+          type: 'document',
+          title: 'Benefits Image',
+          fields: [
+            {
+              name: 'benefitsImage',
+              type: 'image',
+              title: 'image'
+            },
+            {
+              name: 'benefitsImageAlt',
+              type: 'string',
+              title: 'Descriptive label for screen readers & SEO',
+              description: '⚡️ Optional but highly encouraged to make the content more accessible'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'stickyList',
+      type: 'object',
+      title: 'Sticky list section',
+      fields: [
+        {
+          name: 'stickyListTitle',
+          type: 'string',
+          title: 'Sticky list title'
+        },
+        {
+          name: 'stickyListSubtitle',
+          type: 'string',
+          title: 'Sticky list subtitle'
         }
       ]
     }

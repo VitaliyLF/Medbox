@@ -4,6 +4,7 @@ import Hero from '@/components/hero/Hero'
 import VideoBlock from '@/components/videoBlock/VideoBlock'
 import ListLine from '@/components/listLine/ListLine'
 import Benefits from '@/components/benefits/Benefits'
+import StickyList from '@/components/stickyList/StickyList'
 
 export const metadata = {
   title: {
@@ -22,6 +23,7 @@ const HomePage = async () => {
         <VideoBlock videoBlockContent={dataHomePage?.videoSection} />
         <ListLine listLineContent={dataHomePage?.listLine} />
         <Benefits benefitsContent={dataHomePage?.benefits} />
+        <StickyList stickyListContent={dataHomePage?.stickyList} />
       </main>
     </div>
   )

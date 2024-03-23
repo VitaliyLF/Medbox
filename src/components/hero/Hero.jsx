@@ -7,7 +7,7 @@ const Hero = ({ heroContent }) => {
     return null
   }
 
-  const { heroTitle, heroSubtitle, heroText, heroBtnText, heroWrapperImage } = heroContent
+  const { heroTitle, heroSubtitle, heroText, heroBtnText, heroImageAndAlt } = heroContent
 
   return (
     <section className="hero hero--homepage">
@@ -27,11 +27,11 @@ const Hero = ({ heroContent }) => {
               </button>
             )}
           </div>
-          {heroWrapperImage?.heroImage && (
+          {heroImageAndAlt?.heroImage && (
             <Image
               className="hero__img"
-              src={urlFor(heroWrapperImage.heroImage).url()}
-              alt={heroWrapperImage.herosAltImageText || ''}
+              src={urlFor(heroImageAndAlt.heroImage).url()}
+              alt={heroImageAndAlt.herosAltImageText || ''}
               width="750"
               height="507"
               priority={true}

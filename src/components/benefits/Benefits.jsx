@@ -7,7 +7,7 @@ const Benefits = ({ benefitsContent }) => {
     return null
   }
 
-  const { benefitsTitle, benefitsSubtitle, benefitsText, benefitsBtnText, benefitsImage } = benefitsContent
+  const { benefitsTitle, benefitsSubtitle, benefitsText, benefitsBtnText, benefitsImageAndAlt } = benefitsContent
 
   return (
     <section className="benefits">
@@ -26,12 +26,11 @@ const Benefits = ({ benefitsContent }) => {
             </button>
           )}
         </div>
-        {benefitsImage && (
+        {benefitsImageAndAlt?.benefitsImage && (
           <Image
-            className="benefits__img"
-            src={urlFor(benefitsImage).url()}
-            alt=""
-            aria-hidden="true"
+            className="benefits__image"
+            src={urlFor(benefitsImageAndAlt.benefitsImage).url()}
+            alt={benefitsImageAndAlt.benefitsImageAlt || ''}
             width="577"
             height="376"
             loading="lazy"

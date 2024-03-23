@@ -16,7 +16,7 @@ export async function getDataHomePage() {
       heroSubtitle,
       heroText,
       heroBtnText,
-      heroWrapperImage {
+      heroImageAndAlt {
         heroImage,
         herosAltImageText
       },
@@ -54,7 +54,14 @@ export async function getDataHomePage() {
         benefitsSubtitle,
         benefitsText,
         benefitsBtnText,
-        benefitsImage
+        benefitsImageAndAlt {
+        benefitsImage,
+        benefitsImageAlt
+        },
+      },
+      stickyList {
+        stickyListTitle,
+        stickyListSubtitle,
       }
     }
   `

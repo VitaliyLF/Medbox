@@ -23,4 +23,8 @@
   &__info {
     max-width: 570px;
   }
+
+  &__image {
+    border-radius: var(--border-radius-bottom-left-large);
+  }
 }
