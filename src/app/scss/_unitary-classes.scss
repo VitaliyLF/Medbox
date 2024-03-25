@@ -162,6 +162,12 @@
   }
 }
 
+.subtitle-item-section {
+  @include fz35-agrandir;
+
+  font-weight: 400;
+}
+
 .text-section {
   @include fz22-atkinson;
 

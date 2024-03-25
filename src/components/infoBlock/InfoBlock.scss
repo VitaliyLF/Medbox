@@ -1,0 +1,23 @@
+.info-block {
+  &--homepage {
+    background-color: var(--color-light-peach);
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__content {
+    flex-grow: 1;
+    background-color: var(--color-light);
+    border-radius: 0 100px 0 0;
+  }
+
+  &__review {
+    padding: 150px 60px;
+    max-width: 565px;
+    margin: 0;
+    background-color: var(--color-mint-green);
+    border-radius: var(--border-radius-top-left);
+  }
+}

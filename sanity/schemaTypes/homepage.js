@@ -296,6 +296,169 @@ export default {
           name: 'stickyListSubtitle',
           type: 'string',
           title: 'Sticky list subtitle'
+        },
+        {
+          name: 'stickyListImageAndAlt',
+          type: 'document',
+          title: 'Sticky list Image',
+          fields: [
+            {
+              name: 'stickyListImage',
+              type: 'image',
+              title: 'image',
+              description: '⚡️ Optional, but png format is better.'
+            },
+            {
+              name: 'stickyListImageAlt',
+              type: 'string',
+              title: 'Descriptive label for screen readers & SEO',
+              description: '⚡️ Optional but highly encouraged to make the content more accessible'
+            }
+          ]
+        },
+        {
+          name: 'stickyListItems',
+          type: 'array',
+          title: 'Sticky list items',
+          of: [
+            {
+              type: 'document',
+              fields: [
+                {
+                  name: 'stickyListItemTitle',
+                  type: 'string',
+                  title: 'Sticky list title'
+                },
+                {
+                  name: 'stickyListItemText',
+                  type: 'array',
+                  title: 'Sticky list text',
+                  of: [
+                    {
+                      type: 'block'
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: 'stickyListTextButton',
+          type: 'string',
+          title: 'Sticky list text button'
+        }
+      ]
+    },
+    {
+      name: 'infoBlock',
+      type: 'object',
+      title: 'Info block section',
+      fields: [
+        {
+          name: 'infoBlockTitle',
+          type: 'string',
+          title: 'Info block title'
+        },
+        {
+          name: 'infoBlockText',
+          type: 'array',
+          title: 'Info block paragraph',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'infoBlockUrl',
+          type: 'url',
+          title: 'Info block phone url',
+          description: '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel: This field is required.',
+          validation: (Rule) =>
+            Rule.required().uri({
+              scheme: ['http', 'https', 'mailto', 'tel']
+            })
+        },
+        {
+          name: 'infoBlockValue',
+          type: 'string',
+          title: 'Info block phone text'
+        },
+        {
+          name: 'infoBlogBtnText',
+          type: 'string',
+          title: 'Info block button text'
+        },
+        {
+          name: 'infoBlockImageAndAlt',
+          type: 'document',
+          title: 'Info block Image',
+          fields: [
+            {
+              name: 'infoBlockImage',
+              type: 'image',
+              title: 'image',
+              description: '⚡️ Optional, but png format is better.'
+            },
+            {
+              name: 'infoBlockImageAlt',
+              type: 'string',
+              title: 'Descriptive label for screen readers & SEO',
+              description: '⚡️ Optional but highly encouraged to make the content more accessible'
+            }
+          ]
+        },
+        {
+          name: 'infoBlockStar',
+          type: 'array',
+          title: 'Info Block start list',
+          of: [
+            {
+              type: 'document',
+              fields: [
+                {
+                  name: 'infoBlockStarItem',
+                  type: 'image',
+                  title: 'Info Block start item'
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: 'infoBlockSocialIcon',
+          type: 'image',
+          title: 'Info Block social icon'
+        },
+        {
+          name: 'infoBlockSocialIconAlt',
+          type: 'string',
+          title: 'Info Block social icon description for screen readers & SEO',
+          description: '⚡️ Optional but highly encouraged to make the content more accessible'
+        },
+        {
+          name: 'infoBlockSocialUrl',
+          type: 'url',
+          title: 'Info Block social url',
+          validation: (Rule) => Rule.required()
+        },
+        {
+          name: 'infoBlockBlockquote',
+          type: 'object',
+          title: 'Info Block Blockquote',
+          fields: [
+            {
+              name: 'infoBlockBlockquoteText',
+              type: 'string',
+              title: 'Info Block Blockquote text'
+            },
+            {
+              name: 'infoBlockBlockquoteAuthor',
+              type: 'string',
+              title: 'Info Block Blockquote author'
+            }
+          ]
         }
       ]
     }

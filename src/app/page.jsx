@@ -5,6 +5,7 @@ import VideoBlock from '@/components/videoBlock/VideoBlock'
 import ListLine from '@/components/listLine/ListLine'
 import Benefits from '@/components/benefits/Benefits'
 import StickyList from '@/components/stickyList/StickyList'
+import InfoBlock from '@/components/infoBlock/InfoBlock'
 
 export const metadata = {
   title: {
@@ -24,6 +25,7 @@ const HomePage = async () => {
         <ListLine listLineContent={dataHomePage?.listLine} />
         <Benefits benefitsContent={dataHomePage?.benefits} />
         <StickyList stickyListContent={dataHomePage?.stickyList} />
+        <InfoBlock infoBlockContent={dataHomePage?.infoBlock} />
       </main>
     </div>
   )

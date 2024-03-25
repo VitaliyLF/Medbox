@@ -47,7 +47,7 @@ export async function getDataHomePage() {
         listLineBlockquote {
           listLineBlockquoteText,
           listLineBlockquoteAuthor
-        },
+        }
       },
       benefits {
         benefitsTitle,
@@ -62,6 +62,36 @@ export async function getDataHomePage() {
       stickyList {
         stickyListTitle,
         stickyListSubtitle,
+        stickyListImageAndAlt {
+          stickyListImage,
+          stickyListImageAlt
+        },
+        stickyListItems [] {
+          stickyListItemTitle,
+          stickyListItemText
+        },
+        stickyListTextButton
+      },
+      infoBlock {
+        infoBlockTitle,
+        infoBlockText,
+        infoBlockUrl,
+        infoBlockValue,
+        infoBlogBtnText,
+        infoBlockImageAndAlt {
+          infoBlockImage,
+          infoBlockImageAlt
+        },
+        infoBlockStar [] {
+          infoBlockStarItem
+        },
+        infoBlockSocialIcon,
+        infoBlockSocialIconAlt,
+        infoBlockSocialUrl,
+        infoBlockBlockquote {
+          infoBlockBlockquoteText,
+          infoBlockBlockquoteAuthor
+        }
       }
     }
   `

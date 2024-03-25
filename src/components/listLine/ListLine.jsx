@@ -24,6 +24,13 @@ const ListLine = ({ listLineContent }) => {
   return (
     <section className="list-line">
       <div className="list-line__container container">
+        <svg className="list-line__svg-line" viewBox="0 0 1486 1230" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M1 6.2138C60.6667 16.3805 200 34.7138 280 26.7138C380 16.7138 857 -77.2861 857 170.714C857 318.714 857 620.381 857 783.714V1042.71C857.333 1104.71 915 1228.71 1143 1228.71C1428 1228.71 1462 1194.71 1486 1194.71"
+            stroke="#045F51"
+            strokeWidth="2"
+          />
+        </svg>
         <div className="list-line__info">
           {listLineSubtitle && <h2 className="subtitle-section">{listLineSubtitle}</h2>}
           {listLineText && (
