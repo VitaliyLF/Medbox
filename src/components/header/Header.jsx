@@ -56,7 +56,7 @@ const Header = ({ headerContent }) => {
             <ul className="header__nav-list">
               {headerLinks?.map((link, index) => (
                 <li className="header__nav-item" key={index}>
-                  <Link className="header__nav-link link" href="#">
+                  <Link className="link" href="#">
                     {link.headerLinksText}
                   </Link>
                 </li>

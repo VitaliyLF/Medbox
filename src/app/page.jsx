@@ -6,6 +6,8 @@ import ListLine from '@/components/listLine/ListLine'
 import Benefits from '@/components/benefits/Benefits'
 import StickyList from '@/components/stickyList/StickyList'
 import InfoBlock from '@/components/infoBlock/InfoBlock'
+import States from '@/components/states/States'
+import Feedback from '@/components/feedback/Feedback'
 
 export const metadata = {
   title: {
@@ -26,6 +28,8 @@ const HomePage = async () => {
         <Benefits benefitsContent={dataHomePage?.benefits} />
         <StickyList stickyListContent={dataHomePage?.stickyList} />
         <InfoBlock infoBlockContent={dataHomePage?.infoBlock} />
+        <States statesContent={dataHomePage?.states} />
+        <Feedback feedBackContent={dataHomePage?.feedback} />
       </main>
     </div>
   )

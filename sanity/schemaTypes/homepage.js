@@ -356,9 +356,9 @@ export default {
       title: 'Info block section',
       fields: [
         {
-          name: 'infoBlockTitle',
+          name: 'infoBlockSubtitle',
           type: 'string',
-          title: 'Info block title'
+          title: 'Info block Subtitle'
         },
         {
           name: 'infoBlockText',
@@ -457,6 +457,148 @@ export default {
               name: 'infoBlockBlockquoteAuthor',
               type: 'string',
               title: 'Info Block Blockquote author'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'states',
+      type: 'object',
+      title: 'States section',
+      fields: [
+        {
+          name: 'statesTitle',
+          type: 'string',
+          title: 'States Title'
+        },
+        {
+          name: 'statesSubtitle',
+          type: 'string',
+          title: 'States Subtitle'
+        },
+        {
+          name: 'statesText',
+          type: 'array',
+          title: 'States paragraph',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'statesTextContact',
+          type: 'array',
+          title: 'States text contact',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'statesBtnText',
+          type: 'string',
+          title: 'States Button Text'
+        },
+        {
+          name: 'statesImageAndAlt',
+          type: 'document',
+          title: 'States Image',
+          fields: [
+            {
+              name: 'statesImage',
+              type: 'image',
+              title: 'image',
+              description: '⚡️ Optional, but png format is better.'
+            },
+            {
+              name: 'statesImageAlt',
+              type: 'string',
+              title: 'Descriptive label for screen readers & SEO',
+              description: '⚡️ Optional but highly encouraged to make the content more accessible'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: 'feedback',
+      type: 'object',
+      title: 'Feedback section',
+      fields: [
+        {
+          name: 'feedbackSubtitle',
+          type: 'string',
+          title: 'Feedback subtitle'
+        },
+        {
+          name: 'feedbackText',
+          type: 'array',
+          title: 'Feedback paragraph',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'feedbackList',
+          type: 'array',
+          title: 'Feedback list',
+          of: [
+            {
+              type: 'document',
+              fields: [
+                {
+                  name: 'feedbackListItem',
+                  type: 'document',
+                  title: 'Feedback list item',
+                  fields: [
+                    {
+                      name: 'feedbackStar',
+                      type: 'number',
+                      title: 'Feedback start list',
+                      validation: (Rule) => Rule.max(5).min(1).integer()
+                    },
+                    {
+                      name: 'feedbackSocialIcon',
+                      type: 'image',
+                      title: 'Feedback social icon'
+                    },
+                    {
+                      name: 'feedbackSocialIconAlt',
+                      type: 'string',
+                      title: 'Feedback social icon description for screen readers & SEO',
+                      description: '⚡️ Optional but highly encouraged to make the content more accessible'
+                    },
+                    {
+                      name: 'feedbackSocialUrl',
+                      type: 'url',
+                      title: 'Feedback social url'
+                      // validation: (Rule) => Rule.required()
+                    },
+                    {
+                      name: 'feedbackBlockquote',
+                      type: 'object',
+                      title: 'Feedback Blockquote',
+                      fields: [
+                        {
+                          name: 'feedbackBlockquoteText',
+                          type: 'string',
+                          title: 'Feedback Blockquote text'
+                        },
+                        {
+                          name: 'feedbackBlockquoteAuthor',
+                          type: 'string',
+                          title: 'Feedback Blockquote author'
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
             }
           ]
         }

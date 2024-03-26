@@ -1,0 +1,40 @@
+.states {
+  position: relative;
+  background-color: var(--color-light-mint);
+  padding-block: var(--offset-extra-large-medium);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 100%;
+    height: var(--offset-quadruple-extra-large-medium);
+    background-color: var(--color-light-mint);
+    clip-path: var(--clip-path-wave);
+    rotate: 180deg;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    max-width: 535px;
+  }
+
+  &__info {
+    @include marginBottom(140px);
+  }
+
+  &__contact {
+    background-color: var(--color-light);
+    padding: var(--offset-small-medium);
+    border-radius: var(--border-radius-top-left-large-bottom);
+  }
+
+  &__image {
+    height: 100%;
+  }
+}

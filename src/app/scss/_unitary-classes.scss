@@ -1,4 +1,8 @@
 .link {
+  @include fz18-atkinson;
+
+  display: block;
+  color: var(--color-black-green);
   position: relative;
   transition: color var(--timing) ease, scale var(--timing) ease;
 
@@ -15,6 +19,25 @@
     transition: transform var(--timing) ease-in-out;
   }
 
+  &--phone {
+    @include fz22-atkinson;
+
+    display: flex;
+    align-items: center;
+    column-gap: var(--offset-tiny);
+    flex-direction: row-reverse;
+
+    &::after {
+      content: url(../img/phone-icon-link.svg);
+      width: var(--offset-small-medium);
+      height: var(--offset-small-medium);
+    }
+
+    &::before {
+      bottom: -5px;
+    }
+  }
+
   @include focus;
 
   @include hover {
@@ -24,6 +47,10 @@
       transform-origin: left;
       transform: scaleX(1);
     }
+  }
+
+  @include big-desktop {
+    @include fz26-atkinson;
   }
 }
 
@@ -114,6 +141,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    &--info-block {
+      @include marginBottom(var(--offset-small-medium));
+    }
   }
 
   &__stars {
@@ -125,8 +156,24 @@
     aspect-ratio: 1;
   }
 
+  &__blockquote {
+    &--info-block {
+      @include fz35-agrandir;
+    }
+  }
+
   &__footer {
     padding-top: var(--offset-tiny-medium);
+
+    &--info-block {
+      padding-top: var(--offset-small-medium);
+    }
+  }
+
+  &__author {
+    &--info-block {
+      @include fz22-atkinson;
+    }
   }
 }
 
@@ -174,6 +221,19 @@
   @include marginBottom(var(--offset-medium));
 
   text-wrap: balance;
+
+  p {
+    a {
+      color: var(--color-medbox-green);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      transition: color var(--timing) ease;
+
+      @include hover {
+        color: var(--color-puerto-rico);
+      }
+    }
+  }
 
   ol {
     list-style-type: decimal;

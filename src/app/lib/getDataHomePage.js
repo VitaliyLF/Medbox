@@ -73,7 +73,7 @@ export async function getDataHomePage() {
         stickyListTextButton
       },
       infoBlock {
-        infoBlockTitle,
+        infoBlockSubtitle,
         infoBlockText,
         infoBlockUrl,
         infoBlockValue,
@@ -92,7 +92,32 @@ export async function getDataHomePage() {
           infoBlockBlockquoteText,
           infoBlockBlockquoteAuthor
         }
-      }
+      },
+      states {
+        statesTitle,
+        statesSubtitle,
+        statesText,
+        statesTextContact,
+        statesBtnText,
+        statesImageAndAlt {
+          statesImage,
+          statesImageAlt
+        }
+      },
+      feedback {
+        feedbackSubtitle,
+        feedbackText,
+        feedbackList [] {
+          feedbackStar,
+          feedbackSocialIcon,
+          feedbackSocialIconAlt,
+          feedbackSocialUrl,
+          feedbackBlockquote {
+            feedbackBlockquoteText,
+            feedbackBlockquoteAuthor
+          }
+        },
+      },
     }
   `
 

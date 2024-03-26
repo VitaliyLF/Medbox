@@ -89,17 +89,6 @@
     }
   }
 
-  &__nav-link {
-    @include fz18-atkinson;
-
-    display: block;
-    color: var(--color-black-green);
-
-    @include big-desktop {
-      @include fz26-atkinson;
-    }
-  }
-
   &__mobile {
     display: none;
 

@@ -9,7 +9,7 @@ const InfoBlock = ({ infoBlockContent }) => {
   }
 
   const {
-    infoBlockTitle,
+    infoBlockSubtitle,
     infoBlockText,
     infoBlockUrl,
     infoBlockValue,
@@ -26,23 +26,25 @@ const InfoBlock = ({ infoBlockContent }) => {
     <section className="info-block info-block--homepage">
       <div className="info-block__container">
         <div className="info-block__content">
-          {infoBlockTitle && <h2 className="info-block__title">{infoBlockTitle}</h2>}
-          {infoBlockText && (
-            <div className="text-section">
-              <PortableText value={infoBlockText} />
-            </div>
-          )}
-          <Link className="info-block__link link" href={infoBlockUrl}>
-            {infoBlockValue}
-          </Link>
-          {infoBlogBtnText && (
-            <button className="btn" type="button">
-              {infoBlogBtnText}
-            </button>
-          )}
+          <div className="info-block__info">
+            {infoBlockSubtitle && <h2 className="subtitle-section">{infoBlockSubtitle}</h2>}
+            {infoBlockText && (
+              <div className="text-section">
+                <PortableText value={infoBlockText} />
+              </div>
+            )}
+            <Link className="info-block__link link link--phone" href={infoBlockUrl}>
+              {infoBlockValue}
+            </Link>
+            {infoBlogBtnText && (
+              <button className="btn" type="button">
+                {infoBlogBtnText}
+              </button>
+            )}
+          </div>
           {infoBlockImageAndAlt && (
             <Image
-              className="info__block-image"
+              className="info-block__image"
               src={urlFor(infoBlockImageAndAlt.infoBlockImage).url()}
               alt={infoBlockImageAndAlt.infoBlockImageAlt}
               width="418"
@@ -52,7 +54,7 @@ const InfoBlock = ({ infoBlockContent }) => {
           )}
         </div>
         <div className="info-block__review review">
-          <div className="review__top">
+          <div className="review__top review__top--info-block">
             <ul className="review__stars">
               {infoBlockStar?.map((star, index) => (
                 <li className="review__star" key={index}>
@@ -83,10 +85,12 @@ const InfoBlock = ({ infoBlockContent }) => {
             </Link>
           </div>
           {infoBlockBlockquote.infoBlockBlockquoteText && (
-            <blockquote className="review__blockquote text-section-medium">
+            <blockquote className="review__blockquote review__blockquote--info-block">
               {infoBlockBlockquote.infoBlockBlockquoteText}
-              <footer className="review__footer">
-                <cite className="review__author">{infoBlockBlockquote.infoBlockBlockquoteAuthor}</cite>
+              <footer className="review__footer review__footer--info-block">
+                <cite className="review__author review__author--info-block">
+                  {infoBlockBlockquote.infoBlockBlockquoteAuthor}
+                </cite>
               </footer>
             </blockquote>
           )}
