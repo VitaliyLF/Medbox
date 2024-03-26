@@ -576,8 +576,8 @@ export default {
                     {
                       name: 'feedbackSocialUrl',
                       type: 'url',
-                      title: 'Feedback social url'
-                      // validation: (Rule) => Rule.required()
+                      title: 'Feedback social url',
+                      validation: (Rule) => Rule.required()
                     },
                     {
                       name: 'feedbackBlockquote',
