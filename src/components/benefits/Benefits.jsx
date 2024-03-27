@@ -7,30 +7,30 @@ const Benefits = ({ benefitsContent }) => {
     return null
   }
 
-  const { benefitsTitle, benefitsSubtitle, benefitsText, benefitsBtnText, benefitsImageAndAlt } = benefitsContent
+  const { title, subtitle, text, btnText, image, alt } = benefitsContent
 
   return (
     <section className="benefits">
       <div className="benefits__container container">
         <div className="benefits__info">
-          {benefitsTitle && <h2 className="title-section">{benefitsTitle}</h2>}
-          {benefitsSubtitle && <h3 className="subtitle-section">{benefitsSubtitle}</h3>}
-          {benefitsText && (
+          {title && <h2 className="title-section">{title}</h2>}
+          {subtitle && <h3 className="subtitle-section">{subtitle}</h3>}
+          {text && (
             <div className="text-section">
-              <PortableText value={benefitsText} />
+              <PortableText value={text} />
             </div>
           )}
-          {benefitsBtnText && (
+          {btnText && (
             <button className="btn" type="button">
-              {benefitsBtnText}
+              {btnText}
             </button>
           )}
         </div>
-        {benefitsImageAndAlt?.benefitsImage && (
+        {image && (
           <Image
             className="benefits__image"
-            src={urlFor(benefitsImageAndAlt.benefitsImage).url()}
-            alt={benefitsImageAndAlt.benefitsImageAlt || ''}
+            src={urlFor(image).url()}
+            alt={alt || ''}
             width="577"
             height="376"
             loading="lazy"

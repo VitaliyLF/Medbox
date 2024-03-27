@@ -9,12 +9,12 @@ export default {
       title: 'Header',
       fields: [
         {
-          name: 'headerLogo',
+          name: 'logo',
           type: 'image',
           title: 'Header logo Image'
         },
         {
-          name: 'headerLinks',
+          name: 'links',
           type: 'array',
           title: 'Header navigation links',
           of: [
@@ -22,7 +22,7 @@ export default {
               type: 'document',
               fields: [
                 {
-                  name: 'headerLinksText',
+                  name: 'text',
                   type: 'string',
                   title: 'Header link text',
                   description: 'Enter link text'
@@ -32,12 +32,23 @@ export default {
           ]
         },
         {
-          name: 'headerBtnText',
+          name: 'btnText',
           type: 'string',
-          title: 'Header Button text'
+          title: 'Header Button text',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
+            ]
+          }
         },
         {
-          name: 'headerMobileBtnText',
+          name: 'btnTextMobile',
           type: 'string',
           title: 'Header mobile Button text'
         }
@@ -49,25 +60,25 @@ export default {
       title: 'Hero section',
       fields: [
         {
-          name: 'heroTitle',
+          name: 'title',
           type: 'string',
-          title: 'Hero main Title'
+          title: 'Hero Title'
         },
         {
-          name: 'heroSlug',
+          name: 'slug',
           type: 'slug',
           title: 'Slug of homepage',
           options: {
-            source: 'heroTitle'
+            source: 'hero.title'
           }
         },
         {
-          name: 'heroSubtitle',
+          name: 'subtitle',
           type: 'string',
-          title: 'Hero subTitle'
+          title: 'Hero Subtitle'
         },
         {
-          name: 'heroText',
+          name: 'text',
           type: 'array',
           title: 'Hero paragraph',
           of: [
@@ -77,33 +88,32 @@ export default {
           ]
         },
         {
-          name: 'heroBtnText',
+          name: 'btnText',
           type: 'string',
           title: 'Hero button text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
-              { title: 'Check My Coverage', value: 'Check My Coverage' }
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
             ]
           }
         },
         {
-          name: 'heroImageAndAlt',
-          type: 'document',
+          name: 'image',
+          type: 'image',
           title: 'Hero image',
-          fields: [
-            {
-              name: 'heroImage',
-              type: 'image',
-              title: 'image'
-            },
-            {
-              name: 'herosAltImageText',
-              type: 'string',
-              title: 'Descriptive label for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
+          description: '⚡️ Optional, but png format is better.'
+        },
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Hero descriptive label image for screen readers & SEO',
+          description: '⚡️ Optional but highly encouraged to make the content more accessible'
         }
       ]
     },
@@ -113,20 +123,20 @@ export default {
       title: 'Video section',
       fields: [
         {
-          name: 'videoFile',
+          name: 'file',
           type: 'file',
-          title: 'Video File',
+          title: 'File',
           options: {
             accept: 'video/*'
           }
         },
         {
-          name: 'videoBlockHiddenTitle',
+          name: 'title',
           type: 'string',
-          title: '⚡️ Descriptive label for screen readers & SEO'
+          title: '⚡️ Descriptive label video for screen readers & SEO'
         },
         {
-          name: 'videoBlockPoster',
+          name: 'poster',
           type: 'image',
           title: 'Video block poster'
         }
@@ -138,12 +148,12 @@ export default {
       title: 'List line section',
       fields: [
         {
-          name: 'listLineSubtitle',
+          name: 'subtitle',
           type: 'string',
           title: 'List line Subtitle'
         },
         {
-          name: 'listLineText',
+          name: 'text',
           type: 'array',
           title: 'List line paragraph',
           of: [
@@ -153,12 +163,23 @@ export default {
           ]
         },
         {
-          name: 'listLineLink',
+          name: 'btnText',
           type: 'string',
-          title: 'List line link text'
+          title: 'List line link text',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
+            ]
+          }
         },
         {
-          name: 'listLineItems',
+          name: 'list',
           type: 'array',
           title: 'List line items',
           of: [
@@ -166,7 +187,7 @@ export default {
               type: 'document',
               fields: [
                 {
-                  name: 'listLineItem',
+                  name: 'content',
                   type: 'string',
                   title: 'List line item text'
                 }
@@ -175,56 +196,46 @@ export default {
           ]
         },
         {
-          name: 'listLineImage',
+          name: 'image',
           type: 'image',
           title: 'List line image'
         },
         {
-          name: 'listLineStar',
-          type: 'array',
-          title: 'List line start list',
-          of: [
-            {
-              type: 'document',
-              fields: [
-                {
-                  name: 'listLineStarItem',
-                  type: 'image',
-                  title: 'List line start item'
-                }
-              ]
-            }
-          ]
+          name: 'stars',
+          type: 'number',
+          title: 'List line stars',
+          validation: (Rule) => Rule.max(5).min(1).integer().required(),
+          description: '⚡️ Represents the star rating (from 1 to 5, integers only).'
         },
         {
-          name: 'listLineSocialIcon',
+          name: 'socailIcon',
           type: 'image',
           title: 'List line social icon'
         },
         {
-          name: 'listLineSocialIconAlt',
+          name: 'socailIconAlt',
           type: 'string',
           title: 'List line social icon description for screen readers & SEO',
           description: '⚡️ Optional but highly encouraged to make the content more accessible'
         },
         {
-          name: 'listLineSocialUrl',
+          name: 'url',
           type: 'url',
           title: 'List line social url',
           validation: (Rule) => Rule.required()
         },
         {
-          name: 'listLineBlockquote',
+          name: 'blockquote',
           type: 'object',
           title: 'List line Blockquote',
           fields: [
             {
-              name: 'listLineBlockquoteText',
+              name: 'text',
               type: 'string',
               title: 'List line Blockquote text'
             },
             {
-              name: 'listLineBlockquoteAuthor',
+              name: 'author',
               type: 'string',
               title: 'List line Blockquote author'
             }
@@ -238,17 +249,17 @@ export default {
       title: 'Benefits section',
       fields: [
         {
-          name: 'benefitsTitle',
+          name: 'title',
           type: 'string',
           title: 'Benefits title'
         },
         {
-          name: 'benefitsSubtitle',
+          name: 'subtitle',
           type: 'string',
           title: 'Benefits subtitle'
         },
         {
-          name: 'benefitsText',
+          name: 'text',
           type: 'array',
           title: 'Benefits paragraph',
           of: [
@@ -258,27 +269,31 @@ export default {
           ]
         },
         {
-          name: 'benefitsBtnText',
+          name: 'btnText',
           type: 'string',
-          title: 'Benefits buttton text'
+          title: 'Benefits buttton text',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
+            ]
+          }
         },
         {
-          name: 'benefitsImageAndAlt',
-          type: 'document',
-          title: 'Benefits Image',
-          fields: [
-            {
-              name: 'benefitsImage',
-              type: 'image',
-              title: 'image'
-            },
-            {
-              name: 'benefitsImageAlt',
-              type: 'string',
-              title: 'Descriptive label for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
+          name: 'image',
+          type: 'image',
+          title: 'Benefits image'
+        },
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Descriptive label for screen readers & SEO',
+          description: '⚡️ Optional but highly encouraged to make the content more accessible'
         }
       ]
     },
@@ -288,36 +303,29 @@ export default {
       title: 'Sticky list section',
       fields: [
         {
-          name: 'stickyListTitle',
+          name: 'title',
           type: 'string',
           title: 'Sticky list title'
         },
         {
-          name: 'stickyListSubtitle',
+          name: 'subtitle',
           type: 'string',
           title: 'Sticky list subtitle'
         },
         {
-          name: 'stickyListImageAndAlt',
-          type: 'document',
-          title: 'Sticky list Image',
-          fields: [
-            {
-              name: 'stickyListImage',
-              type: 'image',
-              title: 'image',
-              description: '⚡️ Optional, but png format is better.'
-            },
-            {
-              name: 'stickyListImageAlt',
-              type: 'string',
-              title: 'Descriptive label for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
+          name: 'image',
+          type: 'image',
+          title: 'Sticky list image',
+          description: '⚡️ Optional, but png format is better.'
         },
         {
-          name: 'stickyListItems',
+          name: 'alt',
+          type: 'string',
+          title: 'Descriptive label for screen readers & SEO',
+          description: '⚡️ Optional but highly encouraged to make the content more accessible'
+        },
+        {
+          name: 'list',
           type: 'array',
           title: 'Sticky list items',
           of: [
@@ -325,12 +333,12 @@ export default {
               type: 'document',
               fields: [
                 {
-                  name: 'stickyListItemTitle',
+                  name: 'title',
                   type: 'string',
                   title: 'Sticky list title'
                 },
                 {
-                  name: 'stickyListItemText',
+                  name: 'text',
                   type: 'array',
                   title: 'Sticky list text',
                   of: [
@@ -344,9 +352,20 @@ export default {
           ]
         },
         {
-          name: 'stickyListTextButton',
+          name: 'btnText',
           type: 'string',
-          title: 'Sticky list text button'
+          title: 'Sticky list text button',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
+            ]
+          }
         }
       ]
     },
@@ -356,12 +375,12 @@ export default {
       title: 'Info block section',
       fields: [
         {
-          name: 'infoBlockSubtitle',
+          name: 'subtitle',
           type: 'string',
           title: 'Info block Subtitle'
         },
         {
-          name: 'infoBlockText',
+          name: 'text',
           type: 'array',
           title: 'Info block paragraph',
           of: [
@@ -371,7 +390,7 @@ export default {
           ]
         },
         {
-          name: 'infoBlockUrl',
+          name: 'url',
           type: 'url',
           title: 'Info block phone url',
           description: '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel: This field is required.',
@@ -381,80 +400,74 @@ export default {
             })
         },
         {
-          name: 'infoBlockValue',
+          name: 'linkText',
           type: 'string',
           title: 'Info block phone text'
         },
         {
-          name: 'infoBlogBtnText',
+          name: 'btnText',
           type: 'string',
-          title: 'Info block button text'
+          title: 'Info block button text',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
+            ]
+          }
         },
         {
-          name: 'infoBlockImageAndAlt',
-          type: 'document',
-          title: 'Info block Image',
-          fields: [
-            {
-              name: 'infoBlockImage',
-              type: 'image',
-              title: 'image',
-              description: '⚡️ Optional, but png format is better.'
-            },
-            {
-              name: 'infoBlockImageAlt',
-              type: 'string',
-              title: 'Descriptive label for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
+          name: 'image',
+          type: 'image',
+          title: 'Info block image',
+          description: '⚡️ Optional, but png format is better.'
         },
         {
-          name: 'infoBlockStar',
-          type: 'array',
-          title: 'Info Block start list',
-          of: [
-            {
-              type: 'document',
-              fields: [
-                {
-                  name: 'infoBlockStarItem',
-                  type: 'image',
-                  title: 'Info Block start item'
-                }
-              ]
-            }
-          ]
+          name: 'alt',
+          type: 'string',
+          title: 'Descriptive label for screen readers & SEO',
+          description: '⚡️ Optional but highly encouraged to make the content more accessible'
         },
         {
-          name: 'infoBlockSocialIcon',
+          name: 'stars',
+          type: 'number',
+          title: 'List line stars',
+          validation: (Rule) => Rule.max(5).min(1).integer().required(),
+          description: '⚡️ Represents the star rating (from 1 to 5, integers only).'
+        },
+        {
+          name: 'socailIcon',
           type: 'image',
           title: 'Info Block social icon'
         },
         {
-          name: 'infoBlockSocialIconAlt',
+          name: 'socailIconAlt',
           type: 'string',
           title: 'Info Block social icon description for screen readers & SEO',
           description: '⚡️ Optional but highly encouraged to make the content more accessible'
         },
         {
-          name: 'infoBlockSocialUrl',
+          name: 'socailUrl',
           type: 'url',
           title: 'Info Block social url',
           validation: (Rule) => Rule.required()
         },
         {
-          name: 'infoBlockBlockquote',
+          name: 'blockquote',
           type: 'object',
           title: 'Info Block Blockquote',
           fields: [
             {
-              name: 'infoBlockBlockquoteText',
+              name: 'text',
               type: 'string',
               title: 'Info Block Blockquote text'
             },
             {
-              name: 'infoBlockBlockquoteAuthor',
+              name: 'author',
               type: 'string',
               title: 'Info Block Blockquote author'
             }
@@ -468,17 +481,17 @@ export default {
       title: 'States section',
       fields: [
         {
-          name: 'statesTitle',
+          name: 'title',
           type: 'string',
           title: 'States Title'
         },
         {
-          name: 'statesSubtitle',
+          name: 'subtitle',
           type: 'string',
           title: 'States Subtitle'
         },
         {
-          name: 'statesText',
+          name: 'text',
           type: 'array',
           title: 'States paragraph',
           of: [
@@ -488,7 +501,7 @@ export default {
           ]
         },
         {
-          name: 'statesTextContact',
+          name: 'textContact',
           type: 'array',
           title: 'States text contact',
           of: [
@@ -498,28 +511,32 @@ export default {
           ]
         },
         {
-          name: 'statesBtnText',
+          name: 'btnText',
           type: 'string',
-          title: 'States Button Text'
+          title: 'States Button Text',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
+            ]
+          }
         },
         {
-          name: 'statesImageAndAlt',
-          type: 'document',
-          title: 'States Image',
-          fields: [
-            {
-              name: 'statesImage',
-              type: 'image',
-              title: 'image',
-              description: '⚡️ Optional, but png format is better.'
-            },
-            {
-              name: 'statesImageAlt',
-              type: 'string',
-              title: 'Descriptive label for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
+          name: 'image',
+          type: 'image',
+          title: 'State image',
+          description: '⚡️ Optional, but png format is better.'
+        },
+        {
+          name: 'alt',
+          type: 'string',
+          title: 'Descriptive label for screen readers & SEO',
+          description: '⚡️ Optional but highly encouraged to make the content more accessible'
         }
       ]
     },
@@ -529,12 +546,12 @@ export default {
       title: 'Feedback section',
       fields: [
         {
-          name: 'feedbackSubtitle',
+          name: 'subtitle',
           type: 'string',
           title: 'Feedback subtitle'
         },
         {
-          name: 'feedbackText',
+          name: 'text',
           type: 'array',
           title: 'Feedback paragraph',
           of: [
@@ -607,7 +624,7 @@ export default {
   ],
   preview: {
     select: {
-      title: 'hero.heroTitle',
+      title: 'hero.title',
       subtitle: 'hero.heroSubtitle',
       media: 'header.headerLogo'
     }

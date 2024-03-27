@@ -7,42 +7,42 @@ const States = ({ statesContent }) => {
     return null
   }
 
-  const { statesTitle, statesSubtitle, statesText, statesTextContact, statesBtnText, statesImageAndAlt } = statesContent
+  const { title, subtitle, text, textContact, btnText, image, alt } = statesContent
 
   return (
     <section className="states">
       <div className="states__container container">
         <div className="states__wrapper">
           <div className="states__info">
-            {statesTitle && <h2 className="title-section">{statesTitle}</h2>}
-            {statesSubtitle && <h3 className="subtitle-section">{statesSubtitle}</h3>}
-            {statesText && (
+            {title && <h2 className="title-section">{title}</h2>}
+            {subtitle && <h3 className="subtitle-section">{subtitle}</h3>}
+            {text && (
               <div className="text-section">
-                <PortableText value={statesText} />
+                <PortableText value={text} />
               </div>
             )}
           </div>
           <div className="states__contact">
-            {statesTextContact && (
+            {textContact && (
               <div className="text-section">
-                <PortableText value={statesTextContact} />
+                <PortableText value={textContact} />
               </div>
             )}
-            {statesBtnText && (
+            {btnText && (
               <button className="btn" type="button">
-                {statesBtnText}
+                {btnText}
               </button>
             )}
           </div>
         </div>
-        {statesImageAndAlt && (
+        {image && (
           <Image
             className="states__image"
+            src={urlFor(image).url()}
             width="728"
             height="566"
-            alt={statesImageAndAlt.statesImageAlt || ''}
+            alt={alt || ''}
             loading="lazy"
-            src={urlFor(statesImageAndAlt.statesImage).url()}
           />
         )}
       </div>

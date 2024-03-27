@@ -5,19 +5,19 @@ const VideoBlock = ({ videoBlockContent }) => {
     return null
   }
 
-  const { videoFile, videoBlockHiddenTitle, videoBlockPoster } = videoBlockContent
+  const { file, title, poster } = videoBlockContent
 
-  const videoUrl = videoFile.asset.url
+  const videoUrl = file.asset.url
 
   const videoType = videoUrl ? `video/${videoUrl.split('.').pop().toLowerCase()}` : ''
 
   return (
     <section className="videoblock">
-      <h2 className="visually-hidden">{videoBlockHiddenTitle}</h2>
+      <h2 className="visually-hidden">{title}</h2>
       {videoUrl && (
         <video
           className="videoblock__content"
-          poster={videoBlockPoster ? urlFor(videoBlockPoster).url() : ''}
+          poster={poster ? urlFor(poster).url() : ''}
           width="1440"
           height="900"
           preload="auto"

@@ -7,23 +7,22 @@ const StickyList = ({ stickyListContent }) => {
     return null
   }
 
-  const { stickyListTitle, stickyListSubtitle, stickyListImageAndAlt, stickyListItems, stickyListTextButton } =
-    stickyListContent
+  const { title, subtitle, image, alt, list, btnText } = stickyListContent
 
   return (
     <section className="sticky-list">
       <div className="container">
         <div className="sticky-list__top">
-          {stickyListTitle && <h2 className="title-section">{stickyListTitle}</h2>}
-          {stickyListSubtitle && <h3 className="subtitle-section">{stickyListSubtitle}</h3>}
+          {title && <h2 className="title-section">{title}</h2>}
+          {subtitle && <h3 className="subtitle-section">{subtitle}</h3>}
         </div>
         <div className="sticky-list__inner">
           <aside className="sticky-list__aside">
-            {stickyListImageAndAlt && (
+            {image && (
               <Image
                 className="sticky-list__image"
-                src={urlFor(stickyListImageAndAlt.stickyListImage).url()}
-                alt={stickyListImageAndAlt.stickyListImageAlt || ''}
+                src={urlFor(image).url()}
+                alt={alt || ''}
                 width="632"
                 height="509"
                 loading="lazy"
@@ -32,18 +31,18 @@ const StickyList = ({ stickyListContent }) => {
           </aside>
           <div className="sticky-list__info">
             <ul className="sticky-list__items">
-              {stickyListItems?.map((item, index) => (
+              {list?.map((item, index) => (
                 <li className="sticky-list__item" key={index}>
-                  <h4 className="sticky-list__item-title subtitle-item-section">{item.stickyListItemTitle}</h4>
+                  <h4 className="sticky-list__item-title subtitle-item-section">{item.title}</h4>
                   <div className="text-section">
-                    <PortableText value={item.stickyListItemText} />
+                    <PortableText value={item.text} />
                   </div>
                 </li>
               ))}
             </ul>
-            {stickyListTextButton && (
+            {btnText && (
               <button className="sticky-list__btn btn" type="button">
-                {stickyListTextButton}
+                {btnText}
               </button>
             )}
           </div>

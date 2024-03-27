@@ -149,7 +149,17 @@
 
   &__stars {
     display: flex;
+    width: var(--offset-small);
+    aspect-ratio: 1;
     gap: 5px;
+  }
+
+  &__star-icon {
+    fill: var(--color-puerto-rico);
+
+    &--info-block {
+      fill: var(--color-dark-green);
+    }
   }
 
   &__social-image {

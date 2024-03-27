@@ -9,16 +9,16 @@ const ListLine = ({ listLineContent }) => {
   }
 
   const {
-    listLineSubtitle,
-    listLineText,
-    listLineLink,
-    listLineItems,
-    listLineImage,
-    listLineStar,
-    listLineSocialIcon,
-    listLineBlockquote,
-    listLineSocialUrl,
-    listLineSocialIconAlt
+    subtitle,
+    text,
+    btnText,
+    list,
+    image,
+    stars = 0,
+    socailIcon,
+    blockquote,
+    url,
+    socailIconAlt
   } = listLineContent
 
   return (
@@ -32,32 +32,32 @@ const ListLine = ({ listLineContent }) => {
           />
         </svg>
         <div className="list-line__info">
-          {listLineSubtitle && <h2 className="subtitle-section">{listLineSubtitle}</h2>}
-          {listLineText && (
+          {subtitle && <h2 className="subtitle-section">{subtitle}</h2>}
+          {text && (
             <div className="list-line__text text-section">
-              <PortableText value={listLineText} />
+              <PortableText value={text} />
             </div>
           )}
-          {listLineLink && (
+          {btnText && (
             <Link className="btn" href="/">
-              {listLineLink}
+              {btnText}
             </Link>
           )}
         </div>
         <ul className="list-line__items">
-          {listLineItems?.map((item, index) => (
+          {list?.map((item, index) => (
             <li className="list-line__item" key={index}>
-              {item.listLineItem}
+              {item.content}
             </li>
           ))}
         </ul>
       </div>
       <div className="list-line__wave">
-        {listLineImage && (
+        {image && (
           <>
             <Image
               className="list-line__image"
-              src={urlFor(listLineImage).url()}
+              src={urlFor(image).url()}
               alt=""
               width="1440"
               height="720"
@@ -67,40 +67,44 @@ const ListLine = ({ listLineContent }) => {
             <div className="list-line__wrapper container">
               <div className="review">
                 <div className="review__top">
-                  <ul className="review__stars">
-                    {listLineStar?.map((star, index) => (
+                  <ul className="review__stars" aria-label={`${stars} out of ${stars} stars`}>
+                    {Array.from({ length: stars }).map((index) => (
                       <li className="review__star" key={index}>
-                        <Image
-                          className="review__star-image"
-                          src={urlFor(star.listLineStarItem).url()}
-                          alt={index === 0 ? `${listLineStar.length} out of ${listLineStar.length} stars` : ''}
-                          width="24"
-                          height="24"
-                          aria-hidden={index === 0 ? 'false' : 'true'}
-                          loading="lazy"
-                        />
+                        <svg
+                          className="review__star-icon"
+                          aria-hidden="true"
+                          width="25"
+                          height="25"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M12.0001 1L15.0331 8.82547L23.4128 9.2918L16.9075 14.5945L19.0535 22.7082L12.0001 18.16L4.94666 22.7082L7.09263 14.5945L0.587406 9.2918L8.96711 8.82547L12.0001 1Z"
+                            fill="#currentColor"
+                          />
+                        </svg>
                       </li>
                     ))}
                   </ul>
-                  <Link className="review__social-link" href={listLineSocialUrl} target="_blank">
-                    {listLineSocialIcon && (
+                  <Link className="review__social-link" href={url} target="_blank">
+                    {socailIcon && (
                       <Image
                         className="review__social-image"
-                        src={urlFor(listLineSocialIcon).url()}
-                        alt={listLineSocialIconAlt || ''}
+                        src={urlFor(socailIcon).url()}
+                        alt={socailIconAlt || ''}
                         width="45"
                         height="45"
-                        title={`${listLineSocialIconAlt} || New window`}
+                        title={`${socailIconAlt} || New window`}
                         loading="lazy"
                       />
                     )}
                   </Link>
                 </div>
-                {listLineBlockquote.listLineBlockquoteText && (
+                {blockquote && (
                   <blockquote className="review__blockquote text-section-medium ">
-                    {listLineBlockquote.listLineBlockquoteText}
+                    {blockquote.text}
                     <footer className="review__footer">
-                      <cite className="review__author">{listLineBlockquote.listLineBlockquoteAuthor}</cite>
+                      <cite className="review__author">{blockquote.author}</cite>
                     </footer>
                   </blockquote>
                 )}

@@ -11,7 +11,7 @@ const Header = ({ headerContent }) => {
     return null
   }
 
-  const { headerLogo, headerLinks, headerBtnText, headerMobileBtnText } = headerContent
+  const { logo, links, btnText, btnTextMobile } = headerContent
 
   const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
@@ -36,11 +36,11 @@ const Header = ({ headerContent }) => {
     <header className="header header--homepage">
       <div className="header__container container">
         <div className="header__wrapper">
-          {headerLogo && (
+          {logo && (
             <Link className="header__logo" href="/">
               <Image
                 className="header__logo-img"
-                src={urlFor(headerLogo).url()}
+                src={urlFor(logo).url()}
                 alt="Medbox Logo"
                 title="Homepage"
                 width="144"
@@ -54,30 +54,30 @@ const Header = ({ headerContent }) => {
             aria-label="Main navigation"
             title="Use to navigation">
             <ul className="header__nav-list">
-              {headerLinks?.map((link, index) => (
+              {links?.map((link, index) => (
                 <li className="header__nav-item" key={index}>
                   <Link className="link" href="#">
-                    {link.headerLinksText}
+                    {link.text}
                   </Link>
                 </li>
               ))}
             </ul>
             <div className="header__mobile">
-              {headerBtnText && (
+              {btnText && (
                 <button className="header__mobile-btn btn" type="button" aria-hidden="true">
-                  {headerBtnText}
+                  {btnText}
                 </button>
               )}
-              {headerMobileBtnText && (
+              {btnTextMobile && (
                 <Link className="header__mobile-link btn btn--phone" href="tel:8663537856" aria-hidden="true">
-                  {headerMobileBtnText}
+                  {btnTextMobile}
                 </Link>
               )}
             </div>
           </nav>
-          {headerBtnText && (
+          {btnText && (
             <button className="header__btn btn" type="button">
-              {headerBtnText}
+              {btnText}
             </button>
           )}
           <button

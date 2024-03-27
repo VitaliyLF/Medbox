@@ -7,31 +7,31 @@ const Hero = ({ heroContent }) => {
     return null
   }
 
-  const { heroTitle, heroSubtitle, heroText, heroBtnText, heroImageAndAlt } = heroContent
+  const { title, subtitle, text, btnText, image, alt } = heroContent
 
   return (
     <section className="hero hero--homepage">
       <div className="hero__container container">
         <div className="hero__wrapper">
           <div className="hero__info">
-            {heroTitle && <h1 className="title-section">{heroTitle}</h1>}
-            {heroSubtitle && <h2 className="subtitle-section subtitle-section--homepage">{heroSubtitle}</h2>}
-            {heroText && (
+            {title && <h1 className="title-section">{title}</h1>}
+            {subtitle && <h2 className="subtitle-section subtitle-section--homepage">{subtitle}</h2>}
+            {text && (
               <div className="text-section">
-                <PortableText value={heroText} />
+                <PortableText value={text} />
               </div>
             )}
-            {heroBtnText && (
+            {btnText && (
               <button className="hero__btn btn btn--hero-section" type="button">
-                {heroBtnText}
+                {btnText}
               </button>
             )}
           </div>
-          {heroImageAndAlt?.heroImage && (
+          {image && (
             <Image
               className="hero__img"
-              src={urlFor(heroImageAndAlt.heroImage).url()}
-              alt={heroImageAndAlt.herosAltImageText || ''}
+              src={urlFor(image).url()}
+              alt={alt || ''}
               width="750"
               height="507"
               priority={true}

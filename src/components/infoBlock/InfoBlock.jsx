@@ -9,17 +9,18 @@ const InfoBlock = ({ infoBlockContent }) => {
   }
 
   const {
-    infoBlockSubtitle,
-    infoBlockText,
-    infoBlockUrl,
-    infoBlockValue,
-    infoBlogBtnText,
-    infoBlockImageAndAlt,
-    infoBlockStar,
-    infoBlockSocialUrl,
-    infoBlockSocialIcon,
-    infoBlockSocialIconAlt,
-    infoBlockBlockquote
+    subtitle,
+    text,
+    url,
+    linkText,
+    btnText,
+    image,
+    alt,
+    stars,
+    socailUrl,
+    socailIcon,
+    socailIconAlt,
+    blockquote
   } = infoBlockContent
 
   return (
@@ -27,26 +28,26 @@ const InfoBlock = ({ infoBlockContent }) => {
       <div className="info-block__container">
         <div className="info-block__content">
           <div className="info-block__info">
-            {infoBlockSubtitle && <h2 className="subtitle-section">{infoBlockSubtitle}</h2>}
-            {infoBlockText && (
+            {subtitle && <h2 className="subtitle-section">{subtitle}</h2>}
+            {text && (
               <div className="text-section">
-                <PortableText value={infoBlockText} />
+                <PortableText value={text} />
               </div>
             )}
-            <Link className="info-block__link link link--phone" href={infoBlockUrl}>
-              {infoBlockValue}
+            <Link className="info-block__link link link--phone" href={url}>
+              {linkText}
             </Link>
-            {infoBlogBtnText && (
+            {btnText && (
               <button className="btn" type="button">
-                {infoBlogBtnText}
+                {btnText}
               </button>
             )}
           </div>
-          {infoBlockImageAndAlt && (
+          {image && (
             <Image
               className="info-block__image"
-              src={urlFor(infoBlockImageAndAlt.infoBlockImage).url()}
-              alt={infoBlockImageAndAlt.infoBlockImageAlt}
+              src={urlFor(image).url()}
+              alt={alt || ''}
               width="418"
               height="387"
               loading="lazy"
@@ -56,41 +57,43 @@ const InfoBlock = ({ infoBlockContent }) => {
         <div className="info-block__review review">
           <div className="review__top review__top--info-block">
             <ul className="review__stars">
-              {infoBlockStar?.map((star, index) => (
+              {Array.from({ length: stars }).map((index) => (
                 <li className="review__star" key={index}>
-                  <Image
-                    className="review__star-image"
-                    src={urlFor(star.infoBlockStarItem).url()}
-                    alt={index === 0 ? `${infoBlockStar.length} out of ${infoBlockStar.length} stars` : ''}
-                    width="24"
-                    height="24"
-                    aria-hidden={index === 0 ? 'false' : 'true'}
-                    loading="lazy"
-                  />
+                  <svg
+                    className="review__star-icon review__star-icon--info-block"
+                    aria-hidden="true"
+                    width="25"
+                    height="25"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12.0001 1L15.0331 8.82547L23.4128 9.2918L16.9075 14.5945L19.0535 22.7082L12.0001 18.16L4.94666 22.7082L7.09263 14.5945L0.587406 9.2918L8.96711 8.82547L12.0001 1Z"
+                      fill="#currentColor"
+                    />
+                  </svg>
                 </li>
               ))}
             </ul>
-            <Link className="review__social-link" href={infoBlockSocialUrl} target="_blank">
-              {infoBlockSocialIcon && (
+            <Link className="review__social-link" href={socailUrl} target="_blank">
+              {socailIcon && (
                 <Image
                   className="review__social-image"
-                  src={urlFor(infoBlockSocialIcon).url()}
-                  alt={infoBlockSocialIconAlt || ''}
+                  src={urlFor(socailIcon).url()}
+                  alt={socailIconAlt || ''}
                   width="45"
                   height="45"
-                  title={`${infoBlockSocialIconAlt} || New window`}
+                  title={`${socailIconAlt} || New window`}
                   loading="lazy"
                 />
               )}
             </Link>
           </div>
-          {infoBlockBlockquote.infoBlockBlockquoteText && (
+          {blockquote && (
             <blockquote className="review__blockquote review__blockquote--info-block">
-              {infoBlockBlockquote.infoBlockBlockquoteText}
+              {blockquote.text}
               <footer className="review__footer review__footer--info-block">
-                <cite className="review__author review__author--info-block">
-                  {infoBlockBlockquote.infoBlockBlockquoteAuthor}
-                </cite>
+                <cite className="review__author review__author--info-block">{blockquote.author}</cite>
               </footer>
             </blockquote>
           )}

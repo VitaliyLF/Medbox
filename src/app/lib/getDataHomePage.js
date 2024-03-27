@@ -4,109 +4,95 @@ export async function getDataHomePage() {
   const query = `
     *[_type == 'homepage'] [0] {
       header {
-      headerLogo,
-      headerLinks [] {
-        headerLinksText
+      logo,
+      links [] {
+        text
       },
-      headerBtnText,
-      headerMobileBtnText,
+      btnText,
+      btnTextMobile,
       },
       hero {
-      heroTitle,
-      heroSubtitle,
-      heroText,
-      heroBtnText,
-      heroImageAndAlt {
-        heroImage,
-        herosAltImageText
-      },
+      title,
+      subtitle,
+      text,
+      btnText,
+      image,
+      alt,
       },
       videoSection {
-        videoFile {
+        file {
           asset-> {
             url
           }
         },
-        videoBlockPoster,
-        videoBlockHiddenTitle,
+        title,
+        poster,
       },
       listLine {
-        listLineSubtitle,
-        listLineText,
-        listLineLink,
-        listLineItems [] {
-          listLineItem
+        subtitle,
+        text,
+        btnText,
+        list [] {
+          content
         },
-        listLineImage,
-        listLineStar [] {
-          listLineStarItem
-        },
-        listLineSocialIcon,
-        listLineSocialIconAlt,
-        listLineSocialUrl,
-        listLineBlockquote {
-          listLineBlockquoteText,
-          listLineBlockquoteAuthor
+        image,
+        stars,
+        socailIcon,
+        socailIconAlt,
+        url,
+        blockquote {
+          text,
+          author
         }
       },
       benefits {
-        benefitsTitle,
-        benefitsSubtitle,
-        benefitsText,
-        benefitsBtnText,
-        benefitsImageAndAlt {
-        benefitsImage,
-        benefitsImageAlt
-        },
+        title,
+        subtitle,
+        text,
+        btnText,
+        image,
+        alt
       },
       stickyList {
-        stickyListTitle,
-        stickyListSubtitle,
-        stickyListImageAndAlt {
-          stickyListImage,
-          stickyListImageAlt
+        title,
+        subtitle,
+        image,
+        alt,
+        list [] {
+          title,
+          text
         },
-        stickyListItems [] {
-          stickyListItemTitle,
-          stickyListItemText
-        },
-        stickyListTextButton
+        btnText
       },
       infoBlock {
-        infoBlockSubtitle,
-        infoBlockText,
-        infoBlockUrl,
-        infoBlockValue,
-        infoBlogBtnText,
-        infoBlockImageAndAlt {
-          infoBlockImage,
-          infoBlockImageAlt
-        },
-        infoBlockStar [] {
-          infoBlockStarItem
-        },
-        infoBlockSocialIcon,
-        infoBlockSocialIconAlt,
-        infoBlockSocialUrl,
-        infoBlockBlockquote {
-          infoBlockBlockquoteText,
-          infoBlockBlockquoteAuthor
+        subtitle,
+        text,
+        url,
+        linkText,
+        btnText,
+        image,
+        alt,
+        stars,
+        socailIcon,
+        socailIconAlt,
+        socailUrl,
+        blockquote {
+          text,
+          author
         }
       },
       states {
-        statesTitle,
-        statesSubtitle,
-        statesText,
-        statesTextContact,
-        statesBtnText,
-        statesImageAndAlt {
-          statesImage,
-          statesImageAlt
-        }
+        title,
+        subtitle,
+        text,
+        textContact,
+        btnText,
+        image,
+        alt
       },
       feedback {
-        feedbackSubtitle,
-        feedbackText,
+        subtitle,
+        text,
         feedbackList [] {
           feedbackStar,
           feedbackSocialIcon,

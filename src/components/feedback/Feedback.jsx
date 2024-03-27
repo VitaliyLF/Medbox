@@ -5,17 +5,15 @@ const Feedback = ({ feedBackContent }) => {
     return null
   }
 
-  const { feedbackSubtitle, feedbackText, feedbackList } = feedBackContent
-
-  console.log(feedbackList)
+  const { subtitle, text, feedbackList } = feedBackContent
 
   return (
     <section className="feedback">
       <div className="container">
-        {feedbackSubtitle && <h2 className="subtitle-section">{feedbackSubtitle}</h2>}
-        {feedbackText && (
+        {subtitle && <h2 className="subtitle-section">{subtitle}</h2>}
+        {text && (
           <div className="text-section">
-            <PortableText value={feedbackText} />
+            <PortableText value={text} />
           </div>
         )}
       </div>
