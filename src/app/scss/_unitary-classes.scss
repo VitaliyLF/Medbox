@@ -127,66 +127,6 @@
   }
 }
 
-.review {
-  padding: var(--offset-small);
-  border-radius: var(--border-radius-top-right-large-bottom);
-  max-width: 400px;
-  margin-bottom: var(--offset-large-medium);
-  margin-left: auto;
-  background-color: var(--color-light);
-
-  &__top {
-    @include marginBottom(var(--offset-tiny-medium));
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    &--info-block {
-      @include marginBottom(var(--offset-small-medium));
-    }
-  }
-
-  &__stars {
-    display: flex;
-    width: var(--offset-small);
-    aspect-ratio: 1;
-    gap: 5px;
-  }
-
-  &__star-icon {
-    fill: var(--color-puerto-rico);
-
-    &--info-block {
-      fill: var(--color-dark-green);
-    }
-  }
-
-  &__social-image {
-    aspect-ratio: 1;
-  }
-
-  &__blockquote {
-    &--info-block {
-      @include fz35-agrandir;
-    }
-  }
-
-  &__footer {
-    padding-top: var(--offset-tiny-medium);
-
-    &--info-block {
-      padding-top: var(--offset-small-medium);
-    }
-  }
-
-  &__author {
-    &--info-block {
-      @include fz22-atkinson;
-    }
-  }
-}
-
 .title-section {
   @include fz19-atkinson;
 

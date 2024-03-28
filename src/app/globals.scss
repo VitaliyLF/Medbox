@@ -1,7 +1,7 @@
 @import './scss/vendor';
 @import './scss/main';
 
-// page style blocks connection
+// page style section connection
 @import '@/components/header/Header';
 @import '@/components/hero/Hero';
 @import '@/components/videoBlock/VideoBlock';
@@ -11,3 +11,4 @@
 @import '@/components/infoBlock/InfoBlock';
 @import '@/components/states/States';
 @import '@/components/feedback/Feedback';
+@import '@/components/review/Review';

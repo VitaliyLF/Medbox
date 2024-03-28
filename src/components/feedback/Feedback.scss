@@ -1,0 +1,29 @@
+.feedback {
+  padding: var(--offset-quadruple-extra-large) var(--offset-extra-large-medium);
+
+  &-info {
+    @include marginBottom(var(--offset-large-medium));
+
+    text-align: center;
+  }
+
+  &__list {
+    @include marginBottom(var(--offset-large-medium));
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: var(--offset-small);
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__review {
+    padding: var(--offset-medium-large) var(--offset-medium);
+    max-width: 415px;
+    border-radius: var(--border-radius-top-and-right-large);
+    background-color: var(--color-cream);
+  }
+}

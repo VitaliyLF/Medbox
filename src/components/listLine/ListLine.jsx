@@ -15,10 +15,10 @@ const ListLine = ({ listLineContent }) => {
     list,
     image,
     stars = 0,
-    socailIcon,
+    socialIcon,
     blockquote,
-    url,
-    socailIconAlt
+    socialUrl,
+    socialIconAlt
   } = listLineContent
 
   return (
@@ -65,7 +65,7 @@ const ListLine = ({ listLineContent }) => {
               loading="lazy"
             />
             <div className="list-line__wrapper container">
-              <div className="review">
+              {/* <div className="review review--list-line">
                 <div className="review__top">
                   <ul className="review__stars" aria-label={`${stars} out of ${stars} stars`}>
                     {Array.from({ length: stars }).map((index) => (
@@ -86,15 +86,15 @@ const ListLine = ({ listLineContent }) => {
                       </li>
                     ))}
                   </ul>
-                  <Link className="review__social-link" href={url} target="_blank">
-                    {socailIcon && (
+                  <Link className="review__social-link" href={socialUrl} target="_blank">
+                    {socialIcon && (
                       <Image
                         className="review__social-image"
-                        src={urlFor(socailIcon).url()}
-                        alt={socailIconAlt || ''}
+                        src={urlFor(socialIcon).url()}
+                        alt={socialIconAlt || ''}
                         width="45"
                         height="45"
-                        title={`${socailIconAlt} || New window`}
+                        title={`${socialIconAlt} || New window`}
                         loading="lazy"
                       />
                     )}
@@ -108,7 +108,7 @@ const ListLine = ({ listLineContent }) => {
                     </footer>
                   </blockquote>
                 )}
-              </div>
+              </div> */}
             </div>
           </>
         )}

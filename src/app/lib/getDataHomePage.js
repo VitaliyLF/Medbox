@@ -37,9 +37,9 @@ export async function getDataHomePage() {
         },
         image,
         stars,
-        socailIcon,
-        socailIconAlt,
-        url,
+        socialIcon,
+        socialIconAlt,
+        socialUrl,
         blockquote {
           text,
           author
@@ -73,9 +73,9 @@ export async function getDataHomePage() {
         image,
         alt,
         stars,
-        socailIcon,
-        socailIconAlt,
-        socailUrl,
+        socialIcon,
+        socialIconAlt,
+        socialUrl,
         blockquote {
           text,
           author
@@ -93,16 +93,19 @@ export async function getDataHomePage() {
       feedback {
         subtitle,
         text,
-        feedbackList [] {
-          feedbackStar,
-          feedbackSocialIcon,
-          feedbackSocialIconAlt,
-          feedbackSocialUrl,
-          feedbackBlockquote {
-            feedbackBlockquoteText,
-            feedbackBlockquoteAuthor
+        list [] {
+          stars,
+          socialIcon,
+          socialIconAlt,
+          socialUrl,
+          blockquote {
+            text,
+            author
           }
         },
+        subtext,
+        btnText,
+        url
       },
     }
   `

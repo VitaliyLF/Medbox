@@ -208,18 +208,18 @@ export default {
           description: '⚡️ Represents the star rating (from 1 to 5, integers only).'
         },
         {
-          name: 'socailIcon',
+          name: 'socialIcon',
           type: 'image',
           title: 'List line social icon'
         },
         {
-          name: 'socailIconAlt',
+          name: 'socialIconAlt',
           type: 'string',
           title: 'List line social icon description for screen readers & SEO',
           description: '⚡️ Optional but highly encouraged to make the content more accessible'
         },
         {
-          name: 'url',
+          name: 'socialUrl',
           type: 'url',
           title: 'List line social url',
           validation: (Rule) => Rule.required()
@@ -440,18 +440,18 @@ export default {
           description: '⚡️ Represents the star rating (from 1 to 5, integers only).'
         },
         {
-          name: 'socailIcon',
+          name: 'socialIcon',
           type: 'image',
           title: 'Info Block social icon'
         },
         {
-          name: 'socailIconAlt',
+          name: 'socialIconAlt',
           type: 'string',
           title: 'Info Block social icon description for screen readers & SEO',
           description: '⚡️ Optional but highly encouraged to make the content more accessible'
         },
         {
-          name: 'socailUrl',
+          name: 'socialUrl',
           type: 'url',
           title: 'Info Block social url',
           validation: (Rule) => Rule.required()
@@ -561,63 +561,88 @@ export default {
           ]
         },
         {
-          name: 'feedbackList',
+          name: 'list',
           type: 'array',
           title: 'Feedback list',
           of: [
             {
-              type: 'document',
+              type: 'object',
               fields: [
                 {
-                  name: 'feedbackListItem',
-                  type: 'document',
-                  title: 'Feedback list item',
+                  name: 'stars',
+                  type: 'number',
+                  title: 'Feedback start list',
+                  validation: (Rule) => Rule.max(5).min(1).integer()
+                },
+                {
+                  name: 'socialIcon',
+                  type: 'image',
+                  title: 'Feedback social icon'
+                },
+                {
+                  name: 'socialIconAlt',
+                  type: 'string',
+                  title: 'Feedback social icon description for screen readers & SEO',
+                  description: '⚡️ Optional but highly encouraged to make the content more accessible'
+                },
+                {
+                  name: 'socialUrl',
+                  type: 'url',
+                  title: 'Feedback social url',
+                  validation: (Rule) => Rule.required()
+                },
+                {
+                  name: 'blockquote',
+                  type: 'object',
+                  title: 'Feedback Blockquote',
                   fields: [
                     {
-                      name: 'feedbackStar',
-                      type: 'number',
-                      title: 'Feedback start list',
-                      validation: (Rule) => Rule.max(5).min(1).integer()
-                    },
-                    {
-                      name: 'feedbackSocialIcon',
-                      type: 'image',
-                      title: 'Feedback social icon'
-                    },
-                    {
-                      name: 'feedbackSocialIconAlt',
+                      name: 'text',
                       type: 'string',
-                      title: 'Feedback social icon description for screen readers & SEO',
-                      description: '⚡️ Optional but highly encouraged to make the content more accessible'
+                      title: 'Feedback Blockquote text'
                     },
                     {
-                      name: 'feedbackSocialUrl',
-                      type: 'url',
-                      title: 'Feedback social url',
-                      validation: (Rule) => Rule.required()
-                    },
-                    {
-                      name: 'feedbackBlockquote',
-                      type: 'object',
-                      title: 'Feedback Blockquote',
-                      fields: [
-                        {
-                          name: 'feedbackBlockquoteText',
-                          type: 'string',
-                          title: 'Feedback Blockquote text'
-                        },
-                        {
-                          name: 'feedbackBlockquoteAuthor',
-                          type: 'string',
-                          title: 'Feedback Blockquote author'
-                        }
-                      ]
+                      name: 'author',
+                      type: 'string',
+                      title: 'Feedback Blockquote author'
                     }
                   ]
                 }
               ]
             }
           ]
+        },
+        {
+          name: 'subtext',
+          type: 'array',
+          title: 'Feedback subparagraph',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'btnText',
+          type: 'string',
+          title: 'Feedback link Text',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
+            ]
+          }
+        },
+        {
+          name: 'url',
+          type: 'url',
+          title: 'Feedback link url',
+          validation: (Rule) => Rule.required()
         }
       ]
     }
@@ -625,8 +650,8 @@ export default {
   preview: {
     select: {
       title: 'hero.title',
-      subtitle: 'hero.heroSubtitle',
-      media: 'header.headerLogo'
+      subtitle: 'hero.subtitle',
+      media: 'header.logo'
     }
   }
 }
