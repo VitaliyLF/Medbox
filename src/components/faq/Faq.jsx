@@ -1,4 +1,4 @@
-import Details from '../details/details'
+import Details from '../details/Details'
 
 const Faq = ({ faqContent }) => {
   if (!faqContent) {
