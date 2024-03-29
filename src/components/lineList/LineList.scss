@@ -1,4 +1,4 @@
-.list-line {
+.line-list {
   position: relative;
   padding-top: var(--offset-medium-large);
 
@@ -89,9 +89,8 @@
   }
 
   &__image {
-    display: block;
-    object-fit: cover;
     width: 100%;
+    aspect-ratio: 1440 / 720;
   }
 
   &__wrapper {

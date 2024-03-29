@@ -28,7 +28,7 @@ export async function getDataHomePage() {
         title,
         poster,
       },
-      listLine {
+      lineList {
         subtitle,
         text,
         btnText,
@@ -106,6 +106,18 @@ export async function getDataHomePage() {
         subtext,
         btnText,
         url
+      },
+      faq {
+        title,
+        subtitle,
+        list [] {
+          summary,
+          text,
+          url,
+          linkText,
+          image,
+          alt
+        }
       },
     }
   `

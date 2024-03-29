@@ -1,0 +1,11 @@
+.faq {
+  padding-block: var(--offset-extra-large-medium);
+  background-color: var(--color-light-mint);
+
+  &__container {
+  }
+
+  &__aside {
+    max-width: 520px;
+  }
+}

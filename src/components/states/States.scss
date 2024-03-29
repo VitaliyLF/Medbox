@@ -17,6 +17,7 @@
 
   &__container {
     display: flex;
+    align-items: center;
     justify-content: space-between;
   }
 
@@ -35,6 +36,7 @@
   }
 
   &__image {
-    height: 100%;
+    max-width: 728px;
+    aspect-ratio: 728 / 566;
   }
 }

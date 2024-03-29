@@ -1,35 +1,57 @@
 .review {
   --review-padding: var(--offset-small);
+  --review-background-color: var(--color-light);
+  --review-border-radius: var(--border-radius-top-right-large-bottom);
+  --review-star-icon: var(--color-puerto-rico);
+  --review-offset: var(--offset-tiny-medium);
+  --review-blockquote-font-family: var(--font-family-accent);
+  --review-blockquote-font-weight: 400;
+  --review-blockquote-font-size: 18px;
+  --review-blockquote-line-height: 1.4;
+  --review-blockquote-letter-spacing: 0;
+  --review-author-font-size: inherit;
 
   padding: var(--review-padding);
-  border-radius: var(--border-radius-top-right-large-bottom);
-  max-width: 400px;
-  background-color: var(--color-light);
+  border-radius: var(--review-border-radius);
+  background-color: var(--review-background-color);
 
-  &--list-line {
+  &--line-list {
     margin-left: auto;
     margin-bottom: var(--offset-large-medium);
+    max-width: 400px;
   }
 
   &--info-block {
     --review-padding: 150px 60px;
+    --review-background-color: var(--color-mint-green);
+    --review-border-radius: var(--border-radius-top-left);
+    --review-star-icon: var(--color-dark-green);
+    --review-offset: var(--offset-small-medium);
+    --review-blockquote-font-family: var(--font-family-base);
+    --review-blockquote-font-size: var(--offset-medium);
+    --review-blockquote-letter-spacing: 0.35px;
+    --review-author-font-size: 22px;
 
-    max-width: 100%;
+    background-color: var(--review-background-color);
+    border-radius: var(--review-border-radius);
     width: 40vw;
-    background-color: var(--color-mint-green);
-    border-radius: var(--border-radius-top-left);
+  }
+
+  &--feedback {
+    --review-padding: var(--offset-medium-large) var(--offset-medium);
+    --review-background-color: var(--color-cream);
+    --review-border-radius: var(--border-radius-top-and-right-large);
+    --review-blockquote-font-size: 22px;
+
+    max-width: 415px;
   }
 
   &__top {
-    @include marginBottom(var(--offset-tiny-medium));
+    @include marginBottom(var(--review-offset));
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    &--info-block {
-      @include marginBottom(var(--offset-small-medium));
-    }
   }
 
   &__stars {
@@ -40,11 +62,11 @@
   }
 
   &__star-icon {
-    fill: var(--color-puerto-rico);
+    fill: var(--review-star-icon);
+  }
 
-    &--info-block {
-      fill: var(--color-dark-green);
-    }
+  &__social-link {
+    @include focus;
   }
 
   &__social-image {
@@ -52,26 +74,19 @@
   }
 
   &__blockquote {
-    &--info-block {
-      @include fz35-agrandir;
-    }
-
-    &--feedback {
-      @include fz22-atkinson;
-    }
+    font-family: var(--review-blockquote-font-family);
+    font-weight: var(--review-blockquote-font-weight);
+    font-size: var(--review-blockquote-font-size);
+    line-height: var(--review-blockquote-line-height);
+    letter-spacing: var(--review-blockquote-letter-spacing);
   }
 
   &__footer {
-    padding-top: var(--offset-tiny-medium);
-
-    &--info-block {
-      padding-top: var(--offset-small-medium);
-    }
+    padding-top: var(--review-offset);
   }
 
   &__author {
-    &--info-block {
-      @include fz22-atkinson;
-    }
+    display: block;
+    font-size: var(--review-author-font-size);
   }
 }

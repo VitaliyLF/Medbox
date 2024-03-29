@@ -47,6 +47,10 @@
     @include focus;
   }
 
+  &__logo-img {
+    max-width: 144px;
+  }
+
   &__nav {
     @include big-desktop {
       position: fixed;

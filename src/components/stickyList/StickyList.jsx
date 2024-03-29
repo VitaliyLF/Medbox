@@ -1,4 +1,5 @@
 import { urlFor } from '@/app/lib/clientSanity'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import { PortableText } from 'next-sanity'
 import Image from 'next/image'
 
@@ -8,6 +9,7 @@ const StickyList = ({ stickyListContent }) => {
   }
 
   const { title, subtitle, image, alt, list, btnText } = stickyListContent
+  const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
     <section className="sticky-list">
@@ -23,8 +25,8 @@ const StickyList = ({ stickyListContent }) => {
                 className="sticky-list__image"
                 src={urlFor(image).url()}
                 alt={alt || ''}
-                width="632"
-                height="509"
+                width={dimensions.width}
+                height={dimensions.height}
                 loading="lazy"
               />
             )}
@@ -33,7 +35,7 @@ const StickyList = ({ stickyListContent }) => {
             <ul className="sticky-list__items">
               {list?.map((item, index) => (
                 <li className="sticky-list__item" key={index}>
-                  <h4 className="sticky-list__item-title subtitle-item-section">{item.title}</h4>
+                  <h4 className="sticky-list__item-subtitle subtitle-section subtitle-section--medium">{item.title}</h4>
                   <div className="text-section">
                     <PortableText value={item.text} />
                   </div>

@@ -1,5 +1,6 @@
 'use client'
 import { urlFor } from '@/app/lib/clientSanity'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -12,6 +13,7 @@ const Header = ({ headerContent }) => {
   }
 
   const { logo, links, btnText, btnTextMobile } = headerContent
+  const { dimensions } = decodeAssetId(logo.asset._ref)
 
   const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
@@ -43,8 +45,8 @@ const Header = ({ headerContent }) => {
                 src={urlFor(logo).url()}
                 alt="Medbox Logo"
                 title="Homepage"
-                width="144"
-                height="41"
+                width={dimensions.width}
+                height={dimensions.height}
                 priority={true}
               />
             </Link>

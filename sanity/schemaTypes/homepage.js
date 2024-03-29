@@ -11,12 +11,12 @@ export default {
         {
           name: 'logo',
           type: 'image',
-          title: 'Header logo Image'
+          title: 'Logo Image'
         },
         {
           name: 'links',
           type: 'array',
-          title: 'Header navigation links',
+          title: 'Navigation links',
           of: [
             {
               type: 'document',
@@ -34,7 +34,7 @@ export default {
         {
           name: 'btnText',
           type: 'string',
-          title: 'Header Button text',
+          title: 'Button text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -50,7 +50,7 @@ export default {
         {
           name: 'btnTextMobile',
           type: 'string',
-          title: 'Header mobile Button text'
+          title: 'Mobile Button text'
         }
       ]
     },
@@ -62,7 +62,7 @@ export default {
         {
           name: 'title',
           type: 'string',
-          title: 'Hero Title'
+          title: 'Title'
         },
         {
           name: 'slug',
@@ -75,12 +75,12 @@ export default {
         {
           name: 'subtitle',
           type: 'string',
-          title: 'Hero Subtitle'
+          title: 'Subtitle'
         },
         {
           name: 'text',
           type: 'array',
-          title: 'Hero paragraph',
+          title: 'Paragraph',
           of: [
             {
               type: 'block'
@@ -90,7 +90,7 @@ export default {
         {
           name: 'btnText',
           type: 'string',
-          title: 'Hero button text',
+          title: 'Button text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -106,7 +106,7 @@ export default {
         {
           name: 'image',
           type: 'image',
-          title: 'Hero image',
+          title: 'Image',
           description: '⚡️ Optional, but png format is better.'
         },
         {
@@ -138,24 +138,24 @@ export default {
         {
           name: 'poster',
           type: 'image',
-          title: 'Video block poster'
+          title: 'Poster video'
         }
       ]
     },
     {
-      name: 'listLine',
+      name: 'lineList',
       type: 'object',
       title: 'List line section',
       fields: [
         {
           name: 'subtitle',
           type: 'string',
-          title: 'List line Subtitle'
+          title: 'Subtitle'
         },
         {
           name: 'text',
           type: 'array',
-          title: 'List line paragraph',
+          title: 'Paragraph',
           of: [
             {
               type: 'block'
@@ -165,7 +165,7 @@ export default {
         {
           name: 'btnText',
           type: 'string',
-          title: 'List line link text',
+          title: 'Link text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -181,7 +181,7 @@ export default {
         {
           name: 'list',
           type: 'array',
-          title: 'List line items',
+          title: 'List text',
           of: [
             {
               type: 'document',
@@ -189,7 +189,7 @@ export default {
                 {
                   name: 'content',
                   type: 'string',
-                  title: 'List line item text'
+                  title: 'Item text'
                 }
               ]
             }
@@ -198,19 +198,19 @@ export default {
         {
           name: 'image',
           type: 'image',
-          title: 'List line image'
+          title: 'Image'
         },
         {
           name: 'stars',
           type: 'number',
-          title: 'List line stars',
+          title: 'Stars review',
           validation: (Rule) => Rule.max(5).min(1).integer().required(),
           description: '⚡️ Represents the star rating (from 1 to 5, integers only).'
         },
         {
           name: 'socialIcon',
           type: 'image',
-          title: 'List line social icon'
+          title: 'Social icon review'
         },
         {
           name: 'socialIconAlt',
@@ -221,23 +221,23 @@ export default {
         {
           name: 'socialUrl',
           type: 'url',
-          title: 'List line social url',
+          title: 'Social url link review',
           validation: (Rule) => Rule.required()
         },
         {
           name: 'blockquote',
           type: 'object',
-          title: 'List line Blockquote',
+          title: 'Blockquote review',
           fields: [
             {
               name: 'text',
               type: 'string',
-              title: 'List line Blockquote text'
+              title: 'Blockquote text'
             },
             {
               name: 'author',
               type: 'string',
-              title: 'List line Blockquote author'
+              title: 'Blockquote author'
             }
           ]
         }
@@ -251,17 +251,17 @@ export default {
         {
           name: 'title',
           type: 'string',
-          title: 'Benefits title'
+          title: 'Title'
         },
         {
           name: 'subtitle',
           type: 'string',
-          title: 'Benefits subtitle'
+          title: 'Subtitle'
         },
         {
           name: 'text',
           type: 'array',
-          title: 'Benefits paragraph',
+          title: 'Paragraph',
           of: [
             {
               type: 'block'
@@ -271,7 +271,7 @@ export default {
         {
           name: 'btnText',
           type: 'string',
-          title: 'Benefits buttton text',
+          title: 'Buttton text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -287,12 +287,12 @@ export default {
         {
           name: 'image',
           type: 'image',
-          title: 'Benefits image'
+          title: 'Image'
         },
         {
           name: 'alt',
           type: 'string',
-          title: 'Descriptive label for screen readers & SEO',
+          title: 'Descriptive label image for screen readers & SEO',
           description: '⚡️ Optional but highly encouraged to make the content more accessible'
         }
       ]
@@ -305,29 +305,29 @@ export default {
         {
           name: 'title',
           type: 'string',
-          title: 'Sticky list title'
+          title: 'Title'
         },
         {
           name: 'subtitle',
           type: 'string',
-          title: 'Sticky list subtitle'
+          title: 'Subtitle'
         },
         {
           name: 'image',
           type: 'image',
-          title: 'Sticky list image',
+          title: 'Image',
           description: '⚡️ Optional, but png format is better.'
         },
         {
           name: 'alt',
           type: 'string',
-          title: 'Descriptive label for screen readers & SEO',
+          title: 'Descriptive label image for screen readers & SEO',
           description: '⚡️ Optional but highly encouraged to make the content more accessible'
         },
         {
           name: 'list',
           type: 'array',
-          title: 'Sticky list items',
+          title: 'List',
           of: [
             {
               type: 'document',
@@ -335,12 +335,12 @@ export default {
                 {
                   name: 'title',
                   type: 'string',
-                  title: 'Sticky list title'
+                  title: 'List Title'
                 },
                 {
                   name: 'text',
                   type: 'array',
-                  title: 'Sticky list text',
+                  title: 'List Text',
                   of: [
                     {
                       type: 'block'
@@ -354,7 +354,7 @@ export default {
         {
           name: 'btnText',
           type: 'string',
-          title: 'Sticky list text button',
+          title: 'Button text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -377,12 +377,12 @@ export default {
         {
           name: 'subtitle',
           type: 'string',
-          title: 'Info block Subtitle'
+          title: 'Subtitle'
         },
         {
           name: 'text',
           type: 'array',
-          title: 'Info block paragraph',
+          title: 'Paragraph',
           of: [
             {
               type: 'block'
@@ -392,7 +392,7 @@ export default {
         {
           name: 'url',
           type: 'url',
-          title: 'Info block phone url',
+          title: 'Phone link url',
           description: '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel: This field is required.',
           validation: (Rule) =>
             Rule.required().uri({
@@ -402,12 +402,12 @@ export default {
         {
           name: 'linkText',
           type: 'string',
-          title: 'Info block phone text'
+          title: 'Phone link text'
         },
         {
           name: 'btnText',
           type: 'string',
-          title: 'Info block button text',
+          title: 'Button text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -423,26 +423,26 @@ export default {
         {
           name: 'image',
           type: 'image',
-          title: 'Info block image',
+          title: 'Image',
           description: '⚡️ Optional, but png format is better.'
         },
         {
           name: 'alt',
           type: 'string',
-          title: 'Descriptive label for screen readers & SEO',
+          title: 'Descriptive label image for screen readers & SEO',
           description: '⚡️ Optional but highly encouraged to make the content more accessible'
         },
         {
           name: 'stars',
           type: 'number',
-          title: 'List line stars',
+          title: 'Stars review',
           validation: (Rule) => Rule.max(5).min(1).integer().required(),
           description: '⚡️ Represents the star rating (from 1 to 5, integers only).'
         },
         {
           name: 'socialIcon',
           type: 'image',
-          title: 'Info Block social icon'
+          title: 'Social icon review'
         },
         {
           name: 'socialIconAlt',
@@ -453,23 +453,23 @@ export default {
         {
           name: 'socialUrl',
           type: 'url',
-          title: 'Info Block social url',
+          title: 'Social link url',
           validation: (Rule) => Rule.required()
         },
         {
           name: 'blockquote',
           type: 'object',
-          title: 'Info Block Blockquote',
+          title: 'Blockquote review',
           fields: [
             {
               name: 'text',
               type: 'string',
-              title: 'Info Block Blockquote text'
+              title: 'Blockquote text'
             },
             {
               name: 'author',
               type: 'string',
-              title: 'Info Block Blockquote author'
+              title: 'Blockquote author'
             }
           ]
         }
@@ -483,17 +483,17 @@ export default {
         {
           name: 'title',
           type: 'string',
-          title: 'States Title'
+          title: 'Title'
         },
         {
           name: 'subtitle',
           type: 'string',
-          title: 'States Subtitle'
+          title: 'Subtitle'
         },
         {
           name: 'text',
           type: 'array',
-          title: 'States paragraph',
+          title: 'Paragraph',
           of: [
             {
               type: 'block'
@@ -503,7 +503,7 @@ export default {
         {
           name: 'textContact',
           type: 'array',
-          title: 'States text contact',
+          title: 'Text contact',
           of: [
             {
               type: 'block'
@@ -513,7 +513,7 @@ export default {
         {
           name: 'btnText',
           type: 'string',
-          title: 'States Button Text',
+          title: 'Button Text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -529,13 +529,13 @@ export default {
         {
           name: 'image',
           type: 'image',
-          title: 'State image',
+          title: 'Image',
           description: '⚡️ Optional, but png format is better.'
         },
         {
           name: 'alt',
           type: 'string',
-          title: 'Descriptive label for screen readers & SEO',
+          title: 'Descriptive label image for screen readers & SEO',
           description: '⚡️ Optional but highly encouraged to make the content more accessible'
         }
       ]
@@ -548,12 +548,12 @@ export default {
         {
           name: 'subtitle',
           type: 'string',
-          title: 'Feedback subtitle'
+          title: 'Subtitle'
         },
         {
           name: 'text',
           type: 'array',
-          title: 'Feedback paragraph',
+          title: 'Paragraph',
           of: [
             {
               type: 'block'
@@ -563,7 +563,7 @@ export default {
         {
           name: 'list',
           type: 'array',
-          title: 'Feedback list',
+          title: 'List',
           of: [
             {
               type: 'object',
@@ -571,13 +571,13 @@ export default {
                 {
                   name: 'stars',
                   type: 'number',
-                  title: 'Feedback start list',
+                  title: 'Stars review',
                   validation: (Rule) => Rule.max(5).min(1).integer()
                 },
                 {
                   name: 'socialIcon',
                   type: 'image',
-                  title: 'Feedback social icon'
+                  title: 'Social icon review'
                 },
                 {
                   name: 'socialIconAlt',
@@ -588,23 +588,23 @@ export default {
                 {
                   name: 'socialUrl',
                   type: 'url',
-                  title: 'Feedback social url',
+                  title: 'Social link url',
                   validation: (Rule) => Rule.required()
                 },
                 {
                   name: 'blockquote',
                   type: 'object',
-                  title: 'Feedback Blockquote',
+                  title: 'Blockquote review',
                   fields: [
                     {
                       name: 'text',
                       type: 'string',
-                      title: 'Feedback Blockquote text'
+                      title: 'Blockquote text'
                     },
                     {
                       name: 'author',
                       type: 'string',
-                      title: 'Feedback Blockquote author'
+                      title: 'Blockquote author'
                     }
                   ]
                 }
@@ -615,7 +615,7 @@ export default {
         {
           name: 'subtext',
           type: 'array',
-          title: 'Feedback subparagraph',
+          title: 'Subparagraph',
           of: [
             {
               type: 'block'
@@ -625,7 +625,7 @@ export default {
         {
           name: 'btnText',
           type: 'string',
-          title: 'Feedback link Text',
+          title: 'Link Text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -641,8 +641,75 @@ export default {
         {
           name: 'url',
           type: 'url',
-          title: 'Feedback link url',
+          title: 'Link url',
           validation: (Rule) => Rule.required()
+        }
+      ]
+    },
+    {
+      name: 'faq',
+      type: 'object',
+      title: 'FAQ’s section',
+      fields: [
+        {
+          name: 'title',
+          type: 'string',
+          title: 'Title'
+        },
+        {
+          name: 'subtitle',
+          type: 'string',
+          title: 'Subtitle'
+        },
+        {
+          name: 'list',
+          type: 'array',
+          title: 'List',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'summary',
+                  type: 'string',
+                  title: 'Summary Title'
+                },
+                {
+                  name: 'text',
+                  type: 'array',
+                  title: 'text',
+                  of: [
+                    {
+                      type: 'block'
+                    }
+                  ]
+                },
+                {
+                  name: 'url',
+                  type: 'url',
+                  title: 'Link url',
+                  validation: (Rule) => Rule.required()
+                },
+                {
+                  name: 'linkText',
+                  type: 'string',
+                  title: 'Link Text'
+                },
+                {
+                  name: 'image',
+                  type: 'image',
+                  title: 'Image',
+                  description: '⚡️ Optional, but jpg format is better.'
+                },
+                {
+                  name: 'alt',
+                  type: 'string',
+                  title: 'Descriptive label image for screen readers & SEO',
+                  description: '⚡️ Optional but highly encouraged to make the content more accessible'
+                }
+              ]
+            }
+          ]
         }
       ]
     }

@@ -2,12 +2,13 @@ import { getDataHomePage } from './lib/getDataHomePage'
 import Header from '@/components/header/Header'
 import Hero from '@/components/hero/Hero'
 import VideoBlock from '@/components/videoBlock/VideoBlock'
-import ListLine from '@/components/listLine/ListLine'
+import LineList from '@/components/lineList/LineList'
 import Benefits from '@/components/benefits/Benefits'
 import StickyList from '@/components/stickyList/StickyList'
 import InfoBlock from '@/components/infoBlock/InfoBlock'
 import States from '@/components/states/States'
 import Feedback from '@/components/feedback/Feedback'
+import Faq from '@/components/faq/Faq'
 
 export const metadata = {
   title: {
@@ -24,12 +25,13 @@ const HomePage = async () => {
       <main className="homepage" id="main">
         <Hero heroContent={dataHomePage?.hero} />
         <VideoBlock videoBlockContent={dataHomePage?.videoSection} />
-        <ListLine listLineContent={dataHomePage?.listLine} />
+        <LineList lineListContent={dataHomePage?.lineList} />
         <Benefits benefitsContent={dataHomePage?.benefits} />
         <StickyList stickyListContent={dataHomePage?.stickyList} />
         <InfoBlock infoBlockContent={dataHomePage?.infoBlock} />
         <States statesContent={dataHomePage?.states} />
         <Feedback feedBackContent={dataHomePage?.feedback} />
+        <Faq faqContent={dataHomePage?.faq} />
       </main>
     </div>
   )

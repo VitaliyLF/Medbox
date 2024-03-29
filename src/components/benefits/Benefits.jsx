@@ -1,4 +1,5 @@
 import { urlFor } from '@/app/lib/clientSanity'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import { PortableText } from 'next-sanity'
 import Image from 'next/image'
 
@@ -8,6 +9,7 @@ const Benefits = ({ benefitsContent }) => {
   }
 
   const { title, subtitle, text, btnText, image, alt } = benefitsContent
+  const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
     <section className="benefits">
@@ -31,8 +33,8 @@ const Benefits = ({ benefitsContent }) => {
             className="benefits__image"
             src={urlFor(image).url()}
             alt={alt || ''}
-            width="577"
-            height="376"
+            width={dimensions.width}
+            height={dimensions.height}
             loading="lazy"
           />
         )}

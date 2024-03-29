@@ -38,6 +38,9 @@
   }
 
   &__img {
+    max-width: 750px;
+    aspect-ratio: 750 / 507;
+
     @include big-desktop {
       max-width: 100%;
     }

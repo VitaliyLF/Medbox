@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { urlFor } from '@/app/lib/clientSanity'
 import { PortableText } from 'next-sanity'
 import Review from '../review/Review'
-import { decodeAssetId } from '@/helpers/fileUtils'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
 
 const InfoBlock = ({ infoBlockContent }) => {
   if (!infoBlockContent) {
@@ -44,7 +44,7 @@ const InfoBlock = ({ infoBlockContent }) => {
             />
           )}
         </div>
-        <Review source={infoBlockContent} modifier="info-block" className="info-block__review" />
+        <Review source={infoBlockContent} modifier="info-block" />
       </div>
     </section>
   )

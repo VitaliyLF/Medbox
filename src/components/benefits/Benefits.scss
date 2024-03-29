@@ -25,6 +25,8 @@
   }
 
   &__image {
+    max-width: 577px;
+    aspect-ratio: 577 / 376;
     border-radius: var(--border-radius-bottom-left-large);
   }
 }

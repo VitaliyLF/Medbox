@@ -1,4 +1,5 @@
 import { urlFor } from '@/app/lib/clientSanity'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import { PortableText } from 'next-sanity'
 import Image from 'next/image'
 
@@ -8,6 +9,7 @@ const Hero = ({ heroContent }) => {
   }
 
   const { title, subtitle, text, btnText, image, alt } = heroContent
+  const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
     <section className="hero hero--homepage">
@@ -15,7 +17,7 @@ const Hero = ({ heroContent }) => {
         <div className="hero__wrapper">
           <div className="hero__info">
             {title && <h1 className="title-section">{title}</h1>}
-            {subtitle && <h2 className="subtitle-section subtitle-section--homepage">{subtitle}</h2>}
+            {subtitle && <h2 className="subtitle-section subtitle-section--extra-large">{subtitle}</h2>}
             {text && (
               <div className="text-section">
                 <PortableText value={text} />
@@ -32,8 +34,8 @@ const Hero = ({ heroContent }) => {
               className="hero__img"
               src={urlFor(image).url()}
               alt={alt || ''}
-              width="750"
-              height="507"
+              width={dimensions.width}
+              height={dimensions.height}
               priority={true}
             />
           )}

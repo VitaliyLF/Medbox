@@ -1,4 +1,5 @@
 import { urlFor } from '@/app/lib/clientSanity'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import { PortableText } from 'next-sanity'
 import Image from 'next/image'
 
@@ -8,6 +9,7 @@ const States = ({ statesContent }) => {
   }
 
   const { title, subtitle, text, textContact, btnText, image, alt } = statesContent
+  const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
     <section className="states">
@@ -39,8 +41,8 @@ const States = ({ statesContent }) => {
           <Image
             className="states__image"
             src={urlFor(image).url()}
-            width="728"
-            height="566"
+            width={dimensions.width}
+            height={dimensions.height}
             alt={alt || ''}
             loading="lazy"
           />
