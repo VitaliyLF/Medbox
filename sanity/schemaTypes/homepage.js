@@ -687,8 +687,7 @@ export default {
                 {
                   name: 'url',
                   type: 'url',
-                  title: 'Link url',
-                  validation: (Rule) => Rule.required()
+                  title: 'Link url'
                 },
                 {
                   name: 'linkText',

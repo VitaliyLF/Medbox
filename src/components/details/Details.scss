@@ -1,0 +1,51 @@
+.details {
+  &[open] {
+    & .details__summary {
+      &::after {
+        rotate: 180deg;
+      }
+    }
+  }
+
+  &__summary {
+    @include fz28-agrandir;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: var(--offset-tiny-medium);
+    border-top: 1px solid var(--color-grey);
+    cursor: pointer;
+    list-style: none;
+    transition: all var(--timing) ease-in-out;
+
+    &::after {
+      content: '';
+      flex-shrink: 0;
+      display: block;
+      width: var(--offset-large-medium);
+      aspect-ratio: 1;
+      background: url(../../app/img/details-arrow.svg) center/var(--offset-tiny-medium) no-repeat
+        var(--color-medbox-green);
+      border-radius: 50%;
+      transition: rotate var(--timing) ease, background-color var(--timing) ease;
+    }
+
+    @include focus;
+
+    @include hover {
+      &::after {
+        background-color: var(--color-dark-green);
+      }
+    }
+  }
+
+  &__content {
+    margin-bottom: var(--offset-tiny-medium);
+  }
+
+  &__image {
+    max-width: 520px;
+    border-radius: var(--border-radius-all-large);
+  }
+}

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Details from '../details/Details'
 
 const Faq = ({ faqContent }) => {
@@ -5,7 +6,7 @@ const Faq = ({ faqContent }) => {
     return null
   }
 
-  const { title, subtitle, list } = faqContent
+  const { title, subtitle, list, btnText } = faqContent
 
   return (
     <section className="faq">
@@ -18,10 +19,15 @@ const Faq = ({ faqContent }) => {
           <ul className="faq__list">
             {list?.map((item, index) => (
               <li className="faq__item" key={index}>
-                <Details source={item} />
+                <Details source={item} isOpen={index === 0} />
               </li>
             ))}
           </ul>
+          {btnText && (
+            <Link className="btn" href="#">
+              {btnText}
+            </Link>
+          )}
         </div>
       </div>
     </section>

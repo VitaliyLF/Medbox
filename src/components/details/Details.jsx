@@ -4,7 +4,7 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Details = ({ source }) => {
+const Details = ({ source, isOpen }) => {
   if (!source) {
     return null
   }
@@ -14,22 +14,34 @@ const Details = ({ source }) => {
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
-    <details className="details">
-      <summary className="details__summary">{summary}</summary>
-      <div className="text-section">
-        <PortableText value={text} />
+    <details className="details" open={isOpen}>
+      {summary && (
+        <summary className="details__summary" title="Open/Close information">
+          {summary}
+        </summary>
+      )}
+      <div className="details__content">
+        {text && (
+          <div className="text-section text-section--details">
+            <PortableText value={text} />
+          </div>
+        )}
+        {linkText && (
+          <Link className="link link--details" href={url}>
+            {linkText}
+          </Link>
+        )}
+        {image && (
+          <Image
+            className="details__image"
+            src={urlFor(image).url()}
+            alt={alt || ''}
+            width={dimensions.width}
+            height={dimensions.height}
+            loading="lazy"
+          />
+        )}
       </div>
-      <Link className="link" href={url}>
-        {linkText}
-      </Link>
-      <Image
-        className="details__image"
-        src={urlFor(image).url()}
-        alt={alt || ''}
-        width={dimensions.width}
-        height={dimensions.height}
-        loading="lazy"
-      />
     </details>
   )
 }
