@@ -12,7 +12,7 @@ const Feedback = ({ feedBackContent }) => {
   return (
     <section className="feedback">
       <div className="container">
-        <div className="feedback-info">
+        <div className="centered">
           {subtitle && <h2 className="subtitle-section">{subtitle}</h2>}
           {text && (
             <div className="text-section">
@@ -27,14 +27,14 @@ const Feedback = ({ feedBackContent }) => {
             </li>
           ))}
         </ul>
-        <div className="feedback-info">
+        <div className="centered">
           {subtext && (
             <div className="feedback__subtext text-section">
               <PortableText value={subtext} />
             </div>
           )}
           {btnText && (
-            <Link className="btn" href={url} target="_blank">
+            <Link className="btn" href={url} target="_blank" title="Read reviews || New window">
               {btnText}
             </Link>
           )}

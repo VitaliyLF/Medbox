@@ -117,8 +117,18 @@ export async function getDataHomePage() {
           linkText,
           image,
           alt
-        }
+        },
+        btnText
       },
+      supporting {
+        title,
+        subtitle,
+        list [] {
+          url,
+          image,
+          alt
+        }
+      }
     }
   `
 

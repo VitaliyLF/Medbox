@@ -48,13 +48,13 @@
 .skiplink {
   --skiplink-offset: 20px;
   --skiplink-overlay-color: rgba(0, 0, 0, 0.6);
-  --skiplink-bgcolor: rgba(13, 32, 202, 0.473);
+  --skiplink-bgcolor: var(--color-medbox-green);
   --skiplink-flashing-color: rgba(255, 255, 255, 0.5);
 
   position: fixed;
   inset: 0;
   opacity: 0;
-  font-family: inherit;
+  font-family: var(--font-family-additional);
   font-size: var(--skiplink-offset);
   font-weight: 700;
   background-color: var(--skiplink-overlay-color);
@@ -67,7 +67,7 @@
     @include pulse-btn-bg;
 
     position: relative;
-    top: var(--skiplink-offset);
+    top: calc(var(--skiplink-offset) * 2);
     left: var(--skiplink-offset);
     padding: var(--skiplink-offset);
     border-radius: var(--skiplink-offset);

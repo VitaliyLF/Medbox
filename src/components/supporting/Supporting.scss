@@ -1,0 +1,28 @@
+.supporting {
+  padding-block: var(--offset-double-extra-large-medium);
+
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: var(--offset-large-medium);
+  }
+
+  &__item {
+    max-width: 250px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    transition: scale var(--timing) ease;
+
+    @include focus;
+
+    @include hover {
+      scale: 1.1;
+    }
+  }
+}

@@ -1,12 +1,6 @@
 .feedback {
   padding: var(--offset-quadruple-extra-large) var(--offset-extra-large-medium);
 
-  &-info {
-    @include marginBottom(var(--offset-large-medium));
-
-    text-align: center;
-  }
-
   &__list {
     @include marginBottom(var(--offset-large-medium));
 

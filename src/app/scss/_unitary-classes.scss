@@ -44,7 +44,7 @@
     @include marginBottom(var(--offset-medium));
 
     display: inline-block;
-    color: var(--color-medbox-green);
+    color: var(--color-puerto-rico);
   }
 
   @include focus;
@@ -227,4 +227,10 @@
 
     @include marginBottom(var(--offset-small-medium));
   }
+}
+
+.centered {
+  @include marginBottom(var(--offset-large-medium));
+
+  text-align: center;
 }
