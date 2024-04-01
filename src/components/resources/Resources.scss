@@ -1,0 +1,51 @@
+.resources {
+  --width-info-block: 350px;
+  --width-container: 1300px;
+  --padding-container: 15px;
+  --gap-container: 55px;
+
+  padding-block: var(--offset-extra-large-medium);
+  background-color: var(--color-cream);
+
+  &__container {
+    display: flex;
+    gap: var(--gap-container);
+    padding-left: max(var(--padding-container), calc((100% - var(--width-container)) / 2));
+  }
+
+  &__info {
+    max-width: var(--width-info-block);
+    flex-shrink: 0;
+  }
+
+  &__wrapper {
+    width: calc(100% - var(--width-info-block) - var(--gap-container));
+  }
+
+  &__slider {
+    & .swiper-slide {
+      max-width: 400px;
+      transition: opacity var(--timing) ease;
+    }
+
+    & .swiper-button-next {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: url(../../app/img/details-arrow.svg) center/var(--offset-tiny-medium) no-repeat
+        var(--color-medbox-green);
+      rotate: 90deg;
+      transition: background-color var(--timing) ease;
+
+      @include hover {
+        background-color: var(--color-dark-green);
+      }
+    }
+
+    & .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next) {
+      opacity: 0.5;
+      pointer-events: none;
+      touch-action: none;
+    }
+  }
+}

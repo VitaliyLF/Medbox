@@ -176,6 +176,10 @@
 
     font-weight: 400;
   }
+
+  &--blog {
+    @include fz28-agrandir;
+  }
 }
 
 .text-section {
@@ -216,6 +220,10 @@
 
   &--details {
     @include marginBottom(var(--offset-small));
+  }
+
+  &--medium {
+    @include fz18-atkinson;
   }
 
   @include big-desktop {

@@ -773,6 +773,88 @@ export default {
           ]
         }
       ]
+    },
+    {
+      name: 'resources',
+      type: 'object',
+      title: 'Resources section',
+      fields: [
+        {
+          name: 'subtitle',
+          type: 'string',
+          title: 'Subtitle'
+        },
+        {
+          name: 'text',
+          type: 'array',
+          title: 'text',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'btnText',
+          type: 'string',
+          title: 'Link Text',
+          options: {
+            list: [
+              { title: 'Get started', value: 'Get started' },
+              { title: 'Check My Coverage', value: 'Check My Coverage' },
+              { title: 'Learn About Medbox', value: 'Learn About Medbox' },
+              { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+              { title: 'Read More Reviews', value: 'Read More Reviews' },
+              { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
+              { title: 'See All Resources', value: 'See All Resources' }
+            ]
+          }
+        },
+        {
+          name: 'url',
+          type: 'url',
+          title: 'Link url'
+        },
+        {
+          name: 'list',
+          type: 'array',
+          title: 'List blog items',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'url',
+                  type: 'url',
+                  title: 'Blog item url'
+                },
+                {
+                  name: 'image',
+                  type: 'image',
+                  title: 'Blog item image',
+                  description: '⚡️ Optional, but jpg format is better.'
+                },
+                {
+                  name: 'alt',
+                  type: 'string',
+                  title: 'Descriptive label image for screen readers & SEO',
+                  description: '⚡️ Optional but highly encouraged to make the content more accessible'
+                },
+                {
+                  name: 'tag',
+                  type: 'string',
+                  title: 'Blog item tag'
+                },
+                {
+                  name: 'subtitle',
+                  type: 'string',
+                  title: 'Blog item subtitle'
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   preview: {

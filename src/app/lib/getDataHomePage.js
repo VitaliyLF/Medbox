@@ -128,6 +128,19 @@ export async function getDataHomePage() {
           image,
           alt
         }
+      },
+      resources {
+        subtitle,
+        text,
+        btnText,
+        url,
+        list [] {
+          url,
+          image,
+          alt,
+          tag,
+          subtitle
+        }
       }
     }
   `
