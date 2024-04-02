@@ -18,11 +18,11 @@ const Supporting = ({ supportingContent }) => {
           {subtitle && <h3 className="subtitle-section">{subtitle}</h3>}
         </div>
         <ul className="supporting__list">
-          {list?.map((item, index) => {
+          {list?.map((item) => {
             const { dimensions } = decodeAssetId(item.image.asset._ref)
 
             return (
-              <li className="supporting__item" key={index}>
+              <li className="supporting__item" key={item._key}>
                 {item.url ? (
                   <Link className="supporting__link" href={item.url || ''} target="_blank">
                     <Image

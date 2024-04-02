@@ -16,7 +16,7 @@ const Resources = ({ resourcesContent }) => {
 
   return (
     <section className="resources">
-      <div className="resources__container ">
+      <div className="resources__container container">
         <div className="resources__info">
           {subtitle && <h2 className="subtitle-section subtitle-section--large">{subtitle}</h2>}
           {text && (
@@ -34,8 +34,10 @@ const Resources = ({ resourcesContent }) => {
           <Swiper
             className="resources__slider"
             modules={[Navigation, A11y, Keyboard]}
+            preventClicks={true}
+            preventInteractionOnTransition={true}
             spaceBetween={30}
-            slidesPerView={'auto'}
+            slidesPerView={2}
             slidesPerGroup={1}
             navigation
             keyboard={{
@@ -50,8 +52,8 @@ const Resources = ({ resourcesContent }) => {
               firstSlideMessage: 'This is the first slide',
               lastSlideMessage: 'This is the last slide'
             }}>
-            {list?.map((item, index) => (
-              <SwiperSlide key={index}>
+            {list?.map((item) => (
+              <SwiperSlide key={item._key}>
                 <BlogPost source={item} />
               </SwiperSlide>
             ))}

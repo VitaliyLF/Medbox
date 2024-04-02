@@ -18,7 +18,7 @@ const Faq = ({ faqContent }) => {
         <div className="faq__info">
           <ul className="faq__list">
             {list?.map((item, index) => (
-              <li className="faq__item" key={index}>
+              <li className="faq__item" key={item._key}>
                 <Details source={item} isOpen={index === 0} />
               </li>
             ))}

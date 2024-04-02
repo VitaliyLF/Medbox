@@ -21,8 +21,8 @@ const Feedback = ({ feedBackContent }) => {
           )}
         </div>
         <ul className="feedback__list">
-          {list?.map((item, index) => (
-            <li className="feedback__item" key={index}>
+          {list?.map((item) => (
+            <li className="feedback__item" key={item._key}>
               <Review source={item} modifier="feedback" />
             </li>
           ))}

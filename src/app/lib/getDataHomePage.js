@@ -6,6 +6,7 @@ export async function getDataHomePage() {
       header {
       logo,
       links [] {
+        _key,
         text
       },
       btnText,
@@ -33,6 +34,7 @@ export async function getDataHomePage() {
         text,
         btnText,
         list [] {
+          _key,
           content
         },
         image,
@@ -59,6 +61,7 @@ export async function getDataHomePage() {
         image,
         alt,
         list [] {
+          _key,
           title,
           text
         },
@@ -94,6 +97,7 @@ export async function getDataHomePage() {
         subtitle,
         text,
         list [] {
+          _key,
           stars,
           socialIcon,
           socialIconAlt,
@@ -111,6 +115,7 @@ export async function getDataHomePage() {
         title,
         subtitle,
         list [] {
+          _key,
           summary,
           text,
           url,
@@ -124,6 +129,7 @@ export async function getDataHomePage() {
         title,
         subtitle,
         list [] {
+          _key,
           url,
           image,
           alt
@@ -135,12 +141,16 @@ export async function getDataHomePage() {
         btnText,
         url,
         list [] {
+          _key,
           url,
           image,
           alt,
           tag,
           subtitle
         }
+      },
+      signUp {
+        subtitle
       }
     }
   `

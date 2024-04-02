@@ -21,7 +21,6 @@ const BlogPost = ({ source }) => {
           title={subtitle}
         />
       </div>
-
       <div className="blog-post__meta text-section text-section--medium">
         {tag && <div className="blog-post__tag">{tag}</div>}
         <time className="blog-post__time" dateTime="">

@@ -6,7 +6,7 @@ const Review = ({ source, modifier }) => {
   const { stars = 0, socialIcon, socialIconAlt, socialUrl, blockquote } = source
 
   return (
-    <div className={`review review--${modifier} `}>
+    <div className={`review review--${modifier}`}>
       <div className="review__top">
         <ul className="review__stars">
           {Array.from({ length: stars }).map((index) => (

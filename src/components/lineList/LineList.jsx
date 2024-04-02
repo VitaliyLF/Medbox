@@ -37,8 +37,8 @@ const LineList = ({ lineListContent }) => {
           )}
         </div>
         <ul className="line-list__items">
-          {list?.map((item, index) => (
-            <li className="line-list__item" key={index}>
+          {list?.map((item) => (
+            <li className="line-list__item" key={item._key}>
               {item.content}
             </li>
           ))}

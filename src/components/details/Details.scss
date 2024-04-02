@@ -1,9 +1,15 @@
 .details {
+  $root: &;
+
   &[open] {
-    & .details__summary {
+    #{$root}__summary {
       &::after {
         rotate: 180deg;
       }
+    }
+
+    #{$root}__content {
+      animation: details-slide var(--timing) ease-in-out;
     }
   }
 
@@ -47,7 +53,6 @@
     @include details-slide;
 
     margin-bottom: var(--offset-tiny-medium);
-    animation: details-slide var(--timing) ease-in-out;
   }
 
   &__image {

@@ -33,8 +33,8 @@ const StickyList = ({ stickyListContent }) => {
           </aside>
           <div className="sticky-list__info">
             <ul className="sticky-list__items">
-              {list?.map((item, index) => (
-                <li className="sticky-list__item" key={index}>
+              {list?.map((item) => (
+                <li className="sticky-list__item" key={item._key}>
                   <h4 className="sticky-list__item-subtitle subtitle-section subtitle-section--medium">{item.title}</h4>
                   <div className="text-section">
                     <PortableText value={item.text} />

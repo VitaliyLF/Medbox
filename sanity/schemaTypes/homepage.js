@@ -855,6 +855,18 @@ export default {
           ]
         }
       ]
+    },
+    {
+      name: 'signUp',
+      type: 'object',
+      title: 'SignUp section',
+      fields: [
+        {
+          name: 'subtitle',
+          type: 'string',
+          title: 'Subtitle'
+        }
+      ]
     }
   ],
   preview: {

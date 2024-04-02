@@ -27,7 +27,7 @@
     max-width: 400px;
     aspect-ratio: 400 / 250;
     border-radius: var(--border-radius-all-large);
-    transition: scale var(--timing) ease;
+    transition: scale 0.5s ease;
   }
 
   &__meta {
@@ -60,7 +60,7 @@
 
   &__subtitle {
     color: var(--color-black-green);
-    transition: text-decoration-color var(--timing) ease;
+    transition: text-decoration-color 0.5s ease;
     text-decoration: underline;
     text-decoration-color: transparent;
   }

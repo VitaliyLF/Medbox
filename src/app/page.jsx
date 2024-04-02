@@ -11,6 +11,7 @@ import Feedback from '@/components/feedback/Feedback'
 import Faq from '@/components/faq/Faq'
 import Supporting from '@/components/supporting/Supporting'
 import Resources from '@/components/resources/Resources'
+import SignUp from '@/components/signUp/SignUp'
 
 export const metadata = {
   title: {
@@ -36,6 +37,7 @@ const HomePage = async () => {
         <Faq faqContent={dataHomePage?.faq} />
         <Supporting supportingContent={dataHomePage?.supporting} />
         <Resources resourcesContent={dataHomePage?.resources} />
+        <SignUp signUpContent={dataHomePage?.signUp} />
       </main>
     </div>
   )

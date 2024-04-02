@@ -56,8 +56,8 @@ const Header = ({ headerContent }) => {
             aria-label="Main navigation"
             title="Use to navigation">
             <ul className="header__nav-list">
-              {links?.map((link, index) => (
-                <li className="header__nav-item" key={index}>
+              {links?.map((link) => (
+                <li className="header__nav-item" key={link._key}>
                   <Link className="link" href="#">
                     {link.text}
                   </Link>
