@@ -865,6 +865,16 @@ export default {
           name: 'subtitle',
           type: 'string',
           title: 'Subtitle'
+        },
+        {
+          name: 'image',
+          type: 'image',
+          title: 'SignUp Success image'
+        },
+        {
+          name: 'text',
+          type: 'string',
+          title: 'SignUp Success Text'
         }
       ]
     }

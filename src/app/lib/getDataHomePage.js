@@ -150,7 +150,9 @@ export async function getDataHomePage() {
         }
       },
       signUp {
-        subtitle
+        subtitle,
+        image,
+        text
       }
     }
   `
