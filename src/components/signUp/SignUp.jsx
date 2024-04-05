@@ -4,7 +4,8 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 
-const SUBMIT_TIMEOUT_MS = 2500
+const submitTimeOutMs = 2500
+let dimensions = null
 
 const SignUp = ({ signUpContent }) => {
   const {
@@ -21,12 +22,16 @@ const SignUp = ({ signUpContent }) => {
   }
 
   const { subtitle, image, text } = signUpContent
-  const { dimensions } = decodeAssetId(image.asset._ref)
 
-  const onSubmit = () => {
+  if (image && image.asset) {
+    dimensions = decodeAssetId(image.asset._ref).dimensions
+  }
+
+  const onSubmit = (data) => {
+    console.log(data)
     setTimeout(() => {
       reset({ email: '' })
-    }, SUBMIT_TIMEOUT_MS)
+    }, submitTimeOutMs)
   }
 
   return (
@@ -34,7 +39,11 @@ const SignUp = ({ signUpContent }) => {
       <div className="sign-up__container container">
         {subtitle && <h2 className="sign-up__subtitle subtitle-section subtitle-section--medium">{subtitle}</h2>}
         {!isSubmitted && (
-          <form className="sign-up__form" id="sign-up-form" method="post" onSubmit={handleSubmit(onSubmit)}>
+          <form
+            className={`sign-up__form ${!isSubmitted ? 'sign-up__form--animate' : ''}`}
+            id="sign-up-form"
+            method="post"
+            onSubmit={handleSubmit(onSubmit)}>
             <label className="sign-up__label" htmlFor="email">
               <input
                 {...register('email', {
@@ -74,7 +83,7 @@ const SignUp = ({ signUpContent }) => {
         {isSubmitted && (
           <>
             <div className="sign-up__success">
-              {image && dimensions && (
+              {image && (
                 <Image
                   className="sign-up__success-image"
                   src={urlFor(image).url()}

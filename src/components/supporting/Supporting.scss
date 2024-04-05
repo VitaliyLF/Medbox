@@ -1,12 +1,12 @@
 .supporting {
-  padding-block: var(--offset-double-extra-large-medium);
+  padding-block: var(--offset-double-extra-large-medium, 70px);
 
   &__list {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap: var(--offset-large-medium);
+    gap: var(--offset-large-medium, 50px);
   }
 
   &__item {

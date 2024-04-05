@@ -1,9 +1,9 @@
 .review {
-  --review-padding: var(--offset-small);
+  --review-padding: var(--offset-small, 25px);
   --review-background-color: var(--color-light);
-  --review-border-radius: var(--border-radius-top-right-large-bottom);
+  --review-border-radius: var(--border-radius-top-right-large-bottom, 0 40px 40px 40px);
   --review-star-icon: var(--color-puerto-rico);
-  --review-offset: var(--offset-tiny-medium);
+  --review-offset: var(--offset-tiny-medium, 20px);
   --review-blockquote-font-family: var(--font-family-accent);
   --review-blockquote-font-weight: 400;
   --review-blockquote-font-size: 18px;
@@ -17,7 +17,7 @@
 
   &--line-list {
     margin-left: auto;
-    margin-bottom: var(--offset-large-medium);
+    margin-bottom: var(--offset-large-medium, 50px);
     max-width: 400px;
   }
 

@@ -1,13 +1,13 @@
 .feedback {
-  padding: var(--offset-quadruple-extra-large) var(--offset-extra-large-medium);
+  padding: var(--offset-quadruple-extra-large, 85px) var(--offset-extra-large-medium, 60px);
 
   &__list {
-    @include marginBottom(var(--offset-large-medium));
+    @include marginBottom(var(--offset-large-medium, 50px));
 
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: var(--offset-small);
+    gap: var(--offset-small, 25px);
   }
 
   &__item {

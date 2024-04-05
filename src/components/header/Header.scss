@@ -1,11 +1,11 @@
 .header {
   --header-height: 85px;
 
-  padding-top: var(--offset-small);
+  padding-top: var(--offset-small, 25px);
 
   &--homepage {
     background-color: var(--color-light-mint);
-    padding-bottom: var(--offset-small-medium);
+    padding-bottom: var(--offset-small-medium, 30px);
 
     @include big-desktop {
       padding-bottom: 0;
@@ -26,20 +26,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    column-gap: var(--offset-tiny-medium);
-    border-radius: var(--border-radius-all-tiny);
+    column-gap: var(--offset-tiny-medium, 20px);
+    border-radius: var(--border-radius-all-tiny, 10px);
     border: 1px solid var(--color-mint-green);
-    padding: var(--offset-tiny-medium) var(--offset-medium-large);
+    padding: var(--offset-tiny-medium, 20px) var(--offset-medium-large, 40px);
     background-color: var(--color-light);
 
     @include big-desktop {
-      min-height: var(--header-height);
-      border-radius: var(--border-radius-right-left);
+      min-height: var(--header-height, 85px);
+      border-radius: var(--border-radius-right-left, 0 0 20px 20px);
       border: none;
     }
 
     @include mobile {
-      padding: var(--offset-tiny-medium);
+      padding: var(--offset-tiny-medium, 20px);
     }
   }
 
@@ -54,15 +54,15 @@
   &__nav {
     @include big-desktop {
       position: fixed;
-      top: var(--header-height);
+      top: var(--header-height, 85px);
       left: 0;
       width: 100vw;
-      height: calc(100dvh - var(--header-height));
+      height: calc(100dvh - var(--header-height, 85px));
       background-color: var(--color-light-mint);
       translate: -120% 0;
       transition: translate var(--timing-burger-nav) var(--burger-nav-animation);
       overflow-y: auto;
-      z-index: var(--header-nav-z-index);
+      z-index: var(--header-nav-z-index, 10);
       display: flex;
       justify-content: space-between;
       flex-direction: column;
@@ -77,13 +77,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--offset-small);
+    gap: var(--offset-small, 25px);
 
     @include big-desktop {
-      margin-block: var(--offset-medium-large);
+      margin-block: var(--offset-medium-large, 40px);
       flex-direction: column;
       flex-grow: 1;
-      gap: var(--offset-small-medium);
+      gap: var(--offset-small-medium, 30px);
     }
   }
 
@@ -100,14 +100,14 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: var(--offset-tiny);
+      gap: var(--offset-tiny, 15px);
       background-color: var(--color-light);
-      padding: var(--offset-tiny) var(--offset-small);
+      padding: var(--offset-tiny, 15px) var(--offset-small, 25px);
       border-top: 1px solid var(--color-mint-green);
     }
 
     @include small-mobile {
-      padding: var(--offset-tiny);
+      padding: var(--offset-tiny, 15px);
     }
   }
 
@@ -115,7 +115,7 @@
     @include mobile {
       @include fz18-dmsans;
 
-      padding: var(--offset-tiny);
+      padding: var(--offset-tiny, 15px);
     }
 
     @include small-mobile {
@@ -138,8 +138,8 @@
 
     &-line {
       position: relative;
-      width: var(--burger-width);
-      height: var(--burger-height);
+      width: var(--burger-width, 43px);
+      height: var(--burger-height, 43px);
       color: var(--color-light);
       background-color: var(--color-medbox-green);
       border-radius: 50%;
@@ -154,14 +154,14 @@
         left: 50%;
         transform: translateX(-50%);
         width: 20px;
-        height: var(--burger-line-height);
+        height: var(--burger-line-height, 3px);
         background-color: currentColor;
-        border-radius: var(--border-radius-all-small);
+        border-radius: var(--border-radius-all-small, 20px);
         transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
       }
 
       &::before {
-        top: calc(50% - var(--burger-line-height) - 5px);
+        top: calc(50% - var(--burger-line-height, 3px) - 5px);
       }
 
       &::after {
@@ -194,7 +194,7 @@
     @include big-desktop {
       display: flex;
       align-items: center;
-      gap: var(--offset-tiny);
+      gap: var(--offset-tiny, 15px);
     }
   }
 

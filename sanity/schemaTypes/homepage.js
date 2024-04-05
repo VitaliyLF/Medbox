@@ -877,6 +877,18 @@ export default {
           title: 'SignUp Success Text'
         }
       ]
+    },
+    {
+      name: 'footer',
+      type: 'object',
+      title: 'Footer',
+      fields: [
+        {
+          name: 'subtitle',
+          type: 'string',
+          title: 'Subtitle'
+        }
+      ]
     }
   ],
   preview: {

@@ -153,6 +153,9 @@ export async function getDataHomePage() {
         subtitle,
         image,
         text
+      },
+      footer {
+        
       }
     }
   `

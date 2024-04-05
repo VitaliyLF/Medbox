@@ -1,5 +1,5 @@
 .sign-up {
-  padding-block: 60px;
+  padding-block: var(--offset-extra-large-medium, 60px);
   background-color: var(--color-medbox-green);
 
   &__container {
@@ -30,10 +30,10 @@
     @include fz22-atkinson;
 
     width: 100%;
-    padding: 15px 30px;
+    padding: var(--offset-tiny, 15px) var(--offset-small-medium, 30px);
     height: 60px;
     background-color: var(--color-light);
-    border-radius: var(--border-radius-top-and-left-small);
+    border-radius: var(--border-radius-top-and-left-small, 20px 0 0 20px);
 
     &::placeholder {
       color: var(--color-black-green);
@@ -55,8 +55,8 @@
   &__btn {
     @include fz22-dmsans;
 
-    height: 60px;
-    padding: 15px 30px;
+    height: var(--offset-extra-large-medium, 60px);
+    padding: var(--offset-tiny, 15px) var(--offset-small-medium, 30px);
     color: var(--color-light);
     background-color: var(--color-deep-green);
     border-radius: 0 20px 20px 0;
@@ -83,9 +83,12 @@
   }
 
   &__success {
+    @include success-form-animate;
+
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: var(--offset-small-medium, 30px);
+    animation: success-form-animate 0.5s ease-in-out forwards;
   }
 
   &__success-image {

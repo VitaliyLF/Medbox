@@ -1,11 +1,11 @@
 .resources {
-  padding-block: var(--offset-extra-large-medium);
+  padding-block: var(--offset-extra-large-medium, 60px);
   background-color: var(--color-cream);
   overflow-x: hidden;
 
   &__container {
     display: flex;
-    gap: 55px;
+    gap: var(--offset-extra-large, 55px);
   }
 
   &__info {

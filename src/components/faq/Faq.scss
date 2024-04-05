@@ -1,5 +1,5 @@
 .faq {
-  padding-block: var(--offset-extra-large-medium);
+  padding-block: var(--offset-extra-large-medium, 60px);
   background-color: var(--color-light-mint);
 
   &__container {
@@ -10,7 +10,7 @@
   &__aside {
     max-width: 520px;
     position: sticky;
-    top: var(--offset-medium);
+    top: var(--offset-medium, 35px);
     width: 100%;
     height: 100%;
   }
@@ -21,6 +21,6 @@
   }
 
   &__list {
-    margin-bottom: var(--offset-tiny);
+    margin-bottom: var(--offset-tiny, 15px);
   }
 }

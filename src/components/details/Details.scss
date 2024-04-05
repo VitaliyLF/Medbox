@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: var(--offset-tiny-medium);
+    padding-block: var(--offset-tiny-medium, 20px);
     border-top: 1px solid var(--color-grey);
     cursor: pointer;
     list-style: none;
@@ -32,7 +32,7 @@
       content: '';
       flex-shrink: 0;
       display: block;
-      width: var(--offset-large-medium);
+      width: var(--offset-large-medium, 50px);
       aspect-ratio: 1;
       background: url(../../app/img/details-arrow.svg) center/var(--offset-tiny-medium) no-repeat
         var(--color-medbox-green);
@@ -52,11 +52,11 @@
   &__content {
     @include details-slide;
 
-    margin-bottom: var(--offset-tiny-medium);
+    margin-bottom: var(--offset-tiny-medium, 20px);
   }
 
   &__image {
     max-width: 520px;
-    border-radius: var(--border-radius-all-large);
+    border-radius: var(--border-radius-all-large, 40px);
   }
 }

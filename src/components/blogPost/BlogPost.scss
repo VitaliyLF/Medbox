@@ -1,4 +1,5 @@
 .blog-post {
+  $root: &;
   --blog-post-offset: 10px;
 
   display: block;
@@ -7,43 +8,43 @@
   @include focus;
 
   @include hover {
-    & .blog-post__image {
+    #{$root}__image {
       scale: 1.1;
     }
 
-    & .blog-post__subtitle {
+    #{$root}__subtitle {
       text-decoration-color: currentColor;
     }
   }
 
   &__wrapper {
-    @include marginBottom(var(--offset-tiny-medium));
+    @include marginBottom(var(--offset-tiny-medium, 20px));
 
     overflow: hidden;
-    border-radius: var(--border-radius-all-large);
+    border-radius: var(--border-radius-all-large, 40px);
   }
 
   &__image {
     max-width: 400px;
     aspect-ratio: 400 / 250;
-    border-radius: var(--border-radius-all-large);
+    border-radius: var(--border-radius-all-large, 40px);
     transition: scale 0.5s ease;
   }
 
   &__meta {
-    @include marginBottom(var(--blog-post-offset));
+    @include marginBottom(var(--blog-post-offset, 10px));
 
     display: flex;
     color: var(--color-dark-grey);
   }
 
   &__tag {
-    margin-right: var(--blog-post-offset);
+    margin-right: var(--blog-post-offset, 10px);
   }
 
   &__time {
     position: relative;
-    padding-left: var(--blog-post-offset);
+    padding-left: var(--blog-post-offset, 10px);
 
     &::before {
       content: '';

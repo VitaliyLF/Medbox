@@ -1,6 +1,6 @@
 .line-list {
   position: relative;
-  padding-top: var(--offset-medium-large);
+  padding-top: var(--offset-medium-large, 40px);
 
   &::before {
     content: '';
@@ -8,7 +8,7 @@
     top: -80px;
     left: 0;
     width: 100%;
-    height: var(--offset-quadruple-extra-large-medium);
+    height: var(--offset-quadruple-extra-large-medium, 90px);
     background-color: var(--color-light);
     clip-path: var(--clip-path-wave);
     rotate: 180deg;
@@ -19,7 +19,7 @@
     display: flex;
     justify-content: space-between;
     column-gap: 155px;
-    margin-bottom: var(--offset-medium-large);
+    margin-bottom: var(--offset-medium-large, 40px);
   }
 
   &__svg-line {
@@ -45,7 +45,7 @@
   &__items {
     position: relative;
     max-width: 570px;
-    padding-top: var(--offset-small);
+    padding-top: var(--offset-small, 25px);
   }
 
   &__item {
@@ -53,7 +53,7 @@
 
     @include fz35-agrandir;
 
-    @include marginBottom(calc(var(--offset-item-list) * 2));
+    @include marginBottom(calc(var(--offset-item-list, 20px) * 2));
 
     position: relative;
     // opacity: 0;
@@ -63,13 +63,13 @@
       content: '';
       position: absolute;
       top: 50%;
-      right: calc(100% + var(--offset-item-list));
+      right: calc(100% + var(--offset-item-list, 20px));
       translate: 0 -50%;
       border-radius: 50%;
-      width: calc(var(--offset-item-list) * 2);
+      width: calc(var(--offset-item-list, 20px) * 2);
       aspect-ratio: 1;
-      background: url(../../app/img/block-list-checkmark.svg) center/var(--offset-item-list) var(--offset-item-list)
-        no-repeat var(--color-dark-green);
+      background: url(../../app/img/block-list-checkmark.svg) center/var(--offset-item-list, 20px)
+        var(--offset-item-list, 20px) no-repeat var(--color-dark-green);
     }
   }
 
@@ -82,7 +82,7 @@
       top: -10px;
       right: 0;
       width: 100%;
-      height: var(--offset-quadruple-extra-large-medium);
+      height: var(--offset-quadruple-extra-large-medium, 90px);
       background-color: var(--color-light);
       clip-path: var(--clip-path-wave);
     }
