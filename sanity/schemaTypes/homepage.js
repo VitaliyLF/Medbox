@@ -843,7 +843,19 @@ export default {
                 {
                   name: 'tag',
                   type: 'string',
-                  title: 'Blog item tag'
+                  title: 'Blog item tag',
+                  options: {
+                    list: [
+                      { title: 'Exercise', value: 'Exercise' },
+                      { title: 'Independent Living', value: 'Independent Living' },
+                      { title: 'Mental Health & Wellbeing', value: 'Mental Health & Wellbeing' },
+                      { title: 'Health & Nutrition', value: 'Health & Nutrition' },
+                      { title: 'Products for Seniors', value: 'Products for Seniors' },
+                      { title: 'Retirement', value: 'Retirement' },
+                      { title: 'Safety', value: 'Safety' },
+                      { title: 'Safety', value: 'Safety' }
+                    ]
+                  }
                 },
                 {
                   name: 'subtitle',
