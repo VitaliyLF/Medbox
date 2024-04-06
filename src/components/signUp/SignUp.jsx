@@ -37,8 +37,6 @@ const SignUp = ({ signUpContent }) => {
       setTimeout(() => {
         reset({ email: '' })
       }, submitTimeOutMs)
-
-      reset({ email: '' })
     } catch (error) {
       console.error('Error submitting form:', error.message)
     }

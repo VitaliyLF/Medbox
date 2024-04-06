@@ -1,11 +1,11 @@
 import { client } from './clientSanity'
 
-export async function getSignUp(signUpEmail) {
+export async function getSignUp(signUpData) {
   const currentDate = new Date().toISOString()
 
   const data = {
     _type: 'form',
-    ...signUpEmail,
+    ...signUpData,
     createdAt: currentDate
   }
 

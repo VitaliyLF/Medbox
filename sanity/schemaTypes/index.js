@@ -1,4 +1,4 @@
 import homepage from './homepage'
-import signup from './signup'
+import sign from './sign'
 
-export const schemaTypes = [homepage, signup]
+export const schemaTypes = [homepage, sign]
