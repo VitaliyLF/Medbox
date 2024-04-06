@@ -1,8 +1,8 @@
 .review {
   --review-padding: var(--offset-small, 25px);
-  --review-background-color: var(--color-light);
+  --review-background-color: var(--color-light, #fff);
   --review-border-radius: var(--border-radius-top-right-large-bottom, 0 40px 40px 40px);
-  --review-star-icon: var(--color-puerto-rico);
+  --review-star-icon: var(--color-puerto-rico, #27c6b0);
   --review-offset: var(--offset-tiny-medium, 20px);
   --review-blockquote-font-family: var(--font-family-accent);
   --review-blockquote-font-weight: 400;
@@ -23,9 +23,9 @@
 
   &--info-block {
     --review-padding: 150px 60px;
-    --review-background-color: var(--color-mint-green);
+    --review-background-color: var(--color-mint-green, #cce3da);
     --review-border-radius: var(--border-radius-top-left);
-    --review-star-icon: var(--color-dark-green);
+    --review-star-icon: var(--color-dark-green, #045f51);
     --review-offset: var(--offset-small-medium);
     --review-blockquote-font-family: var(--font-family-base);
     --review-blockquote-font-size: var(--offset-medium);
@@ -39,7 +39,7 @@
 
   &--feedback {
     --review-padding: var(--offset-medium-large) var(--offset-medium);
-    --review-background-color: var(--color-cream);
+    --review-background-color: var(--color-cream, #f8f4f0);
     --review-border-radius: var(--border-radius-top-and-right-large);
     --review-blockquote-font-size: 22px;
 

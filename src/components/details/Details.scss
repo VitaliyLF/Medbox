@@ -9,7 +9,7 @@
     }
 
     #{$root}__content {
-      animation: details-slide var(--timing) ease-in-out;
+      animation: details-slide var(--timing, 0.3s) ease-in-out;
     }
   }
 
@@ -20,7 +20,7 @@
     align-items: center;
     justify-content: space-between;
     padding-block: var(--offset-tiny-medium, 20px);
-    border-top: 1px solid var(--color-grey);
+    border-top: 1px solid var(--color-grey, #9fa4a1);
     cursor: pointer;
     list-style: none;
 
@@ -35,16 +35,16 @@
       width: var(--offset-large-medium, 50px);
       aspect-ratio: 1;
       background: url(../../app/img/details-arrow.svg) center/var(--offset-tiny-medium) no-repeat
-        var(--color-medbox-green);
+        var(--color-medbox-green, #02836f);
       border-radius: 50%;
-      transition: rotate var(--timing) ease, background-color var(--timing) ease;
+      transition: rotate var(--timing, 0.3s) ease, background-color var(--timing, 0.3s) ease;
     }
 
     @include focus;
 
     @include hover {
       &::after {
-        background-color: var(--color-dark-green);
+        background-color: var(--color-dark-green, #045f51);
       }
     }
   }

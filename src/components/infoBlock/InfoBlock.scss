@@ -1,6 +1,6 @@
 .info-block {
   &--homepage {
-    background-color: var(--color-light-peach);
+    background-color: var(--color-light-peach, #f9ede9);
   }
 
   &__container {
@@ -11,7 +11,7 @@
     position: relative;
     padding: 120px var(--offset-double-extra-large-medium, 70px);
     width: 60vw;
-    background-color: var(--color-light);
+    background-color: var(--color-light, #fff);
     border-radius: var(--border-radius-top-right, 0 100px 0 0);
     display: flex;
     justify-content: center;

@@ -1,6 +1,6 @@
 .hero {
   &--homepage {
-    background-color: var(--color-light-mint);
+    background-color: var(--color-light-mint, #e8f2ee);
   }
 
   &__wrapper {

@@ -1,6 +1,6 @@
 .states {
   position: relative;
-  background-color: var(--color-light-mint);
+  background-color: var(--color-light-mint, #e8f2ee);
   padding-block: var(--offset-extra-large-medium, 60px);
 
   &::before {
@@ -10,7 +10,7 @@
     right: 0;
     width: 100%;
     height: var(--offset-quadruple-extra-large-medium, 90px);
-    background-color: var(--color-light-mint);
+    background-color: var(--color-light-mint, #e8f2ee);
     clip-path: var(--clip-path-wave);
     rotate: 180deg;
   }
@@ -30,7 +30,7 @@
   }
 
   &__contact {
-    background-color: var(--color-light);
+    background-color: var(--color-light, #fff);
     padding: var(--offset-small-medium, 30px);
     border-radius: var(--border-radius-top-left-large-bottom, 40px 0 40px 40px);
   }

@@ -1,4 +1,5 @@
 'use client'
+import { getSignUp } from '@/app/lib/getSignUp'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
@@ -27,11 +28,20 @@ const SignUp = ({ signUpContent }) => {
     dimensions = decodeAssetId(image.asset._ref).dimensions
   }
 
-  const onSubmit = (data) => {
-    console.log(data)
-    setTimeout(() => {
+  const onSubmit = async (data) => {
+    try {
+      console.log(data)
+
+      await getSignUp(data)
+
+      setTimeout(() => {
+        reset({ email: '' })
+      }, submitTimeOutMs)
+
       reset({ email: '' })
-    }, submitTimeOutMs)
+    } catch (error) {
+      console.error('Error submitting form:', error.message)
+    }
   }
 
   return (

@@ -1,6 +1,6 @@
 .sticky-list {
   padding-block: var(--offset-double-extra-large-medium, 70px);
-  background-color: var(--color-light-peach);
+  background-color: var(--color-light-peach, #f9ede9);
 
   &__top {
     max-width: 650px;
@@ -40,7 +40,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background-color: var(--color-light);
+      background-color: var(--color-light, #fff);
       width: 5px;
       height: 100%;
       z-index: 1;
@@ -51,7 +51,7 @@
     position: relative;
     padding: var(--offset-large, 45px) var(--offset-medium, 35px);
     opacity: 0.3;
-    transition: opacity var(--timing) ease;
+    transition: opacity var(--timing, 0.3s) ease;
 
     & .is-active {
       opacity: 1;
@@ -63,7 +63,7 @@
         left: 0;
         width: 5px;
         height: 100%;
-        background-color: var(--color-dark-green);
+        background-color: var(--color-dark-green, #045f51);
         z-index: 2;
       }
     }

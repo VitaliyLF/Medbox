@@ -1,19 +1,19 @@
 :root {
-  --color-light: #ffffff;
-  --color-cream: #f8f4f0;
-  --color-alabaster: #ede9df;
-  --color-light-peach: #f9ede9;
-  --color-peach: #f6d4c6;
-  --color-light-mint: #e8f2ee;
-  --color-mint-green: #cce3da;
-  --color-medbox-green: #02836f;
-  --color-dark-green: #045f51;
-  --color-black-green: #202524;
-  --color-beige: #d2c8b7;
-  --color-blue-green: #88e1d5;
-  --color-puerto-rico: #27c6b0;
-  --color-deep-green: #003d33;
-  --color-grey: #9fa4a1;
-  --color-dark-grey: #565f5d;
-  --color-input-error: #f10d0d;
+  --color-light: hsl(0, 0%, 100%);
+  --color-cream: hsl(30, 36%, 96%);
+  --color-alabaster: hsl(43, 28%, 90%);
+  --color-light-peach: hsl(15, 57%, 95%);
+  --color-peach: hsl(18, 73%, 87%);
+  --color-light-mint: hsl(156, 28%, 93%);
+  --color-mint-green: hsl(157, 29%, 85%);
+  --color-medbox-green: hsl(171, 97%, 26%);
+  --color-dark-green: hsl(171, 92%, 19%);
+  --color-black-green: hsl(168, 7%, 14%);
+  --color-beige: hsl(38, 23%, 77%);
+  --color-blue-green: hsl(172, 60%, 71%);
+  --color-puerto-rico: hsl(172, 67%, 46%);
+  --color-deep-green: hsl(170, 100%, 12%);
+  --color-grey: hsl(144, 3%, 63%);
+  --color-dark-grey: hsl(167, 5%, 35%);
+  --color-input-error: hsl(0, 90%, 50%);
 }

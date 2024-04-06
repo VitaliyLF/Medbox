@@ -1,6 +1,6 @@
 .sign-up {
   padding-block: var(--offset-extra-large-medium, 60px);
-  background-color: var(--color-medbox-green);
+  background-color: var(--color-medbox-green, #02836f);
 
   &__container {
     display: flex;
@@ -10,7 +10,7 @@
 
   &__subtitle {
     max-width: 555px;
-    color: var(--color-light);
+    color: var(--color-light, #fff);
   }
 
   &__form {
@@ -31,23 +31,23 @@
 
     width: 100%;
     padding: var(--offset-tiny, 15px) var(--offset-small-medium, 30px);
-    height: 60px;
-    background-color: var(--color-light);
+    height: var(--offset-extra-large-medium, 60px);
+    background-color: var(--color-light, #fff);
     border-radius: var(--border-radius-top-and-left-small, 20px 0 0 20px);
 
     &::placeholder {
-      color: var(--color-black-green);
+      color: var(--color-black-green, #202524);
     }
 
     &:focus {
       transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
-      outline: 3px dotted var(--color-light);
+      outline: 3px dotted var(--color-light, #fff);
       outline-offset: calc(3px * 2);
     }
 
     &--error {
       &::placeholder {
-        color: var(--color-input-error);
+        color: var(--color-input-error, #f10d0d);
       }
     }
   }
@@ -57,20 +57,21 @@
 
     height: var(--offset-extra-large-medium, 60px);
     padding: var(--offset-tiny, 15px) var(--offset-small-medium, 30px);
-    color: var(--color-light);
-    background-color: var(--color-deep-green);
-    border-radius: 0 20px 20px 0;
-    transition: color var(--timing) ease, background-color var(--timing) ease, opacity var(--timing) ease;
+    color: var(--color-light, #fff);
+    background-color: var(--color-deep-green, #003d33);
+    border-radius: var(--border-radius-right-top-and-bottom, 0 20px 20px 0);
+    transition: color var(--timing, 0.3s) ease, background-color var(--timing, 0.3s) ease,
+      opacity var(--timing, 0.3s) ease;
 
     &:focus {
       transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
-      outline: 3px dotted var(--color-light);
+      outline: 3px dotted var(--color-light, #fff);
       outline-offset: calc(3px * 2);
     }
 
     @include hover {
-      color: var(--color-black-green);
-      background-color: var(--color-blue-green);
+      color: var(--color-black-green, #202524);
+      background-color: var(--color-blue-green, #88e1d5);
     }
   }
 
@@ -78,8 +79,8 @@
     @include fz18-dmsans;
 
     position: absolute;
-    bottom: -40px;
-    color: var(--color-light);
+    bottom: calc(var(--offset-medium-large) * -1);
+    color: var(--color-light, #fff);
   }
 
   &__success {
@@ -88,7 +89,7 @@
     display: flex;
     align-items: center;
     gap: var(--offset-small-medium, 30px);
-    animation: success-form-animate 0.5s ease-in-out forwards;
+    animation: success-form-animate var(--timing-animation, 0.5s) ease-in-out forwards;
   }
 
   &__success-image {
@@ -99,6 +100,6 @@
   &__success-text {
     @include fz28-agrandir;
 
-    color: var(--color-light);
+    color: var(--color-light, #fff);
   }
 }

@@ -2,9 +2,9 @@
   @include fz18-atkinson;
 
   display: block;
-  color: var(--color-black-green);
+  color: var(--color-black-green, #202524);
   position: relative;
-  transition: color var(--timing) ease, scale var(--timing) ease;
+  transition: color var(--timing) ease, scale var(--timing, 0.3s) ease;
 
   &::before {
     content: '';
@@ -13,10 +13,10 @@
     bottom: -1px;
     width: 100%;
     height: 1px;
-    background-color: var(--color-medbox-green);
+    background-color: var(--color-medbox-green, #02836f);
     transform-origin: right;
     transform: scaleX(0);
-    transition: transform var(--timing) ease-in-out;
+    transition: transform var(--timing, 0.3s) ease-in-out;
   }
 
   &--phone {
@@ -44,13 +44,13 @@
     @include marginBottom(var(--offset-medium));
 
     display: inline-block;
-    color: var(--color-puerto-rico);
+    color: var(--color-puerto-rico, #27c6b0);
   }
 
   @include focus;
 
   @include hover {
-    color: var(--color-medbox-green);
+    color: var(--color-medbox-green, #02836f);
 
     &::before {
       transform-origin: left;
@@ -69,13 +69,13 @@
   display: inline-flex;
   align-items: center;
   padding: var(--offset-tiny) var(--offset-tiny-medium);
-  color: var(--color-light);
+  color: var(--color-light, #fff);
   border-radius: var(--border-radius-all-large);
-  background-color: var(--color-medbox-green);
+  background-color: var(--color-medbox-green, #02836f);
   position: relative;
   overflow: hidden;
   z-index: 1;
-  transition: scale var(--timing) ease;
+  transition: scale var(--timing, 0.3s) ease;
 
   &::after {
     content: '';
@@ -95,7 +95,7 @@
     &::after {
       @include loadingWave;
 
-      background-color: var(--color-deep-green);
+      background-color: var(--color-deep-green, #003d33);
       animation: loadingWave 1.2s linear;
     }
   }
@@ -106,9 +106,9 @@
     --icon-phone-size: 20px;
 
     padding: 12px 15px;
-    background-color: var(--color-light);
-    border: 1px solid var(--color-medbox-green);
-    color: var(--color-medbox-green);
+    background-color: var(--color-light, #fff);
+    border: 1px solid var(--color-medbox-green, #02836f);
+    color: var(--color-medbox-green, #02836f);
     white-space: nowrap;
     display: flex;
     align-items: flex-end;
@@ -191,15 +191,15 @@
 
   p {
     a {
-      color: var(--color-medbox-green);
+      color: var(--color-medbox-green, #02836f);
       text-decoration: underline;
       text-underline-offset: 5px;
-      transition: color var(--timing) ease;
+      transition: color var(--timing, 0.3s) ease;
 
       @include focus;
 
       @include hover {
-        color: var(--color-puerto-rico);
+        color: var(--color-puerto-rico, #27c6b0);
       }
     }
   }
@@ -213,7 +213,7 @@
   }
 
   blockquote {
-    border-left: 4px solid var(--color-mint-green);
+    border-left: 4px solid var(--color-mint-green, #cce3da);
     padding-left: 10px;
     margin: 1em 40px;
   }

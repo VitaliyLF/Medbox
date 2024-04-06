@@ -28,14 +28,14 @@
     max-width: 400px;
     aspect-ratio: 400 / 250;
     border-radius: var(--border-radius-all-large, 40px);
-    transition: scale 0.5s ease;
+    transition: scale var(--timing-animation, 0.5s) ease;
   }
 
   &__meta {
     @include marginBottom(var(--blog-post-offset, 10px));
 
     display: flex;
-    color: var(--color-dark-grey);
+    color: var(--color-dark-grey, #565f5d);
   }
 
   &__tag {
@@ -55,13 +55,13 @@
       width: 3px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background-color: var(--color-dark-grey);
+      background-color: var(--color-dark-grey, #565f5d);
     }
   }
 
   &__subtitle {
-    color: var(--color-black-green);
-    transition: text-decoration-color 0.5s ease;
+    color: var(--color-black-green, #202524);
+    transition: text-decoration-color var(--timing-animation, 0.5s) ease;
     text-decoration: underline;
     text-decoration-color: transparent;
   }

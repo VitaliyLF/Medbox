@@ -4,7 +4,7 @@
   padding-top: var(--offset-small, 25px);
 
   &--homepage {
-    background-color: var(--color-light-mint);
+    background-color: var(--color-light-mint, #e8f2ee);
     padding-bottom: var(--offset-small-medium, 30px);
 
     @include big-desktop {
@@ -28,9 +28,9 @@
     justify-content: space-between;
     column-gap: var(--offset-tiny-medium, 20px);
     border-radius: var(--border-radius-all-tiny, 10px);
-    border: 1px solid var(--color-mint-green);
+    border: 1px solid var(--color-mint-green, #cce3da);
     padding: var(--offset-tiny-medium, 20px) var(--offset-medium-large, 40px);
-    background-color: var(--color-light);
+    background-color: var(--color-light, #fff);
 
     @include big-desktop {
       min-height: var(--header-height, 85px);
@@ -48,7 +48,7 @@
   }
 
   &__logo-img {
-    max-width: 144px;
+    max-width: 145px;
   }
 
   &__nav {
@@ -58,9 +58,9 @@
       left: 0;
       width: 100vw;
       height: calc(100dvh - var(--header-height, 85px));
-      background-color: var(--color-light-mint);
+      background-color: var(--color-light-mint, #e8f2ee);
       translate: -120% 0;
-      transition: translate var(--timing-burger-nav) var(--burger-nav-animation);
+      transition: translate var(--timing-burger-nav, 1s) var(--burger-nav-animation);
       overflow-y: auto;
       z-index: var(--header-nav-z-index, 10);
       display: flex;
@@ -101,9 +101,9 @@
       align-items: center;
       justify-content: center;
       gap: var(--offset-tiny, 15px);
-      background-color: var(--color-light);
+      background-color: var(--color-light, #fff);
       padding: var(--offset-tiny, 15px) var(--offset-small, 25px);
-      border-top: 1px solid var(--color-mint-green);
+      border-top: 1px solid var(--color-mint-green, #cce3da);
     }
 
     @include small-mobile {
@@ -130,22 +130,22 @@
   }
 
   &__burger {
-    --burger-width: 43px;
-    --burger-height: 43px;
+    --burger-width: 45px;
+    --burger-height: 45px;
     --burger-line-height: 3px;
 
     display: none;
 
     &-line {
       position: relative;
-      width: var(--burger-width, 43px);
-      height: var(--burger-height, 43px);
-      color: var(--color-light);
-      background-color: var(--color-medbox-green);
+      width: var(--burger-width, 45px);
+      height: var(--burger-height, 45px);
+      color: var(--color-light, #fff);
+      background-color: var(--color-medbox-green, #02836f);
       border-radius: 50%;
       z-index: 10;
       cursor: pointer;
-      transition: background-color var(--timing) ease-out, color var(--timing) ease-out;
+      transition: background-color var(--timing, 0.3s) ease-out, color var(--timing, 0.3s) ease-out;
 
       &::before,
       &::after {
@@ -157,7 +157,7 @@
         height: var(--burger-line-height, 3px);
         background-color: currentColor;
         border-radius: var(--border-radius-all-small, 20px);
-        transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+        transition: transform var(--timing, 0.3s) ease-in-out, top var(--timing, 0.3s) ease-in-out;
       }
 
       &::before {
@@ -172,21 +172,21 @@
     &--active {
       & .header__burger-line {
         background-color: transparent;
-        color: var(--color-medbox-green);
+        color: var(--color-medbox-green, #02836f);
         --burger-line-height: 2px;
 
         &::before {
           width: 30px;
           top: 48%;
           transform: translateX(-50%) rotate(45deg);
-          transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+          transition: transform var(--timing, 0.3s) ease-in-out, top var(--timing, 0.3s) ease-in-out;
         }
 
         &::after {
           width: 30px;
           top: 48%;
           transform: translateX(-50%) rotate(-45deg);
-          transition: transform var(--timing) ease-in-out, top var(--timing) ease-in-out;
+          transition: transform var(--timing, 0.3s) ease-in-out, top var(--timing, 0.3s) ease-in-out;
         }
       }
     }
@@ -201,8 +201,8 @@
   &__burger-info {
     @include fz22-dmsans;
 
-    color: var(--color-dark-green);
-    transition: opacity var(--timing) ease-out, visibility var(--timing) ease-out;
+    color: var(--color-dark-green, #045f51);
+    transition: opacity var(--timing, 0.3s) ease-out, visibility var(--timing, 0.3s) ease-out;
 
     &.is-hidden {
       opacity: 0;

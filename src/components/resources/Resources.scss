@@ -1,6 +1,6 @@
 .resources {
   padding-block: var(--offset-extra-large-medium, 60px);
-  background-color: var(--color-cream);
+  background-color: var(--color-cream, #f8f4f0);
   overflow-x: hidden;
 
   &__container {
@@ -22,16 +22,17 @@
 
     &.swiper {
       overflow: visible;
-      padding-inline: 60px;
+      padding-inline: var(--offset-extra-large-medium, 60px);
     }
 
     & .swiper-slide {
-      transition: opacity var(--timing) ease;
+      transition: opacity var(--timing, 0.3s) ease;
 
       &:not(.swiper-slide-active, .swiper-slide-next) {
         opacity: 0.5;
         pointer-events: none;
         touch-action: none;
+        user-select: none;
       }
     }
 
@@ -44,14 +45,14 @@
       height: 50px;
       border-radius: 50%;
       background: url(../../app/img/details-arrow.svg) center/var(--offset-tiny-medium) no-repeat
-        var(--color-medbox-green);
+        var(--color-medbox-green, #02836f);
       rotate: 90deg;
-      transition: background-color var(--timing) ease, opacity var(--timing) ease;
+      transition: background-color var(--timing, 0.3s) ease, opacity var(--timing, 0.3s) ease;
 
       @include focus;
 
       @include hover {
-        background-color: var(--color-dark-green);
+        background-color: var(--color-dark-green, #045f51);
       }
     }
 
