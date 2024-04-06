@@ -853,7 +853,7 @@ export default {
                       { title: 'Products for Seniors', value: 'Products for Seniors' },
                       { title: 'Retirement', value: 'Retirement' },
                       { title: 'Safety', value: 'Safety' },
-                      { title: 'Safety', value: 'Safety' }
+                      { title: 'Technology', value: 'Technology' }
                     ]
                   }
                 },
