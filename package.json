@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@portabletext/react": "^3.0.11",
     "@sanity/client": "^6.15.5",
     "@vercel/analytics": "^1.2.2",

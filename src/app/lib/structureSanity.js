@@ -4,6 +4,6 @@ export const structureSanity = (S) =>
     .title('Pages')
     .showIcons(false)
     .items([
-      S.listItem().title('Homepage').schemaType('homepage').child(S.documentTypeList('homepage'))
-      // S.listItem().title('About').schemaType('about').child(S.documentTypeList('about'))
+      S.listItem().title('Homepage').schemaType('homepage').child(S.documentTypeList('homepage')),
+      S.listItem().title('Mail').schemaType('form').child(S.documentTypeList('form'))
     ])
