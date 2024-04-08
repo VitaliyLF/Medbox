@@ -8,8 +8,8 @@ const Footer = ({ footerContent }) => {
     return null
   }
 
-  const { footerLogo, title } = footerContent
-  const { dimensions } = decodeAssetId(logo.asset._ref)
+  const { footerLogo, list } = footerContent
+  const { dimensions } = decodeAssetId(footerLogo.asset._ref)
 
   return (
     <footer className="footer">
@@ -18,7 +18,7 @@ const Footer = ({ footerContent }) => {
           {footerLogo && (
             <Link className="footer__logo" href="/">
               <Image
-                className="footer__logo-img"
+                className="footer__logo-image"
                 src={urlFor(footerLogo).url()}
                 alt="Medbox Logo"
                 title="Homepage"
@@ -31,17 +31,9 @@ const Footer = ({ footerContent }) => {
           <ul className="footer__list">
             {list?.map((item) => (
               <li className="footer__item" key={item._key}>
-                {title && <h2 className="footer__item-title">{title}</h2>}
+                {item.title && <h2 className="footer__item-title">{item.title}</h2>}
                 <ul className="footer__sublist">
-                  {item?.sublist?.map((subitem) => (
-                    <li className="footer__subitem" key={subitem._key}>
-                      {subitem.text && (
-                        <Link className="footer__item-link" href="/">
-                          {text}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
+                  <li className="footer__subitem"></li>
                 </ul>
               </li>
             ))}

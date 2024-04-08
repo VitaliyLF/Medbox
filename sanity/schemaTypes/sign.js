@@ -21,5 +21,10 @@ export default {
   ],
   initialValue: {
     createdAt: new Date().toISOString()
+  },
+  preview: {
+    select: {
+      title: 'email'
+    }
   }
 }

@@ -896,9 +896,26 @@ export default {
       title: 'Footer',
       fields: [
         {
-          name: 'subtitle',
-          type: 'string',
-          title: 'Subtitle'
+          name: 'footerLogo',
+          type: 'image',
+          title: 'Logo'
+        },
+        {
+          name: 'list',
+          type: 'array',
+          title: 'Footer columns info',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'title',
+                  type: 'string',
+                  title: 'Footer columns title'
+                }
+              ]
+            }
+          ]
         }
       ]
     }

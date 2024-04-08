@@ -1,2 +1,11 @@
 .footer {
+  background-color: var(--color-deep-green, #003d33);
+
+  &__logo {
+    display: inline-block;
+  }
+
+  &__logo-image {
+    max-width: 168px;
+  }
 }
