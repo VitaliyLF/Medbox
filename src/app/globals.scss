@@ -1,6 +1,10 @@
 @import './scss/vendor';
 @import './scss/main';
 
+@import '@/components/titleSection/TitleSection';
+@import '@/components/subtitleSection/SubtitleSection';
+@import '@/components/textSection/TextSection';
+
 // page style section connection
 @import '@/components/header/Header';
 @import '@/components/hero/Hero';

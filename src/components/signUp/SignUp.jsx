@@ -9,29 +9,24 @@ const submitTimeOutMs = 2500
 let dimensions = null
 
 const SignUp = ({ signUpContent }) => {
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors, isValid, isSubmitted }
-  } = useForm({
-    mode: 'onBlur'
-  })
-
-  if (!signUpContent) {
-    return null
-  }
-
   const { subtitle, image, text } = signUpContent
 
   if (image && image.asset) {
     dimensions = decodeAssetId(image.asset._ref).dimensions
   }
 
+  const {
+    register,
+    handleSubmit,
+    reset,
+    setError,
+    formState: { errors, isValid, isSubmitted }
+  } = useForm({
+    mode: 'onBlur'
+  })
+
   const onSubmit = async (data) => {
     try {
-      console.log(data)
-
       await getSignUp(data)
 
       setTimeout(() => {
@@ -39,6 +34,27 @@ const SignUp = ({ signUpContent }) => {
       }, submitTimeOutMs)
     } catch (error) {
       console.error('Error submitting form:', error.message)
+    }
+  }
+
+  const handlePaste = (e) => {
+    const clipboardData = e.clipboardData
+    const pastedText = clipboardData.getData('text')
+
+    if (pastedText.length > 50) {
+      e.preventDefault()
+      const trimmedText = pastedText.substring(0, 50)
+      const input = e.target
+
+      setTimeout(() => {
+        input.value = trimmedText
+        input.dispatchEvent(new Event('input', { bubbles: true }))
+      }, 10)
+
+      setError('email', {
+        type: 'manual',
+        message: 'The text is too long. Maximum 50 characters.'
+      })
     }
   }
 
@@ -80,6 +96,7 @@ const SignUp = ({ signUpContent }) => {
                 title="Please enter your email address"
                 minLength="1"
                 maxLength="50"
+                onPaste={handlePaste}
               />
               {errors?.email && <p className="sign-up__error">{errors?.email?.message || 'Required'}</p>}
             </label>

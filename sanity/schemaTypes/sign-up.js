@@ -1,7 +1,7 @@
 export default {
-  name: 'form',
+  name: 'signup',
   type: 'document',
-  title: 'Mail',
+  title: 'Sign Up',
   fields: [
     {
       name: 'email',

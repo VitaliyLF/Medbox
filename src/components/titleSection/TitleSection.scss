@@ -1,0 +1,15 @@
+.title-section {
+  @include fz19-atkinson;
+
+  @include marginBottom(var(--offset-medium));
+
+  font-weight: 400;
+  text-transform: uppercase;
+  text-wrap: balance;
+
+  @include mobile {
+    @include fz16-atkinson;
+
+    @include marginBottom(var(--offset-tiny-medium));
+  }
+}

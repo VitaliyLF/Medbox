@@ -1,0 +1,29 @@
+.subtitle-section {
+  @include fz50-agrandir;
+
+  @include marginBottom(var(--offset-tiny-medium));
+
+  text-wrap: balance;
+
+  &--extra-large {
+    @include fz70-agrandir;
+
+    @include mobile {
+      @include fz50-agrandir-mobile;
+    }
+  }
+
+  &--large {
+    @include fz45-agrandir;
+  }
+
+  &--medium {
+    @include fz35-agrandir;
+
+    font-weight: 400;
+  }
+
+  &--blog {
+    @include fz28-agrandir;
+  }
+}

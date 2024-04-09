@@ -1,34 +1,29 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import { PortableText } from 'next-sanity'
 import Image from 'next/image'
+import Info from '../info/Info'
 
 const Hero = ({ heroContent }) => {
-  if (!heroContent) {
-    return null
-  }
-
-  const { title, subtitle, text, btnText, image, alt } = heroContent
+  const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
     <section className="hero hero--homepage">
+      <h1 className="visually-hidden">
+        MedBox: Revolutionizing Senior Pharmacy Services for Stress-Free Medication Management
+      </h1>
       <div className="hero__container container">
         <div className="hero__wrapper">
-          <div className="hero__info">
-            {title && <h1 className="title-section">{title}</h1>}
-            {subtitle && <h2 className="subtitle-section subtitle-section--extra-large">{subtitle}</h2>}
-            {text && (
-              <div className="text-section">
-                <PortableText value={text} />
-              </div>
-            )}
-            {btnText && (
-              <button className="hero__btn btn btn--hero-section" type="button">
-                {btnText}
-              </button>
-            )}
-          </div>
+          <Info
+            infoClassName="hero__info"
+            title={title}
+            subtitle={subtitle}
+            subtitleModifier="extra-large"
+            btnText={btnText}
+            btnModifier="hero-section"
+            text={text}
+            textModifier="details"
+          />
           {image && (
             <Image
               className="hero__img"

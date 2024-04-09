@@ -2,7 +2,7 @@ import { client } from './clientSanity'
 
 export async function getSignUp(signUpData) {
   const data = {
-    _type: 'form',
+    _type: 'signup',
     email: signUpData.email,
     createdAt: new Date().toISOString()
   }
