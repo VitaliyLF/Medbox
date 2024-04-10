@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, A11y, Keyboard } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import BlogPost from '../blogPost/BlogPost'
+import BlogPost from '../../common/blogPost/BlogPost'
 
 const Resources = ({ resourcesContent }) => {
   if (!resourcesContent) {

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Details from '../details/Details'
+import Details from '../../common/details/Details'
 
 const Faq = ({ faqContent }) => {
   if (!faqContent) {

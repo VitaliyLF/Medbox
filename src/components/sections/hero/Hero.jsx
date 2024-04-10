@@ -1,7 +1,7 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
-import Info from '../info/Info'
+import ContentBlock from '../../common/сontentBlock/ContentBlock'
 
 const Hero = ({ heroContent }) => {
   const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}
@@ -14,8 +14,8 @@ const Hero = ({ heroContent }) => {
       </h1>
       <div className="hero__container container">
         <div className="hero__wrapper">
-          <Info
-            infoClassName="hero__info"
+          <ContentBlock
+            contentClassName="hero__content"
             title={title}
             subtitle={subtitle}
             subtitleModifier="extra-large"
