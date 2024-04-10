@@ -39,6 +39,12 @@
 
   @include active;
 
+  &--header {
+    @include big-desktop {
+      display: none;
+    }
+  }
+
   &--phone {
     --icon-phone-size: 20px;
 

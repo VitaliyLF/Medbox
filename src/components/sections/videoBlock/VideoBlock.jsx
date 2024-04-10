@@ -1,29 +1,12 @@
-import { urlFor } from '@/app/lib/clientSanity'
+import Video from '@/components/common/video/Video'
 
 const VideoBlock = ({ videoBlockContent }) => {
-  const { file, title, poster } = videoBlockContent ?? {}
-
-  const videoUrl = file.asset.url
-
-  const videoType = videoUrl ? `video/${videoUrl.split('.').pop().toLowerCase()}` : ''
+  const { title, file, poster } = videoBlockContent ?? {}
 
   return (
-    <section className="videoblock">
+    <section className="video-block">
       <h2 className="visually-hidden">{title}</h2>
-      {videoUrl && (
-        <video
-          className="videoblock__content"
-          poster={poster ? urlFor(poster).url() : ''}
-          width="1440"
-          height="900"
-          preload="auto"
-          autoPlay
-          loop
-          muted
-          playsInline>
-          <source src={videoUrl} type={videoType} />
-        </video>
-      )}
+      <Video file={file} poster={poster} />
     </section>
   )
 }

@@ -60,13 +60,25 @@
     }
   }
 
+  &--footer {
+    color: var(--color-light, #fff);
+
+    @include hover {
+      color: var(--color-puerto-rico, #27c6b0);
+
+      &::before {
+        background-color: currentColor;
+      }
+    }
+  }
+
   @include big-desktop {
     @include fz26-atkinson;
   }
 }
 
 .centered {
-  @include marginBottom(var(--offset-large-medium));
+  @include marginBottom(var(--offset-large-medium, 50px));
 
   text-align: center;
 }

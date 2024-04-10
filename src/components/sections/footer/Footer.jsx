@@ -2,13 +2,11 @@ import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Link from 'next/link'
+import TitleSection from '@/components/common/titleSection/TitleSection'
+import TextSection from '@/components/common/textSection/TextSection'
 
 const Footer = ({ footerContent }) => {
-  if (!footerContent) {
-    return null
-  }
-
-  const { footerLogo, list } = footerContent
+  const { footerLogo, list } = footerContent ?? {}
   const { dimensions } = decodeAssetId(footerLogo.asset._ref)
 
   return (
@@ -27,17 +25,23 @@ const Footer = ({ footerContent }) => {
               />
             </Link>
           )}
-
-          <ul className="footer__list">
+          {/* <ul className="footer__list">
             {list?.map((item) => (
               <li className="footer__item" key={item._key}>
-                {item.title && <h2 className="footer__item-title">{item.title}</h2>}
+                <TitleSection titleSection={item.title} modifier="footer" />
+                <TextSection textSection={item.text} modifier="footer" />
                 <ul className="footer__sublist">
-                  <li className="footer__subitem"></li>
+                  <li className="footer__item">
+                    {item?.sublist.map((link) => (
+                      <Link className="link link--footer" href={link.url} key={link._key}>
+                        {link.linkText}
+                      </Link>
+                    ))}
+                  </li>
                 </ul>
               </li>
             ))}
-          </ul>
+          </ul> */}
         </div>
       </div>
     </footer>

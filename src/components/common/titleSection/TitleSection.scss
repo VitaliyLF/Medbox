@@ -1,7 +1,7 @@
 .title-section {
   @include fz19-atkinson;
 
-  @include marginBottom(var(--offset-medium));
+  @include marginBottom(var(--offset-medium, 35px));
 
   font-weight: 400;
   text-transform: uppercase;
@@ -10,6 +10,16 @@
   @include mobile {
     @include fz16-atkinson;
 
-    @include marginBottom(var(--offset-tiny-medium));
+    @include marginBottom(var(--offset-tiny-medium, 20px));
+  }
+
+  &--footer {
+    @include fz19-atkinson;
+
+    @include marginBottom(var(--offset-tiny-medium, 20px));
+
+    color: var(--color-light, #fff);
+    text-transform: initial;
+    font-weight: 700;
   }
 }

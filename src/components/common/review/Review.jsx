@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { urlFor } from '@/app/lib/clientSanity'
 
 const Review = ({ source, modifier }) => {
-  const { stars = 0, socialIcon, socialIconAlt, socialUrl, blockquote } = source
+  const { stars = 0, socialIcon, socialIconAlt, socialUrl, blockquote } = source ?? {}
 
   return (
     <div className={`review review--${modifier}`}>

@@ -25,5 +25,14 @@
 
   &--blog {
     @include fz28-agrandir;
+
+    color: var(--color-black-green, #202524);
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    transition: text-decoration-color var(--timing-animation, 0.5s) ease;
+
+    @include hover {
+      text-decoration-color: currentColor;
+    }
   }
 }

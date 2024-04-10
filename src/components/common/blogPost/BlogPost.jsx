@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import SubtitleSection from '../subtitleSection/SubtitleSection'
 
 const BlogPost = ({ source }) => {
   const { url, image, alt, tag, subtitle } = source
@@ -27,7 +28,7 @@ const BlogPost = ({ source }) => {
           Sep 23, 2023
         </time>
       </div>
-      {subtitle && <h2 className="blog-post__subtitle subtitle-section subtitle-section--blog">{subtitle}</h2>}
+      <SubtitleSection subtitleSection={subtitle} modifier="blog" />
     </Link>
   )
 }

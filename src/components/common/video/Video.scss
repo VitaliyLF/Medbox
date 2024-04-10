@@ -1,0 +1,11 @@
+.video {
+  &__content {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+
+    @include big-desktop {
+      height: auto;
+    }
+  }
+}

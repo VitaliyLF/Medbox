@@ -1,3 +1,29 @@
+const videoSection = {
+  name: 'videoSection',
+  type: 'object',
+  title: 'Video section',
+  fields: [
+    {
+      name: 'file',
+      type: 'file',
+      title: 'File',
+      options: {
+        accept: 'video/*'
+      }
+    },
+    {
+      name: 'title',
+      type: 'string',
+      title: '⚡️ Descriptive label video for screen readers & SEO'
+    },
+    {
+      name: 'poster',
+      type: 'image',
+      title: 'Poster video'
+    }
+  ]
+}
+
 export default {
   name: 'homepage',
   type: 'document',
@@ -117,31 +143,7 @@ export default {
         }
       ]
     },
-    {
-      name: 'videoSection',
-      type: 'object',
-      title: 'Video section',
-      fields: [
-        {
-          name: 'file',
-          type: 'file',
-          title: 'File',
-          options: {
-            accept: 'video/*'
-          }
-        },
-        {
-          name: 'title',
-          type: 'string',
-          title: '⚡️ Descriptive label video for screen readers & SEO'
-        },
-        {
-          name: 'poster',
-          type: 'image',
-          title: 'Poster video'
-        }
-      ]
-    },
+    videoSection,
     {
       name: 'lineList',
       type: 'object',
@@ -912,6 +914,33 @@ export default {
                   name: 'title',
                   type: 'string',
                   title: 'Footer columns title'
+                },
+                {
+                  name: 'text',
+                  type: 'array',
+                  title: 'Footer columns text',
+                  of: [
+                    {
+                      type: 'block'
+                    }
+                  ]
+                },
+                {
+                  name: 'sublist',
+                  type: 'array',
+                  title: 'Footer links',
+                  of: [
+                    {
+                      type: 'object',
+                      fields: [
+                        {
+                          name: 'linkText',
+                          type: 'string',
+                          title: 'Footer link text'
+                        }
+                      ]
+                    }
+                  ]
                 }
               ]
             }

@@ -1,5 +1,6 @@
 'use client'
 import { urlFor } from '@/app/lib/clientSanity'
+import Button from '@/components/common/button/Button'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -8,11 +9,7 @@ import { useState } from 'react'
 const Header = ({ headerContent }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
 
-  if (!headerContent) {
-    return null
-  }
-
-  const { logo, links, btnText, btnTextMobile } = headerContent
+  const { logo, links, btnText, btnTextMobile } = headerContent ?? {}
   const { dimensions } = decodeAssetId(logo.asset._ref)
 
   const toggleMenuVisibility = () => {
@@ -77,11 +74,7 @@ const Header = ({ headerContent }) => {
               )}
             </div>
           </nav>
-          {btnText && (
-            <button className="header__btn btn" type="button">
-              {btnText}
-            </button>
-          )}
+          <Button buttonText={btnText} modifier="header" />
           <button
             className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
             type="button"

@@ -158,6 +158,10 @@ export async function getDataHomePage() {
         footerLogo,
         list [] {
           title,
+          text,
+          sublist [] {
+            link,
+          }
         }
       }
     }

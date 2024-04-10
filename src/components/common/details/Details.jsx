@@ -1,16 +1,11 @@
 import { urlFor } from '@/app/lib/clientSanity'
-import { PortableText } from 'next-sanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
+import TextSection from '../textSection/TextSection'
 
 const Details = ({ source, isOpen }) => {
-  if (!source) {
-    return null
-  }
-
-  const { summary, text, url, linkText, image, alt } = source
-
+  const { summary, text, url, linkText, image, alt } = source ?? {}
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
@@ -21,11 +16,7 @@ const Details = ({ source, isOpen }) => {
         </summary>
       )}
       <div className="details__content">
-        {text && (
-          <div className="text-section text-section--details">
-            <PortableText value={text} />
-          </div>
-        )}
+        <TextSection textSection={text} modifier="details" />
         {linkText && (
           <Link className="link link--details" href={url}>
             {linkText}

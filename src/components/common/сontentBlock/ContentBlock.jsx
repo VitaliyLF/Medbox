@@ -7,6 +7,7 @@ import Link from 'next/link'
 const ContentBlock = ({
   contentClassName,
   title,
+  titleModifier,
   subtitle,
   subtitleModifier,
   btnText,
@@ -18,7 +19,7 @@ const ContentBlock = ({
   url
 }) => (
   <div className={contentClassName || ''}>
-    {title && <TitleSection titleSection={title} />}
+    {title && <TitleSection titleSection={title} modifier={titleModifier} />}
     {subtitle && <SubtitleSection subtitleSection={subtitle} modifier={subtitleModifier} />}
     {text && <TextSection textSection={text} modifier={textModifier} />}
     {linkText && url && (

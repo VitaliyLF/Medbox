@@ -42,6 +42,12 @@
     @include fz18-atkinson;
   }
 
+  &--footer {
+    @include fz18-atkinson;
+
+    color: var(--color-light, #fff);
+  }
+
   @include big-desktop {
     max-width: 100%;
   }

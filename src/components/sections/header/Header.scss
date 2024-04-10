@@ -123,12 +123,6 @@
     }
   }
 
-  &__btn {
-    @include big-desktop {
-      display: none;
-    }
-  }
-
   &__burger {
     --burger-width: 45px;
     --burger-height: 45px;
