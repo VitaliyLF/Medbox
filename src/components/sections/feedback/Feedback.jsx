@@ -1,24 +1,18 @@
 import { PortableText } from 'next-sanity'
 import Link from 'next/link'
-import Review from '../review/Review'
+import Review from '../../common/review/Review'
+import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
+import TextSection from '@/components/common/textSection/TextSection'
 
 const Feedback = ({ feedBackContent }) => {
-  if (!feedBackContent) {
-    return null
-  }
-
-  const { subtitle, text, list, subtext, btnText, url } = feedBackContent
+  const { subtitle, text, list, subtext, linkText, url } = feedBackContent ?? {}
 
   return (
     <section className="feedback">
       <div className="container">
         <div className="centered">
-          {subtitle && <h2 className="subtitle-section">{subtitle}</h2>}
-          {text && (
-            <div className="text-section">
-              <PortableText value={text} />
-            </div>
-          )}
+          <SubtitleSection subtitleSection={subtitle} />
+          <TextSection textSection={text} />
         </div>
         <ul className="feedback__list">
           {list?.map((item) => (
@@ -33,9 +27,9 @@ const Feedback = ({ feedBackContent }) => {
               <PortableText value={subtext} />
             </div>
           )}
-          {btnText && (
+          {linkText && (
             <Link className="btn" href={url} target="_blank" title="Read reviews || New window">
-              {btnText}
+              {linkText}
             </Link>
           )}
         </div>

@@ -1,35 +1,26 @@
 'use client'
-import { PortableText } from 'next-sanity'
-import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, A11y, Keyboard } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import BlogPost from '../../common/blogPost/BlogPost'
+import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 
 const Resources = ({ resourcesContent }) => {
-  if (!resourcesContent) {
-    return null
-  }
-
-  const { subtitle, text, btnText, url, list } = resourcesContent
+  const { subtitle, text, linkText, url, list } = resourcesContent ?? {}
 
   return (
     <section className="resources">
       <div className="resources__container container">
-        <div className="resources__info">
-          {subtitle && <h2 className="subtitle-section subtitle-section--large">{subtitle}</h2>}
-          {text && (
-            <div className="text-section text-section--medium">
-              <PortableText value={text} />
-            </div>
-          )}
-          {btnText && (
-            <Link className="btn" href={url}>
-              {btnText}
-            </Link>
-          )}
-        </div>
+        <ContentBlock
+          contentClassName="resources__content"
+          subtitle={subtitle}
+          subtitleModifier="large"
+          text={text}
+          textModifier="medium"
+          linkText={linkText}
+          url={url}
+        />
         <div className="resources__wrapper">
           <Swiper
             className="resources__slider"

@@ -1,22 +1,21 @@
 import { urlFor } from '@/app/lib/clientSanity'
+import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
+import TextSection from '@/components/common/textSection/TextSection'
+import TitleSection from '@/components/common/titleSection/TitleSection'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import { PortableText } from 'next-sanity'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const StickyList = ({ stickyListContent }) => {
-  if (!stickyListContent) {
-    return null
-  }
-
-  const { title, subtitle, image, alt, list, btnText } = stickyListContent
+  const { title, subtitle, image, alt, list, linkText } = stickyListContent ?? {}
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
     <section className="sticky-list">
       <div className="container">
         <div className="sticky-list__top">
-          {title && <h2 className="title-section">{title}</h2>}
-          {subtitle && <h3 className="subtitle-section">{subtitle}</h3>}
+          <TitleSection titleSection={title} />
+          <SubtitleSection subtitleSection={subtitle} />
         </div>
         <div className="sticky-list__inner">
           <aside className="sticky-list__aside">
@@ -36,16 +35,14 @@ const StickyList = ({ stickyListContent }) => {
               {list?.map((item) => (
                 <li className="sticky-list__item" key={item._key}>
                   <h4 className="sticky-list__item-subtitle subtitle-section subtitle-section--medium">{item.title}</h4>
-                  <div className="text-section">
-                    <PortableText value={item.text} />
-                  </div>
+                  <TextSection textSection={item.text} />
                 </li>
               ))}
             </ul>
-            {btnText && (
-              <button className="sticky-list__btn btn" type="button">
-                {btnText}
-              </button>
+            {linkText && (
+              <Link className="sticky-list__btn btn" href="/">
+                {linkText}
+              </Link>
             )}
           </div>
         </div>

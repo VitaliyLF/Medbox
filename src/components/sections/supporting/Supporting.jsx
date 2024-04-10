@@ -2,20 +2,18 @@ import { urlFor } from '@/app/lib/clientSanity'
 import Image from 'next/image'
 import Link from 'next/link'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import TitleSection from '@/components/common/titleSection/TitleSection'
+import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
 
 const Supporting = ({ supportingContent }) => {
-  if (!supportingContent) {
-    return null
-  }
-
-  const { title, subtitle, list } = supportingContent
+  const { title, subtitle, list } = supportingContent ?? {}
 
   return (
     <section className="supporting">
       <div className="container">
         <div className="centered">
-          {title && <h2 className="title-section">{title}</h2>}
-          {subtitle && <h3 className="subtitle-section">{subtitle}</h3>}
+          <TitleSection titleSection={title} />
+          <SubtitleSection subtitleSection={subtitle} />
         </div>
         <ul className="supporting__list">
           {list?.map((item) => {

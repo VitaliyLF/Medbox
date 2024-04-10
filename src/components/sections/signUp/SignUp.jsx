@@ -9,7 +9,7 @@ const submitTimeOutMs = 2500
 let dimensions = null
 
 const SignUp = ({ signUpContent }) => {
-  const { subtitle, image, text } = signUpContent
+  const { subtitle, image, text } = signUpContent ?? {}
 
   if (image && image.asset) {
     dimensions = decodeAssetId(image.asset._ref).dimensions

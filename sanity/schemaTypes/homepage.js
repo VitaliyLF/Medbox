@@ -163,7 +163,7 @@ export default {
           ]
         },
         {
-          name: 'btnText',
+          name: 'linkText',
           type: 'string',
           title: 'Link text',
           options: {
@@ -352,9 +352,9 @@ export default {
           ]
         },
         {
-          name: 'btnText',
+          name: 'linkText',
           type: 'string',
-          title: 'Button text',
+          title: 'Link text',
           options: {
             list: [
               { title: 'Get started', value: 'Get started' },
@@ -623,7 +623,7 @@ export default {
           ]
         },
         {
-          name: 'btnText',
+          name: 'linkText',
           type: 'string',
           title: 'Link Text',
           options: {
@@ -711,7 +711,7 @@ export default {
           ]
         },
         {
-          name: 'btnText',
+          name: 'linkText',
           type: 'string',
           title: 'Link Text',
           options: {
@@ -795,7 +795,7 @@ export default {
           ]
         },
         {
-          name: 'btnText',
+          name: 'linkText',
           type: 'string',
           title: 'Link Text',
           options: {

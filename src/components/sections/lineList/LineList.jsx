@@ -1,16 +1,11 @@
-import { PortableText } from '@portabletext/react'
 import Image from 'next/image'
-import Link from 'next/link'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import Review from '../review/Review'
+import Review from '../../common/review/Review'
+import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 
 const LineList = ({ lineListContent }) => {
-  if (!lineListContent) {
-    return null
-  }
-
-  const { subtitle, text, btnText, list, image } = lineListContent
+  const { subtitle, text, linkText, list, image } = lineListContent ?? {}
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
@@ -23,19 +18,13 @@ const LineList = ({ lineListContent }) => {
             strokeWidth="2"
           />
         </svg>
-        <div className="line-list__info">
-          {subtitle && <h2 className="subtitle-section">{subtitle}</h2>}
-          {text && (
-            <div className="line-list__text text-section">
-              <PortableText value={text} />
-            </div>
-          )}
-          {btnText && (
-            <Link className="btn" href="/">
-              {btnText}
-            </Link>
-          )}
-        </div>
+        <ContentBlock
+          contentClassName="line-list__content"
+          subtitle={subtitle}
+          text={text}
+          linkText={linkText}
+          url={'/'}
+        />
         <ul className="line-list__items">
           {list?.map((item) => (
             <li className="line-list__item" key={item._key}>

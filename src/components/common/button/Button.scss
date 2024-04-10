@@ -27,6 +27,8 @@
   @include focus;
 
   @include hover {
+    color: var(--color-light, #fff);
+
     &::after {
       @include loadingWave;
 

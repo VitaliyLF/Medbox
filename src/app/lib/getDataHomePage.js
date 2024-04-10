@@ -32,7 +32,7 @@ export async function getDataHomePage() {
       lineList {
         subtitle,
         text,
-        btnText,
+        linkText,
         list [] {
           _key,
           content
@@ -65,7 +65,7 @@ export async function getDataHomePage() {
           title,
           text
         },
-        btnText
+        linkText
       },
       infoBlock {
         subtitle,
@@ -108,7 +108,7 @@ export async function getDataHomePage() {
           }
         },
         subtext,
-        btnText,
+        linkText,
         url
       },
       faq {
@@ -123,7 +123,7 @@ export async function getDataHomePage() {
           image,
           alt
         },
-        btnText
+        linkText
       },
       supporting {
         title,
@@ -138,7 +138,7 @@ export async function getDataHomePage() {
       resources {
         subtitle,
         text,
-        btnText,
+        linkText,
         url,
         list [] {
           _key,

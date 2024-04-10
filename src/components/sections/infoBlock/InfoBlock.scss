@@ -7,7 +7,7 @@
     display: flex;
   }
 
-  &__content {
+  &__info {
     position: relative;
     padding: 120px var(--offset-double-extra-large-medium, 70px);
     width: 60vw;
@@ -17,15 +17,11 @@
     justify-content: center;
   }
 
-  &__info {
+  &__content {
     max-width: 465px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-  }
-
-  &__link {
-    @include marginBottom(var(--offset-medium, 35px));
   }
 
   &__image {

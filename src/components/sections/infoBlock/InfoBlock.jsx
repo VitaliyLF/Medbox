@@ -1,38 +1,26 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { urlFor } from '@/app/lib/clientSanity'
-import { PortableText } from 'next-sanity'
-import Review from '../review/Review'
+import Review from '../../common/review/Review'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 
 const InfoBlock = ({ infoBlockContent }) => {
-  if (!infoBlockContent) {
-    return null
-  }
-
-  const { subtitle, text, url, linkText, btnText, image, alt } = infoBlockContent
+  const { subtitle, text, url, linkText, btnText, image, alt } = infoBlockContent ?? {}
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
     <section className="info-block info-block--homepage">
       <div className="info-block__container">
-        <div className="info-block__content">
-          <div className="info-block__info">
-            {subtitle && <h2 className="subtitle-section">{subtitle}</h2>}
-            {text && (
-              <div className="text-section">
-                <PortableText value={text} />
-              </div>
-            )}
-            <Link className="info-block__link link link--phone" href={url}>
-              {linkText}
-            </Link>
-            {btnText && (
-              <button className="btn" type="button">
-                {btnText}
-              </button>
-            )}
-          </div>
+        <div className="info-block__info">
+          <ContentBlock
+            contentClassName="info-block__content"
+            subtitle={subtitle}
+            text={text}
+            btnText={btnText}
+            linkModifier="phone"
+            linkText={linkText}
+            url={url}
+          />
           {image && (
             <Image
               className="info-block__image"

@@ -22,6 +22,8 @@
   &--phone {
     @include fz22-atkinson;
 
+    @include marginBottom(var(--offset-medium, 35px));
+
     display: flex;
     align-items: center;
     column-gap: var(--offset-tiny);

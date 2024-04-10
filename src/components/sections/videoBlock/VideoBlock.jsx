@@ -1,11 +1,7 @@
 import { urlFor } from '@/app/lib/clientSanity'
 
 const VideoBlock = ({ videoBlockContent }) => {
-  if (!videoBlockContent) {
-    return null
-  }
-
-  const { file, title, poster } = videoBlockContent
+  const { file, title, poster } = videoBlockContent ?? {}
 
   const videoUrl = file.asset.url
 

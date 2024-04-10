@@ -1,19 +1,17 @@
 import Link from 'next/link'
 import Details from '../../common/details/Details'
+import TitleSection from '@/components/common/titleSection/TitleSection'
+import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
 
 const Faq = ({ faqContent }) => {
-  if (!faqContent) {
-    return null
-  }
-
-  const { title, subtitle, list, btnText } = faqContent
+  const { title, subtitle, list, linkText } = faqContent ?? {}
 
   return (
     <section className="faq">
       <div className="faq__container container">
         <aside className="faq__aside">
-          {title && <h2 className="title-section">{title}</h2>}
-          {subtitle && <h3 className="subtitle-section subtitle-section--large">{subtitle}</h3>}
+          <TitleSection titleSection={title} />
+          <SubtitleSection subtitleSection={subtitle} />
         </aside>
         <div className="faq__info">
           <ul className="faq__list">
@@ -23,9 +21,9 @@ const Faq = ({ faqContent }) => {
               </li>
             ))}
           </ul>
-          {btnText && (
+          {linkText && (
             <Link className="btn" href="#">
-              {btnText}
+              {linkText}
             </Link>
           )}
         </div>

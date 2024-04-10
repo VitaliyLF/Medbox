@@ -39,8 +39,8 @@ const HomePage = async () => {
         <Supporting supportingContent={dataHomePage?.supporting} />
         <Resources resourcesContent={dataHomePage?.resources} />
         <SignUp signUpContent={dataHomePage?.signUp} />
-        <Footer footerContent={dataHomePage?.footer} />
       </main>
+      <Footer footerContent={dataHomePage?.footer} />
     </div>
   )
 }

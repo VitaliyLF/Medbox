@@ -2,7 +2,7 @@ import { PortableText } from 'next-sanity'
 
 const TextSection = ({ textSection, modifier }) => {
   return (
-    <div className={`text-section text-section--${modifier}`}>
+    <div className={`text-section ${modifier ? `text-section--${modifier}` : ''}`}>
       <PortableText value={textSection} />
     </div>
   )

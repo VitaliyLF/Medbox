@@ -1,40 +1,22 @@
 import { urlFor } from '@/app/lib/clientSanity'
+import Button from '@/components/common/button/Button'
+import TextSection from '@/components/common/textSection/TextSection'
+import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import { PortableText } from 'next-sanity'
 import Image from 'next/image'
 
 const States = ({ statesContent }) => {
-  if (!statesContent) {
-    return null
-  }
-
-  const { title, subtitle, text, textContact, btnText, image, alt } = statesContent
+  const { title, subtitle, text, textContact, btnText, image, alt } = statesContent ?? {}
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (
     <section className="states">
       <div className="states__container container">
         <div className="states__wrapper">
-          <div className="states__info">
-            {title && <h2 className="title-section">{title}</h2>}
-            {subtitle && <h3 className="subtitle-section">{subtitle}</h3>}
-            {text && (
-              <div className="text-section">
-                <PortableText value={text} />
-              </div>
-            )}
-          </div>
+          <ContentBlock contentClassName="states__content" title={title} subtitle={subtitle} text={text} />
           <div className="states__contact">
-            {textContact && (
-              <div className="text-section">
-                <PortableText value={textContact} />
-              </div>
-            )}
-            {btnText && (
-              <button className="btn" type="button">
-                {btnText}
-              </button>
-            )}
+            <TextSection textSection={textContact} />
+            <Button buttonText={btnText} />
           </div>
         </div>
         {image && (
