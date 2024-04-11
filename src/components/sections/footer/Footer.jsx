@@ -6,7 +6,7 @@ import TitleSection from '@/components/common/titleSection/TitleSection'
 import TextSection from '@/components/common/textSection/TextSection'
 
 const Footer = ({ footerContent }) => {
-  const { footerLogo, list } = footerContent ?? {}
+  const { footerLogo, list, sublist } = footerContent ?? {}
   const { dimensions } = decodeAssetId(footerLogo.asset._ref)
 
   return (
@@ -25,15 +25,15 @@ const Footer = ({ footerContent }) => {
               />
             </Link>
           )}
-          {/* <ul className="footer__list">
+          <ul className="footer__list">
             {list?.map((item) => (
               <li className="footer__item" key={item._key}>
                 <TitleSection titleSection={item.title} modifier="footer" />
                 <TextSection textSection={item.text} modifier="footer" />
                 <ul className="footer__sublist">
                   <li className="footer__item">
-                    {item?.sublist.map((link) => (
-                      <Link className="link link--footer" href={link.url} key={link._key}>
+                    {item?.sublist?.map((link) => (
+                      <Link className="link link--light" href={link.url || ''} key={link._key}>
                         {link.linkText}
                       </Link>
                     ))}
@@ -41,7 +41,7 @@ const Footer = ({ footerContent }) => {
                 </ul>
               </li>
             ))}
-          </ul> */}
+          </ul>
         </div>
       </div>
     </footer>

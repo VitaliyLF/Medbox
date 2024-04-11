@@ -937,6 +937,17 @@ export default {
                           name: 'linkText',
                           type: 'string',
                           title: 'Footer link text'
+                        },
+                        {
+                          name: 'url',
+                          type: 'url',
+                          title: 'Footer link url',
+                          description:
+                            '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel: This field is required.',
+                          validation: (Rule) =>
+                            Rule.uri({
+                              scheme: ['http', 'https', 'mailto', 'tel']
+                            })
                         }
                       ]
                     }

@@ -45,6 +45,8 @@
   &--footer {
     @include fz18-atkinson;
 
+    @include marginBottom(0);
+
     color: var(--color-light, #fff);
   }
 
