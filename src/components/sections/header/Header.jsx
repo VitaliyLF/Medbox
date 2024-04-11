@@ -6,6 +6,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
+import classNames from 'classnames'
+
 const Header = ({ headerContent }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
 
@@ -76,7 +78,7 @@ const Header = ({ headerContent }) => {
           </nav>
           <Button buttonText={btnText} modifier="header" />
           <button
-            className={`header__burger ${isMenuOpen ? 'header__burger--active' : ''}`}
+            className={classNames('header__burger', { 'header__burger--active': isMenuOpen })}
             type="button"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen ? 'true' : 'false'}

@@ -165,6 +165,12 @@ export async function getDataHomePage() {
             linkText,
             url,
           }
+        },
+        socialList [] {
+          linkText,
+          url,
+          socialIcon,
+          socialIconAlt
         }
       }
     }

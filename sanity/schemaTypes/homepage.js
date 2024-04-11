@@ -942,8 +942,7 @@ export default {
                           name: 'url',
                           type: 'url',
                           title: 'Footer link url',
-                          description:
-                            '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel: This field is required.',
+                          description: '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel:',
                           validation: (Rule) =>
                             Rule.uri({
                               scheme: ['http', 'https', 'mailto', 'tel']
@@ -952,6 +951,40 @@ export default {
                       ]
                     }
                   ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          name: 'socialList',
+          type: 'array',
+          title: 'Footer social list',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'linkText',
+                  type: 'string',
+                  title: 'Footer social link text'
+                },
+                {
+                  name: 'url',
+                  type: 'url',
+                  title: 'Footer social link url',
+                  validation: (Rule) => Rule.required()
+                },
+                {
+                  name: 'socialIcon',
+                  type: 'image',
+                  title: 'Footer social icon'
+                },
+                {
+                  name: 'socialIconAlt',
+                  type: 'string',
+                  title: 'Feedback social icon description for screen readers & SEO',
+                  description: '⚡️ Optional but highly encouraged to make the content more accessible'
                 }
               ]
             }

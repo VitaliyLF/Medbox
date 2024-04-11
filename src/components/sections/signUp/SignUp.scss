@@ -1,6 +1,18 @@
 .sign-up {
+  position: relative;
   padding-block: var(--offset-extra-large-medium, 60px);
   background-color: var(--color-medbox-green, #02836f);
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+    width: 100%;
+    height: var(--offset-double-extra-large-medium, 70px);
+    background-color: var(--color-medbox-green, #02836f);
+    clip-path: var(--clip-path-wave);
+  }
 
   &__container {
     display: flex;

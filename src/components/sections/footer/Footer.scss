@@ -1,5 +1,14 @@
 .footer {
+  padding-top: var(--offset-extra-large-medium, 60px);
+  padding-bottom: var(--offset-small-medium, 30px);
   background-color: var(--color-deep-green, #003d33);
+
+  &__top {
+    @include marginBottom(var(--offset-tiny-medium));
+
+    display: flex;
+    gap: 250px;
+  }
 
   &__logo {
     display: inline-block;
@@ -7,5 +16,17 @@
 
   &__logo-image {
     max-width: 168px;
+  }
+
+  &__list {
+    display: flex;
+    flex-grow: 1;
+    gap: 130px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: baseline;
+    flex-direction: column;
   }
 }

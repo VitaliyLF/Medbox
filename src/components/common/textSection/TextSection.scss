@@ -45,9 +45,15 @@
   &--footer {
     @include fz18-atkinson;
 
-    @include marginBottom(0);
+    @include marginBottom(20px);
 
     color: var(--color-light, #fff);
+
+    p {
+      a {
+        color: currentColor;
+      }
+    }
   }
 
   @include big-desktop {

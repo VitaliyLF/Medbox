@@ -19,6 +19,21 @@
     transition: transform var(--timing, 0.3s) ease-in-out;
   }
 
+  @include focus;
+
+  @include hover {
+    color: var(--color-medbox-green, #02836f);
+
+    &::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+
+  @include big-desktop {
+    @include fz26-atkinson;
+  }
+
   &--phone {
     @include fz22-atkinson;
 
@@ -49,18 +64,10 @@
     color: var(--color-puerto-rico, #27c6b0);
   }
 
-  @include focus;
-
-  @include hover {
-    color: var(--color-medbox-green, #02836f);
-
-    &::before {
-      transform-origin: left;
-      transform: scaleX(1);
-    }
-  }
-
   &--light {
+    @include marginBottom(10px);
+
+    display: inline-block;
     color: var(--color-light, #fff);
 
     @include hover {
@@ -70,10 +77,6 @@
         background-color: currentColor;
       }
     }
-  }
-
-  @include big-desktop {
-    @include fz26-atkinson;
   }
 }
 
