@@ -6,7 +6,7 @@ import TitleSection from '@/components/common/titleSection/TitleSection'
 import TextSection from '@/components/common/textSection/TextSection'
 
 const Footer = ({ footerContent }) => {
-  const { footerLogo, list, socialList } = footerContent ?? {}
+  const { footerLogo, list, socialList, policyList } = footerContent ?? {}
   const { dimensions } = decodeAssetId(footerLogo.asset._ref)
 
   return (
@@ -60,6 +60,15 @@ const Footer = ({ footerContent }) => {
                     title={`${socialItem.socialIconAlt} || New window`}
                     loading="lazy"
                   />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <ul className="footer__policy-list">
+            {policyList?.map((link) => (
+              <li className="footer__policy-item" key={link._key}>
+                <Link className="footer__policy-link" href={link.url}>
+                  {link.linkText}
                 </Link>
               </li>
             ))}

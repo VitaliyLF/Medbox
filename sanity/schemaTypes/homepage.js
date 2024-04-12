@@ -989,6 +989,29 @@ export default {
               ]
             }
           ]
+        },
+        {
+          name: 'policyList',
+          type: 'array',
+          title: 'Footer policy list',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'linkText',
+                  type: 'string',
+                  title: 'Footer policy link text'
+                },
+                {
+                  name: 'url',
+                  type: 'url',
+                  title: 'Footer policy link url',
+                  validation: (Rule) => Rule.required()
+                }
+              ]
+            }
+          ]
         }
       ]
     }

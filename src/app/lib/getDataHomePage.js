@@ -171,6 +171,10 @@ export async function getDataHomePage() {
           url,
           socialIcon,
           socialIconAlt
+        },
+        policyList [] {
+          linkText,
+          url
         }
       }
     }
