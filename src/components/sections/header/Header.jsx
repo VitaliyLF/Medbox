@@ -5,7 +5,6 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
-
 import classNames from 'classnames'
 
 const Header = ({ headerContent }) => {
@@ -51,7 +50,7 @@ const Header = ({ headerContent }) => {
             </Link>
           )}
           <nav
-            className={`header__nav ${isMenuOpen ? 'header__nav--active' : ''}`}
+            className={classNames('header__nav', { 'header__nav--active': isMenuOpen })}
             aria-label="Main navigation"
             title="Use to navigation">
             <ul className="header__nav-list">

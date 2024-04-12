@@ -34,7 +34,7 @@ const StickyList = ({ stickyListContent }) => {
             <ul className="sticky-list__items">
               {list?.map((item) => (
                 <li className="sticky-list__item" key={item._key}>
-                  <h4 className="sticky-list__item-subtitle subtitle-section subtitle-section--medium">{item.title}</h4>
+                  <h4 className="sticky-list__item-subtitle">{item.title}</h4>
                   <TextSection textSection={item.text} />
                 </li>
               ))}

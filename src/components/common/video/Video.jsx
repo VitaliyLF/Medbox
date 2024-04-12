@@ -1,6 +1,8 @@
 import { urlFor } from '@/app/lib/clientSanity'
 
 const Video = ({ file, poster }) => {
+  if (!file) return null
+
   const videoUrl = file.asset.url
   const videoType = videoUrl ? `video/${videoUrl.split('.').pop().toLowerCase()}` : ''
 

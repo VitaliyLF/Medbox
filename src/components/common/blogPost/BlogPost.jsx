@@ -5,8 +5,7 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import SubtitleSection from '../subtitleSection/SubtitleSection'
 
 const BlogPost = ({ source }) => {
-  const { url, image, alt, tag, subtitle } = source
-
+  const { url, image, alt, tag, subtitle } = source ?? {}
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   return (

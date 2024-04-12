@@ -71,6 +71,10 @@
 
   &__item-subtitle {
     @include marginBottom(var(--offset-tiny-medium, 20px));
+
+    @include fz35-agrandir;
+
+    font-weight: 400;
   }
 
   &__btn {

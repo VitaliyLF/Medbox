@@ -1,3 +1,5 @@
+@import '@/app/scss/mixins';
+
 .subtitle-section {
   @include fz50-agrandir;
 
@@ -15,12 +17,6 @@
 
   &--large {
     @include fz45-agrandir;
-  }
-
-  &--medium {
-    @include fz35-agrandir;
-
-    font-weight: 400;
   }
 
   &--blog {

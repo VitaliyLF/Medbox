@@ -70,6 +70,12 @@
     display: inline-block;
     color: var(--color-light, #fff);
 
+    &:focus {
+      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      outline: 3px dotted var(--color-light, #fff);
+      outline-offset: calc(3px * 2);
+    }
+
     @include hover {
       color: var(--color-puerto-rico, #27c6b0);
 

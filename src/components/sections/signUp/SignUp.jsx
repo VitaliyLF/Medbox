@@ -4,6 +4,7 @@ import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
+import classNames from 'classnames'
 
 const submitTimeOutMs = 2500
 let dimensions = null
@@ -61,13 +62,9 @@ const SignUp = ({ signUpContent }) => {
   return (
     <section className="sign-up">
       <div className="sign-up__container container">
-        {subtitle && <h2 className="sign-up__subtitle subtitle-section subtitle-section--medium">{subtitle}</h2>}
+        {subtitle && <h2 className="sign-up__subtitle">{subtitle}</h2>}
         {!isSubmitted && (
-          <form
-            className={`sign-up__form ${!isSubmitted ? 'sign-up__form--animate' : ''}`}
-            id="sign-up-form"
-            method="post"
-            onSubmit={handleSubmit(onSubmit)}>
+          <form className="sign-up__form" id="sign-up-form" method="post" onSubmit={handleSubmit(onSubmit)}>
             <label className="sign-up__label" htmlFor="email">
               <input
                 {...register('email', {
@@ -85,7 +82,7 @@ const SignUp = ({ signUpContent }) => {
                     message: 'Invalid email address'
                   }
                 })}
-                className={`sign-up__input ${errors.email ? 'sign-up__input--error' : ''}`}
+                className={classNames('sign-up__input', { 'sign-up__input--error': errors.email })}
                 name="email"
                 type="email"
                 placeholder="Enter your email"

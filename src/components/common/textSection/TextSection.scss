@@ -1,3 +1,5 @@
+@import '@/app/scss/mixins';
+
 .text-section {
   @include fz22-atkinson;
 
@@ -52,6 +54,12 @@
     p {
       a {
         color: currentColor;
+
+        &:focus {
+          transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+          outline: 3px dotted currentColor;
+          outline-offset: calc(3px * 2);
+        }
       }
     }
   }

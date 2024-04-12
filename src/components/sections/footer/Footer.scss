@@ -7,11 +7,25 @@
     @include marginBottom(var(--offset-tiny-medium));
 
     display: flex;
+    align-items: flex-start;
     gap: 250px;
   }
 
   &__logo {
     display: inline-block;
+    opacity: 0.7;
+    transition: opacity var(--timing, 0.3s) ease;
+
+    &:focus {
+      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      outline: 3px dotted var(--color-light, #fff);
+      outline-offset: calc(3px * 2);
+      opacity: 1;
+    }
+
+    @include hover {
+      opacity: 1;
+    }
   }
 
   &__logo-image {
