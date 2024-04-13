@@ -5,10 +5,10 @@ import ContentBlock from '../../common/сontentBlock/ContentBlock'
 
 const Hero = ({ heroContent }) => {
   const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}
-  const { dimensions } = decodeAssetId(image.asset._ref)
+  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   return (
-    <section className="hero hero--homepage">
+    <section className="hero">
       <h1 className="visually-hidden">
         MedBox: Revolutionizing Senior Pharmacy Services for Stress-Free Medication Management
       </h1>
@@ -29,8 +29,8 @@ const Hero = ({ heroContent }) => {
               className="hero__img"
               src={urlFor(image).url()}
               alt={alt || ''}
-              width={dimensions.width}
-              height={dimensions.height}
+              width={dimensions.width || 0}
+              height={dimensions.height || 0}
               priority={true}
             />
           )}

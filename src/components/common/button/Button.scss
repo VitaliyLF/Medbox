@@ -52,8 +52,8 @@
 
     padding: 12px 15px;
     background-color: var(--color-light, #fff);
-    border: 1px solid var(--color-medbox-green, #02836f);
     color: var(--color-medbox-green, #02836f);
+    border: 1px solid currentColor;
     white-space: nowrap;
     display: flex;
     align-items: flex-end;

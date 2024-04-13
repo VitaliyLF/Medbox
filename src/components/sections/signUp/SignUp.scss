@@ -80,7 +80,7 @@
 
     &:focus {
       transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
-      outline: 3px dotted var(--color-light, #fff);
+      outline: 3px dotted currentColor;
       outline-offset: calc(3px * 2);
     }
 

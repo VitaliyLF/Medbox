@@ -10,7 +10,7 @@
     right: 0;
     width: 100%;
     height: var(--offset-quadruple-extra-large-medium, 90px);
-    background-color: var(--color-light);
+    background-color: var(--color-light, #fff);
     clip-path: var(--clip-path-wave-mirrored);
   }
 

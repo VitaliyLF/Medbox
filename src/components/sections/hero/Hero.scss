@@ -1,7 +1,5 @@
 .hero {
-  &--homepage {
-    background-color: var(--color-light-mint, #e8f2ee);
-  }
+  background-color: var(--color-light-mint, #e8f2ee);
 
   &__wrapper {
     display: flex;

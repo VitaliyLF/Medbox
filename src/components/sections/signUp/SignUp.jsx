@@ -110,8 +110,8 @@ const SignUp = ({ signUpContent }) => {
                   className="sign-up__success-image"
                   src={urlFor(image).url()}
                   alt="Success form submitted"
-                  width={dimensions.width}
-                  height={dimensions.height}
+                  width={dimensions.width || 0}
+                  height={dimensions.height || 0}
                 />
               )}
               {text && <p className="sign-up__success-text">{text}</p>}

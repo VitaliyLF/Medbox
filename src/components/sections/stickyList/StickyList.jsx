@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 const StickyList = ({ stickyListContent }) => {
   const { title, subtitle, image, alt, list, linkText } = stickyListContent ?? {}
-  const { dimensions } = decodeAssetId(image.asset._ref)
+  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   return (
     <section className="sticky-list">
@@ -24,8 +24,8 @@ const StickyList = ({ stickyListContent }) => {
                 className="sticky-list__image"
                 src={urlFor(image).url()}
                 alt={alt || ''}
-                width={dimensions.width}
-                height={dimensions.height}
+                width={dimensions.width || 0}
+                height={dimensions.height || 0}
                 loading="lazy"
               />
             )}

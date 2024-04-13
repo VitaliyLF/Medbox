@@ -22,8 +22,8 @@ const Benefits = ({ benefitsContent }) => {
             className="benefits__image"
             src={urlFor(image).url()}
             alt={alt || ''}
-            width={dimensions.width}
-            height={dimensions.height}
+            width={dimensions.width || 0}
+            height={dimensions.height || 0}
             loading="lazy"
           />
         )}

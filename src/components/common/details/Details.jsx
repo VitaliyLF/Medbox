@@ -6,7 +6,7 @@ import TextSection from '../textSection/TextSection'
 
 const Details = ({ source, isOpen }) => {
   const { summary, text, url, linkText, image, alt } = source ?? {}
-  const { dimensions } = decodeAssetId(image.asset._ref)
+  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   return (
     <details className="details" open={isOpen}>
@@ -18,7 +18,7 @@ const Details = ({ source, isOpen }) => {
       <div className="details__content">
         <TextSection textSection={text} modifier="details" />
         {linkText && (
-          <Link className="link link--details" href={url}>
+          <Link className="link link--puerto-rico" href={url}>
             {linkText}
           </Link>
         )}
@@ -27,8 +27,8 @@ const Details = ({ source, isOpen }) => {
             className="details__image"
             src={urlFor(image).url()}
             alt={alt || ''}
-            width={dimensions.width}
-            height={dimensions.height}
+            width={dimensions.width || 0}
+            height={dimensions.height || 0}
             loading="lazy"
           />
         )}

@@ -1012,6 +1012,45 @@ export default {
               ]
             }
           ]
+        },
+        {
+          name: 'copyright',
+          type: 'array',
+          title: 'Footer copyright',
+          of: [
+            {
+              type: 'block'
+            }
+          ]
+        },
+        {
+          name: 'parthersList',
+          type: 'array',
+          title: 'Footer parthers list',
+          of: [
+            {
+              type: 'object',
+              fields: [
+                {
+                  name: 'url',
+                  type: 'url',
+                  title: 'Footer parthers url'
+                },
+                {
+                  name: 'image',
+                  type: 'image',
+                  title: 'Footer parthers image',
+                  description: '⚡️ Optional, but svg format is better.'
+                },
+                {
+                  name: 'alt',
+                  type: 'string',
+                  title: 'Descriptive label image for screen readers & SEO',
+                  description: '⚡️ Optional but highly encouraged to make the content more accessible'
+                }
+              ]
+            }
+          ]
         }
       ]
     }

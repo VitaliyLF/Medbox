@@ -2,18 +2,11 @@
   --header-height: 85px;
 
   padding-top: var(--offset-small, 25px);
-
-  &--homepage {
-    background-color: var(--color-light-mint, #e8f2ee);
-    padding-bottom: var(--offset-small-medium, 30px);
-
-    @include big-desktop {
-      padding-bottom: 0;
-    }
-  }
+  padding-bottom: var(--offset-small-medium, 30px);
+  background-color: var(--color-light-mint, #e8f2ee);
 
   @include big-desktop {
-    padding-top: 0;
+    padding: 0;
   }
 
   &__container {

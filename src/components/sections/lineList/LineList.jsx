@@ -6,7 +6,7 @@ import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 
 const LineList = ({ lineListContent }) => {
   const { subtitle, text, linkText, list, image } = lineListContent ?? {}
-  const { dimensions } = decodeAssetId(image.asset._ref)
+  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   return (
     <section className="line-list">
@@ -40,8 +40,8 @@ const LineList = ({ lineListContent }) => {
               className="line-list__image"
               src={urlFor(image).url()}
               alt=""
-              width={dimensions.width}
-              height={dimensions.height}
+              width={dimensions.width || 0}
+              height={dimensions.height || 0}
               aria-hidden="true"
               loading="lazy"
             />

@@ -167,14 +167,23 @@ export async function getDataHomePage() {
           }
         },
         socialList [] {
+          _key,
           linkText,
           url,
           socialIcon,
           socialIconAlt
         },
         policyList [] {
+          _key,
           linkText,
           url
+        },
+        copyright,
+        parthersList [] {
+          _key,
+          url,
+          image,
+          alt
         }
       }
     }

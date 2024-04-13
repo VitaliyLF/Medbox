@@ -11,29 +11,22 @@ const Header = ({ headerContent }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
 
   const { logo, links, btnText, btnTextMobile } = headerContent ?? {}
-  const { dimensions } = decodeAssetId(logo.asset._ref)
+  const dimensions = logo?.asset ? decodeAssetId(logo.asset._ref).dimensions : null
 
   const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
-    !isMenuOpen ? disableScroll() : enableScroll()
+    toggleScroll()
   }
 
-  const disableScroll = () => {
+  const toggleScroll = () => {
     const paddingOffset = window.innerWidth - document.documentElement.clientWidth
-
-    document.body.classList.add('scroll-lock')
-    document.body.style.paddingRight = `${paddingOffset}px`
-    document.body.style.scrollBehavior = 'unset'
-  }
-
-  const enableScroll = () => {
-    document.body.classList.remove('scroll-lock')
-    document.body.style.paddingRight = ''
-    document.body.style.scrollBehavior = ''
+    document.body.classList.toggle('scroll-lock')
+    document.body.style.paddingRight = isMenuOpen ? '' : `${paddingOffset}px`
+    document.body.style.scrollBehavior = isMenuOpen ? '' : 'unset'
   }
 
   return (
-    <header className="header header--homepage">
+    <header className="header">
       <div className="header__container container">
         <div className="header__wrapper">
           {logo && (

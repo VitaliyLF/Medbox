@@ -22,18 +22,20 @@
     }
   }
 
-  ol {
-    list-style-type: decimal;
-  }
-
-  ul {
-    list-style-type: disc;
-  }
-
   blockquote {
     border-left: 4px solid var(--color-mint-green, #cce3da);
     padding-left: 10px;
     margin: 1em 40px;
+  }
+
+  @include big-desktop {
+    max-width: 100%;
+  }
+
+  @include mobile {
+    @include fz20-atkinson-mobile;
+
+    @include marginBottom(var(--offset-small-medium));
   }
 
   &--details {
@@ -64,13 +66,10 @@
     }
   }
 
-  @include big-desktop {
-    max-width: 100%;
-  }
+  &--footer-copyright {
+    @include marginBottom(0);
 
-  @include mobile {
-    @include fz20-atkinson-mobile;
-
-    @include marginBottom(var(--offset-small-medium));
+    font-size: 14px;
+    color: var(--color-mint-green, #cce3da);
   }
 }
