@@ -31,7 +31,7 @@ const Hero = ({ heroContent }) => {
               alt={alt || ''}
               width={dimensions.width || 0}
               height={dimensions.height || 0}
-              priority={true}
+              loading="lazy"
             />
           )}
         </div>

@@ -80,6 +80,7 @@
   }
 
   &__bottom {
+    padding-top: var(--offset-tiny, 15px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -102,7 +103,7 @@
   }
 
   &__bottom-image {
-    max-width: 106px;
+    max-width: 110px;
     object-fit: none;
   }
 }

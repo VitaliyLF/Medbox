@@ -36,9 +36,9 @@ const Header = ({ headerContent }) => {
                 src={urlFor(logo).url()}
                 alt="Medbox Logo"
                 title="Homepage"
-                width={dimensions.width}
-                height={dimensions.height}
-                priority={true}
+                width={dimensions.width || 0}
+                height={dimensions.height || 0}
+                loading="lazy"
               />
             </Link>
           )}
