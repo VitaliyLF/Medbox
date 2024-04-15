@@ -94,11 +94,16 @@
 
   &__bottom-link {
     display: inline-block;
+    transition: scale var(--timing, 0.3s) ease;
 
     &:focus {
       transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
       outline: 3px dotted var(--color-light, #fff);
       outline-offset: calc(3px * 2);
+    }
+
+    @include hover {
+      scale: 1.1;
     }
   }
 
