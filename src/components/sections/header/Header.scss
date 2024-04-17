@@ -37,7 +37,27 @@
   }
 
   &__logo {
+    position: relative;
+    overflow: hidden;
+
     @include focus;
+
+    @include hover {
+      &::before {
+        @include shine;
+
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 120%;
+        height: 200%;
+        opacity: 0.5;
+        background: linear-gradient(to left, transparent 0%, #fff 40% 60%, transparent 100%);
+        transform: translate(-120%, -25%);
+        animation: shine 4s infinite;
+      }
+    }
   }
 
   &__logo-img {
