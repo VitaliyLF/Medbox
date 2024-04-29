@@ -15,7 +15,7 @@ const Details = ({ source, isOpen }) => {
           {summary}
         </summary>
       )}
-      <div className="details__content">
+      <article className="details__content">
         <TextSection textSection={text} modifier="details" />
         {linkText && (
           <Link className="link link--puerto-rico" href={url}>
@@ -32,7 +32,7 @@ const Details = ({ source, isOpen }) => {
             loading="lazy"
           />
         )}
-      </div>
+      </article>
     </details>
   )
 }

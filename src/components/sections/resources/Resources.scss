@@ -49,6 +49,10 @@
       rotate: 90deg;
       transition: background-color var(--timing, 0.3s) ease, opacity var(--timing, 0.3s) ease;
 
+      &::after {
+        display: none;
+      }
+
       @include focus;
 
       @include hover {

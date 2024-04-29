@@ -41,13 +41,13 @@
 
     display: flex;
     align-items: center;
-    column-gap: var(--offset-tiny);
+    column-gap: var(--offset-tiny, 15px);
     flex-direction: row-reverse;
 
     &::after {
       content: url(../img/phone-icon-link.svg);
-      width: var(--offset-small-medium);
-      height: var(--offset-small-medium);
+      width: var(--offset-small-medium, 30px);
+      height: var(--offset-small-medium, 30px);
     }
 
     &::before {
@@ -58,7 +58,7 @@
   &--puerto-rico {
     @include fz22-dmsans;
 
-    @include marginBottom(var(--offset-medium));
+    @include marginBottom(var(--offset-medium, 35px));
 
     display: inline-block;
     color: var(--color-puerto-rico, #27c6b0);

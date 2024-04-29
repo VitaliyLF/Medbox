@@ -4,7 +4,7 @@ import './globals.scss'
 
 const RootLayout = async ({ children }) => {
   return (
-    <html lang="en" className="page">
+    <html lang="en" className="page custom-scrollbar">
       <body className="page__body">
         <a className="skiplink" href="#main">
           <span className="skiplink__text" data-title="Enter">

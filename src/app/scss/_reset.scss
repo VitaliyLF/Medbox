@@ -1,11 +1,7 @@
-html {
-  box-sizing: border-box;
-}
-
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 img {
@@ -97,6 +93,15 @@ input {
 dialog {
   border: none;
   padding: 0;
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
 }
 
 mark {

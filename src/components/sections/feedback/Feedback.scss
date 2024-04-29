@@ -1,5 +1,6 @@
 .feedback {
   padding: var(--offset-quadruple-extra-large, 85px) var(--offset-extra-large-medium, 60px);
+  background-color: var(--color-light, #fff);
 
   &__list {
     @include marginBottom(var(--offset-large-medium, 50px));

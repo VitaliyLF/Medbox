@@ -3,7 +3,7 @@
 .subtitle-section {
   @include fz50-agrandir;
 
-  @include marginBottom(var(--offset-tiny-medium));
+  @include marginBottom(var(--offset-tiny-medium, 20px));
 
   text-wrap: balance;
 

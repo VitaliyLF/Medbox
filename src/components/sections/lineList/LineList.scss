@@ -1,6 +1,7 @@
 .line-list {
   position: relative;
   padding-top: var(--offset-medium-large, 40px);
+  background-color: var(--color-light, #fff);
 
   &::before {
     content: '';

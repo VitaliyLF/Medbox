@@ -56,7 +56,7 @@
 
   &__stars {
     display: flex;
-    width: var(--offset-small);
+    width: var(--offset-small, 25px);
     aspect-ratio: 1;
     gap: 5px;
   }

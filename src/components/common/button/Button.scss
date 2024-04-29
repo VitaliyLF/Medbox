@@ -5,7 +5,7 @@
 
   display: inline-flex;
   align-items: center;
-  padding: var(--offset-tiny) var(--offset-tiny-medium);
+  padding: var(--offset-tiny, 15px) var(--offset-tiny-medium, 20px);
   color: var(--color-light, #fff);
   border-radius: var(--border-radius-all-large);
   background-color: var(--color-medbox-green, #02836f);
@@ -77,6 +77,6 @@
   &--hero-section {
     @include fz30-dmsans;
 
-    padding-inline: var(--offset-small);
+    padding-inline: var(--offset-small, 25px);
   }
 }

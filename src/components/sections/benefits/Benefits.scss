@@ -1,6 +1,7 @@
 .benefits {
   padding-top: var(--offset-double-extra-large-medium, 70px);
   padding-bottom: var(--offset-large-medium, 50px);
+  background-color: var(--color-light, #fff);
   position: relative;
 
   &::after {

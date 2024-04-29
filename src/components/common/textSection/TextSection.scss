@@ -3,7 +3,7 @@
 .text-section {
   @include fz22-atkinson;
 
-  @include marginBottom(var(--offset-medium));
+  @include marginBottom(var(--offset-medium, 35px));
 
   text-wrap: balance;
 
@@ -35,11 +35,11 @@
   @include mobile {
     @include fz20-atkinson-mobile;
 
-    @include marginBottom(var(--offset-small-medium));
+    @include marginBottom(var(--offset-small-medium, 30px));
   }
 
   &--details {
-    @include marginBottom(var(--offset-small));
+    @include marginBottom(var(--offset-small, 25px));
   }
 
   &--medium {

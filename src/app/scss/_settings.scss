@@ -9,21 +9,36 @@
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeSpeed;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 .page__body {
   margin: 0;
-  min-width: 320px;
+  min-width: 360px;
   min-height: 100%;
   font-size: 16px;
   color: var(--color-black-green, #202524);
 }
 
 .site-container {
+  position: relative;
+  z-index: 10;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+}
+
+.custom-scrollbar {
+  scrollbar-color: var(--color-medbox-green, #02836f) var(--color-light, #fff) /* Firefox */;
+
+  &::-webkit-scrollbar {
+    background-color: var(--color-light, #fff);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--color-medbox-green, #02836f);
+  }
 }
 
 .scroll-lock {

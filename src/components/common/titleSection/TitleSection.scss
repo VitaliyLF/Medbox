@@ -16,8 +16,6 @@
   }
 
   &--footer {
-    @include fz19-atkinson;
-
     @include marginBottom(var(--offset-tiny-medium, 20px));
 
     color: var(--color-light, #fff);
