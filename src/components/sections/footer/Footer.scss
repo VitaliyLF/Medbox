@@ -68,12 +68,17 @@
     gap: 10px;
     flex-direction: row-reverse;
     color: var(--color-light, #fff);
+    transition: color var(--timing, 0.3s) ease;
 
     &:focus {
       transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
       outline: 3px dotted currentColor;
       outline-offset: calc(3px * 2);
       opacity: 1;
+    }
+
+    @include hover {
+      color: var(--color-puerto-rico, #27c6b0);
     }
   }
 
