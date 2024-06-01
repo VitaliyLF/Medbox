@@ -12,42 +12,34 @@ const cx = classNames.bind(styles)
 const TitleSection = ({ titleSection, modifier }) => {
   const container = useRef(null)
 
-  // useGSAP(
-  //   () => {
-  //     gsap.fromTo(
-  //       container.current,
-  //       { opacity: 0, y: 40 },
-  //       {
-  //         opacity: 1,
-  //         y: 0,
-  //         duration: 0.5,
-  //         delay: 0.2,
-  //         scrollTrigger: {
-  //           trigger: container.current,
-  //           markers: true,
-  //           start: 'top 80%', // Когда верх элемента достигает 80% от высоты окна
-  //           end: 'bottom 20%', // Когда низ элемента достигает 20% от высоты окна
-  //           scrub: true // Анимация будет привязана к скроллу
-  //         }
-  //       }
-  //     )
-  //   },
-  //   { scope: container }
-  // )
-
   useGSAP(
     () => {
-      gsap.to(container.current, {
-        scrollTrigger: {
-          trigger: container.current,
-          scrub: true,
-          markers: true,
-          x: 500
+      gsap.fromTo(
+        container.current,
+        { x: -1200 },
+        {
+          x: 0,
+          duration: 0.5,
+          delay: 0.2
         }
-      })
+      )
     },
     { scope: container }
   )
+
+  // useGSAP(
+  //   () => {
+  //     gsap.to(container.current, {
+  //       scrollTrigger: {
+  //         trigger: container.current,
+  //         scrub: true,
+  //         markers: true,
+  //         x: 500
+  //       }
+  //     })
+  //   },
+  //   { scope: container }
+  // )
 
   if (!titleSection) return null
 
