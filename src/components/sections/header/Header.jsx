@@ -11,7 +11,7 @@ const Header = ({ headerContent }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
 
   const { logo, links, btnText, btnTextMobile } = headerContent ?? {}
-  const dimensions = logo?.asset ? decodeAssetId(logo.asset._ref).dimensions : null
+  const logoDimensions = logo?.asset ? decodeAssetId(logo.asset._ref).dimensions : null
 
   const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
@@ -36,8 +36,8 @@ const Header = ({ headerContent }) => {
                 src={urlFor(logo).url()}
                 alt="Medbox Logo"
                 title="Homepage"
-                width={dimensions.width || 0}
-                height={dimensions.height || 0}
+                width={logoDimensions.width || 0}
+                height={logoDimensions.height || 0}
                 loading="lazy"
               />
             </Link>

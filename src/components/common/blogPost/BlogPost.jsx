@@ -4,9 +4,9 @@ import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import SubtitleSection from '../subtitleSection/SubtitleSection'
 
-const BlogPost = ({ source }) => {
-  const { url, image, alt, tag, subtitle } = source ?? {}
-  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+const BlogPost = ({ blog }) => {
+  const { url, image, alt, tag, subtitle } = blog ?? {}
+  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   return (
     <Link className="blog-post" href={url}>
@@ -16,8 +16,8 @@ const BlogPost = ({ source }) => {
             className="blog-post__image"
             src={urlFor(image).url()}
             alt={alt || ''}
-            width={dimensions.width || 0}
-            height={dimensions.height || 0}
+            width={imageDimensions.width || 0}
+            height={imageDimensions.height || 0}
             loading="lazy"
             title={subtitle}
           />

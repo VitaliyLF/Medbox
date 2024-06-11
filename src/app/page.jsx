@@ -7,7 +7,7 @@ import Benefits from '@/components/sections/benefits/Benefits'
 import StickyList from '@/components/sections/stickyList/StickyList'
 import InfoBlock from '@/components/sections/infoBlock/InfoBlock'
 import States from '@/components/sections/states/States'
-import Feedback from '@/components/sections/feedback/Feedback'
+import FeedbackSection from '@/components/sections/feedback/Feedback'
 import Faq from '@/components/sections/faq/Faq'
 import Supporting from '@/components/sections/supporting/Supporting'
 import Resources from '@/components/sections/resources/Resources'
@@ -34,7 +34,7 @@ const HomePage = async () => {
         <StickyList stickyListContent={dataHomePage?.stickyList} />
         <InfoBlock infoBlockContent={dataHomePage?.infoBlock} />
         <States statesContent={dataHomePage?.states} />
-        <Feedback feedBackContent={dataHomePage?.feedback} />
+        <FeedbackSection feedBackContent={dataHomePage?.feedback} />
         <Faq faqContent={dataHomePage?.faq} />
         <Supporting supportingContent={dataHomePage?.supporting} />
         <Resources resourcesContent={dataHomePage?.resources} />

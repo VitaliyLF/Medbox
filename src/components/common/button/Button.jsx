@@ -6,13 +6,13 @@ const cx = classNames.bind(styles)
 const Button = ({ buttonText, modifier }) => {
   if (!buttonText) return null
 
-  const className = cx({
+  const buttonClassName = cx({
     btn: true,
     [`btn--${modifier}`]: modifier
   })
 
   return (
-    <button className={className} type="button">
+    <button className={buttonClassName} type="button">
       {buttonText}
     </button>
   )

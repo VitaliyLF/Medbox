@@ -7,13 +7,13 @@ const cx = classNames.bind(styles)
 const TextSection = ({ textSection, modifier }) => {
   if (!textSection) return null
 
-  const className = cx({
+  const textClassName = cx({
     'text-section': true,
     [`text-section--${modifier}`]: modifier
   })
 
   return (
-    <div className={className}>
+    <div className={textClassName}>
       <PortableText value={textSection} />
     </div>
   )

@@ -27,29 +27,15 @@ const TitleSection = ({ titleSection, modifier }) => {
     { scope: container }
   )
 
-  // useGSAP(
-  //   () => {
-  //     gsap.to(container.current, {
-  //       scrollTrigger: {
-  //         trigger: container.current,
-  //         scrub: true,
-  //         markers: true,
-  //         x: 500
-  //       }
-  //     })
-  //   },
-  //   { scope: container }
-  // )
-
   if (!titleSection) return null
 
-  const className = cx({
+  const titleClassName = cx({
     'title-section': true,
     [`title-section--${modifier}`]: modifier
   })
 
   return (
-    <h2 ref={container} className={className}>
+    <h2 ref={container} className={titleClassName}>
       {titleSection}
     </h2>
   )

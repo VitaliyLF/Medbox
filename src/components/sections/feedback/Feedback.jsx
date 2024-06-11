@@ -4,7 +4,7 @@ import Review from '../../common/review/Review'
 import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
 import TextSection from '@/components/common/textSection/TextSection'
 
-const Feedback = ({ feedBackContent }) => {
+const FeedbackSection = ({ feedBackContent }) => {
   const { subtitle, text, list, subtext, linkText, url } = feedBackContent ?? {}
 
   return (
@@ -38,4 +38,4 @@ const Feedback = ({ feedBackContent }) => {
   )
 }
 
-export default Feedback
+export default FeedbackSection

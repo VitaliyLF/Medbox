@@ -903,9 +903,9 @@ export default {
           title: 'Logo'
         },
         {
-          name: 'list',
+          name: 'contactList',
           type: 'array',
-          title: 'Footer columns info',
+          title: 'Footer contact list',
           of: [
             {
               type: 'object',
@@ -913,12 +913,12 @@ export default {
                 {
                   name: 'title',
                   type: 'string',
-                  title: 'Footer columns title'
+                  title: 'Footer contact  title'
                 },
                 {
                   name: 'text',
                   type: 'array',
-                  title: 'Footer columns text',
+                  title: 'Footer contact  text',
                   of: [
                     {
                       type: 'block'

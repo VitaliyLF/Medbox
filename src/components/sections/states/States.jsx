@@ -7,7 +7,7 @@ import Image from 'next/image'
 
 const States = ({ statesContent }) => {
   const { title, subtitle, text, textContact, btnText, image, alt } = statesContent ?? {}
-  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   return (
     <section className="states">
@@ -23,8 +23,8 @@ const States = ({ statesContent }) => {
           <Image
             className="states__image"
             src={urlFor(image).url()}
-            width={dimensions.width || 0}
-            height={dimensions.height || 0}
+            width={imageDimensions.width || 0}
+            height={imageDimensions.height || 0}
             alt={alt || ''}
             loading="lazy"
           />

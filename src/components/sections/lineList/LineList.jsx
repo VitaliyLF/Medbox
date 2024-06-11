@@ -6,18 +6,22 @@ import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 
 const LineList = ({ lineListContent }) => {
   const { subtitle, text, linkText, list, image } = lineListContent ?? {}
-  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+
+  const ListLineSvg = () => (
+    <svg className="line-list__svg-line" viewBox="0 0 1486 1230" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1 6.2138C60.6667 16.3805 200 34.7138 280 26.7138C380 16.7138 857 -77.2861 857 170.714C857 318.714 857 620.381 857 783.714V1042.71C857.333 1104.71 915 1228.71 1143 1228.71C1428 1228.71 1462 1194.71 1486 1194.71"
+        stroke="#045F51"
+        strokeWidth="2"
+      />
+    </svg>
+  )
 
   return (
     <section className="line-list">
       <div className="line-list__container container">
-        <svg className="line-list__svg-line" viewBox="0 0 1486 1230" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M1 6.2138C60.6667 16.3805 200 34.7138 280 26.7138C380 16.7138 857 -77.2861 857 170.714C857 318.714 857 620.381 857 783.714V1042.71C857.333 1104.71 915 1228.71 1143 1228.71C1428 1228.71 1462 1194.71 1486 1194.71"
-            stroke="#045F51"
-            strokeWidth="2"
-          />
-        </svg>
+        <ListLineSvg />
         <ContentBlock
           contentClassName="line-list__content"
           subtitle={subtitle}
@@ -40,8 +44,8 @@ const LineList = ({ lineListContent }) => {
               className="line-list__image"
               src={urlFor(image).url()}
               alt=""
-              width={dimensions.width || 0}
-              height={dimensions.height || 0}
+              width={imageDimensions.width || 0}
+              height={imageDimensions.height || 0}
               aria-hidden="true"
               loading="lazy"
             />

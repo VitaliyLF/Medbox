@@ -45,7 +45,7 @@ const Resources = ({ resourcesContent }) => {
             }}>
             {list?.map((item) => (
               <SwiperSlide key={item._key}>
-                <BlogPost source={item} />
+                <BlogPost blog={item} />
               </SwiperSlide>
             ))}
           </Swiper>

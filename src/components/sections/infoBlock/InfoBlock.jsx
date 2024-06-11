@@ -6,7 +6,7 @@ import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 
 const InfoBlock = ({ infoBlockContent }) => {
   const { subtitle, text, url, linkText, btnText, image, alt } = infoBlockContent ?? {}
-  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   return (
     <section className="info-block">
@@ -26,8 +26,8 @@ const InfoBlock = ({ infoBlockContent }) => {
               className="info-block__image"
               src={urlFor(image).url()}
               alt={alt || ''}
-              width={dimensions.width || 0}
-              height={dimensions.height || 0}
+              width={imageDimensions.width || 0}
+              height={imageDimensions.height || 0}
               loading="lazy"
             />
           )}

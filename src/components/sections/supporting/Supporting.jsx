@@ -17,9 +17,9 @@ const Supporting = ({ supportingContent }) => {
         </div>
         <ul className="supporting__list">
           {list?.map((item) => {
-            const dimensions = item.image?.asset ? decodeAssetId(item.image.asset._ref).dimensions : null
+            const imageDimensions = item.image?.asset ? decodeAssetId(item.image.asset._ref).dimensions : null
 
-            if (!item.image || !dimensions) {
+            if (!item.image || !imageDimensions) {
               return null
             }
 
@@ -30,8 +30,8 @@ const Supporting = ({ supportingContent }) => {
                     <Image
                       className="supporting__image"
                       src={urlFor(item.image).url()}
-                      width={dimensions.width || 0}
-                      height={dimensions.height || 0}
+                      width={imageDimensions.width || 0}
+                      height={imageDimensions.height || 0}
                       alt={item.alt || ''}
                       loading="lazy"
                       title={`${item.alt} site || New window`}
@@ -41,8 +41,8 @@ const Supporting = ({ supportingContent }) => {
                   <Image
                     className="supporting__image"
                     src={urlFor(item.image).url()}
-                    width={dimensions.width || 0}
-                    height={dimensions.height || 0}
+                    width={imageDimensions.width || 0}
+                    height={imageDimensions.height || 0}
                     alt={item.alt || ''}
                     loading="lazy"
                   />

@@ -4,9 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 import TextSection from '../textSection/TextSection'
 
-const Details = ({ source, isOpen }) => {
+const Details = ({ source, isOpen = false }) => {
   const { summary, text, url, linkText, image, alt } = source ?? {}
-  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   return (
     <details className="details" open={isOpen}>
@@ -27,8 +27,8 @@ const Details = ({ source, isOpen }) => {
             className="details__image"
             src={urlFor(image).url()}
             alt={alt || ''}
-            width={dimensions.width || 0}
-            height={dimensions.height || 0}
+            width={imageDimensions.width || 0}
+            height={imageDimensions.height || 0}
             loading="lazy"
           />
         )}

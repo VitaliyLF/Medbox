@@ -35,13 +35,13 @@
     max-width: 170px;
   }
 
-  &__list {
+  &__contact-list {
     display: flex;
     flex-grow: 1;
     gap: 130px;
   }
 
-  &__item {
+  &__contact-item {
     display: flex;
     align-items: baseline;
     flex-direction: column;

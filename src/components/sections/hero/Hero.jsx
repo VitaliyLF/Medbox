@@ -1,6 +1,4 @@
 'use client'
-// import gsap from 'gsap'
-// import { useGSAP } from '@gsap/react'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
@@ -11,9 +9,7 @@ import { useEffect, useState } from 'react'
 const Hero = ({ heroContent }) => {
   const [isMobile, setIsMobile] = useState(false)
   const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}
-  const dimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
-
-  // gsap.registerPlugin(useGSAP)
+  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 576px)')
@@ -24,10 +20,6 @@ const Hero = ({ heroContent }) => {
 
     return () => mediaQuery.removeEventListener('change', handleResize)
   }, [])
-
-  // useGSAP(() => {
-  //   gsap.fromTo('.title-section', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.6, delay: 0.3 })
-  // }, [])
 
   return (
     <section className="hero">
@@ -52,8 +44,8 @@ const Hero = ({ heroContent }) => {
                 className="hero__img"
                 src={urlFor(image).url()}
                 alt={alt || ''}
-                width={dimensions.width || 0}
-                height={dimensions.height || 0}
+                width={imageDimensions.width || 0}
+                height={imageDimensions.height || 0}
                 loading="lazy"
               />
             ) : (
@@ -62,8 +54,8 @@ const Hero = ({ heroContent }) => {
                   className="hero__img"
                   src={urlFor(image).url()}
                   alt={alt || ''}
-                  width={dimensions.width || 0}
-                  height={dimensions.height || 0}
+                  width={imageDimensions.width || 0}
+                  height={imageDimensions.height || 0}
                   loading="lazy"
                 />
               </Tilt>

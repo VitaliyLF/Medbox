@@ -156,7 +156,7 @@ export async function getDataHomePage() {
       },
       footer {
         footerLogo,
-        list [] {
+        contactList [] {
           _key,
           title,
           text,
