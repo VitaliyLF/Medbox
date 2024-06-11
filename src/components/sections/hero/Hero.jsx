@@ -21,6 +21,16 @@ const Hero = ({ heroContent }) => {
     return () => mediaQuery.removeEventListener('change', handleResize)
   }, [])
 
+  const contentBlockHero = {
+    contentClassName: 'hero__content',
+    subtitleModifier: 'extra-large',
+    textModifier: 'details',
+    title,
+    subtitle,
+    btnText,
+    text
+  }
+
   return (
     <section className="hero">
       <h1 className="visually-hidden">
@@ -28,16 +38,7 @@ const Hero = ({ heroContent }) => {
       </h1>
       <div className="hero__container container">
         <div className="hero__wrapper">
-          <ContentBlock
-            contentClassName="hero__content"
-            title={title}
-            subtitle={subtitle}
-            subtitleModifier="extra-large"
-            btnText={btnText}
-            btnModifier="hero-section"
-            text={text}
-            textModifier="details"
-          />
+          <ContentBlock {...contentBlockHero} />
           {image &&
             (isMobile ? (
               <Image

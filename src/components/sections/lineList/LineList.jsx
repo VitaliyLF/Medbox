@@ -8,6 +8,14 @@ const LineList = ({ lineListContent }) => {
   const { subtitle, text, linkText, list, image } = lineListContent ?? {}
   const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
+  const contentBlockLineList = {
+    contentClassName: 'line-list__content',
+    subtitle,
+    text,
+    linkText,
+    url: '/'
+  }
+
   const ListLineSvg = () => (
     <svg className="line-list__svg-line" viewBox="0 0 1486 1230" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -22,13 +30,7 @@ const LineList = ({ lineListContent }) => {
     <section className="line-list">
       <div className="line-list__container container">
         <ListLineSvg />
-        <ContentBlock
-          contentClassName="line-list__content"
-          subtitle={subtitle}
-          text={text}
-          linkText={linkText}
-          url={'/'}
-        />
+        <ContentBlock {...contentBlockLineList} />
         <ul className="line-list__items">
           {list?.map((item) => (
             <li className="line-list__item" key={item._key}>

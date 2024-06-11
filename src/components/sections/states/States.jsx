@@ -9,11 +9,18 @@ const States = ({ statesContent }) => {
   const { title, subtitle, text, textContact, btnText, image, alt } = statesContent ?? {}
   const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
+  const contentBlockStates = {
+    contentClassName: 'states__content',
+    title,
+    subtitle,
+    text
+  }
+
   return (
     <section className="states">
       <div className="states__container container">
         <div className="states__wrapper">
-          <ContentBlock contentClassName="states__content" title={title} subtitle={subtitle} text={text} />
+          <ContentBlock {...contentBlockStates} />
           <div className="states__contact">
             <TextSection textSection={textContact} />
             <Button buttonText={btnText} />

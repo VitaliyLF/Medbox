@@ -8,19 +8,21 @@ const InfoBlock = ({ infoBlockContent }) => {
   const { subtitle, text, url, linkText, btnText, image, alt } = infoBlockContent ?? {}
   const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
+  const contentBlockInfo = {
+    contentClassName: 'info-block__content',
+    linkModifier: 'phone',
+    subtitle,
+    text,
+    btnText,
+    linkText,
+    url
+  }
+
   return (
     <section className="info-block">
       <div className="info-block__container">
         <div className="info-block__info">
-          <ContentBlock
-            contentClassName="info-block__content"
-            subtitle={subtitle}
-            text={text}
-            btnText={btnText}
-            linkModifier="phone"
-            linkText={linkText}
-            url={url}
-          />
+          <ContentBlock {...contentBlockInfo} />
           {image && (
             <Image
               className="info-block__image"
