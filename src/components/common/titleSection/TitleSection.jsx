@@ -16,11 +16,20 @@ const TitleSection = ({ titleSection, modifier }) => {
     () => {
       gsap.fromTo(
         container.current,
-        { x: -1200 },
         {
-          x: 0,
-          duration: 0.5,
-          delay: 0.2
+          y: 50,
+          opacity: 0,
+          duration: 0.25
+        },
+        {
+          y: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: container.current,
+            // markers: true,
+            start: 'center center',
+            toggleActions: 'restart pause restart pause'
+          }
         }
       )
     },

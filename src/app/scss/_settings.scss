@@ -22,8 +22,6 @@
 }
 
 .site-container {
-  position: relative;
-  z-index: 10;
   display: grid;
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto;
@@ -82,7 +80,9 @@
   color: var(--color-black);
   z-index: var(--skiplink-z-index);
   pointer-events: none;
-  transition: opacity var(--timing, 0.3s) ease, background-color var(--timing, 0.3s) ease;
+  transition:
+    opacity var(--timing, 0.3s) ease,
+    background-color var(--timing, 0.3s) ease;
 
   &__text {
     @include pulse-btn-bg;
