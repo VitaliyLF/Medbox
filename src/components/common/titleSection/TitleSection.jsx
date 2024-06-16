@@ -9,29 +9,30 @@ import styles from './TitleSection.scss'
 gsap.registerPlugin(ScrollTrigger)
 const cx = classNames.bind(styles)
 
-const TitleSection = ({ titleSection, modifier }) => {
+const TitleSection = ({ titleSection, modifier, animate = true }) => {
   const container = useRef(null)
 
   useGSAP(
     () => {
-      gsap.fromTo(
-        container.current,
-        {
-          y: 50,
-          opacity: 0,
-          duration: 0.25
-        },
-        {
-          y: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: container.current,
-            // markers: true,
-            start: 'center center',
-            toggleActions: 'restart pause restart pause'
+      if (animate) {
+        gsap.fromTo(
+          container.current,
+          {
+            y: 50,
+            opacity: 0,
+            duration: 0.25
+          },
+          {
+            y: 0,
+            opacity: 1,
+            scrollTrigger: {
+              trigger: container.current,
+              start: 'center center',
+              toggleActions: 'restart pause restart pause'
+            }
           }
-        }
-      )
+        )
+      }
     },
     { scope: container }
   )

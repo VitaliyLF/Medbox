@@ -58,6 +58,10 @@ export async function getDataHomePage() {
       stickyList {
         title,
         subtitle,
+        listImages [] {
+          image,
+          alt
+        },
         image,
         alt,
         list [] {

@@ -13,7 +13,7 @@ const Footer = ({ footerContent }) => {
     <ul className="footer__contact-list">
       {contactList?.map((item) => (
         <li className="footer__contact-item" key={item._key}>
-          <TitleSection titleSection={item.title} modifier="footer" />
+          <TitleSection titleSection={item.title} modifier="footer" animate={false} />
           <TextSection textSection={item.text} modifier="footer" />
           {item?.sublist && (
             <ul className="footer__contact-sublist">

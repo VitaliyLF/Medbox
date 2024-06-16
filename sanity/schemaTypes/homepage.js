@@ -315,17 +315,30 @@ export default {
           title: 'Subtitle'
         },
         {
-          name: 'image',
-          type: 'image',
-          title: 'Image',
-          description: '⚡️ Optional, but png format is better.'
+          name: 'listImages',
+          type: 'array',
+          title: 'List images',
+          of: [
+            {
+              type: 'document',
+              fields: [
+                {
+                  name: 'image',
+                  type: 'image',
+                  title: 'Image',
+                  description: '⚡️ Optional, but png format is better.'
+                },
+                {
+                  name: 'alt',
+                  type: 'string',
+                  title: 'Descriptive label image for screen readers & SEO',
+                  description: '⚡️ Optional but highly encouraged to make the content more accessible'
+                }
+              ]
+            }
+          ]
         },
-        {
-          name: 'alt',
-          type: 'string',
-          title: 'Descriptive label image for screen readers & SEO',
-          description: '⚡️ Optional but highly encouraged to make the content more accessible'
-        },
+
         {
           name: 'list',
           type: 'array',
