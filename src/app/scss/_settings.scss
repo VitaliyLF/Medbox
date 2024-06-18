@@ -31,14 +31,19 @@
 }
 
 .custom-scrollbar {
-  scrollbar-color: var(--color-medbox-green, #02836f) var(--color-light, #fff) /* Firefox */;
-
-  &::-webkit-scrollbar {
-    background-color: var(--color-light, #fff);
+  &::-webkit-scrollbar-track {
+    background-color: var(--color-mint-green, #ffffff);
   }
 
   &::-webkit-scrollbar-thumb {
     background-color: var(--color-medbox-green, #02836f);
+  }
+}
+
+@supports (scrollbar-color: var(--color-medbox-green, #02836f) var(--color-mint-green, #ffffff)) {
+  .custom-scrollbar {
+    scrollbar-color: var(--color-medbox-green, #02836f) var(--color-mint-green, #ffffff);
+    scrollbar-width: auto;
   }
 }
 
