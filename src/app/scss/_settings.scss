@@ -63,18 +63,17 @@
 }
 
 .container {
-  --content-max-width: 1300px;
-  --padding-inline: 15px;
-
   margin-inline: auto;
-  width: min(var(--content-max-width), 100% - (var(--padding-inline) * 2));
+  width: min(var(--container-max-width), 100% - (var(--container-padding-inline) * 2));
 }
 
 .skiplink {
   --skiplink-offset: 20px;
-  --skiplink-overlay-color: hsla(0, 0%, 0%, 0.6);
-  --skiplink-bgcolor: var(--color-medbox-green, #02836f);
-  --skiplink-flashing-color: hsla(0, 0%, 100%, 0.5);
+  --skiplink-bg-color: var(--color-medbox-green, #02836f);
+  --skiplink-overlay-color: hsl(0, 0%, 0%);
+  --skiplink-flashing-color: hsl(0, 0%, 100%);
+  --skiplink-overlay-color-mix-a60: color-mix(in srgb, var(--skiplink-overlay-color), transparent 40%);
+  --skiplink-flashing-color-mix-a50: color-mix(in srgb, var(--skiplink-flashing-color), transparent 50%);
   --skiplink-z-index: 900;
 
   position: fixed;
@@ -83,7 +82,7 @@
   font-family: var(--font-family-additional);
   font-size: var(--skiplink-offset);
   font-weight: 700;
-  background-color: var(--skiplink-overlay-color);
+  background-color: var(--skiplink-overlay-color-mix-a60, hsla(0, 0%, 0%, 0.6));
   color: var(--color-black);
   z-index: var(--skiplink-z-index);
   pointer-events: none;
@@ -99,7 +98,7 @@
     left: var(--skiplink-offset);
     padding: var(--skiplink-offset);
     border-radius: var(--skiplink-offset);
-    background-color: var(--skiplink-bgcolor);
+    background-color: var(--skiplink-bg-color);
     color: var(--color-light, #fff);
     border: 2px solid var(--color-light, #fff);
     display: inline-flex;
@@ -129,7 +128,7 @@
     opacity: 1;
 
     & .skiplink__text {
-      box-shadow: var(--skiplink-flashing-color) 0px 0px 0px 0px;
+      box-shadow: var(--skiplink-flashing-color-mix-a50, hsla(0, 0%, 100%, 0.5)) 0px 0px 0px 0px;
     }
   }
 }

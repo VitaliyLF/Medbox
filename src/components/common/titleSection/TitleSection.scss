@@ -18,7 +18,7 @@
   &--footer {
     @include marginBottom(var(--offset-tiny-medium, 20px));
 
-    color: var(--color-light, #fff);
+    color: var(--color-light, #ffffff);
     text-transform: initial;
     font-weight: 700;
   }

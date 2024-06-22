@@ -47,7 +47,9 @@
       background: url(../../../app/img/details-arrow.svg) center/var(--offset-tiny-medium) no-repeat
         var(--color-medbox-green, #02836f);
       rotate: 90deg;
-      transition: background-color var(--timing, 0.3s) ease, opacity var(--timing, 0.3s) ease;
+      transition:
+        background-color var(--timing, 0.3s) ease,
+        opacity var(--timing, 0.3s) ease;
 
       &::after {
         display: none;

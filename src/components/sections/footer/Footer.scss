@@ -74,12 +74,12 @@
     transition: color var(--timing, 0.3s) ease;
 
     &:focus {
-      transition:
-        outline 0.1s ease-in,
-        outline-offset 0.1s ease-in;
       outline: 3px dotted currentColor;
       outline-offset: calc(3px * 2);
       opacity: 1;
+      transition:
+        outline 0.1s ease-in,
+        outline-offset 0.1s ease-in;
     }
 
     @include hover {
@@ -110,11 +110,11 @@
     transition: scale var(--timing, 0.3s) ease;
 
     &:focus {
+      outline: 3px dotted var(--color-light, #fff);
+      outline-offset: calc(3px * 2);
       transition:
         outline 0.1s ease-in,
         outline-offset 0.1s ease-in;
-      outline: 3px dotted var(--color-light, #fff);
-      outline-offset: calc(3px * 2);
     }
 
     @include hover {

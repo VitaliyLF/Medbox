@@ -1,8 +1,12 @@
 :root {
-  // base
+  // font-family
   --font-family-base: 'Agrandir', sans-serif;
   --font-family-accent: 'Atkinson Hyperlegible', sans-serif;
   --font-family-additional: 'DM Sans', sans-serif;
+
+  //container
+  --container-max-width: 1300px;
+  --container-padding-inline: 15px;
 
   // border-radius-size
   --border-radius-all-large: 40px;

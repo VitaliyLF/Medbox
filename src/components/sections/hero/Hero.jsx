@@ -12,7 +12,7 @@ const Hero = ({ heroContent }) => {
   const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 576px)')
+    const mediaQuery = window.matchMedia('(max-width: 768px)')
     setIsMobile(mediaQuery.matches)
 
     const handleResize = () => setIsMobile(mediaQuery.matches)
