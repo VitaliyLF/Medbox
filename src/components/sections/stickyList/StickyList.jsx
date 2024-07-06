@@ -12,11 +12,12 @@ import Link from 'next/link'
 import { useRef } from 'react'
 import classNames from 'classnames/bind'
 
-gsap.registerPlugin(ScrollTrigger)
-
-const StickyList = ({ stickyListContent }) => {
-  const { title, subtitle, listImages, alt, list, linkText } = stickyListContent ?? {}
+const StickyList = ({
+  stickyListContent: { title, subtitle, listImages, alt, list, linkText } = {},
+}) => {
   const listItemRefs = useRef({})
+
+  gsap.registerPlugin(ScrollTrigger)
 
   useGSAP(() => {
     Object.values(listItemRefs.current).forEach((listItem, index) => {
@@ -25,7 +26,6 @@ const StickyList = ({ stickyListContent }) => {
           trigger: listItem,
           start: 'bottom center',
           end: '200px 15%',
-          // markers: true,
           onEnter: () => listItem.classList.add('is-active'),
           onLeave: () => listItem.classList.remove('is-active'),
           onEnterBack: () => listItem.classList.add('is-active'),
@@ -33,7 +33,7 @@ const StickyList = ({ stickyListContent }) => {
             if (index !== 0) {
               listItem.classList.remove('is-active')
             }
-          }
+          },
         })
       }
     })
@@ -50,10 +50,14 @@ const StickyList = ({ stickyListContent }) => {
           <aside className="sticky-list__aside">
             <ul className="sticky-list__images">
               {listImages?.map((item) => {
-                const imageDimensions = item.image?.asset ? decodeAssetId(item.image.asset._ref).dimensions : null
+                const imageDimensions = item.image?.asset
+                  ? decodeAssetId(item.image.asset._ref).dimensions
+                  : null
 
                 return (
-                  <li className="sticky-list__images-item" key={item.image.asset._ref}>
+                  <li
+                    className="sticky-list__images-item"
+                    key={item.image.asset._ref}>
                     <Image
                       className="sticky-list__image"
                       src={urlFor(item.image).url()}
@@ -71,7 +75,9 @@ const StickyList = ({ stickyListContent }) => {
             <ul className="sticky-list__items">
               {list?.map((item) => (
                 <li
-                  className={classNames('sticky-list__item', { 'is-active': item._key === list[0]._key })}
+                  className={classNames('sticky-list__item', {
+                    'is-active': item._key === list[0]._key,
+                  })}
                   key={item._key}
                   ref={(el) => (listItemRefs.current[item._key] = el)}>
                   <h4 className="sticky-list__item-subtitle">{item.title}</h4>

@@ -6,9 +6,6 @@ import { useRef } from 'react'
 import classNames from 'classnames/bind'
 import styles from './TitleSection.scss'
 
-gsap.registerPlugin(ScrollTrigger)
-const cx = classNames.bind(styles)
-
 const TitleSection = ({ titleSection, modifier, animate = true }) => {
   const container = useRef(null)
 
@@ -20,7 +17,7 @@ const TitleSection = ({ titleSection, modifier, animate = true }) => {
           {
             y: 50,
             opacity: 0,
-            duration: 0.25
+            duration: 0.25,
           },
           {
             y: 0,
@@ -28,20 +25,24 @@ const TitleSection = ({ titleSection, modifier, animate = true }) => {
             scrollTrigger: {
               trigger: container.current,
               start: 'center center',
-              toggleActions: 'restart pause restart pause'
-            }
-          }
+              toggleActions: 'restart pause restart pause',
+            },
+          },
         )
       }
     },
-    { scope: container }
+    { scope: container },
   )
 
   if (!titleSection) return null
 
+  gsap.registerPlugin(ScrollTrigger)
+
+  const cx = classNames.bind(styles)
+
   const titleClassName = cx({
     'title-section': true,
-    [`title-section--${modifier}`]: modifier
+    [`title-section--${modifier}`]: modifier,
   })
 
   return (

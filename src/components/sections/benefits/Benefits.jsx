@@ -3,8 +3,9 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import ContentBlock from '../../common/сontentBlock/ContentBlock'
 
-const Benefits = ({ benefitsContent }) => {
-  const { title, subtitle, text, btnText, image, alt } = benefitsContent ?? {}
+const Benefits = ({
+  benefitsContent: { title, subtitle, text, btnText, image, alt } = {},
+}) => {
   const { dimensions } = decodeAssetId(image.asset._ref)
 
   const contentBlockBenefits = {
@@ -12,7 +13,7 @@ const Benefits = ({ benefitsContent }) => {
     title,
     subtitle,
     btnText,
-    text
+    text,
   }
 
   return (

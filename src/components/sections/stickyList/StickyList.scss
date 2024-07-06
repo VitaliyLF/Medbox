@@ -21,11 +21,15 @@
   }
 
   &__images {
+    // display: flex;
+    // overflow: hidden;
   }
 
   &__images-item {
     // opacity: 0;
     // visibility: hidden;
+    // position: sticky;
+    // top: 0;
 
     &.is-active {
       opacity: 1;

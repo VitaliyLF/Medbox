@@ -5,9 +5,7 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import TitleSection from '@/components/common/titleSection/TitleSection'
 import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
 
-const Supporting = ({ supportingContent }) => {
-  const { title, subtitle, list } = supportingContent ?? {}
-
+const Supporting = ({ supportingContent: { title, subtitle, list } = {} }) => {
   return (
     <section className="supporting">
       <div className="container">
@@ -17,7 +15,9 @@ const Supporting = ({ supportingContent }) => {
         </div>
         <ul className="supporting__list">
           {list?.map((item) => {
-            const imageDimensions = item.image?.asset ? decodeAssetId(item.image.asset._ref).dimensions : null
+            const imageDimensions = item.image?.asset
+              ? decodeAssetId(item.image.asset._ref).dimensions
+              : null
 
             if (!item.image || !imageDimensions) {
               return null
@@ -26,7 +26,10 @@ const Supporting = ({ supportingContent }) => {
             return (
               <li className="supporting__item" key={item._key}>
                 {item.url ? (
-                  <Link className="supporting__link" href={item.url || ''} target="_blank">
+                  <Link
+                    className="supporting__link"
+                    href={item.url || ''}
+                    target="_blank">
                     <Image
                       className="supporting__image"
                       src={urlFor(item.image).url()}

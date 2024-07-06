@@ -5,21 +5,38 @@ import Link from 'next/link'
 import TitleSection from '@/components/common/titleSection/TitleSection'
 import TextSection from '@/components/common/textSection/TextSection'
 
-const Footer = ({ footerContent }) => {
-  const { footerLogo, contactList, socialList, policyList, copyright, parthersList } = footerContent ?? {}
-  const LogoDimensions = footerLogo?.asset ? decodeAssetId(footerLogo.asset._ref).dimensions : null
+const Footer = ({
+  footerContent: {
+    footerLogo,
+    contactList,
+    socialList,
+    policyList,
+    copyright,
+    parthersList,
+  } = {},
+}) => {
+  const LogoDimensions = footerLogo?.asset
+    ? decodeAssetId(footerLogo.asset._ref).dimensions
+    : null
 
   const renderContactList = () => (
     <ul className="footer__contact-list">
       {contactList?.map((item) => (
         <li className="footer__contact-item" key={item._key}>
-          <TitleSection titleSection={item.title} modifier="footer" animate={false} />
+          <TitleSection
+            titleSection={item.title}
+            modifier="footer"
+            animate={false}
+          />
           <TextSection textSection={item.text} modifier="footer" />
           {item?.sublist && (
             <ul className="footer__contact-sublist">
               <li className="footer__contact-item">
                 {item?.sublist?.map((link) => (
-                  <Link className="link link--light" href={link.url || ''} key={link._key}>
+                  <Link
+                    className="link link--light"
+                    href={link.url || ''}
+                    key={link._key}>
                     {link.linkText}
                   </Link>
                 ))}
@@ -78,11 +95,16 @@ const Footer = ({ footerContent }) => {
   const renderParthersList = () => (
     <ul className="footer__bottom-list">
       {parthersList?.map((parther) => {
-        const partherDimensions = parther.image?.asset ? decodeAssetId(parther.image.asset._ref).dimensions : null
+        const partherDimensions = parther.image?.asset
+          ? decodeAssetId(parther.image.asset._ref).dimensions
+          : null
 
         return (
           <li className="footer__bottom-item" key={parther._key}>
-            <Link className="footer__bottom-link" href={parther.url} target="_blank">
+            <Link
+              className="footer__bottom-link"
+              href={parther.url}
+              target="_blank">
               <Image
                 className="footer__bottom-image"
                 src={urlFor(parther.image).url()}

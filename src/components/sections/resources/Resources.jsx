@@ -6,9 +6,9 @@ import 'swiper/css/navigation'
 import BlogPost from '../../common/blogPost/BlogPost'
 import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 
-const Resources = ({ resourcesContent }) => {
-  const { subtitle, text, linkText, url, list } = resourcesContent ?? {}
-
+const Resources = ({
+  resourcesContent: { subtitle, text, linkText, url, list } = {},
+}) => {
   const contentBlockResources = {
     contentClassName: 'resources__content',
     subtitleModifier: 'large',
@@ -16,7 +16,7 @@ const Resources = ({ resourcesContent }) => {
     subtitle,
     text,
     url,
-    linkText
+    linkText,
   }
 
   const swiperResourcesSettings = {
@@ -31,15 +31,15 @@ const Resources = ({ resourcesContent }) => {
     keyboard: {
       enabled: true,
       onlyInViewport: true,
-      pageUpDown: true
+      pageUpDown: true,
     },
     a11y: {
       enabled: true,
       prevSlideMessage: 'Previous slide',
       nextSlideMessage: 'Next slide',
       firstSlideMessage: 'This is the first slide',
-      lastSlideMessage: 'This is the last slide'
-    }
+      lastSlideMessage: 'This is the last slide',
+    },
   }
 
   return (
@@ -48,9 +48,9 @@ const Resources = ({ resourcesContent }) => {
         <ContentBlock {...contentBlockResources} />
         <div className="resources__wrapper">
           <Swiper {...swiperResourcesSettings}>
-            {list?.map((item) => (
-              <SwiperSlide key={item._key}>
-                <BlogPost blog={item} />
+            {list?.map((post) => (
+              <SwiperSlide key={post._key}>
+                <BlogPost post={post} />
               </SwiperSlide>
             ))}
           </Swiper>

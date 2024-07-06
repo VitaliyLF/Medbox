@@ -5,10 +5,10 @@
   "bracketSpacing": true,
   "bracketSameLine": true,
   "jsxBracketSameLine": true,
-  "trailingComma": "none",
+  "trailingComma": "all",
   "endOfLine": "auto",
   "htmlWhitespaceSensitivity": "ignore",
-  "printWidth": 120,
+  "printWidth": 80,
   "tabWidth": 2,
   "arrowParens": "always"
 }

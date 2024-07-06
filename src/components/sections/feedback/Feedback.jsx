@@ -4,9 +4,9 @@ import Review from '../../common/review/Review'
 import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
 import TextSection from '@/components/common/textSection/TextSection'
 
-const FeedbackSection = ({ feedBackContent }) => {
-  const { subtitle, text, list, subtext, linkText, url } = feedBackContent ?? {}
-
+const FeedbackSection = ({
+  feedBackContent: { subtitle, text, list, subtext, linkText, url } = {},
+}) => {
   return (
     <section className="feedback">
       <div className="container">
@@ -28,7 +28,11 @@ const FeedbackSection = ({ feedBackContent }) => {
             </div>
           )}
           {linkText && (
-            <Link className="btn" href={url} target="_blank" title="Read reviews || New window">
+            <Link
+              className="btn"
+              href={url}
+              target="_blank"
+              title="Read reviews || New window">
               {linkText}
             </Link>
           )}

@@ -5,15 +5,26 @@ import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 
-const States = ({ statesContent }) => {
-  const { title, subtitle, text, textContact, btnText, image, alt } = statesContent ?? {}
-  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+const States = ({
+  statesContent: {
+    title,
+    subtitle,
+    text,
+    textContact,
+    btnText,
+    image,
+    alt,
+  } = {},
+}) => {
+  const imageDimensions = image?.asset
+    ? decodeAssetId(image.asset._ref).dimensions
+    : null
 
   const contentBlockStates = {
     contentClassName: 'states__content',
     title,
     subtitle,
-    text
+    text,
   }
 
   return (

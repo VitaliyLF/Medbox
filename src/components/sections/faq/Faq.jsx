@@ -3,9 +3,7 @@ import Details from '../../common/details/Details'
 import TitleSection from '@/components/common/titleSection/TitleSection'
 import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
 
-const Faq = ({ faqContent }) => {
-  const { title, subtitle, list, linkText } = faqContent ?? {}
-
+const Faq = ({ faqContent: { title, subtitle, list, linkText } = {} }) => {
   return (
     <section className="faq">
       <div className="faq__container container">

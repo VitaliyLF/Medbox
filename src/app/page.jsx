@@ -16,8 +16,8 @@ import Footer from '@/components/sections/footer/Footer'
 
 export const metadata = {
   title: {
-    default: 'Medbox'
-  }
+    default: 'Medbox',
+  },
 }
 
 const HomePage = async () => {

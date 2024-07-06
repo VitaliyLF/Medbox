@@ -16,14 +16,18 @@ const ContentBlock = ({
   textModifier,
   linkModifier,
   linkText,
-  url
+  url,
 }) => (
   <div className={contentClassName || ''}>
     {title && <TitleSection titleSection={title} modifier={titleModifier} />}
-    {subtitle && <SubtitleSection subtitleSection={subtitle} modifier={subtitleModifier} />}
+    {subtitle && (
+      <SubtitleSection subtitleSection={subtitle} modifier={subtitleModifier} />
+    )}
     {text && <TextSection textSection={text} modifier={textModifier} />}
     {linkText && url && (
-      <Link className={`link ${linkModifier ? `link--${linkModifier}` : 'btn'}`} href={url}>
+      <Link
+        className={`link ${linkModifier ? `link--${linkModifier}` : 'btn'}`}
+        href={url}>
         {linkText}
       </Link>
     )}

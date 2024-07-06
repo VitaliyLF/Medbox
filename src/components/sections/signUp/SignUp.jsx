@@ -6,11 +6,9 @@ import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import classNames from 'classnames'
 
-const submitTimeOutMs = 2500
-let dimensions = null
-
-const SignUp = ({ signUpContent }) => {
-  const { subtitle, image, text } = signUpContent ?? {}
+const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
+  const submitTimeOutMs = 2500
+  let dimensions = null
 
   if (image && image.asset) {
     dimensions = decodeAssetId(image.asset._ref).dimensions
@@ -21,9 +19,9 @@ const SignUp = ({ signUpContent }) => {
     handleSubmit,
     reset,
     setError,
-    formState: { errors, isValid, isSubmitted }
+    formState: { errors, isValid, isSubmitted },
   } = useForm({
-    mode: 'onBlur'
+    mode: 'onBlur',
   })
 
   const onSubmit = async (data) => {
@@ -54,7 +52,7 @@ const SignUp = ({ signUpContent }) => {
 
       setError('email', {
         type: 'manual',
-        message: 'The text is too long. Maximum 50 characters.'
+        message: 'The text is too long. Maximum 50 characters.',
       })
     }
   }
@@ -64,25 +62,31 @@ const SignUp = ({ signUpContent }) => {
       <div className="sign-up__container container">
         {subtitle && <h2 className="sign-up__subtitle">{subtitle}</h2>}
         {!isSubmitted && (
-          <form className="sign-up__form" id="sign-up-form" method="post" onSubmit={handleSubmit(onSubmit)}>
+          <form
+            className="sign-up__form"
+            id="sign-up-form"
+            method="post"
+            onSubmit={handleSubmit(onSubmit)}>
             <label className="sign-up__label" htmlFor="email">
               <input
                 {...register('email', {
                   required: 'Required',
                   maxLength: {
                     value: 50,
-                    message: 'Maximum 50 characters'
+                    message: 'Maximum 50 characters',
                   },
                   minLength: {
                     value: 5,
-                    message: 'Minimum of 5 characters'
+                    message: 'Minimum of 5 characters',
                   },
                   pattern: {
                     value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                    message: 'Invalid email address'
-                  }
+                    message: 'Invalid email address',
+                  },
                 })}
-                className={classNames('sign-up__input', { 'sign-up__input--error': errors.email })}
+                className={classNames('sign-up__input', {
+                  'sign-up__input--error': errors.email,
+                })}
                 name="email"
                 type="email"
                 placeholder="Enter your email"
@@ -95,9 +99,17 @@ const SignUp = ({ signUpContent }) => {
                 maxLength="50"
                 onPaste={handlePaste}
               />
-              {errors?.email && <p className="sign-up__error">{errors?.email?.message || 'Required'}</p>}
+              {errors?.email && (
+                <p className="sign-up__error">
+                  {errors?.email?.message || 'Required'}
+                </p>
+              )}
             </label>
-            <button className="sign-up__btn" type="submit" form="sign-up-form" disabled={!isValid}>
+            <button
+              className="sign-up__btn"
+              type="submit"
+              form="sign-up-form"
+              disabled={!isValid}>
               Sign Up
             </button>
           </form>

@@ -7,10 +7,14 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
 
-const Header = ({ headerContent }) => {
+const Header = ({
+  headerContent: { logo, links, btnText, btnTextMobile } = {},
+}) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
-  const { logo, links, btnText, btnTextMobile } = headerContent ?? {}
-  const logoDimensions = logo?.asset ? decodeAssetId(logo.asset._ref).dimensions : null
+
+  const logoDimensions = logo?.asset
+    ? decodeAssetId(logo.asset._ref).dimensions
+    : null
 
   const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
@@ -18,7 +22,8 @@ const Header = ({ headerContent }) => {
   }
 
   const toggleScroll = () => {
-    const paddingOffset = window.innerWidth - document.documentElement.clientWidth
+    const paddingOffset =
+      window.innerWidth - document.documentElement.clientWidth
     document.body.classList.toggle('scroll-lock')
     document.body.style.paddingRight = isMenuOpen ? '' : `${paddingOffset}px`
     document.body.style.scrollBehavior = isMenuOpen ? '' : 'unset'
@@ -77,7 +82,9 @@ const Header = ({ headerContent }) => {
             </Link>
           )}
           <nav
-            className={classNames('header__nav', { 'header__nav--active': isMenuOpen })}
+            className={classNames('header__nav', {
+              'header__nav--active': isMenuOpen,
+            })}
             aria-label="Main navigation"
             title="Use to navigation">
             <ul className="header__nav-list">
@@ -91,12 +98,18 @@ const Header = ({ headerContent }) => {
             </ul>
             <div className="header__mobile">
               {btnText && (
-                <button className="header__mobile-btn btn" type="button" aria-hidden="true">
+                <button
+                  className="header__mobile-btn btn"
+                  type="button"
+                  aria-hidden="true">
                   {btnText}
                 </button>
               )}
               {btnTextMobile && (
-                <Link className="header__mobile-link btn btn--phone" href="tel:8663537856" aria-hidden="true">
+                <Link
+                  className="header__mobile-link btn btn--phone"
+                  href="tel:8663537856"
+                  aria-hidden="true">
                   {btnTextMobile}
                 </Link>
               )}
@@ -104,7 +117,9 @@ const Header = ({ headerContent }) => {
           </nav>
           <Button buttonText={btnText} modifier="header" />
           <button
-            className={classNames('header__burger', { 'header__burger--active': isMenuOpen })}
+            className={classNames('header__burger', {
+              'header__burger--active': isMenuOpen,
+            })}
             type="button"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen ? 'true' : 'false'}
@@ -116,7 +131,10 @@ const Header = ({ headerContent }) => {
           </button>
         </div>
       </div>
-      <a className="header__scroll-link" href="#scroll-to-top" title="Scroll to top">
+      <a
+        className="header__scroll-link"
+        href="#scroll-to-top"
+        title="Scroll to top">
         <ScrollIcon />
         Scroll to top
       </a>

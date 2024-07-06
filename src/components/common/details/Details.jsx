@@ -4,9 +4,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import TextSection from '../textSection/TextSection'
 
-const Details = ({ source, isOpen = false }) => {
-  const { summary, text, url, linkText, image, alt } = source ?? {}
-  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+const Details = ({
+  source: { summary, text, url, linkText, image, alt } = {},
+  isOpen = false,
+}) => {
+  const imageDimensions = image?.asset
+    ? decodeAssetId(image.asset._ref).dimensions
+    : null
 
   return (
     <details className="details" open={isOpen}>

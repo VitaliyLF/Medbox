@@ -5,8 +5,12 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
 
 const InfoBlock = ({ infoBlockContent }) => {
-  const { subtitle, text, url, linkText, btnText, image, alt } = infoBlockContent ?? {}
-  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+  const { subtitle, text, url, linkText, btnText, image, alt } =
+    infoBlockContent ?? {}
+
+  const imageDimensions = image?.asset
+    ? decodeAssetId(image.asset._ref).dimensions
+    : null
 
   const contentBlockInfo = {
     contentClassName: 'info-block__content',
@@ -15,7 +19,7 @@ const InfoBlock = ({ infoBlockContent }) => {
     text,
     btnText,
     linkText,
-    url
+    url,
   }
 
   return (

@@ -6,10 +6,14 @@ import ContentBlock from '../../common/сontentBlock/ContentBlock'
 import Tilt from 'react-parallax-tilt'
 import { useEffect, useState } from 'react'
 
-const Hero = ({ heroContent }) => {
+const Hero = ({
+  heroContent: { title, subtitle, text, btnText, image, alt } = {},
+}) => {
   const [isMobile, setIsMobile] = useState(false)
-  const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}
-  const imageDimensions = image?.asset ? decodeAssetId(image.asset._ref).dimensions : null
+
+  const imageDimensions = image?.asset
+    ? decodeAssetId(image.asset._ref).dimensions
+    : null
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 768px)')
@@ -28,13 +32,14 @@ const Hero = ({ heroContent }) => {
     title,
     subtitle,
     btnText,
-    text
+    text,
   }
 
   return (
     <section className="hero">
       <h1 className="visually-hidden">
-        MedBox: Revolutionizing Senior Pharmacy Services for Stress-Free Medication Management
+        MedBox: Revolutionizing Senior Pharmacy Services for Stress-Free
+        Medication Management
       </h1>
       <div className="hero__container container">
         <div className="hero__wrapper">
@@ -50,7 +55,11 @@ const Hero = ({ heroContent }) => {
                 loading="lazy"
               />
             ) : (
-              <Tilt scale={1.1} transitionSpeed={1500} tiltMaxAngleX={15} tiltMaxAngleY={15}>
+              <Tilt
+                scale={1.1}
+                transitionSpeed={1500}
+                tiltMaxAngleX={15}
+                tiltMaxAngleY={15}>
                 <Image
                   className="hero__img"
                   src={urlFor(image).url()}

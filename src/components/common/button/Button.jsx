@@ -1,14 +1,14 @@
 import classNames from 'classnames/bind'
 import styles from './Button.scss'
 
-const cx = classNames.bind(styles)
-
 const Button = ({ buttonText, modifier }) => {
   if (!buttonText) return null
 
+  const cx = classNames.bind(styles)
+
   const buttonClassName = cx({
     btn: true,
-    [`btn--${modifier}`]: modifier
+    [`btn--${modifier}`]: modifier,
   })
 
   return (
