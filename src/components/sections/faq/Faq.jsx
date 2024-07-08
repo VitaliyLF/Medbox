@@ -13,13 +13,14 @@ const Faq = ({ faqContent: { title, subtitle, list, linkText } = {} }) => {
         </aside>
         <div className="faq__info">
           <ul className="faq__list">
-            {list?.map((item, index) => (
-              <li className="faq__item" key={item._key}>
-                <Details source={item} isOpen={index === 0} />
-              </li>
-            ))}
+            {list?.length > 0 &&
+              list.map((item, index) => (
+                <li className="faq__item" key={item._key}>
+                  <Details source={item} isOpen={index === 0} />
+                </li>
+              ))}
           </ul>
-          {linkText && (
+          {Boolean(linkText) && (
             <Link className="btn" href="#">
               {linkText}
             </Link>

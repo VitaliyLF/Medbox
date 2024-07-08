@@ -14,15 +14,15 @@ const Details = ({
 
   return (
     <details className="details" open={isOpen}>
-      {summary && (
+      {Boolean(summary) && (
         <summary className="details__summary" title="Open/Close information">
           {summary}
         </summary>
       )}
       <article className="details__content">
         <TextSection textSection={text} modifier="details" />
-        {linkText && (
-          <Link className="link link--puerto-rico" href={url}>
+        {Boolean(linkText) && (
+          <Link className="link link--puerto-rico" href={url || ''}>
             {linkText}
           </Link>
         )}

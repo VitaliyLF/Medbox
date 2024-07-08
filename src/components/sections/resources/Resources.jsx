@@ -48,11 +48,12 @@ const Resources = ({
         <ContentBlock {...contentBlockResources} />
         <div className="resources__wrapper">
           <Swiper {...swiperResourcesSettings}>
-            {list?.map((post) => (
-              <SwiperSlide key={post._key}>
-                <BlogPost post={post} />
-              </SwiperSlide>
-            ))}
+            {list?.length > 0 &&
+              list.map((post) => (
+                <SwiperSlide key={post._key}>
+                  <BlogPost post={post} />
+                </SwiperSlide>
+              ))}
           </Swiper>
         </div>
       </div>

@@ -18,12 +18,16 @@ const ContentBlock = ({
   linkText,
   url,
 }) => (
-  <div className={contentClassName || ''}>
-    {title && <TitleSection titleSection={title} modifier={titleModifier} />}
-    {subtitle && (
+  <div className={contentClassName || null}>
+    {Boolean(title) && (
+      <TitleSection titleSection={title} modifier={titleModifier} />
+    )}
+    {Boolean(subtitle) && (
       <SubtitleSection subtitleSection={subtitle} modifier={subtitleModifier} />
     )}
-    {text && <TextSection textSection={text} modifier={textModifier} />}
+    {Boolean(text) && (
+      <TextSection textSection={text} modifier={textModifier} />
+    )}
     {linkText && url && (
       <Link
         className={`link ${linkModifier ? `link--${linkModifier}` : 'btn'}`}
@@ -31,7 +35,7 @@ const ContentBlock = ({
         {linkText}
       </Link>
     )}
-    {btnText && <Button buttonText={btnText} modifier={btnModifier} />}
+    {Boolean(btnText) && <Button buttonText={btnText} modifier={btnModifier} />}
   </div>
 )
 

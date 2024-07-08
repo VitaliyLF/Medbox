@@ -49,43 +49,45 @@ const StickyList = ({
         <div className="sticky-list__inner">
           <aside className="sticky-list__aside">
             <ul className="sticky-list__images">
-              {listImages?.map((item) => {
-                const imageDimensions = item.image?.asset
-                  ? decodeAssetId(item.image.asset._ref).dimensions
-                  : null
+              {listImages?.length > 0 &&
+                listImages.map((item) => {
+                  const imageDimensions = item.image?.asset
+                    ? decodeAssetId(item.image.asset._ref).dimensions
+                    : null
 
-                return (
-                  <li
-                    className="sticky-list__images-item"
-                    key={item.image.asset._ref}>
-                    <Image
-                      className="sticky-list__image"
-                      src={urlFor(item.image).url()}
-                      alt={alt || ''}
-                      width={imageDimensions.width || 0}
-                      height={imageDimensions.height || 0}
-                      loading="lazy"
-                    />
-                  </li>
-                )
-              })}
+                  return (
+                    <li
+                      className="sticky-list__images-item"
+                      key={item.image.asset._ref}>
+                      <Image
+                        className="sticky-list__image"
+                        src={urlFor(item.image).url()}
+                        alt={alt || ''}
+                        width={imageDimensions.width || 0}
+                        height={imageDimensions.height || 0}
+                        loading="lazy"
+                      />
+                    </li>
+                  )
+                })}
             </ul>
           </aside>
           <div className="sticky-list__info">
             <ul className="sticky-list__items">
-              {list?.map((item) => (
-                <li
-                  className={classNames('sticky-list__item', {
-                    'is-active': item._key === list[0]._key,
-                  })}
-                  key={item._key}
-                  ref={(el) => (listItemRefs.current[item._key] = el)}>
-                  <h4 className="sticky-list__item-subtitle">{item.title}</h4>
-                  <TextSection textSection={item.text} />
-                </li>
-              ))}
+              {list?.length > 0 &&
+                list?.map((item) => (
+                  <li
+                    className={classNames('sticky-list__item', {
+                      'is-active': item._key === list[0]._key,
+                    })}
+                    key={item._key}
+                    ref={(el) => (listItemRefs.current[item._key] = el)}>
+                    <h4 className="sticky-list__item-subtitle">{item.title}</h4>
+                    <TextSection textSection={item.text} />
+                  </li>
+                ))}
             </ul>
-            {linkText && (
+            {Boolean(linkText) && (
               <Link className="sticky-list__btn btn" href="/">
                 {linkText}
               </Link>

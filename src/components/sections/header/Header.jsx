@@ -97,7 +97,7 @@ const Header = ({
               ))}
             </ul>
             <div className="header__mobile">
-              {btnText && (
+              {Boolean(btnText) && (
                 <button
                   className="header__mobile-btn btn"
                   type="button"
@@ -105,7 +105,7 @@ const Header = ({
                   {btnText}
                 </button>
               )}
-              {btnTextMobile && (
+              {Boolean(btnTextMobile) && (
                 <Link
                   className="header__mobile-link btn btn--phone"
                   href="tel:8663537856"

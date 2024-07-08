@@ -40,9 +40,13 @@
   }
 }
 
-@supports (scrollbar-color: var(--color-medbox-green, #02836f) var(--color-mint-green, #ffffff)) {
+@supports (
+  scrollbar-color: var(--color-medbox-green, #02836f)
+    var(--color-mint-green, #ffffff)
+) {
   .custom-scrollbar {
-    scrollbar-color: var(--color-medbox-green, #02836f) var(--color-mint-green, #ffffff);
+    scrollbar-color: var(--color-medbox-green, #02836f)
+      var(--color-mint-green, #ffffff);
     scrollbar-width: auto;
   }
 }
@@ -64,7 +68,10 @@
 
 .container {
   margin-inline: auto;
-  width: min(var(--container-max-width), 100% - (var(--container-padding-inline) * 2));
+  width: min(
+    var(--container-max-width),
+    100% - (var(--container-padding-inline) * 2)
+  );
 }
 
 .skiplink {
@@ -72,8 +79,16 @@
   --skiplink-bg-color: var(--color-medbox-green, #02836f);
   --skiplink-overlay-color: hsl(0, 0%, 0%);
   --skiplink-flashing-color: hsl(0, 0%, 100%);
-  --skiplink-overlay-color-mix-a60: color-mix(in srgb, var(--skiplink-overlay-color), transparent 40%);
-  --skiplink-flashing-color-mix-a50: color-mix(in srgb, var(--skiplink-flashing-color), transparent 50%);
+  --skiplink-overlay-color-mix-a60: color-mix(
+    in srgb,
+    var(--skiplink-overlay-color),
+    transparent 40%
+  );
+  --skiplink-flashing-color-mix-a50: color-mix(
+    in srgb,
+    var(--skiplink-flashing-color),
+    transparent 50%
+  );
   --skiplink-z-index: 900;
 
   position: fixed;
@@ -104,7 +119,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    animation: pulse-btn-bg 1.5s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal none running;
+    animation: pulse-btn-bg 1.5s cubic-bezier(0.8, 0, 0, 1) 0s infinite normal
+      none running;
     transition: box-shadow var(--timing, 0.3s);
 
     &::before {
@@ -128,7 +144,8 @@
     opacity: 1;
 
     & .skiplink__text {
-      box-shadow: var(--skiplink-flashing-color-mix-a50, hsla(0, 0%, 100%, 0.5)) 0px 0px 0px 0px;
+      box-shadow: var(--skiplink-flashing-color-mix-a50, hsla(0, 0%, 100%, 0.5))
+        0px 0px 0px 0px;
     }
   }
 }

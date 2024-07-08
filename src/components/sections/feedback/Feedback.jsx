@@ -15,19 +15,20 @@ const FeedbackSection = ({
           <TextSection textSection={text} />
         </div>
         <ul className="feedback__list">
-          {list?.map((item) => (
-            <li className="feedback__item" key={item._key}>
-              <Review source={item} modifier="feedback" />
-            </li>
-          ))}
+          {list?.length > 0 &&
+            list.map((item) => (
+              <li className="feedback__item" key={item._key}>
+                <Review source={item} modifier="feedback" />
+              </li>
+            ))}
         </ul>
         <div className="centered">
-          {subtext && (
+          {Boolean(subtext) && (
             <div className="feedback__subtext text-section">
               <PortableText value={subtext} />
             </div>
           )}
-          {linkText && (
+          {Boolean(linkText) && (
             <Link
               className="btn"
               href={url}

@@ -10,7 +10,7 @@ const BlogPost = ({ post: { url, image, alt, tag, subtitle } = {} }) => {
     : null
 
   return (
-    <Link className="blog-post" href={url}>
+    <Link className="blog-post" href={url || ''}>
       <div className="blog-post__wrapper">
         {image && (
           <Image
@@ -20,12 +20,12 @@ const BlogPost = ({ post: { url, image, alt, tag, subtitle } = {} }) => {
             width={imageDimensions.width || 0}
             height={imageDimensions.height || 0}
             loading="lazy"
-            title={subtitle}
+            title={subtitle || ''}
           />
         )}
       </div>
       <div className="blog-post__meta text-section text-section--medium">
-        {tag && <div className="blog-post__tag">{tag}</div>}
+        {Boolean(tag) && <div className="blog-post__tag">{tag}</div>}
         <time className="blog-post__time" dateTime="">
           Sep 23, 2023
         </time>

@@ -32,7 +32,10 @@ const Review = ({
             </li>
           ))}
         </ul>
-        <Link className="review__social-link" href={socialUrl} target="_blank">
+        <Link
+          className="review__social-link"
+          href={socialUrl || ''}
+          target="_blank">
           {socialIcon && (
             <Image
               className="review__social-image"
@@ -46,7 +49,7 @@ const Review = ({
           )}
         </Link>
       </div>
-      {blockquote && (
+      {Boolean(blockquote) && (
         <blockquote className="review__blockquote">
           {blockquote.text}
           <footer className="review__footer">

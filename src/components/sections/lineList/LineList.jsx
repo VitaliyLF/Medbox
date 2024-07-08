@@ -38,11 +38,12 @@ const LineList = ({ lineListContent }) => {
         <ListLineSvg />
         <ContentBlock {...contentBlockLineList} />
         <ul className="line-list__items">
-          {list?.map((item) => (
-            <li className="line-list__item" key={item._key}>
-              {item.content}
-            </li>
-          ))}
+          {list?.length > 0 &&
+            list.map((item) => (
+              <li className="line-list__item" key={item._key}>
+                {item.content}
+              </li>
+            ))}
         </ul>
       </div>
       <div className="line-list__wave">

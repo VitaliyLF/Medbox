@@ -60,7 +60,7 @@ const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
   return (
     <section className="sign-up">
       <div className="sign-up__container container">
-        {subtitle && <h2 className="sign-up__subtitle">{subtitle}</h2>}
+        {Boolean(subtitle) && <h2 className="sign-up__subtitle">{subtitle}</h2>}
         {!isSubmitted && (
           <form
             className="sign-up__form"
@@ -126,7 +126,7 @@ const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
                   height={dimensions.height || 0}
                 />
               )}
-              {text && <p className="sign-up__success-text">{text}</p>}
+              {Boolean(text) && <p className="sign-up__success-text">{text}</p>}
             </div>
           </>
         )}
