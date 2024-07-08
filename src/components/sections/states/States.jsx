@@ -44,7 +44,6 @@ const States = ({
             width={imageDimensions.width || 0}
             height={imageDimensions.height || 0}
             alt={alt || ''}
-            loading="lazy"
           />
         )}
       </div>

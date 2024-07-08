@@ -37,7 +37,6 @@ const Supporting = ({ supportingContent: { title, subtitle, list } = {} }) => {
                         width={imageDimensions.width || 0}
                         height={imageDimensions.height || 0}
                         alt={item.alt || ''}
-                        loading="lazy"
                         title={`${item.alt} site || New window`}
                       />
                     </Link>
@@ -48,7 +47,6 @@ const Supporting = ({ supportingContent: { title, subtitle, list } = {} }) => {
                       width={imageDimensions.width || 0}
                       height={imageDimensions.height || 0}
                       alt={item.alt || ''}
-                      loading="lazy"
                     />
                   )}
                 </li>

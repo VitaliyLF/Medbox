@@ -44,7 +44,6 @@ const Review = ({
               width="45"
               height="45"
               title={`${socialIconAlt} || New window`}
-              loading="lazy"
             />
           )}
         </Link>

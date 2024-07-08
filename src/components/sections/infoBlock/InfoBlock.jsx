@@ -34,7 +34,6 @@ const InfoBlock = ({ infoBlockContent }) => {
               alt={alt || ''}
               width={imageDimensions.width || 0}
               height={imageDimensions.height || 0}
-              loading="lazy"
             />
           )}
         </div>

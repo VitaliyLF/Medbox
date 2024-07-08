@@ -70,7 +70,6 @@ const Footer = ({
                   alt={socialItem.socialIconAlt || ''}
                   width={socialDimensions?.width || 0}
                   height={socialDimensions?.height || 0}
-                  loading="lazy"
                 />
               )}
             </Link>

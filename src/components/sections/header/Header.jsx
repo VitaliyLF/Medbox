@@ -77,7 +77,6 @@ const Header = ({
                 title="Homepage"
                 width={logoDimensions.width || 0}
                 height={logoDimensions.height || 0}
-                loading="lazy"
               />
             </Link>
           )}

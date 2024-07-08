@@ -27,7 +27,6 @@ const Benefits = ({
             alt={alt || ''}
             width={dimensions.width || 0}
             height={dimensions.height || 0}
-            loading="lazy"
           />
         )}
       </div>

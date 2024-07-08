@@ -19,7 +19,6 @@ const BlogPost = ({ post: { url, image, alt, tag, subtitle } = {} }) => {
             alt={alt || ''}
             width={imageDimensions.width || 0}
             height={imageDimensions.height || 0}
-            loading="lazy"
             title={subtitle || ''}
           />
         )}

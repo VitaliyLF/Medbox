@@ -56,7 +56,8 @@ const LineList = ({ lineListContent }) => {
               width={imageDimensions.width || 0}
               height={imageDimensions.height || 0}
               aria-hidden="true"
-              loading="lazy"
+              quality={100}
+              sizes="100vw"
             />
             <div className="line-list__wrapper container">
               <Review source={lineListContent} modifier="line-list" />
