@@ -2,6 +2,12 @@ import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.scss'
 
+export const metadata = {
+  title: {
+    default: 'Medbox',
+  },
+}
+
 const RootLayout = async ({ children }) => {
   return (
     <html lang="en" className="page custom-scrollbar">

@@ -14,12 +14,6 @@ import Resources from '@/components/sections/resources/Resources'
 import SignUp from '@/components/sections/signUp/SignUp'
 import Footer from '@/components/sections/footer/Footer'
 
-export const metadata = {
-  title: {
-    default: 'Medbox',
-  },
-}
-
 const HomePage = async () => {
   const dataHomePage = await getDataHomePage()
 
