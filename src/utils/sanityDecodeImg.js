@@ -7,7 +7,7 @@ const decodeAssetId = (id) => {
   return {
     assetId,
     dimensions: { width, height },
-    format
+    format,
   }
 }
 

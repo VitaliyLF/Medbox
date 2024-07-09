@@ -1,8 +1,8 @@
 import { PortableText } from 'next-sanity'
 import Link from 'next/link'
-import Review from '../../common/review/Review'
-import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
-import TextSection from '@/components/common/textSection/TextSection'
+import Review from '../../common/Review/Review'
+import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
+import TextSection from '@/components/common/TextSection/TextSection'
 
 const FeedbackSection = ({
   feedBackContent: { subtitle, text, list, subtext, linkText, url } = {},

@@ -1,7 +1,7 @@
-import TitleSection from '@/components/common/titleSection/TitleSection'
-import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
-import TextSection from '@/components/common/textSection/TextSection'
-import Button from '@/components/common/button/Button'
+import TitleSection from '@/components/common/TitleSection/TitleSection'
+import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
+import TextSection from '@/components/common/TextSection/TextSection'
+import Button from '@/components/common/Button/Button'
 import Link from 'next/link'
 
 const ContentBlock = ({

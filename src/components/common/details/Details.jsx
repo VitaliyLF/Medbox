@@ -2,7 +2,7 @@ import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
-import TextSection from '../textSection/TextSection'
+import TextSection from '../TextSection/TextSection'
 
 const Details = ({
   source: { summary, text, url, linkText, image, alt } = {},

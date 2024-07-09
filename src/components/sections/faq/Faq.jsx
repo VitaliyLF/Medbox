@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import Details from '../../common/details/Details'
-import TitleSection from '@/components/common/titleSection/TitleSection'
-import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
+import Details from '../../common/Details/Details'
+import TitleSection from '@/components/common/TitleSection/TitleSection'
+import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 
 const Faq = ({ faqContent: { title, subtitle, list, linkText } = {} }) => {
   return (

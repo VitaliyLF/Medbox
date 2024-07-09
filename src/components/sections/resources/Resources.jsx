@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, A11y, Keyboard } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/navigation'
-import BlogPost from '../../common/blogPost/BlogPost'
-import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
+import BlogPost from '../../common/BlogPost/BlogPost'
+import ContentBlock from '@/components/common/ContentBlock/ContentBlock'
 
 const Resources = ({
   resourcesContent: { subtitle, text, linkText, url, list } = {},

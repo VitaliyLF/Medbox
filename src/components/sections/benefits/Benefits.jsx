@@ -1,7 +1,7 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
-import ContentBlock from '../../common/сontentBlock/ContentBlock'
+import ContentBlock from '../../common/ContentBlock/ContentBlock'
 
 const Benefits = ({
   benefitsContent: { title, subtitle, text, btnText, image, alt } = {},

@@ -2,8 +2,8 @@ import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Link from 'next/link'
-import TitleSection from '@/components/common/titleSection/TitleSection'
-import TextSection from '@/components/common/textSection/TextSection'
+import TitleSection from '@/components/common/TitleSection/TitleSection'
+import TextSection from '@/components/common/TextSection/TextSection'
 
 const Footer = ({
   footerContent: {

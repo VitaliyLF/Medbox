@@ -53,7 +53,12 @@
         width: 120%;
         height: 200%;
         opacity: 0.5;
-        background: linear-gradient(to left, transparent 0%, #fff 40% 60%, transparent 100%);
+        background: linear-gradient(
+          to left,
+          transparent 0%,
+          #fff 40% 60%,
+          transparent 100%
+        );
         transform: translate(-120%, -25%);
         animation: shine 4s infinite;
       }
@@ -62,78 +67,6 @@
 
   &__logo-img {
     max-width: 145px;
-  }
-
-  &__nav {
-    @include big-desktop {
-      position: fixed;
-      top: var(--header-height, 85px);
-      left: 0;
-      width: 100vw;
-      height: calc(100dvh - var(--header-height, 85px));
-      background-color: var(--color-light-mint, #e8f2ee);
-      translate: -120% 0;
-      transition: translate var(--timing-burger-nav, 1s) var(--burger-nav-animation);
-      overflow-y: auto;
-      z-index: var(--header-nav-z-index, 10);
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-
-      &--active {
-        translate: 0;
-      }
-    }
-  }
-
-  &__nav-list {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: var(--offset-small, 25px);
-
-    @include big-desktop {
-      margin-block: var(--offset-medium-large, 40px);
-      flex-direction: column;
-      flex-grow: 1;
-      gap: var(--offset-small-medium, 30px);
-    }
-  }
-
-  &__nav-item {
-    @include big-desktop {
-      flex-grow: 1;
-    }
-  }
-
-  &__mobile {
-    display: none;
-
-    @include big-desktop {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: var(--offset-tiny, 15px);
-      background-color: var(--color-light, #fff);
-      padding: var(--offset-tiny, 15px) var(--offset-small, 25px);
-      border-top: 1px solid var(--color-mint-green, #cce3da);
-    }
-
-    @include small-mobile {
-      padding: var(--offset-tiny, 15px);
-    }
-  }
-
-  &__mobile-btn {
-    @include mobile {
-      @include fz18-dmsans;
-
-      padding: var(--offset-tiny, 15px);
-    }
-
-    @include small-mobile {
-      @include fz16-dmsans;
-    }
   }
 
   &__burger {
@@ -152,8 +85,7 @@
       border-radius: 50%;
       z-index: 10;
       cursor: pointer;
-      transition:
-        background-color var(--timing, 0.3s) ease-out,
+      transition: background-color var(--timing, 0.3s) ease-out,
         color var(--timing, 0.3s) ease-out;
 
       &::before,
@@ -166,8 +98,7 @@
         height: var(--burger-line-height, 3px);
         background-color: currentColor;
         border-radius: var(--border-radius-all-small, 20px);
-        transition:
-          transform var(--timing, 0.3s) ease-in-out,
+        transition: transform var(--timing, 0.3s) ease-in-out,
           top var(--timing, 0.3s) ease-in-out;
       }
 
@@ -190,8 +121,7 @@
           width: 30px;
           top: 48%;
           transform: translateX(-50%) rotate(45deg);
-          transition:
-            transform var(--timing, 0.3s) ease-in-out,
+          transition: transform var(--timing, 0.3s) ease-in-out,
             top var(--timing, 0.3s) ease-in-out;
         }
 
@@ -199,8 +129,7 @@
           width: 30px;
           top: 48%;
           transform: translateX(-50%) rotate(-45deg);
-          transition:
-            transform var(--timing, 0.3s) ease-in-out,
+          transition: transform var(--timing, 0.3s) ease-in-out,
             top var(--timing, 0.3s) ease-in-out;
         }
       }
@@ -217,8 +146,7 @@
     @include fz22-dmsans;
 
     color: var(--color-dark-green, #045f51);
-    transition:
-      opacity var(--timing, 0.3s) ease-out,
+    transition: opacity var(--timing, 0.3s) ease-out,
       visibility var(--timing, 0.3s) ease-out;
 
     &.is-hidden {
@@ -245,12 +173,9 @@
     opacity: 0;
     visibility: hidden;
     translate: 0 var(--offset-large-medium, 50px);
-    transition:
-      opacity var(--timing, 0.3s) ease,
-      translate var(--timing, 0.3s) ease,
-      visibility var(--timing, 0.3s) ease,
-      background-color var(--timing, 0.3s) ease,
-      scale var(--timing, 0.3s) ease;
+    transition: opacity var(--timing, 0.3s) ease,
+      translate var(--timing, 0.3s) ease, visibility var(--timing, 0.3s) ease,
+      background-color var(--timing, 0.3s) ease, scale var(--timing, 0.3s) ease;
 
     &.is-active {
       opacity: 1;

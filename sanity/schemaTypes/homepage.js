@@ -10,20 +10,20 @@ const heroSection = {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
     },
     {
       name: 'slug',
       type: 'slug',
       title: 'Slug of homepage',
       options: {
-        source: 'hero.title'
-      }
+        source: 'hero.title',
+      },
     },
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'text',
@@ -31,9 +31,9 @@ const heroSection = {
       title: 'Paragraph',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'btnText',
@@ -44,26 +44,30 @@ const heroSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
     },
     {
       name: 'image',
       type: 'image',
       title: 'Image',
-      description: '⚡️ Optional, but png format is better.'
+      description: '⚡️ Optional, but png format is better.',
     },
     {
       name: 'alt',
       type: 'string',
       title: 'Hero descriptive label image for screen readers & SEO',
-      description: '⚡️ Optional but highly encouraged to make the content more accessible'
-    }
-  ]
+      description:
+        '⚡️ Optional but highly encouraged to make the content more accessible',
+    },
+  ],
 }
 
 const videoSection = {
@@ -76,20 +80,20 @@ const videoSection = {
       type: 'file',
       title: 'File',
       options: {
-        accept: 'video/*'
-      }
+        accept: 'video/*',
+      },
     },
     {
       name: 'title',
       type: 'string',
-      title: '⚡️ Descriptive label video for screen readers & SEO'
+      title: '⚡️ Descriptive label video for screen readers & SEO',
     },
     {
       name: 'poster',
       type: 'image',
-      title: 'Poster video'
-    }
-  ]
+      title: 'Poster video',
+    },
+  ],
 }
 
 const lineListSection = {
@@ -100,7 +104,7 @@ const lineListSection = {
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'text',
@@ -108,9 +112,9 @@ const lineListSection = {
       title: 'Paragraph',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'linkText',
@@ -121,12 +125,15 @@ const lineListSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
     },
     {
       name: 'list',
@@ -139,40 +146,42 @@ const lineListSection = {
             {
               name: 'content',
               type: 'string',
-              title: 'Item text'
-            }
-          ]
-        }
-      ]
+              title: 'Item text',
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'image',
       type: 'image',
-      title: 'Image'
+      title: 'Image',
     },
     {
       name: 'stars',
       type: 'number',
       title: 'Stars review',
       validation: (Rule) => Rule.max(5).min(1).integer().required(),
-      description: '⚡️ Represents the star rating (from 1 to 5, integers only).'
+      description:
+        '⚡️ Represents the star rating (from 1 to 5, integers only).',
     },
     {
       name: 'socialIcon',
       type: 'image',
-      title: 'Social icon review'
+      title: 'Social icon review',
     },
     {
       name: 'socialIconAlt',
       type: 'string',
       title: 'List line social icon description for screen readers & SEO',
-      description: '⚡️ Optional but highly encouraged to make the content more accessible'
+      description:
+        '⚡️ Optional but highly encouraged to make the content more accessible',
     },
     {
       name: 'socialUrl',
       type: 'url',
       title: 'Social url link review',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'blockquote',
@@ -182,16 +191,16 @@ const lineListSection = {
         {
           name: 'text',
           type: 'string',
-          title: 'Blockquote text'
+          title: 'Blockquote text',
         },
         {
           name: 'author',
           type: 'string',
-          title: 'Blockquote author'
-        }
-      ]
-    }
-  ]
+          title: 'Blockquote author',
+        },
+      ],
+    },
+  ],
 }
 
 const benefitsSection = {
@@ -202,12 +211,12 @@ const benefitsSection = {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
     },
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'text',
@@ -215,9 +224,9 @@ const benefitsSection = {
       title: 'Paragraph',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'btnText',
@@ -228,25 +237,29 @@ const benefitsSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
     },
     {
       name: 'image',
       type: 'image',
-      title: 'Image'
+      title: 'Image',
     },
     {
       name: 'alt',
       type: 'string',
       title: 'Descriptive label image for screen readers & SEO',
-      description: '⚡️ Optional but highly encouraged to make the content more accessible'
-    }
-  ]
+      description:
+        '⚡️ Optional but highly encouraged to make the content more accessible',
+    },
+  ],
 }
 
 const stickyListSection = {
@@ -257,12 +270,12 @@ const stickyListSection = {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
     },
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'listImages',
@@ -276,17 +289,18 @@ const stickyListSection = {
               name: 'image',
               type: 'image',
               title: 'Image',
-              description: '⚡️ Optional, but png format is better.'
+              description: '⚡️ Optional, but png format is better.',
             },
             {
               name: 'alt',
               type: 'string',
               title: 'Descriptive label image for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
-        }
-      ]
+              description:
+                '⚡️ Optional but highly encouraged to make the content more accessible',
+            },
+          ],
+        },
+      ],
     },
 
     {
@@ -300,7 +314,7 @@ const stickyListSection = {
             {
               name: 'title',
               type: 'string',
-              title: 'List Title'
+              title: 'List Title',
             },
             {
               name: 'text',
@@ -308,13 +322,13 @@ const stickyListSection = {
               title: 'List Text',
               of: [
                 {
-                  type: 'block'
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                  type: 'block',
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'linkText',
@@ -325,14 +339,17 @@ const stickyListSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
-    }
-  ]
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
+    },
+  ],
 }
 
 const infoBlockSection = {
@@ -343,7 +360,7 @@ const infoBlockSection = {
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'text',
@@ -351,24 +368,25 @@ const infoBlockSection = {
       title: 'Paragraph',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'url',
       type: 'url',
       title: 'Phone link url',
-      description: '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel: This field is required.',
+      description:
+        '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel: This field is required.',
       validation: (Rule) =>
         Rule.required().uri({
-          scheme: ['http', 'https', 'mailto', 'tel']
-        })
+          scheme: ['http', 'https', 'mailto', 'tel'],
+        }),
     },
     {
       name: 'linkText',
       type: 'string',
-      title: 'Phone link text'
+      title: 'Phone link text',
     },
     {
       name: 'btnText',
@@ -379,48 +397,54 @@ const infoBlockSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
     },
     {
       name: 'image',
       type: 'image',
       title: 'Image',
-      description: '⚡️ Optional, but png format is better.'
+      description: '⚡️ Optional, but png format is better.',
     },
     {
       name: 'alt',
       type: 'string',
       title: 'Descriptive label image for screen readers & SEO',
-      description: '⚡️ Optional but highly encouraged to make the content more accessible'
+      description:
+        '⚡️ Optional but highly encouraged to make the content more accessible',
     },
     {
       name: 'stars',
       type: 'number',
       title: 'Stars review',
       validation: (Rule) => Rule.max(5).min(1).integer().required(),
-      description: '⚡️ Represents the star rating (from 1 to 5, integers only).'
+      description:
+        '⚡️ Represents the star rating (from 1 to 5, integers only).',
     },
     {
       name: 'socialIcon',
       type: 'image',
-      title: 'Social icon review'
+      title: 'Social icon review',
     },
     {
       name: 'socialIconAlt',
       type: 'string',
       title: 'Info Block social icon description for screen readers & SEO',
-      description: '⚡️ Optional but highly encouraged to make the content more accessible'
+      description:
+        '⚡️ Optional but highly encouraged to make the content more accessible',
     },
     {
       name: 'socialUrl',
       type: 'url',
       title: 'Social link url',
-      validation: (Rule) => Rule.required()
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'blockquote',
@@ -430,16 +454,16 @@ const infoBlockSection = {
         {
           name: 'text',
           type: 'string',
-          title: 'Blockquote text'
+          title: 'Blockquote text',
         },
         {
           name: 'author',
           type: 'string',
-          title: 'Blockquote author'
-        }
-      ]
-    }
-  ]
+          title: 'Blockquote author',
+        },
+      ],
+    },
+  ],
 }
 
 const statesSection = {
@@ -450,12 +474,12 @@ const statesSection = {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
     },
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'text',
@@ -463,9 +487,9 @@ const statesSection = {
       title: 'Paragraph',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'textContact',
@@ -473,9 +497,9 @@ const statesSection = {
       title: 'Text contact',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'btnText',
@@ -486,26 +510,30 @@ const statesSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
     },
     {
       name: 'image',
       type: 'image',
       title: 'Image',
-      description: '⚡️ Optional, but png format is better.'
+      description: '⚡️ Optional, but png format is better.',
     },
     {
       name: 'alt',
       type: 'string',
       title: 'Descriptive label image for screen readers & SEO',
-      description: '⚡️ Optional but highly encouraged to make the content more accessible'
-    }
-  ]
+      description:
+        '⚡️ Optional but highly encouraged to make the content more accessible',
+    },
+  ],
 }
 
 const feedbackSection = {
@@ -516,7 +544,7 @@ const feedbackSection = {
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'text',
@@ -524,9 +552,9 @@ const feedbackSection = {
       title: 'Paragraph',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'list',
@@ -540,24 +568,26 @@ const feedbackSection = {
               name: 'stars',
               type: 'number',
               title: 'Stars review',
-              validation: (Rule) => Rule.max(5).min(1).integer()
+              validation: (Rule) => Rule.max(5).min(1).integer(),
             },
             {
               name: 'socialIcon',
               type: 'image',
-              title: 'Social icon review'
+              title: 'Social icon review',
             },
             {
               name: 'socialIconAlt',
               type: 'string',
-              title: 'Feedback social icon description for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
+              title:
+                'Feedback social icon description for screen readers & SEO',
+              description:
+                '⚡️ Optional but highly encouraged to make the content more accessible',
             },
             {
               name: 'socialUrl',
               type: 'url',
               title: 'Social link url',
-              validation: (Rule) => Rule.required()
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'blockquote',
@@ -567,18 +597,18 @@ const feedbackSection = {
                 {
                   name: 'text',
                   type: 'string',
-                  title: 'Blockquote text'
+                  title: 'Blockquote text',
                 },
                 {
                   name: 'author',
                   type: 'string',
-                  title: 'Blockquote author'
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                  title: 'Blockquote author',
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'subtext',
@@ -586,9 +616,9 @@ const feedbackSection = {
       title: 'Subparagraph',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'linkText',
@@ -599,20 +629,23 @@ const feedbackSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
     },
     {
       name: 'url',
       type: 'url',
       title: 'Link url',
-      validation: (Rule) => Rule.required()
-    }
-  ]
+      validation: (Rule) => Rule.required(),
+    },
+  ],
 }
 
 const faqSection = {
@@ -623,12 +656,12 @@ const faqSection = {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
     },
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'list',
@@ -641,7 +674,7 @@ const faqSection = {
             {
               name: 'summary',
               type: 'string',
-              title: 'Summary Title'
+              title: 'Summary Title',
             },
             {
               name: 'text',
@@ -649,35 +682,36 @@ const faqSection = {
               title: 'text',
               of: [
                 {
-                  type: 'block'
-                }
-              ]
+                  type: 'block',
+                },
+              ],
             },
             {
               name: 'url',
               type: 'url',
-              title: 'Link url'
+              title: 'Link url',
             },
             {
               name: 'linkText',
               type: 'string',
-              title: 'Link Text'
+              title: 'Link Text',
             },
             {
               name: 'image',
               type: 'image',
               title: 'Image',
-              description: '⚡️ Optional, but jpg format is better.'
+              description: '⚡️ Optional, but jpg format is better.',
             },
             {
               name: 'alt',
               type: 'string',
               title: 'Descriptive label image for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
-        }
-      ]
+              description:
+                '⚡️ Optional but highly encouraged to make the content more accessible',
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'linkText',
@@ -688,14 +722,17 @@ const faqSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
-    }
-  ]
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
+    },
+  ],
 }
 
 const supportingSection = {
@@ -706,12 +743,12 @@ const supportingSection = {
     {
       name: 'title',
       type: 'string',
-      title: 'Title'
+      title: 'Title',
     },
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'list',
@@ -724,25 +761,26 @@ const supportingSection = {
             {
               name: 'url',
               type: 'url',
-              title: 'Link url'
+              title: 'Link url',
             },
             {
               name: 'image',
               type: 'image',
               title: 'Image',
-              description: '⚡️ Optional, but png format is better.'
+              description: '⚡️ Optional, but png format is better.',
             },
             {
               name: 'alt',
               type: 'string',
               title: 'Descriptive label image for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
-        }
-      ]
-    }
-  ]
+              description:
+                '⚡️ Optional but highly encouraged to make the content more accessible',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 const resourcesSection = {
@@ -753,7 +791,7 @@ const resourcesSection = {
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'text',
@@ -761,9 +799,9 @@ const resourcesSection = {
       title: 'text',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'linkText',
@@ -774,17 +812,20 @@ const resourcesSection = {
           { title: 'Get started', value: 'Get started' },
           { title: 'Check My Coverage', value: 'Check My Coverage' },
           { title: 'Learn About Medbox', value: 'Learn About Medbox' },
-          { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
+          {
+            title: 'Check Insurance Coverage',
+            value: 'Check Insurance Coverage',
+          },
           { title: 'Read More Reviews', value: 'Read More Reviews' },
           { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-          { title: 'See All Resources', value: 'See All Resources' }
-        ]
-      }
+          { title: 'See All Resources', value: 'See All Resources' },
+        ],
+      },
     },
     {
       name: 'url',
       type: 'url',
-      title: 'Link url'
+      title: 'Link url',
     },
     {
       name: 'list',
@@ -797,19 +838,20 @@ const resourcesSection = {
             {
               name: 'url',
               type: 'url',
-              title: 'Blog item url'
+              title: 'Blog item url',
             },
             {
               name: 'image',
               type: 'image',
               title: 'Blog item image',
-              description: '⚡️ Optional, but jpg format is better.'
+              description: '⚡️ Optional, but jpg format is better.',
             },
             {
               name: 'alt',
               type: 'string',
               title: 'Descriptive label image for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
+              description:
+                '⚡️ Optional but highly encouraged to make the content more accessible',
             },
             {
               name: 'tag',
@@ -819,25 +861,31 @@ const resourcesSection = {
                 list: [
                   { title: 'Exercise', value: 'Exercise' },
                   { title: 'Independent Living', value: 'Independent Living' },
-                  { title: 'Mental Health & Wellbeing', value: 'Mental Health & Wellbeing' },
+                  {
+                    title: 'Mental Health & Wellbeing',
+                    value: 'Mental Health & Wellbeing',
+                  },
                   { title: 'Health & Nutrition', value: 'Health & Nutrition' },
-                  { title: 'Products for Seniors', value: 'Products for Seniors' },
+                  {
+                    title: 'Products for Seniors',
+                    value: 'Products for Seniors',
+                  },
                   { title: 'Retirement', value: 'Retirement' },
                   { title: 'Safety', value: 'Safety' },
-                  { title: 'Technology', value: 'Technology' }
-                ]
-              }
+                  { title: 'Technology', value: 'Technology' },
+                ],
+              },
             },
             {
               name: 'subtitle',
               type: 'string',
-              title: 'Blog item subtitle'
-            }
-          ]
-        }
-      ]
-    }
-  ]
+              title: 'Blog item subtitle',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 const signUp = {
@@ -848,19 +896,19 @@ const signUp = {
     {
       name: 'subtitle',
       type: 'string',
-      title: 'Subtitle'
+      title: 'Subtitle',
     },
     {
       name: 'image',
       type: 'image',
-      title: 'SignUp Success image'
+      title: 'SignUp Success image',
     },
     {
       name: 'text',
       type: 'string',
-      title: 'SignUp Success Text'
-    }
-  ]
+      title: 'SignUp Success Text',
+    },
+  ],
 }
 
 const footer = {
@@ -871,7 +919,7 @@ const footer = {
     {
       name: 'footerLogo',
       type: 'image',
-      title: 'Logo'
+      title: 'Logo',
     },
     {
       name: 'contactList',
@@ -884,7 +932,7 @@ const footer = {
             {
               name: 'title',
               type: 'string',
-              title: 'Footer contact  title'
+              title: 'Footer contact  title',
             },
             {
               name: 'text',
@@ -892,9 +940,9 @@ const footer = {
               title: 'Footer contact  text',
               of: [
                 {
-                  type: 'block'
-                }
-              ]
+                  type: 'block',
+                },
+              ],
             },
             {
               name: 'sublist',
@@ -907,25 +955,26 @@ const footer = {
                     {
                       name: 'linkText',
                       type: 'string',
-                      title: 'Footer link text'
+                      title: 'Footer link text',
                     },
                     {
                       name: 'url',
                       type: 'url',
                       title: 'Footer link url',
-                      description: '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel:',
+                      description:
+                        '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel:',
                       validation: (Rule) =>
                         Rule.uri({
-                          scheme: ['http', 'https', 'mailto', 'tel']
-                        })
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
-      ]
+                          scheme: ['http', 'https', 'mailto', 'tel'],
+                        }),
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'socialList',
@@ -938,28 +987,30 @@ const footer = {
             {
               name: 'linkText',
               type: 'string',
-              title: 'Footer social link text'
+              title: 'Footer social link text',
             },
             {
               name: 'url',
               type: 'url',
               title: 'Footer social link url',
-              validation: (Rule) => Rule.required()
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'socialIcon',
               type: 'image',
-              title: 'Footer social icon'
+              title: 'Footer social icon',
             },
             {
               name: 'socialIconAlt',
               type: 'string',
-              title: 'Feedback social icon description for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
-        }
-      ]
+              title:
+                'Feedback social icon description for screen readers & SEO',
+              description:
+                '⚡️ Optional but highly encouraged to make the content more accessible',
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'policyList',
@@ -972,17 +1023,17 @@ const footer = {
             {
               name: 'linkText',
               type: 'string',
-              title: 'Footer policy link text'
+              title: 'Footer policy link text',
             },
             {
               name: 'url',
               type: 'url',
               title: 'Footer policy link url',
-              validation: (Rule) => Rule.required()
-            }
-          ]
-        }
-      ]
+              validation: (Rule) => Rule.required(),
+            },
+          ],
+        },
+      ],
     },
     {
       name: 'copyright',
@@ -990,9 +1041,9 @@ const footer = {
       title: 'Footer copyright',
       of: [
         {
-          type: 'block'
-        }
-      ]
+          type: 'block',
+        },
+      ],
     },
     {
       name: 'parthersList',
@@ -1005,25 +1056,26 @@ const footer = {
             {
               name: 'url',
               type: 'url',
-              title: 'Footer parthers url'
+              title: 'Footer parthers url',
             },
             {
               name: 'image',
               type: 'image',
               title: 'Footer parthers image',
-              description: '⚡️ Optional, but svg format is better.'
+              description: '⚡️ Optional, but svg format is better.',
             },
             {
               name: 'alt',
               type: 'string',
               title: 'Descriptive label image for screen readers & SEO',
-              description: '⚡️ Optional but highly encouraged to make the content more accessible'
-            }
-          ]
-        }
-      ]
-    }
-  ]
+              description:
+                '⚡️ Optional but highly encouraged to make the content more accessible',
+            },
+          ],
+        },
+      ],
+    },
+  ],
 }
 
 export default {
@@ -1044,13 +1096,13 @@ export default {
     supportingSection,
     resourcesSection,
     signUp,
-    footer
+    footer,
   ],
   preview: {
     select: {
       title: 'hero.title',
       subtitle: 'hero.subtitle',
-      media: 'header.logo'
-    }
-  }
+      media: 'header.logo',
+    },
+  },
 }

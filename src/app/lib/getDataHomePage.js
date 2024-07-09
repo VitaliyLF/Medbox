@@ -7,7 +7,8 @@ export async function getDataHomePage() {
       logo,
       links [] {
         _key,
-        text
+        text,
+        href
       },
       btnText,
       btnTextMobile,

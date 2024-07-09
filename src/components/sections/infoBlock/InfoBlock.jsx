@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
-import Review from '../../common/review/Review'
+import Review from '../../common/Review/Review'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import ContentBlock from '@/components/common/сontentBlock/ContentBlock'
+import ContentBlock from '@/components/common/ContentBlock/ContentBlock'
 
 const InfoBlock = ({ infoBlockContent }) => {
   const { subtitle, text, url, linkText, btnText, image, alt } =

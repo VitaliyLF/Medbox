@@ -2,8 +2,8 @@ import { urlFor } from '@/app/lib/clientSanity'
 import Image from 'next/image'
 import Link from 'next/link'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import TitleSection from '@/components/common/titleSection/TitleSection'
-import SubtitleSection from '@/components/common/subtitleSection/SubtitleSection'
+import TitleSection from '@/components/common/TitleSection/TitleSection'
+import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 
 const Supporting = ({ supportingContent: { title, subtitle, list } = {} }) => {
   return (

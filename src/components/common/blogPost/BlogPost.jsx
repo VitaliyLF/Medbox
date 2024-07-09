@@ -2,7 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import SubtitleSection from '../subtitleSection/SubtitleSection'
+import SubtitleSection from '../SubtitleSection/SubtitleSection'
 
 const BlogPost = ({ post: { url, image, alt, tag, subtitle } = {} }) => {
   const imageDimensions = image?.asset

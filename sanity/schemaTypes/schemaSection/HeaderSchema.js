@@ -10,9 +10,9 @@ export const HeaderSchema = (fields = {}) => {
       { title: 'Check Insurance Coverage', value: 'Check Insurance Coverage' },
       { title: 'Read More Reviews', value: 'Read More Reviews' },
       { title: 'See Full FAQ’s Page', value: 'See Full FAQ’s Page' },
-      { title: 'See All Resources', value: 'See All Resources' }
+      { title: 'See All Resources', value: 'See All Resources' },
     ],
-    btnTextMobileTitle = 'Mobile Button text'
+    btnTextMobileTitle = 'Mobile Button text',
   } = fields
 
   return {
@@ -23,7 +23,7 @@ export const HeaderSchema = (fields = {}) => {
       {
         name: 'logo',
         type: 'image',
-        title: logoTitle
+        title: logoTitle,
       },
       {
         name: 'links',
@@ -37,25 +37,31 @@ export const HeaderSchema = (fields = {}) => {
                 name: 'text',
                 type: 'string',
                 title: 'Header link text',
-                description: 'Enter link text'
-              }
-            ]
-          }
-        ]
+                description: 'Enter link text',
+              },
+              {
+                name: 'href',
+                type: 'string',
+                title: 'Header link href',
+                description: 'Enter link text',
+              },
+            ],
+          },
+        ],
       },
       {
         name: 'btnText',
         type: 'string',
         title: btnTextTitle,
         options: {
-          list: btnTextOptions
-        }
+          list: btnTextOptions,
+        },
       },
       {
         name: 'btnTextMobile',
         type: 'string',
-        title: btnTextMobileTitle
-      }
-    ]
+        title: btnTextMobileTitle,
+      },
+    ],
   }
 }

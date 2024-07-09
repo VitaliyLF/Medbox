@@ -1,11 +1,12 @@
 'use client'
 import { urlFor } from '@/app/lib/clientSanity'
-import Button from '@/components/common/button/Button'
+import Button from '@/components/common/Button/Button'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import classNames from 'classnames'
+import Navigation from '@/components/common/Navigation/Navigation'
 
 const Header = ({
   headerContent: { logo, links, btnText, btnTextMobile } = {},
@@ -47,6 +48,13 @@ const Header = ({
     }
   }, [])
 
+  const contentBlockHeader = {
+    isMenuOpen,
+    links,
+    btnText,
+    btnTextMobile,
+  }
+
   const ScrollIcon = () => (
     <svg
       className="footer__scroll-icon"
@@ -80,40 +88,7 @@ const Header = ({
               />
             </Link>
           )}
-          <nav
-            className={classNames('header__nav', {
-              'header__nav--active': isMenuOpen,
-            })}
-            aria-label="Main navigation"
-            title="Use to navigation">
-            <ul className="header__nav-list">
-              {links?.map((link) => (
-                <li className="header__nav-item" key={link._key}>
-                  <Link className="link" href="#">
-                    {link.text}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <div className="header__mobile">
-              {Boolean(btnText) && (
-                <button
-                  className="header__mobile-btn btn"
-                  type="button"
-                  aria-hidden="true">
-                  {btnText}
-                </button>
-              )}
-              {Boolean(btnTextMobile) && (
-                <Link
-                  className="header__mobile-link btn btn--phone"
-                  href="tel:8663537856"
-                  aria-hidden="true">
-                  {btnTextMobile}
-                </Link>
-              )}
-            </div>
-          </nav>
+          <Navigation {...contentBlockHeader} />
           <Button buttonText={btnText} modifier="header" />
           <button
             className={classNames('header__burger', {
