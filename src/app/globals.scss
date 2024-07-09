@@ -3,24 +3,24 @@
 @import './scss/main';
 
 // common style connection
-@import '@/components/common/details/Details';
-@import '@/components/common/blogPost/BlogPost';
-@import '@/components/common/review/Review';
-@import '@/components/common/video/Video';
-@import '@/components/common/navigation/Navigation';
+@import '@/components/common/Details/Details';
+@import '@/components/common/BlogPost/BlogPost';
+@import '@/components/common/Review/Review';
+@import '@/components/common/Video/Video';
+@import '@/components/common/Navigation/Navigation';
 
 // page style section connection
-@import '@/components/sections/header/Header';
-@import '@/components/sections/hero/Hero';
-@import '@/components/sections/videoBlock/VideoBlock';
-@import '@/components/sections/lineList/LineList';
-@import '@/components/sections/benefits/Benefits';
-@import '@/components/sections/stickyList/StickyList';
-@import '@/components/sections/infoBlock/InfoBlock';
-@import '@/components/sections/states/States';
-@import '@/components/sections/feedback/Feedback';
-@import '@/components/sections/faq/Faq';
-@import '@/components/sections/supporting/Supporting';
-@import '@/components/sections/resources/Resources';
-@import '@/components/sections/signUp/SignUp';
-@import '@/components/sections/footer/Footer';
+@import '@/components/sections/Header/Header';
+@import '@/components/sections/Hero/Hero';
+@import '@/components/sections/VideoBlock/VideoBlock';
+@import '@/components/sections/LineList/LineList';
+@import '@/components/sections/Benefits/Benefits';
+@import '@/components/sections/StickyList/StickyList';
+@import '@/components/sections/InfoBlock/InfoBlock';
+@import '@/components/sections/States/States';
+@import '@/components/sections/Feedback/Feedback';
+@import '@/components/sections/Faq/Faq';
+@import '@/components/sections/Supporting/Supporting';
+@import '@/components/sections/Resources/Resources';
+@import '@/components/sections/SignUp/SignUp';
+@import '@/components/sections/Footer/Footer';
