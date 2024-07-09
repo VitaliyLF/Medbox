@@ -20,7 +20,7 @@ const Navigation = ({ isMenuOpen, links, btnText, btnTextMobile }) => {
             return (
               <li className="nav_-item" key={link._key}>
                 <Link
-                  className={isActive ? 'link link--active' : 'link'}
+                  className={isActive ? 'link link--nav-active' : 'link'}
                   href={link.href}>
                   {link.text}
                 </Link>

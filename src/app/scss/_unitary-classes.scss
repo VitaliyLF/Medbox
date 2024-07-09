@@ -4,7 +4,9 @@
   display: block;
   color: var(--color-black-green, #202524);
   position: relative;
-  transition: color var(--timing) ease, scale var(--timing, 0.3s) ease;
+  transition:
+    color var(--timing) ease,
+    scale var(--timing, 0.3s) ease;
 
   &::before {
     content: '';
@@ -32,6 +34,14 @@
 
   @include big-desktop {
     @include fz26-atkinson;
+  }
+
+  &--nav-active {
+    color: var(--color-medbox-green, #02836f);
+
+    &::before {
+      transform: scaleX(1);
+    }
   }
 
   &--phone {
@@ -71,7 +81,9 @@
     color: var(--color-light, #fff);
 
     &:focus {
-      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      transition:
+        outline 0.1s ease-in,
+        outline-offset 0.1s ease-in;
       outline: 3px dotted var(--color-light, #fff);
       outline-offset: calc(3px * 2);
     }
@@ -90,7 +102,9 @@
     color: var(--color-mint-green, #cce3da);
 
     &:focus {
-      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      transition:
+        outline 0.1s ease-in,
+        outline-offset 0.1s ease-in;
       outline: 3px dotted var(--color-light, #fff);
       outline-offset: calc(3px * 2);
     }
