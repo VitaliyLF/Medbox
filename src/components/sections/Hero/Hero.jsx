@@ -2,7 +2,7 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
-import ContentBlock from '../../common/ContentModule/ContentModule'
+import ContentModule from '../../common/ContentModule/ContentModule'
 import Tilt from 'react-parallax-tilt'
 import { useEffect, useState } from 'react'
 
@@ -43,7 +43,7 @@ const Hero = ({
       </h1>
       <div className="hero__container container">
         <div className="hero__wrapper">
-          <ContentBlock {...contentBlockHero} />
+          <ContentModule {...contentBlockHero} />
           {image &&
             (isMobile ? (
               <Image

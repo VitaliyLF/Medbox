@@ -61,7 +61,20 @@ const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
     <section className="sign-up">
       <div className="sign-up__container container">
         {Boolean(subtitle) && <h2 className="sign-up__subtitle">{subtitle}</h2>}
-        {!isSubmitted && (
+        {isSubmitted ? (
+          <div className="sign-up__success">
+            {image && (
+              <Image
+                className="sign-up__success-image"
+                src={urlFor(image).url()}
+                alt="Success form submitted"
+                width={dimensions.width || 0}
+                height={dimensions.height || 0}
+              />
+            )}
+            {Boolean(text) && <p className="sign-up__success-text">{text}</p>}
+          </div>
+        ) : (
           <form
             className="sign-up__form"
             id="sign-up-form"
@@ -113,22 +126,6 @@ const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
               Sign Up
             </button>
           </form>
-        )}
-        {isSubmitted && (
-          <>
-            <div className="sign-up__success">
-              {image && (
-                <Image
-                  className="sign-up__success-image"
-                  src={urlFor(image).url()}
-                  alt="Success form submitted"
-                  width={dimensions.width || 0}
-                  height={dimensions.height || 0}
-                />
-              )}
-              {Boolean(text) && <p className="sign-up__success-text">{text}</p>}
-            </div>
-          </>
         )}
       </div>
     </section>

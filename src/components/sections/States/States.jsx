@@ -1,7 +1,7 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import Button from '@/components/common/UI/Button/Button'
 import TextSection from '@/components/common/TextSection/TextSection'
-import ContentBlock from '@/components/common/ContentModule/ContentModule'
+import ContentModule from '@/components/common/ContentModule/ContentModule'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 
@@ -31,7 +31,7 @@ const States = ({
     <section className="states">
       <div className="states__container container">
         <div className="states__wrapper">
-          <ContentBlock {...contentBlockStates} />
+          <ContentModule {...contentBlockStates} />
           <div className="states__contact">
             <TextSection textSection={textContact} />
             <Button buttonText={btnText} />

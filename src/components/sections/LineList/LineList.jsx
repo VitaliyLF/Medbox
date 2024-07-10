@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Review from '../../common/Review/Review'
-import ContentBlock from '@/components/common/ContentModule/ContentModule'
+import ContentModule from '@/components/common/ContentModule/ContentModule'
 
 const LineList = ({ lineListContent }) => {
   const { subtitle, text, linkText, list, image } = lineListContent ?? {}
@@ -36,7 +36,7 @@ const LineList = ({ lineListContent }) => {
     <section className="line-list">
       <div className="line-list__container container">
         <ListLineSvg />
-        <ContentBlock {...contentBlockLineList} />
+        <ContentModule {...contentBlockLineList} />
         <ul className="line-list__items">
           {list?.length > 0 &&
             list.map((item) => (

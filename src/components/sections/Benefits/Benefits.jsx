@@ -1,7 +1,7 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
-import ContentBlock from '../../common/ContentModule/ContentModule'
+import ContentModule from '../../common/ContentModule/ContentModule'
 
 const Benefits = ({
   benefitsContent: { title, subtitle, text, btnText, image, alt } = {},
@@ -19,7 +19,7 @@ const Benefits = ({
   return (
     <section className="benefits">
       <div className="benefits__container container">
-        <ContentBlock {...contentBlockBenefits} />
+        <ContentModule {...contentBlockBenefits} />
         {image && (
           <Image
             className="benefits__image"

@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import Review from '../../common/Review/Review'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import ContentBlock from '@/components/common/ContentModule/ContentModule'
+import ContentModule from '@/components/common/ContentModule/ContentModule'
 
 const InfoBlock = ({ infoBlockContent }) => {
   const { subtitle, text, url, linkText, btnText, image, alt } =
@@ -26,7 +26,7 @@ const InfoBlock = ({ infoBlockContent }) => {
     <section className="info-block">
       <div className="info-block__container">
         <div className="info-block__info">
-          <ContentBlock {...contentBlockInfo} />
+          <ContentModule {...contentBlockInfo} />
           {image && (
             <Image
               className="info-block__image"

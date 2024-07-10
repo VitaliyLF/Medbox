@@ -4,7 +4,7 @@ import TextSection from '@/components/common/TextSection/TextSection'
 import Button from '@/components/common/UI/Button/Button'
 import Link from 'next/link'
 
-const ContentBlock = ({
+const ContentModule = ({
   contentClassName,
   title,
   titleModifier,
@@ -39,4 +39,4 @@ const ContentBlock = ({
   </div>
 )
 
-export default ContentBlock
+export default ContentModule
