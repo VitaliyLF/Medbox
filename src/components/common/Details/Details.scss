@@ -30,11 +30,11 @@
       display: block;
       width: var(--offset-large-medium, 50px);
       aspect-ratio: 1;
-      background: url(../../../app/img/details-arrow.svg) center/var(--offset-tiny-medium) no-repeat
+      background: url(../../../app/assets/img/details-arrow.svg)
+        center/var(--offset-tiny-medium) no-repeat
         var(--color-medbox-green, #02836f);
       border-radius: 50%;
-      transition:
-        rotate var(--timing, 0.3s) ease,
+      transition: rotate var(--timing, 0.3s) ease,
         background-color var(--timing, 0.3s) ease;
     }
 

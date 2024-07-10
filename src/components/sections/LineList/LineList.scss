@@ -65,8 +65,9 @@
       border-radius: 50%;
       width: calc(var(--offset-item-list, 20px) * 2);
       aspect-ratio: 1;
-      background: url(../../../app/img/block-list-checkmark.svg) center/var(--offset-item-list, 20px)
-        var(--offset-item-list, 20px) no-repeat var(--color-dark-green, #045f51);
+      background: url(../../../app/assets/img/block-list-checkmark.svg)
+        center/var(--offset-item-list, 20px) var(--offset-item-list, 20px)
+        no-repeat var(--color-dark-green, #045f51);
     }
   }
 

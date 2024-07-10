@@ -1,4 +1,14 @@
-@include font-face('Agrandir', '../fonts/AgrandirRegular', 400, normal);
-@include font-face('Atkinson Hyperlegible', '../fonts/AtkinsonHyperlegibleRegular', 400, normal);
-@include font-face('Atkinson Hyperlegible', '../fonts/AtkinsonHyperlegibleBold', 700, normal);
-@include font-face('DM Sans', '../fonts/DMSansRegular', 400, normal);
+@include font-face('Agrandir', '../assets/fonts/AgrandirRegular', 400, normal);
+@include font-face(
+  'Atkinson Hyperlegible',
+  '../assets/fonts/AtkinsonHyperlegibleRegular',
+  400,
+  normal
+);
+@include font-face(
+  'Atkinson Hyperlegible',
+  '../assets/fonts/AtkinsonHyperlegibleBold',
+  700,
+  normal
+);
+@include font-face('DM Sans', '../assets/fonts/DMSansRegular', 400, normal);

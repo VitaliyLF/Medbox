@@ -60,7 +60,7 @@
     column-gap: calc(var(--icon-phone-size) / 2);
 
     &::before {
-      content: url(../../../app/img/icon-header-phone.svg);
+      content: url(../../../app/assets/img/icon-header-phone.svg);
       width: var(--icon-phone-size);
       height: var(--icon-phone-size);
     }

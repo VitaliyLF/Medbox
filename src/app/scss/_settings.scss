@@ -123,7 +123,7 @@
     transition: box-shadow var(--timing, 0.3s);
 
     &::before {
-      content: url(../img/skiplink-enter-icon.svg);
+      content: url(../assets/img/skiplink-enter-icon.svg);
       margin-left: var(--skiplink-offset);
       order: 2;
       width: var(--skiplink-offset);
