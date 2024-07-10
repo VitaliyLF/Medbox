@@ -36,14 +36,15 @@ export const HeaderSchema = (fields = {}) => {
               {
                 name: 'text',
                 type: 'string',
-                title: 'Header link text',
+                title: 'Header link label',
                 description: 'Enter link text',
               },
               {
                 name: 'href',
                 type: 'string',
                 title: 'Header link href',
-                description: 'Enter link text',
+                description: 'Enter link path. ⚡️ This field is required.',
+                validation: (Rule) => Rule.required(),
               },
             ],
           },

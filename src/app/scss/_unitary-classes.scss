@@ -1,8 +1,11 @@
 .link {
+  --link-offset: 15px;
+
   @include fz18-atkinson;
 
   display: block;
   color: var(--color-black-green, #202524);
+  padding-block: var(--link-offset, 15px);
   position: relative;
   transition: color var(--timing) ease, scale var(--timing, 0.3s) ease;
 
@@ -10,7 +13,7 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: -1px;
+    bottom: var(--link-offset, 15px);
     width: 100%;
     height: 1px;
     background-color: var(--color-medbox-green, #02836f);
@@ -39,6 +42,16 @@
 
     &::before {
       transform: scaleX(1);
+    }
+  }
+
+  &--nav-external {
+    color: var(--color-medbox-green, #02836f);
+
+    @include hover {
+      &::before {
+        transform: scale(0);
+      }
     }
   }
 

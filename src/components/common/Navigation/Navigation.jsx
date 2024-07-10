@@ -16,14 +16,26 @@ const Navigation = ({ isMenuOpen, links, btnText, btnTextMobile }) => {
         {links?.length > 0 &&
           links.map((link) => {
             const isActive = currentPath === link.href
+            const isExternal =
+              link.href === 'https://www.billpaysafely.com/medbox'
 
             return (
-              <li className="nav_-item" key={link._key}>
-                <Link
-                  className={isActive ? 'link link--nav-active' : 'link'}
-                  href={link.href}>
-                  {link.text}
-                </Link>
+              <li className="nav__item" key={link._key}>
+                {isExternal ? (
+                  <Link
+                    className={isExternal ? 'link link--nav-external' : ''}
+                    href={link.href}
+                    title="Payment Portal || New window"
+                    target="_blank">
+                    {link.text}
+                  </Link>
+                ) : (
+                  <Link
+                    className={isActive ? 'link link--nav-active' : 'link'}
+                    href={link.href}>
+                    {link.text}
+                  </Link>
+                )}
               </li>
             )
           })}

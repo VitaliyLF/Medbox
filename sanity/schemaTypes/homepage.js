@@ -376,6 +376,7 @@ const infoBlockSection = {
       name: 'url',
       type: 'url',
       title: 'Phone link url',
+      initialValue: 'tel:8663537856',
       description:
         '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel: This field is required.',
       validation: (Rule) =>
