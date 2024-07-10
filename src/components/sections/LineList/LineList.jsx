@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Review from '../../common/Review/Review'
-import ContentBlock from '@/components/common/ContentBlock/ContentBlock'
+import ContentBlock from '@/components/common/ContentModule/ContentModule'
 
 const LineList = ({ lineListContent }) => {
   const { subtitle, text, linkText, list, image } = lineListContent ?? {}

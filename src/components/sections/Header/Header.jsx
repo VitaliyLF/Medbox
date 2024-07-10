@@ -1,6 +1,6 @@
 'use client'
 import { urlFor } from '@/app/lib/clientSanity'
-import Button from '@/components/common/Button/Button'
+import Button from '@/components/common/UI/Button/Button'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'

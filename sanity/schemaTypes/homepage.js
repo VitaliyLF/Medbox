@@ -1,6 +1,6 @@
-import { HeaderSchema } from './schemaSection/HeaderSchema'
+// import { HeaderSchema } from './schemaSection/HeaderSchema'
 
-const header = HeaderSchema()
+// const header = HeaderSchema()
 
 const heroSection = {
   name: 'hero',
@@ -1084,7 +1084,6 @@ export default {
   type: 'document',
   title: 'Homepage',
   fields: [
-    header,
     heroSection,
     videoSection,
     lineListSection,

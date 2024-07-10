@@ -3,16 +3,6 @@ import { client } from './clientSanity'
 export async function getDataHomePage() {
   const query = `
     *[_type == 'homepage'] [0] {
-      header {
-      logo,
-      links [] {
-        _key,
-        text,
-        href
-      },
-      btnText,
-      btnTextMobile,
-      },
       hero {
       title,
       subtitle,

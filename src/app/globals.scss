@@ -3,20 +3,20 @@
 @import './scss/main';
 
 // common style connection
-@import '@/components/common/Details/Details';
+@import '@/components/common/UI/Details/Details';
 @import '@/components/common/BlogPost/BlogPost';
 @import '@/components/common/Review/Review';
-@import '@/components/common/Video/Video';
+@import '@/components/common/UI/Video/Video';
 @import '@/components/common/Navigation/Navigation';
 
 // page style section connection
 @import '@/components/sections/Header/Header';
 @import '@/components/sections/Hero/Hero';
-@import '@/components/sections/VideoBlock/VideoBlock';
+@import '@/components/sections/Video/Video';
 @import '@/components/sections/LineList/LineList';
 @import '@/components/sections/Benefits/Benefits';
 @import '@/components/sections/StickyList/StickyList';
-@import '@/components/sections/InfoBlock/InfoBlock';
+@import '@/components/sections/Banner/Banner';
 @import '@/components/sections/States/States';
 @import '@/components/sections/Feedback/Feedback';
 @import '@/components/sections/Faq/Faq';

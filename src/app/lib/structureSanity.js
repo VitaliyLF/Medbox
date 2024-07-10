@@ -9,6 +9,10 @@ export const structureSanity = (S) =>
         .schemaType('homepage')
         .child(S.documentTypeList('homepage')),
       S.listItem()
+        .title('Header')
+        .schemaType('header')
+        .child(S.documentTypeList('header')),
+      S.listItem()
         .title('Sign Up')
         .schemaType('signup')
         .child(S.documentTypeList('signup')),

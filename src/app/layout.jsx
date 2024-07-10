@@ -4,6 +4,7 @@ import { getDataHomePage } from './lib/getDataHomePage'
 import './globals.scss'
 import Header from '@/components/sections/Header/Header'
 import Footer from '@/components/sections/Footer/Footer'
+import { getDataHeader } from './lib/getDataHeader'
 
 export const metadata = {
   title: {
@@ -13,6 +14,7 @@ export const metadata = {
 
 const RootLayout = async ({ children }) => {
   const dataHomePage = await getDataHomePage()
+  const dataHeader = await getDataHeader()
 
   return (
     <html lang="en" className="page custom-scrollbar">
@@ -23,7 +25,7 @@ const RootLayout = async ({ children }) => {
           </span>
         </a>
         <div className="site-container">
-          <Header headerContent={dataHomePage?.header} />
+          <Header headerContent={dataHeader?.header} />
           {children}
           <Footer footerContent={dataHomePage?.footer} />
         </div>

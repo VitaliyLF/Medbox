@@ -1,4 +1,4 @@
-import Video from '@/components/common/Video/Video'
+import Video from '@/components/common/UI/Video/Video'
 
 const VideoBlock = ({ videoBlockContent: { title, file, poster } = {} }) => {
   return (

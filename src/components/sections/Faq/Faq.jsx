@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Details from '../../common/Details/Details'
+import Details from '../../common/UI/Details/Details'
 import TitleSection from '@/components/common/TitleSection/TitleSection'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 

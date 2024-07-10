@@ -1,7 +1,7 @@
 import { urlFor } from '@/app/lib/clientSanity'
-import Button from '@/components/common/Button/Button'
+import Button from '@/components/common/UI/Button/Button'
 import TextSection from '@/components/common/TextSection/TextSection'
-import ContentBlock from '@/components/common/ContentBlock/ContentBlock'
+import ContentBlock from '@/components/common/ContentModule/ContentModule'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 
