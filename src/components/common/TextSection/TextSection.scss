@@ -28,11 +28,11 @@
     margin: 1em 40px;
   }
 
-  @include big-desktop {
+  @include xl {
     max-width: 100%;
   }
 
-  @include mobile {
+  @include sm {
     @include fz20-atkinson-mobile;
 
     @include marginBottom(var(--offset-small-medium, 30px));
@@ -58,7 +58,9 @@
         color: currentColor;
 
         &:focus {
-          transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+          transition:
+            outline 0.1s ease-in,
+            outline-offset 0.1s ease-in;
           outline: 3px dotted currentColor;
           outline-offset: calc(3px * 2);
         }

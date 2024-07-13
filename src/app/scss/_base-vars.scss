@@ -36,6 +36,7 @@
 
   // z-index
   --loading-z-index: 1001;
+  --skiplink-z-index: 900;
   --header-nav-z-index: 10;
   --scroll-to-top-z-index: 11;
 
@@ -110,6 +111,7 @@
     100% 80.6708%,
     100% 0%
   );
+
   --clip-path-wave-mirrored: polygon(
     0% 0%,
     0% 17.5%,

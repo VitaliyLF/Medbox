@@ -1,0 +1,37 @@
+.scroll-link {
+  position: fixed;
+  bottom: var(--offset-small-medium, 30px);
+  right: var(--offset-small-medium, 30px);
+  z-index: var(--scroll-to-top-z-index, 11);
+  max-width: var(--offset-triple-extra-large-medium, 80px);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--offset-tiny, 15px);
+  background-color: var(--color-puerto-rico, #27c6b0);
+  color: var(--color-light, #fff);
+  border-radius: var(--border-radius-all-large, 40px);
+  padding: var(--offset-tiny, 15px);
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  translate: 0 var(--offset-large-medium, 50px);
+  transition:
+    opacity var(--timing, 0.3s) ease,
+    translate var(--timing, 0.3s) ease,
+    visibility var(--timing, 0.3s) ease,
+    background-color var(--timing, 0.3s) ease,
+    scale var(--timing, 0.3s) ease;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+    translate: 0;
+  }
+
+  @include hover {
+    background-color: var(--color-medbox-green, #02836f);
+  }
+
+  @include active;
+}

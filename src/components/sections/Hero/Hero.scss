@@ -7,16 +7,16 @@
     column-gap: var(--offset-extra-large, 55px);
     padding-bottom: var(--offset-triple-extra-large, 75px);
 
-    @include big-desktop {
+    @include xl {
       flex-direction: column;
     }
 
-    @include tablet {
+    @include lg {
       column-gap: 0;
       row-gap: var(--offset-double-extra-large-medium, 70px);
     }
 
-    @include mobile {
+    @include sm {
       padding-bottom: 0;
     }
   }
@@ -25,7 +25,7 @@
     max-width: 475px;
     padding-top: var(--offset-large, 45px);
 
-    @include big-desktop {
+    @include xl {
       max-width: 100%;
       padding-top: var(--offset-medium-large, 40px);
     }
@@ -39,7 +39,7 @@
     max-width: 750px;
     aspect-ratio: 750 / 507;
 
-    @include big-desktop {
+    @include xl {
       max-width: 100%;
     }
   }

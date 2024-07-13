@@ -1,5 +1,5 @@
 .nav {
-  @include big-desktop {
+  @include xl {
     position: fixed;
     top: var(--header-height, 85px);
     left: 0;
@@ -26,7 +26,7 @@
     align-items: center;
     gap: var(--offset-small, 25px);
 
-    @include big-desktop {
+    @include xl {
       margin-block: var(--offset-medium-large, 40px);
       flex-direction: column;
       justify-content: center;
@@ -36,7 +36,7 @@
   }
 
   &__item {
-    @include big-desktop {
+    @include xl {
       flex-grow: 1;
     }
   }
@@ -44,7 +44,7 @@
   &-mobile {
     display: none;
 
-    @include big-desktop {
+    @include xl {
       display: flex;
       align-items: center;
       justify-content: center;
@@ -54,19 +54,19 @@
       border-top: 1px solid var(--color-mint-green, #cce3da);
     }
 
-    @include small-mobile {
+    @include xs {
       padding: var(--offset-tiny, 15px);
     }
   }
 
   &-mobile-btn {
-    @include mobile {
+    @include sm {
       @include fz18-dmsans;
 
       padding: var(--offset-tiny, 15px);
     }
 
-    @include small-mobile {
+    @include xs {
       @include fz16-dmsans;
     }
   }

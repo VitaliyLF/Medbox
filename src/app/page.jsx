@@ -17,18 +17,18 @@ const HomePage = async () => {
 
   return (
     <main className="homepage" id="main">
-      <Hero heroContent={dataHomePage?.hero} />
-      <VideoBlock videoBlockContent={dataHomePage?.videoSection} />
-      <LineList lineListContent={dataHomePage?.lineList} />
-      <Benefits benefitsContent={dataHomePage?.benefits} />
-      <StickyList stickyListContent={dataHomePage?.stickyList} />
-      <InfoBlock infoBlockContent={dataHomePage?.infoBlock} />
-      <States statesContent={dataHomePage?.states} />
-      <FeedbackSection feedBackContent={dataHomePage?.feedback} />
-      <Faq faqContent={dataHomePage?.faq} />
-      <Supporting supportingContent={dataHomePage?.supporting} />
-      <Resources resourcesContent={dataHomePage?.resources} />
-      <SignUp signUpContent={dataHomePage?.signUp} />
+      <Hero heroContent={dataHomePage.hero} />
+      <VideoBlock videoBlockContent={dataHomePage.videoSection} />
+      <LineList lineListContent={dataHomePage.lineList} />
+      <Benefits benefitsContent={dataHomePage.benefits} />
+      <StickyList stickyListContent={dataHomePage.stickyList} />
+      <InfoBlock infoBlockContent={dataHomePage.infoBlock} />
+      <States statesContent={dataHomePage.states} />
+      <FeedbackSection feedBackContent={dataHomePage.feedback} />
+      <Faq faqContent={dataHomePage.faq} />
+      <Supporting supportingContent={dataHomePage.supporting} />
+      <Resources resourcesContent={dataHomePage.resources} />
+      <SignUp signUpContent={dataHomePage.signUp} />
     </main>
   )
 }

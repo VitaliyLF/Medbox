@@ -10,7 +10,7 @@
   &--extra-large {
     @include fz70-agrandir;
 
-    @include mobile {
+    @include sm {
       @include fz50-agrandir-mobile;
     }
   }

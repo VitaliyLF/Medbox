@@ -1,10 +1,11 @@
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import { getDataHomePage } from './lib/getDataHomePage'
-import './globals.scss'
+import { getDataHeader } from './lib/getDataHeader'
 import Header from '@/components/sections/Header/Header'
 import Footer from '@/components/sections/Footer/Footer'
-import { getDataHeader } from './lib/getDataHeader'
+import SkipLink from '@/components/common/SkipLink/SkipLink'
+import './globals.scss'
 
 export const metadata = {
   title: {
@@ -19,15 +20,11 @@ const RootLayout = async ({ children }) => {
   return (
     <html lang="en" className="page custom-scrollbar">
       <body className="page__body">
-        <a className="skiplink" href="#main">
-          <span className="skiplink__text" data-title="Enter">
-            Skip to Content
-          </span>
-        </a>
+        <SkipLink />
         <div className="site-container">
-          <Header headerContent={dataHeader?.header} />
+          <Header headerContent={dataHeader.header} />
           {children}
-          <Footer footerContent={dataHomePage?.footer} />
+          <Footer footerContent={dataHomePage.footer} />
         </div>
         <Analytics />
         <SpeedInsights />

@@ -42,7 +42,7 @@
   @include active;
 
   &--header {
-    @include big-desktop {
+    @include xl {
       display: none;
     }
   }
@@ -65,11 +65,11 @@
       height: var(--icon-phone-size);
     }
 
-    @include mobile {
+    @include sm {
       @include fz18-dmsans;
     }
 
-    @include small-mobile {
+    @include xs {
       @include fz16-dmsans;
     }
   }

@@ -4,7 +4,7 @@
     object-fit: cover;
     width: 100%;
 
-    @include big-desktop {
+    @include xl {
       height: auto;
     }
   }

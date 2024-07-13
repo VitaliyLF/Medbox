@@ -9,7 +9,7 @@
   text-transform: uppercase;
   text-wrap: balance;
 
-  @include mobile {
+  @include sm {
     @include fz16-atkinson;
 
     @include marginBottom(var(--offset-tiny-medium, 20px));
