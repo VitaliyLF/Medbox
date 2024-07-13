@@ -2,10 +2,10 @@
   padding-top: var(--offset-extra-large-medium, 60px);
   padding-bottom: var(--offset-small-medium, 30px);
   background-color: var(--color-deep-green, #003d33);
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  z-index: -1;
+  // position: sticky;
+  // bottom: 0;
+  // width: 100%;
+  // z-index: -1;
 
   &__top {
     @include marginBottom(var(--offset-tiny-medium, 20px));
