@@ -4,15 +4,15 @@ import Review from '../../common/Review/Review'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
 
-const InfoBlock = ({ infoBlockContent }) => {
+const Banner = ({ bannerContent }) => {
   const { subtitle, text, url, linkText, btnText, image, alt } =
-    infoBlockContent ?? {}
+    bannerContent ?? {}
 
   const imageDimensions = image?.asset
     ? decodeAssetId(image.asset._ref).dimensions
     : null
 
-  const contentBlockInfo = {
+  const contentBlockBanner = {
     contentClassName: 'info-block__content',
     linkModifier: 'phone',
     subtitle,
@@ -26,7 +26,7 @@ const InfoBlock = ({ infoBlockContent }) => {
     <section className="info-block">
       <div className="info-block__container">
         <div className="info-block__info">
-          <ContentModule {...contentBlockInfo} />
+          <ContentModule {...contentBlockBanner} />
           {image && (
             <Image
               className="info-block__image"
@@ -37,10 +37,10 @@ const InfoBlock = ({ infoBlockContent }) => {
             />
           )}
         </div>
-        <Review source={infoBlockContent} modifier="info-block" />
+        <Review source={bannerContent} modifier="info-block" />
       </div>
     </section>
   )
 }
 
-export default InfoBlock
+export default Banner

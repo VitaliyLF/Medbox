@@ -4,7 +4,7 @@ import VideoBlock from '@/components/sections/Video/Video'
 import LineList from '@/components/sections/LineList/LineList'
 import Benefits from '@/components/sections/Benefits/Benefits'
 import StickyList from '@/components/sections/StickyList/StickyList'
-import InfoBlock from '@/components/sections/Banner/Banner'
+import Banner from '@/components/sections/Banner/Banner'
 import States from '@/components/sections/States/States'
 import FeedbackSection from '@/components/sections/Feedback/Feedback'
 import Faq from '@/components/sections/Faq/Faq'
@@ -22,7 +22,7 @@ const HomePage = async () => {
       <LineList lineListContent={dataHomePage.lineList} />
       <Benefits benefitsContent={dataHomePage.benefits} />
       <StickyList stickyListContent={dataHomePage.stickyList} />
-      <InfoBlock infoBlockContent={dataHomePage.infoBlock} />
+      <Banner bannerContent={dataHomePage.infoBlock} />
       <States statesContent={dataHomePage.states} />
       <FeedbackSection feedBackContent={dataHomePage.feedback} />
       <Faq faqContent={dataHomePage.faq} />
