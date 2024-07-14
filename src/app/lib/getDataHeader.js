@@ -2,21 +2,23 @@ import { client } from './clientSanity'
 
 export async function getDataHeader() {
   const query = `
-    *[_type == 'header'] [0] {
-      header {
+    *[_type == 'header'][0] {
       logo,
-      links [] {
+      links[] {
         _key,
         text,
         href
       },
       btnText,
-      btnTextMobile,
-      },
+      btnTextMobile
     }
-    `
+  `
 
-  const data = await client.fetch(query)
-
-  return data
+  try {
+    const data = await client.fetch(query)
+    return data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return null
+  }
 }

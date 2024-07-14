@@ -150,7 +150,7 @@ export async function getDataHomePage() {
         text
       },
       footer {
-        footerLogo,
+        logo,
         contactList [] {
           _key,
           title,
@@ -184,7 +184,11 @@ export async function getDataHomePage() {
     }
   `
 
-  const data = await client.fetch(query)
-
-  return data
+  try {
+    const data = await client.fetch(query)
+    return data
+  } catch (error) {
+    console.error('Error fetching data:', error)
+    return null
+  }
 }

@@ -16,4 +16,8 @@ export const structureSanity = (S) =>
         .title('Sign Up')
         .schemaType('signup')
         .child(S.documentTypeList('signup')),
+      S.listItem()
+        .title('Footer')
+        .schemaType('footer')
+        .child(S.documentTypeList('footer')),
     ])

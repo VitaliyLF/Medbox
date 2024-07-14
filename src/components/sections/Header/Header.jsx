@@ -1,22 +1,15 @@
 'use client'
-import { urlFor } from '@/app/lib/clientSanity'
-import Button from '@/components/common/UI/Button/Button'
-import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import Button from '@/components/common/UI/Button/Button'
 import classNames from 'classnames'
 import Navigation from '@/components/common/Navigation/Navigation'
 import ScrollToTop from '@/components/common/ScrollToTop/ScrollToTop'
+import Logotype from '@/components/common/Logotype/Logotype'
 
 const Header = ({
   headerContent: { logo, links, btnText, btnTextMobile } = {},
 }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
-
-  const logoDimensions = logo?.asset
-    ? decodeAssetId(logo.asset._ref).dimensions
-    : null
 
   const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
@@ -60,18 +53,11 @@ const Header = ({
     <header className="header" id="scroll-to-top">
       <div className="header__container container">
         <div className="header__wrapper">
-          {logo && (
-            <Link className="header__logo" href="/">
-              <Image
-                className="header__logo-img"
-                src={urlFor(logo).url()}
-                alt="Medbox Logo"
-                title="Homepage"
-                width={logoDimensions.width || 0}
-                height={logoDimensions.height || 0}
-              />
-            </Link>
-          )}
+          <Logotype
+            logoImage={logo}
+            logoClass="header__logo"
+            logoImageClass="header__logo-img"
+          />
           <Navigation {...contentBlockHeader} />
           <Button buttonText={btnText} modifier="header" />
           <button

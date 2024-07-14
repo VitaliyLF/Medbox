@@ -6,6 +6,7 @@ import FaqList from './FaqList'
 const Faq = ({ faqContent: { title, subtitle, list, linkText } = {} }) => {
   return (
     <section className="faq">
+      <h2 className="visually-hidden">Our FAQ’s</h2>
       <div className="faq__container container">
         <aside className="faq__aside">
           <TitleSection titleSection={title} />
