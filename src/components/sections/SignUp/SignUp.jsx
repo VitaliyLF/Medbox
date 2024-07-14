@@ -80,7 +80,8 @@ const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
             id="sign-up-form"
             method="post"
             onSubmit={handleSubmit(onSubmit)}>
-            <label className="sign-up__label" htmlFor="email">
+            <label className="sign-up__label" htmlFor="sign-up-email">
+              <span className="visually-hidden">Email:</span>
               <input
                 {...register('email', {
                   required: 'Required',
@@ -102,6 +103,7 @@ const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
                 })}
                 name="email"
                 type="email"
+                id="sign-up-email"
                 placeholder="Enter your email"
                 aria-invalid={!!errors.email}
                 aria-required="true"

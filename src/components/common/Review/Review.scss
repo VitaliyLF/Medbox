@@ -1,7 +1,10 @@
 .review {
   --review-padding: var(--offset-small, 25px);
   --review-background-color: var(--color-light, #fff);
-  --review-border-radius: var(--border-radius-top-right-large-bottom, 0 40px 40px 40px);
+  --review-border-radius: var(
+    --border-radius-top-right-large-bottom,
+    0 40px 40px 40px
+  );
   --review-star-icon: var(--color-puerto-rico, #27c6b0);
   --review-offset: var(--offset-tiny-medium, 20px);
   --review-blockquote-font-family: var(--font-family-accent);
@@ -21,7 +24,7 @@
     max-width: 400px;
   }
 
-  &--info-block {
+  &--banner {
     --review-padding: 150px 60px;
     --review-background-color: var(--color-mint-green, #cce3da);
     --review-border-radius: var(--border-radius-top-left);
@@ -85,7 +88,12 @@
         width: 120%;
         height: 200%;
         opacity: 0.5;
-        background: linear-gradient(to left, transparent 0%, var(--review-background-color) 40% 60%, transparent 100%);
+        background: linear-gradient(
+          to left,
+          transparent 0%,
+          var(--review-background-color) 40% 60%,
+          transparent 100%
+        );
         transform: translate(-120%, -25%);
         animation: shine 4s infinite;
       }

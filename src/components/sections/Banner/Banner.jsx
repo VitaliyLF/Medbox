@@ -1,7 +1,7 @@
-import Image from 'next/image'
-import { urlFor } from '@/app/lib/clientSanity'
-import Review from '../../common/Review/Review'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import { urlFor } from '@/app/lib/clientSanity'
+import Image from 'next/image'
+import Review from '../../common/Review/Review'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
 
 const Banner = ({ bannerContent }) => {
@@ -13,7 +13,7 @@ const Banner = ({ bannerContent }) => {
     : null
 
   const contentBlockBanner = {
-    contentClassName: 'info-block__content',
+    contentClassName: 'banner__content',
     linkModifier: 'phone',
     subtitle,
     text,
@@ -23,13 +23,13 @@ const Banner = ({ bannerContent }) => {
   }
 
   return (
-    <section className="info-block">
-      <div className="info-block__container">
-        <div className="info-block__info">
+    <section className="banner">
+      <div className="banner__container">
+        <div className="banner__info">
           <ContentModule {...contentBlockBanner} />
           {image && (
             <Image
-              className="info-block__image"
+              className="banner__image"
               src={urlFor(image).url()}
               alt={alt || ''}
               width={imageDimensions.width || 0}
@@ -37,7 +37,7 @@ const Banner = ({ bannerContent }) => {
             />
           )}
         </div>
-        <Review source={bannerContent} modifier="info-block" />
+        <Review source={bannerContent} modifier="banner" />
       </div>
     </section>
   )

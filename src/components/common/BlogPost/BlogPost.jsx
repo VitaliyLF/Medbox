@@ -25,7 +25,7 @@ const BlogPost = ({ post: { url, image, alt, tag, subtitle } = {} }) => {
       </div>
       <div className="blog-post__meta text-section text-section--medium">
         {Boolean(tag) && <div className="blog-post__tag">{tag}</div>}
-        <time className="blog-post__time" dateTime="">
+        <time className="blog-post__time" dateTime="2024-09-23">
           Sep 23, 2023
         </time>
       </div>

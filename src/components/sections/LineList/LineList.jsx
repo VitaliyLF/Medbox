@@ -6,6 +6,7 @@ import ContentModule from '@/components/common/ContentModule/ContentModule'
 
 const LineList = ({ lineListContent }) => {
   const { subtitle, text, linkText, list, image } = lineListContent ?? {}
+
   const imageDimensions = image?.asset
     ? decodeAssetId(image.asset._ref).dimensions
     : null

@@ -62,7 +62,7 @@ export async function getDataHomePage() {
         },
         linkText
       },
-      infoBlock {
+      banner {
         subtitle,
         text,
         url,
@@ -174,7 +174,7 @@ export async function getDataHomePage() {
           url
         },
         copyright,
-        parthersList [] {
+        partnersList [] {
           _key,
           url,
           image,

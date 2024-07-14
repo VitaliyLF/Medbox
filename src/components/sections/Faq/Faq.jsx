@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import Details from '../../common/UI/Details/Details'
 import TitleSection from '@/components/common/TitleSection/TitleSection'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
+import FaqList from './FaqList'
 
 const Faq = ({ faqContent: { title, subtitle, list, linkText } = {} }) => {
   return (
@@ -12,14 +12,7 @@ const Faq = ({ faqContent: { title, subtitle, list, linkText } = {} }) => {
           <SubtitleSection subtitleSection={subtitle} />
         </aside>
         <div className="faq__info">
-          <ul className="faq__list">
-            {list?.length > 0 &&
-              list.map((item, index) => (
-                <li className="faq__item" key={item._key}>
-                  <Details source={item} isOpen={index === 0} />
-                </li>
-              ))}
-          </ul>
+          <FaqList list={list} />
           {Boolean(linkText) && (
             <Link className="btn" href="#">
               {linkText}

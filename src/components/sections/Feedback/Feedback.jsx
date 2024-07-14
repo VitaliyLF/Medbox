@@ -1,10 +1,10 @@
 import { PortableText } from 'next-sanity'
 import Link from 'next/link'
-import Review from '../../common/Review/Review'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 import TextSection from '@/components/common/TextSection/TextSection'
+import FeedbackList from './FeedbackList'
 
-const FeedbackSection = ({
+const Feedback = ({
   feedBackContent: { subtitle, text, list, subtext, linkText, url } = {},
 }) => {
   return (
@@ -14,14 +14,7 @@ const FeedbackSection = ({
           <SubtitleSection subtitleSection={subtitle} />
           <TextSection textSection={text} />
         </div>
-        <ul className="feedback__list">
-          {list?.length > 0 &&
-            list.map((item) => (
-              <li className="feedback__item" key={item._key}>
-                <Review source={item} modifier="feedback" />
-              </li>
-            ))}
-        </ul>
+        <FeedbackList list={list} />
         <div className="centered">
           {Boolean(subtext) && (
             <div className="feedback__subtext text-section">
@@ -43,4 +36,4 @@ const FeedbackSection = ({
   )
 }
 
-export default FeedbackSection
+export default Feedback

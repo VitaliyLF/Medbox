@@ -352,10 +352,10 @@ const stickyListSection = {
   ],
 }
 
-const infoBlockSection = {
-  name: 'infoBlock',
+const bannerSection = {
+  name: 'banner',
   type: 'object',
-  title: 'Info block section',
+  title: 'Banner section',
   fields: [
     {
       name: 'subtitle',
@@ -437,7 +437,7 @@ const infoBlockSection = {
     {
       name: 'socialIconAlt',
       type: 'string',
-      title: 'Info Block social icon description for screen readers & SEO',
+      title: 'Banner social icon description for screen readers & SEO',
       description:
         '⚡️ Optional but highly encouraged to make the content more accessible',
     },
@@ -1047,9 +1047,9 @@ const footer = {
       ],
     },
     {
-      name: 'parthersList',
+      name: 'partnersList',
       type: 'array',
-      title: 'Footer parthers list',
+      title: 'Footer partners list',
       of: [
         {
           type: 'object',
@@ -1057,12 +1057,12 @@ const footer = {
             {
               name: 'url',
               type: 'url',
-              title: 'Footer parthers url',
+              title: 'Footer partners url',
             },
             {
               name: 'image',
               type: 'image',
-              title: 'Footer parthers image',
+              title: 'Footer partners image',
               description: '⚡️ Optional, but svg format is better.',
             },
             {
@@ -1089,7 +1089,7 @@ export default {
     lineListSection,
     benefitsSection,
     stickyListSection,
-    infoBlockSection,
+    bannerSection,
     statesSection,
     feedbackSection,
     faqSection,

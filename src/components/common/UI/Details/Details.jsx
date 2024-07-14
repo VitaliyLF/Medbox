@@ -19,7 +19,7 @@ const Details = ({
           {summary}
         </summary>
       )}
-      <article className="details__content">
+      <div className="details__content">
         <TextSection textSection={text} modifier="details" />
         {Boolean(linkText) && (
           <Link className="link link--puerto-rico" href={url || ''}>
@@ -35,7 +35,7 @@ const Details = ({
             height={imageDimensions.height || 0}
           />
         )}
-      </article>
+      </div>
     </details>
   )
 }
