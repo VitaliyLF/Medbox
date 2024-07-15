@@ -12,21 +12,19 @@ const Banner = ({ bannerContent }) => {
     ? decodeAssetId(image.asset._ref).dimensions
     : null
 
-  const contentBlockBanner = {
-    contentClassName: 'banner__content',
-    linkModifier: 'phone',
-    subtitle,
-    text,
-    btnText,
-    linkText,
-    url,
-  }
-
   return (
     <section className="banner">
       <div className="banner__container">
         <div className="banner__info">
-          <ContentModule {...contentBlockBanner} />
+          <ContentModule
+            contentClassName="banner__content"
+            linkModifier="phone"
+            subtitle={subtitle}
+            text={text}
+            btnText={btnText}
+            linkText={linkText}
+            url={url}
+          />
           {image && (
             <Image
               className="banner__image"

@@ -1,39 +1,8 @@
-'use client'
-import { urlFor } from '@/app/lib/clientSanity'
-import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import Image from 'next/image'
 import ContentModule from '../../common/ContentModule/ContentModule'
-import Tilt from 'react-parallax-tilt'
-import { useEffect, useState } from 'react'
+import TiltImage from '@/components/common/TiltImage/TiltImage'
 
-const Hero = ({
-  heroContent: { title, subtitle, text, btnText, image, alt } = {},
-}) => {
-  const [isMobile, setIsMobile] = useState(false)
-
-  const imageDimensions = image?.asset
-    ? decodeAssetId(image.asset._ref).dimensions
-    : null
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia('(max-width: 768px)')
-    setIsMobile(mediaQuery.matches)
-
-    const handleResize = () => setIsMobile(mediaQuery.matches)
-    mediaQuery.addEventListener('change', handleResize)
-
-    return () => mediaQuery.removeEventListener('change', handleResize)
-  }, [])
-
-  const contentBlockHero = {
-    contentClassName: 'hero__content',
-    subtitleModifier: 'extra-large',
-    textModifier: 'details',
-    title,
-    subtitle,
-    btnText,
-    text,
-  }
+const Hero = ({ heroContent }) => {
+  const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}
 
   return (
     <section className="hero">
@@ -43,33 +12,21 @@ const Hero = ({
       </h1>
       <div className="hero__container container">
         <div className="hero__wrapper">
-          <ContentModule {...contentBlockHero} />
-          {image &&
-            (isMobile ? (
-              <Image
-                className="hero__img"
-                src={urlFor(image).url()}
-                alt={alt || ''}
-                width={imageDimensions.width || 0}
-                height={imageDimensions.height || 0}
-                priority
-              />
-            ) : (
-              <Tilt
-                scale={1.1}
-                transitionSpeed={1500}
-                tiltMaxAngleX={15}
-                tiltMaxAngleY={15}>
-                <Image
-                  className="hero__img"
-                  src={urlFor(image).url()}
-                  alt={alt || ''}
-                  width={imageDimensions.width || 0}
-                  height={imageDimensions.height || 0}
-                  priority
-                />
-              </Tilt>
-            ))}
+          <ContentModule
+            contentClassName="hero__content"
+            subtitleModifier="extra-large"
+            textModifier="details"
+            title={title}
+            subtitle={subtitle}
+            text={text}
+            btnText={btnText}
+          />
+          <TiltImage
+            className="hero__img"
+            image={image}
+            alt={alt}
+            priority={true}
+          />
         </div>
       </div>
     </section>

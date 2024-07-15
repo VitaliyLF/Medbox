@@ -8,7 +8,8 @@ import classNames from 'classnames'
 import Button from '@/components/common/UI/Button/Button'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 
-const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
+const SignUp = ({ signUpContent }) => {
+  const { subtitle, image, text } = signUpContent
   const submitTimeOutMs = 2500
   let dimensions = null
 

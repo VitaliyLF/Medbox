@@ -6,18 +6,8 @@ import 'swiper/css/navigation'
 import BlogPost from '../../common/BlogPost/BlogPost'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
 
-const Resources = ({
-  resourcesContent: { subtitle, text, linkText, url, list } = {},
-}) => {
-  const contentBlockResources = {
-    contentClassName: 'resources__content',
-    subtitleModifier: 'large',
-    textModifier: 'medium',
-    subtitle,
-    text,
-    url,
-    linkText,
-  }
+const Resources = ({ resourcesContent }) => {
+  const { subtitle, text, linkText, url, list } = resourcesContent ?? {}
 
   const swiperResourcesSettings = {
     className: 'resources__slider',
@@ -45,7 +35,15 @@ const Resources = ({
   return (
     <section className="resources">
       <div className="resources__container container">
-        <ContentModule {...contentBlockResources} />
+        <ContentModule
+          contentClassName="resources__content"
+          subtitleModifier="large"
+          textModifier="medium"
+          subtitle={subtitle}
+          text={text}
+          url={url}
+          linkText={linkText}
+        />
         <div className="resources__wrapper">
           <Swiper {...swiperResourcesSettings}>
             {list?.length > 0 &&

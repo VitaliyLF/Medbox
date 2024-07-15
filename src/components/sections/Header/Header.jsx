@@ -6,10 +6,9 @@ import Navigation from '@/components/common/Navigation/Navigation'
 import ScrollToTop from '@/components/common/ScrollToTop/ScrollToTop'
 import Logotype from '@/components/common/Logotype/Logotype'
 
-const Header = ({
-  headerContent: { logo, links, btnText, btnTextMobile } = {},
-}) => {
+const Header = ({ headerContent }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
+  const { logo, links, btnText, btnTextMobile } = headerContent ?? {}
 
   const toggleMenuVisibility = () => {
     setMenuOpen(!isMenuOpen)
@@ -42,13 +41,6 @@ const Header = ({
     }
   }, [])
 
-  const contentBlockHeader = {
-    isMenuOpen,
-    links,
-    btnText,
-    btnTextMobile,
-  }
-
   return (
     <header className="header" id="scroll-to-top">
       <div className="header__container container">
@@ -58,7 +50,12 @@ const Header = ({
             logoClass="header__logo"
             logoImageClass="header__logo-img"
           />
-          <Navigation {...contentBlockHeader} />
+          <Navigation
+            isMenuOpen={isMenuOpen}
+            links={links}
+            btnText={btnText}
+            btnTextMobile={btnTextMobile}
+          />
           {btnText && (
             <Button modifier="header" type="button">
               {btnText}

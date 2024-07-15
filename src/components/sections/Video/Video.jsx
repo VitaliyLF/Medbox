@@ -1,6 +1,8 @@
 import Video from '@/components/common/UI/Video/Video'
 
-const VideoBlock = ({ videoBlockContent: { title, file, poster } = {} }) => {
+const VideoBlock = ({ videoBlockContent }) => {
+  const { title, file, poster } = videoBlockContent ?? {}
+
   return (
     <section className="video-block">
       <h2 className="visually-hidden">{title}</h2>

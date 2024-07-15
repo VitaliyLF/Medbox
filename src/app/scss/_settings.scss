@@ -19,6 +19,9 @@
   min-height: 100%;
   font-size: 16px;
   color: var(--color-black-green, #202524);
+  // position: relative;
+  // z-index: -2;
+  // background-color: var(--color-deep-green, #003d33);
 }
 
 .site-container {
@@ -26,8 +29,6 @@
   grid-template-columns: 100%;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
-  // position: relative;
-  // z-index: 1;
 }
 
 .custom-scrollbar {

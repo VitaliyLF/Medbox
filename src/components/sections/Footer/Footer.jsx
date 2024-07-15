@@ -5,16 +5,10 @@ import FooterPolicyList from './FooterPolicyList'
 import FooterPartnersList from './FooterParthersList'
 import Logotype from '@/components/common/Logotype/Logotype'
 
-const Footer = ({
-  footerContent: {
-    logo,
-    contactList,
-    socialList,
-    policyList,
-    copyright,
-    partnersList,
-  } = {},
-}) => {
+const Footer = ({ footerContent }) => {
+  const { logo, contactList, socialList, policyList, copyright, partnersList } =
+    footerContent ?? {}
+
   return (
     <footer className="footer">
       <div className="footer__container container">

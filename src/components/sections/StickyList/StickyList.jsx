@@ -12,10 +12,10 @@ import Link from 'next/link'
 import { useRef } from 'react'
 import classNames from 'classnames/bind'
 
-const StickyList = ({
-  stickyListContent: { title, subtitle, listImages, alt, list, linkText } = {},
-}) => {
+const StickyList = ({ stickyListContent }) => {
   const listItemRefs = useRef({})
+  const { title, subtitle, listImages, alt, list, linkText } =
+    stickyListContent ?? {}
 
   gsap.registerPlugin(ScrollTrigger)
 

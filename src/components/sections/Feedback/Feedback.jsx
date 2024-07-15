@@ -3,9 +3,9 @@ import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection
 import TextSection from '@/components/common/TextSection/TextSection'
 import FeedbackList from './FeedbackList'
 
-const Feedback = ({
-  feedBackContent: { subtitle, text, list, subtext, linkText, url } = {},
-}) => {
+const Feedback = ({ feedBackContent }) => {
+  const { subtitle, text, list, subtext, linkText, url } = feedBackContent ?? {}
+
   return (
     <section className="feedback">
       <div className="container">

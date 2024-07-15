@@ -11,14 +11,6 @@ const LineList = ({ lineListContent }) => {
     ? decodeAssetId(image.asset._ref).dimensions
     : null
 
-  const contentBlockLineList = {
-    contentClassName: 'line-list__content',
-    subtitle,
-    text,
-    linkText,
-    url: '/',
-  }
-
   const ListLineSvg = () => (
     <svg
       className="line-list__svg-line"
@@ -37,7 +29,13 @@ const LineList = ({ lineListContent }) => {
     <section className="line-list">
       <div className="line-list__container container">
         <ListLineSvg />
-        <ContentModule {...contentBlockLineList} />
+        <ContentModule
+          contentClassName="line-list__content"
+          subtitle={subtitle}
+          text={text}
+          linkText={linkText}
+          url="/"
+        />
         <ul className="line-list__items">
           {list?.length > 0 &&
             list.map((item) => (

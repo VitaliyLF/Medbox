@@ -3,7 +3,9 @@ import TitleSection from '@/components/common/TitleSection/TitleSection'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 import FaqList from './FaqList'
 
-const Faq = ({ faqContent: { title, subtitle, list, linkText } = {} }) => {
+const Faq = ({ faqContent }) => {
+  const { title, subtitle, list, linkText } = faqContent ?? {}
+
   return (
     <section className="faq">
       <h2 className="visually-hidden">Our FAQ’s</h2>

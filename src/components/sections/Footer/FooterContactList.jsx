@@ -7,7 +7,9 @@ const FooterContactList = ({ contactList }) => (
     {contactList?.map((item) => (
       <li className="footer__contact-item" key={item._key}>
         {item.title && (
-          <TitleSection modifier="footer">{item.title}</TitleSection>
+          <TitleSection modifier="footer" animate={false}>
+            {item.title}
+          </TitleSection>
         )}
 
         {item.text && <TextSection modifier="footer">{item.text}</TextSection>}
