@@ -28,7 +28,7 @@ const ContentModule = ({
     {Boolean(text) && <TextSection modifier={textModifier}>{text}</TextSection>}
     {linkText && url && (
       <Link
-        className={`link ${linkModifier ? `link--${linkModifier}` : 'btn'}`}
+        className={linkModifier ? `link link--${linkModifier}` : 'btn'}
         href={url}>
         {linkText}
       </Link>
