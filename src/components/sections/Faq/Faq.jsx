@@ -9,8 +9,8 @@ const Faq = ({ faqContent: { title, subtitle, list, linkText } = {} }) => {
       <h2 className="visually-hidden">Our FAQ’s</h2>
       <div className="faq__container container">
         <aside className="faq__aside">
-          <TitleSection titleSection={title} />
-          <SubtitleSection subtitleSection={subtitle} />
+          {title && <TitleSection>{title}</TitleSection>}
+          {subtitle && <SubtitleSection>{subtitle}</SubtitleSection>}
         </aside>
         <div className="faq__info">
           <FaqList list={list} />

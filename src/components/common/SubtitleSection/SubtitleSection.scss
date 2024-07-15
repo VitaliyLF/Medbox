@@ -19,6 +19,14 @@
     @include fz45-agrandir;
   }
 
+  &--sign-up {
+    @include fz35-agrandir;
+
+    max-width: 555px;
+    color: var(--color-light, #fff);
+    font-weight: 400;
+  }
+
   &--blog {
     @include fz28-agrandir;
 

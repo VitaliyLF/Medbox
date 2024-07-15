@@ -7,8 +7,8 @@ const Supporting = ({ supportingContent: { title, subtitle, list } = {} }) => {
     <section className="supporting">
       <div className="container">
         <div className="centered">
-          <TitleSection titleSection={title} />
-          <SubtitleSection subtitleSection={subtitle} />
+          {title && <TitleSection>{title}</TitleSection>}
+          {subtitle && <SubtitleSection>{subtitle}</SubtitleSection>}
         </div>
         <SupportingList list={list} />
       </div>

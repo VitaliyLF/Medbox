@@ -31,7 +31,9 @@ const Footer = ({
           <FooterPolicyList policyList={policyList} />
         </div>
         <div className="footer__bottom">
-          <TextSection textSection={copyright} modifier="footer-copyright" />
+          {copyright && (
+            <TextSection modifier="footer-copyright">{copyright}</TextSection>
+          )}
           <FooterPartnersList partnersList={partnersList} />
         </div>
       </div>

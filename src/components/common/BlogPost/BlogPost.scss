@@ -30,6 +30,8 @@
   &__meta {
     @include marginBottom(var(--blog-post-offset, 10px));
 
+    @include fz18-atkinson;
+
     display: flex;
     color: var(--color-dark-grey, #565f5d);
   }

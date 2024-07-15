@@ -2,9 +2,7 @@ import { PortableText } from 'next-sanity'
 import classNames from 'classnames/bind'
 import styles from './TextSection.scss'
 
-const TextSection = ({ textSection, modifier }) => {
-  if (!textSection) return null
-
+const TextSection = ({ children, modifier }) => {
   const cx = classNames.bind(styles)
 
   const textClassName = cx({
@@ -14,7 +12,7 @@ const TextSection = ({ textSection, modifier }) => {
 
   return (
     <div className={textClassName}>
-      <PortableText value={textSection} />
+      <PortableText value={children} />
     </div>
   )
 }

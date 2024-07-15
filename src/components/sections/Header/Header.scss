@@ -69,14 +69,14 @@
     max-width: 145px;
   }
 
-  &__burger {
+  .burger {
     --burger-width: 45px;
     --burger-height: 45px;
     --burger-line-height: 3px;
 
     display: none;
 
-    &-line {
+    &__line {
       position: relative;
       width: var(--burger-width, 45px);
       height: var(--burger-height, 45px);
@@ -85,8 +85,7 @@
       border-radius: 50%;
       z-index: 10;
       cursor: pointer;
-      transition:
-        background-color var(--timing, 0.3s) ease-out,
+      transition: background-color var(--timing, 0.3s) ease-out,
         color var(--timing, 0.3s) ease-out;
 
       &::before,
@@ -99,8 +98,7 @@
         height: var(--burger-line-height, 3px);
         background-color: currentColor;
         border-radius: var(--border-radius-all-small, 20px);
-        transition:
-          transform var(--timing, 0.3s) ease-in-out,
+        transition: transform var(--timing, 0.3s) ease-in-out,
           top var(--timing, 0.3s) ease-in-out;
       }
 
@@ -113,8 +111,14 @@
       }
     }
 
+    &__info {
+      @include fz22-dmsans;
+
+      color: var(--color-dark-green, #045f51);
+    }
+
     &--active {
-      & .header__burger-line {
+      & .burger__line {
         background-color: transparent;
         color: var(--color-medbox-green, #02836f);
         --burger-line-height: 2px;
@@ -123,8 +127,7 @@
           width: 30px;
           top: 48%;
           transform: translateX(-50%) rotate(45deg);
-          transition:
-            transform var(--timing, 0.3s) ease-in-out,
+          transition: transform var(--timing, 0.3s) ease-in-out,
             top var(--timing, 0.3s) ease-in-out;
         }
 
@@ -132,8 +135,7 @@
           width: 30px;
           top: 48%;
           transform: translateX(-50%) rotate(-45deg);
-          transition:
-            transform var(--timing, 0.3s) ease-in-out,
+          transition: transform var(--timing, 0.3s) ease-in-out,
             top var(--timing, 0.3s) ease-in-out;
         }
       }
@@ -143,20 +145,6 @@
       display: flex;
       align-items: center;
       gap: var(--offset-tiny, 15px);
-    }
-  }
-
-  &__burger-info {
-    @include fz22-dmsans;
-
-    color: var(--color-dark-green, #045f51);
-    transition:
-      opacity var(--timing, 0.3s) ease-out,
-      visibility var(--timing, 0.3s) ease-out;
-
-    &.is-hidden {
-      opacity: 0;
-      visibility: hidden;
     }
   }
 }

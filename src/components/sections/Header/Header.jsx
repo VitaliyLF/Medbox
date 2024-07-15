@@ -59,20 +59,24 @@ const Header = ({
             logoImageClass="header__logo-img"
           />
           <Navigation {...contentBlockHeader} />
-          <Button buttonText={btnText} modifier="header" />
-          <button
-            className={classNames('header__burger', {
-              'header__burger--active': isMenuOpen,
+          {btnText && (
+            <Button modifier="header" type="button">
+              {btnText}
+            </Button>
+          )}
+          <Button
+            className={classNames('burger', {
+              'burger--active': isMenuOpen,
             })}
             type="button"
             aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={isMenuOpen ? 'true' : 'false'}
             onClick={toggleMenuVisibility}>
-            <span className="header__burger-info" aria-hidden="true">
-              Menu
+            <span className="burger__info" aria-hidden="true">
+              {isMenuOpen ? 'Close menu' : 'Menu'}
             </span>
-            <span className="header__burger-line"></span>
-          </button>
+            <span className="burger__line"></span>
+          </Button>
         </div>
       </div>
       <ScrollToTop />

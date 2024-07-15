@@ -1,9 +1,7 @@
 import classNames from 'classnames/bind'
 import styles from './Button.scss'
 
-const Button = ({ buttonText, modifier }) => {
-  if (!buttonText) return null
-
+const Button = ({ children, modifier, ...props }) => {
   const cx = classNames.bind(styles)
 
   const buttonClassName = cx({
@@ -12,8 +10,8 @@ const Button = ({ buttonText, modifier }) => {
   })
 
   return (
-    <button className={buttonClassName} type="button">
-      {buttonText}
+    <button className={buttonClassName} {...props}>
+      {children}
     </button>
   )
 }

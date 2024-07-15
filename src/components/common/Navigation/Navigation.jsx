@@ -13,7 +13,7 @@ const Navigation = ({ isMenuOpen, links, btnText, btnTextMobile }) => {
       title="Use to navigation">
       <NavigationList links={links} />
       <div className="nav-mobile">
-        {Boolean(btnText) && <Button buttonText={btnText}></Button>}
+        {Boolean(btnText) && <Button type="button">{btnText}</Button>}
         {Boolean(btnTextMobile) && (
           <Link className="btn btn--phone" href="tel:8663537856">
             {btnTextMobile}

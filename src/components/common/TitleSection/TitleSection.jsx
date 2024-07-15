@@ -6,8 +6,16 @@ import { useRef } from 'react'
 import classNames from 'classnames/bind'
 import styles from './TitleSection.scss'
 
-const TitleSection = ({ titleSection, modifier, animate = true }) => {
+const TitleSection = ({ children, modifier, animate = true }) => {
   const container = useRef(null)
+  const cx = classNames.bind(styles)
+
+  const titleClassName = cx({
+    'title-section': true,
+    [`title-section--${modifier}`]: modifier,
+  })
+
+  gsap.registerPlugin(ScrollTrigger)
 
   useGSAP(
     () => {
@@ -34,20 +42,9 @@ const TitleSection = ({ titleSection, modifier, animate = true }) => {
     { scope: container },
   )
 
-  if (!titleSection) return null
-
-  gsap.registerPlugin(ScrollTrigger)
-
-  const cx = classNames.bind(styles)
-
-  const titleClassName = cx({
-    'title-section': true,
-    [`title-section--${modifier}`]: modifier,
-  })
-
   return (
     <h2 ref={container} className={titleClassName}>
-      {titleSection}
+      {children}
     </h2>
   )
 }

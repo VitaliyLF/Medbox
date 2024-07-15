@@ -5,6 +5,8 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
 import classNames from 'classnames'
+import Button from '@/components/common/UI/Button/Button'
+import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 
 const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
   const submitTimeOutMs = 2500
@@ -60,7 +62,9 @@ const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
   return (
     <section className="sign-up">
       <div className="sign-up__container container">
-        {Boolean(subtitle) && <h2 className="sign-up__subtitle">{subtitle}</h2>}
+        {subtitle && (
+          <SubtitleSection modifier="sign-up">{subtitle}</SubtitleSection>
+        )}
         {isSubmitted ? (
           <div className="sign-up__success">
             {image && (
@@ -120,13 +124,13 @@ const SignUp = ({ signUpContent: { subtitle, image, text } = {} }) => {
                 </p>
               )}
             </label>
-            <button
+            <Button
               className="sign-up__btn"
               type="submit"
               form="sign-up-form"
               disabled={!isValid}>
               Sign Up
-            </button>
+            </Button>
           </form>
         )}
       </div>

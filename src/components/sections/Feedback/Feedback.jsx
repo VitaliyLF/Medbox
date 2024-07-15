@@ -1,4 +1,3 @@
-import { PortableText } from 'next-sanity'
 import Link from 'next/link'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 import TextSection from '@/components/common/TextSection/TextSection'
@@ -11,16 +10,12 @@ const Feedback = ({
     <section className="feedback">
       <div className="container">
         <div className="centered">
-          <SubtitleSection subtitleSection={subtitle} />
-          <TextSection textSection={text} />
+          {subtitle && <SubtitleSection>{subtitle}</SubtitleSection>}
+          {text && <TextSection>{text}</TextSection>}
         </div>
         <FeedbackList list={list} />
         <div className="centered">
-          {Boolean(subtext) && (
-            <div className="feedback__subtext text-section">
-              <PortableText value={subtext} />
-            </div>
-          )}
+          {Boolean(subtext) && <TextSection>{subtext}</TextSection>}
           {Boolean(linkText) && (
             <Link
               className="btn"

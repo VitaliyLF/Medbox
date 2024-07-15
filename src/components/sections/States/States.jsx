@@ -33,8 +33,8 @@ const States = ({
         <div className="states__wrapper">
           <ContentModule {...contentBlockStates} />
           <div className="states__contact">
-            <TextSection textSection={textContact} />
-            <Button buttonText={btnText} />
+            {textContact && <TextSection>{textContact}</TextSection>}
+            {btnText && <Button type="button">{btnText}</Button>}
           </div>
         </div>
         {image && (

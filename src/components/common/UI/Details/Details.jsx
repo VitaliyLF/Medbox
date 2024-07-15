@@ -20,7 +20,7 @@ const Details = ({
         </summary>
       )}
       <div className="details__content">
-        <TextSection textSection={text} modifier="details" />
+        {text && <TextSection modifier="details">{text}</TextSection>}
         {Boolean(linkText) && (
           <Link className="link link--puerto-rico" href={url || ''}>
             {linkText}

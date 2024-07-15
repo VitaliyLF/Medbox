@@ -20,14 +20,12 @@ const ContentModule = ({
 }) => (
   <div className={contentClassName || null}>
     {Boolean(title) && (
-      <TitleSection titleSection={title} modifier={titleModifier} />
+      <TitleSection modifier={titleModifier}>{title}</TitleSection>
     )}
     {Boolean(subtitle) && (
-      <SubtitleSection subtitleSection={subtitle} modifier={subtitleModifier} />
+      <SubtitleSection modifier={subtitleModifier}>{subtitle}</SubtitleSection>
     )}
-    {Boolean(text) && (
-      <TextSection textSection={text} modifier={textModifier} />
-    )}
+    {Boolean(text) && <TextSection modifier={textModifier}>{text}</TextSection>}
     {linkText && url && (
       <Link
         className={`link ${linkModifier ? `link--${linkModifier}` : 'btn'}`}
@@ -35,7 +33,11 @@ const ContentModule = ({
         {linkText}
       </Link>
     )}
-    {Boolean(btnText) && <Button buttonText={btnText} modifier={btnModifier} />}
+    {Boolean(btnText) && (
+      <Button modifier={btnModifier} type="button">
+        {btnText}
+      </Button>
+    )}
   </div>
 )
 

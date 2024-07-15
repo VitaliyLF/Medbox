@@ -43,8 +43,8 @@ const StickyList = ({
     <section className="sticky-list">
       <div className="container">
         <div className="sticky-list__top">
-          <TitleSection titleSection={title} />
-          <SubtitleSection subtitleSection={subtitle} />
+          {title && <TitleSection>{title}</TitleSection>}
+          {subtitle && <SubtitleSection>{subtitle}</SubtitleSection>}
         </div>
         <div className="sticky-list__inner">
           <aside className="sticky-list__aside">
@@ -82,7 +82,7 @@ const StickyList = ({
                     key={item._key}
                     ref={(el) => (listItemRefs.current[item._key] = el)}>
                     <h4 className="sticky-list__item-subtitle">{item.title}</h4>
-                    <TextSection textSection={item.text} />
+                    <TextSection>{item.text}</TextSection>
                   </li>
                 ))}
             </ul>
