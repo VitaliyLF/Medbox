@@ -5,7 +5,7 @@
   // position: sticky;
   // bottom: 0;
   // width: 100%;
-  // z-index: -1;
+  // z-index: -2;
 
   &__top {
     @include marginBottom(var(--offset-tiny-medium, 20px));
@@ -21,7 +21,9 @@
     transition: opacity var(--timing, 0.3s) ease;
 
     &:focus {
-      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      transition:
+        outline 0.1s ease-in,
+        outline-offset 0.1s ease-in;
       outline: 3px dotted var(--color-light, #fff);
       outline-offset: calc(3px * 2);
       opacity: 1;
@@ -75,7 +77,9 @@
       outline: 3px dotted currentColor;
       outline-offset: calc(3px * 2);
       opacity: 1;
-      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      transition:
+        outline 0.1s ease-in,
+        outline-offset 0.1s ease-in;
     }
 
     @include hover {
@@ -108,7 +112,9 @@
     &:focus {
       outline: 3px dotted var(--color-light, #fff);
       outline-offset: calc(3px * 2);
-      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      transition:
+        outline 0.1s ease-in,
+        outline-offset 0.1s ease-in;
     }
 
     @include hover {

@@ -4,7 +4,9 @@ import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import SubtitleSection from '../SubtitleSection/SubtitleSection'
 
-const BlogPost = ({ post: { url, image, alt, tag, subtitle } = {} }) => {
+const BlogPost = ({ post }) => {
+  const { url, image, alt, tag, subtitle } = post ?? {}
+
   const imageDimensions = image?.asset
     ? decodeAssetId(image.asset._ref).dimensions
     : null
