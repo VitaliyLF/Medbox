@@ -1,4 +1,4 @@
 const ResourcesPage = () => {
-  return <div>ResourcesPage</div>
+  return <div className="hero">ResourcesPage</div>
 }
 export default ResourcesPage

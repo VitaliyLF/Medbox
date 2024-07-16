@@ -27,7 +27,6 @@
     gap: var(--offset-small, 25px);
 
     @include xl {
-      margin-block: var(--offset-medium-large, 40px);
       flex-direction: column;
       justify-content: center;
       flex-grow: 1;
@@ -38,6 +37,28 @@
   &__item {
     @include xl {
       flex-grow: 1;
+      display: flex;
+      align-items: center;
+
+      &:first-child {
+        padding-top: var(--offset-small-medium, 30px);
+      }
+
+      &:last-child {
+        padding-bottom: var(--offset-small-medium, 30px);
+      }
+    }
+  }
+
+  &__link {
+    padding-block: var(--offset-tiny, 15px);
+
+    &::before {
+      bottom: var(--offset-tiny, 15px);
+    }
+
+    @include xl {
+      padding-block: 0;
     }
   }
 

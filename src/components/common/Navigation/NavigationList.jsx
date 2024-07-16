@@ -16,7 +16,9 @@ const NavigationList = ({ links }) => {
             <li className="nav__item" key={link._key}>
               {isExternal ? (
                 <Link
-                  className={isExternal ? 'link link--nav-external' : ''}
+                  className={
+                    isExternal ? 'nav__link link link--nav-external' : ''
+                  }
                   href={link.href}
                   title="Payment Portal || New window"
                   target="_blank">
@@ -24,7 +26,11 @@ const NavigationList = ({ links }) => {
                 </Link>
               ) : (
                 <Link
-                  className={isActive ? 'link link--nav-active' : 'link'}
+                  className={
+                    isActive
+                      ? 'nav__link link link--nav-active'
+                      : 'nav__link link'
+                  }
                   href={link.href}>
                   {link.text}
                 </Link>

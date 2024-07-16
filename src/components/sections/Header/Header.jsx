@@ -26,11 +26,12 @@ const Header = ({ headerContent }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollToTopLink = document.querySelector('.scroll-link')
-      const heroHeight = document.querySelector('.hero').offsetHeight
+      const heroSection = document.querySelector('.hero')
       const y = window.scrollY
 
-      if (scrollToTopLink) {
-        scrollToTopLink.classList.toggle('is-active', y >= heroHeight)
+      if (scrollToTopLink && heroSection) {
+        const heroSectionHeight = heroSection.offsetHeight
+        scrollToTopLink.classList.toggle('is-active', y >= heroSectionHeight)
       }
     }
 

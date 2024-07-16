@@ -3,6 +3,7 @@ import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Review from '../../common/Review/Review'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
+import LineListItems from './LineListItems'
 
 const LineList = ({ lineListContent }) => {
   const { subtitle, text, linkText, list, image } = lineListContent ?? {}
@@ -36,14 +37,7 @@ const LineList = ({ lineListContent }) => {
           linkText={linkText}
           url="/"
         />
-        <ul className="line-list__items">
-          {list?.length > 0 &&
-            list.map((item) => (
-              <li className="line-list__item" key={item._key}>
-                {item.content}
-              </li>
-            ))}
-        </ul>
+        <LineListItems list={list} />
       </div>
       <div className="line-list__wave">
         {image && (

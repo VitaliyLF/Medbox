@@ -11,7 +11,7 @@ export async function getDataFooter() {
           sublist [] {
             _key,
             linkText,
-            url,
+            href,
           }
         },
         socialList [] {

@@ -54,6 +54,20 @@
     }
   }
 
+  &--nav-footer-active {
+    @include marginBottom(10px);
+
+    color: var(--color-puerto-rico, #27c6b0);
+
+    @include hover {
+      color: var(--color-puerto-rico, #27c6b0);
+
+      &::before {
+        transform: scale(0);
+      }
+    }
+  }
+
   &--phone {
     @include fz22-atkinson;
 

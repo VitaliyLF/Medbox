@@ -1,4 +1,4 @@
 const WhatIsMedboxPage = () => {
-  return <div>WhatIsMedboxPage</div>
+  return <div className="hero">WhatIsMedboxPage</div>
 }
 export default WhatIsMedboxPage

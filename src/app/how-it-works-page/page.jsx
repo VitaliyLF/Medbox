@@ -1,4 +1,4 @@
 const HowItWorksPage = () => {
-  return <div>HowItWorksPage</div>
+  return <div className="hero">HowItWorksPage</div>
 }
 export default HowItWorksPage

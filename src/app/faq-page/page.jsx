@@ -1,4 +1,4 @@
 const FaqPage = () => {
-  return <div>FaqPage</div>
+  return <div className="hero">FaqPage</div>
 }
 export default FaqPage

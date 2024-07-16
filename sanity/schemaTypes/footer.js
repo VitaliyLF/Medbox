@@ -45,15 +45,12 @@ export default {
                       title: 'Footer link text',
                     },
                     {
-                      name: 'url',
-                      type: 'url',
+                      name: 'href',
+                      type: 'string',
                       title: 'Footer link url',
                       description:
-                        '⚡️ Enter a valid URL starting with http://, https://, mailto: or tel:',
-                      validation: (Rule) =>
-                        Rule.uri({
-                          scheme: ['http', 'https', 'mailto', 'tel'],
-                        }),
+                        'Enter link path. ⚡️ This field is required.',
+                      validation: (Rule) => Rule.required(),
                     },
                   ],
                 },

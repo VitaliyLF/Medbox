@@ -24,7 +24,7 @@ const TitleSection = ({ children, modifier, animate = true }) => {
           container.current,
           {
             y: 50,
-            opacity: 0,
+            // opacity: 0,
             duration: 0.25,
           },
           {
@@ -32,8 +32,9 @@ const TitleSection = ({ children, modifier, animate = true }) => {
             opacity: 1,
             scrollTrigger: {
               trigger: container.current,
+              // markers: true,
               start: 'center center',
-              toggleActions: 'restart pause restart pause',
+              toggleActions: 'play play none pause',
             },
           },
         )

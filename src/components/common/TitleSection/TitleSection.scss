@@ -8,6 +8,7 @@
   font-weight: 400;
   text-transform: uppercase;
   text-wrap: balance;
+  opacity: 0;
 
   @include sm {
     @include fz16-atkinson;
