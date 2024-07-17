@@ -1,8 +1,8 @@
-import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import { urlFor } from '@/app/lib/clientSanity'
+import ContentModule from '@/components/common/ContentModule/ContentModule'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Review from '../../common/Review/Review'
-import ContentModule from '@/components/common/ContentModule/ContentModule'
 
 const Banner = ({ bannerContent }) => {
   const { subtitle, text, url, linkText, btnText, image, alt } =

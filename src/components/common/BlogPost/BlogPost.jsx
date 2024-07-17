@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import Image from 'next/image'
+import Link from 'next/link'
 import SubtitleSection from '../SubtitleSection/SubtitleSection'
 
 const BlogPost = ({ post }) => {

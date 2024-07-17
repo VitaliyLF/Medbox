@@ -1,5 +1,5 @@
-import TitleSection from '@/components/common/TitleSection/TitleSection'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
+import TitleSection from '@/components/common/TitleSection/TitleSection'
 import SupportingList from './SupportingList'
 
 const Supporting = ({ supportingContent }) => {

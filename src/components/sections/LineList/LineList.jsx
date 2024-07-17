@@ -1,8 +1,8 @@
-import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
-import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import Review from '../../common/Review/Review'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import Image from 'next/image'
+import Review from '../../common/Review/Review'
 import LineListItems from './LineListItems'
 
 const LineList = ({ lineListContent }) => {

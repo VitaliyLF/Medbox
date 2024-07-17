@@ -34,7 +34,8 @@
         center/var(--offset-tiny-medium) no-repeat
         var(--color-medbox-green, #02836f);
       border-radius: 50%;
-      transition: rotate var(--timing, 0.3s) ease,
+      transition:
+        rotate var(--timing, 0.3s) ease,
         background-color var(--timing, 0.3s) ease;
     }
 

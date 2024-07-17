@@ -1,9 +1,10 @@
 'use client'
+
+import { useGSAP } from '@gsap/react'
+import classNames from 'classnames/bind'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
-import classNames from 'classnames/bind'
 import styles from './TitleSection.scss'
 
 const TitleSection = ({ children, modifier, animate = true }) => {

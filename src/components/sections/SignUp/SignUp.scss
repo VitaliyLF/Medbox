@@ -20,14 +20,6 @@
     justify-content: space-between;
   }
 
-  // &__subtitle {
-  //   @include fz35-agrandir;
-
-  //   max-width: 555px;
-  //   color: var(--color-light, #fff);
-  //   font-weight: 400;
-  // }
-
   &__form {
     position: relative;
     display: flex;
@@ -59,7 +51,9 @@
     }
 
     &:focus-visible {
-      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      transition:
+        outline 0.1s ease-in,
+        outline-offset 0.1s ease-in;
       outline: 3px dotted var(--color-light, #fff);
       outline-offset: calc(3px * 2);
     }
@@ -95,12 +89,15 @@
     color: var(--color-light, #fff);
     background-color: var(--color-deep-green, #003d33);
     border-radius: var(--border-radius-right-top-and-bottom, 0 20px 20px 0);
-    transition: color var(--timing, 0.3s) ease,
+    transition:
+      color var(--timing, 0.3s) ease,
       background-color var(--timing, 0.3s) ease,
       opacity var(--timing, 0.3s) ease;
 
     &:focus {
-      transition: outline 0.1s ease-in, outline-offset 0.1s ease-in;
+      transition:
+        outline 0.1s ease-in,
+        outline-offset 0.1s ease-in;
       outline: 3px dotted currentColor;
       outline-offset: calc(3px * 2);
     }

@@ -4,7 +4,7 @@ export async function getSignUp(signUpData) {
   const data = {
     _type: 'signup',
     email: signUpData.email,
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
   }
 
   try {

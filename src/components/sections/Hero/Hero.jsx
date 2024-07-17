@@ -1,5 +1,5 @@
-import ContentModule from '../../common/ContentModule/ContentModule'
 import TiltImage from '@/components/common/TiltImage/TiltImage'
+import ContentModule from '../../common/ContentModule/ContentModule'
 
 const Hero = ({ heroContent }) => {
   const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}

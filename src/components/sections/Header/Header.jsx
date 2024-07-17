@@ -1,10 +1,11 @@
 'use client'
-import { useEffect, useState } from 'react'
-import Button from '@/components/common/UI/Button/Button'
-import classNames from 'classnames'
+
+import Logotype from '@/components/common/Logotype/Logotype'
 import Navigation from '@/components/common/Navigation/Navigation'
 import ScrollToTop from '@/components/common/ScrollToTop/ScrollToTop'
-import Logotype from '@/components/common/Logotype/Logotype'
+import Button from '@/components/common/UI/Button/Button'
+import classNames from 'classnames'
+import { useState } from 'react'
 
 const Header = ({ headerContent }) => {
   const [isMenuOpen, setMenuOpen] = useState(false)
@@ -22,25 +23,6 @@ const Header = ({ headerContent }) => {
     document.body.style.paddingRight = isMenuOpen ? '' : `${paddingOffset}px`
     document.body.style.scrollBehavior = isMenuOpen ? '' : 'unset'
   }
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollToTopLink = document.querySelector('.scroll-link')
-      const heroSection = document.querySelector('.hero')
-      const y = window.scrollY
-
-      if (scrollToTopLink && heroSection) {
-        const heroSectionHeight = heroSection.offsetHeight
-        scrollToTopLink.classList.toggle('is-active', y >= heroSectionHeight)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
 
   return (
     <header className="header" id="scroll-to-top">

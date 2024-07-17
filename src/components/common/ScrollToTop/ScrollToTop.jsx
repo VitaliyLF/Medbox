@@ -1,6 +1,28 @@
+'use client'
+
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 const ScrollToTop = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollToTopLink = document.querySelector('.scroll-link')
+      const heroSection = document.querySelector('.hero')
+      const y = window.scrollY
+
+      if (scrollToTopLink && heroSection) {
+        const heroSectionHeight = heroSection.offsetHeight
+        scrollToTopLink.classList.toggle('is-active', y >= heroSectionHeight)
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   const ScrollIcon = () => (
     <svg
       className="scroll-link__icon"

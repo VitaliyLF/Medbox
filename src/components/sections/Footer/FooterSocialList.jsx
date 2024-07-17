@@ -1,7 +1,7 @@
-import Link from 'next/link'
-import Image from 'next/image'
-import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import { urlFor } from '@/app/lib/clientSanity'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const FooterSocialList = ({ socialList }) => (
   <ul className="footer__social-list">

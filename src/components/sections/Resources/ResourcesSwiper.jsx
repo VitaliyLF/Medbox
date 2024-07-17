@@ -1,8 +1,9 @@
 'use client'
+
 import 'swiper/css'
 import 'swiper/css/navigation'
+import { A11y, Keyboard, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation, A11y, Keyboard } from 'swiper/modules'
 import BlogPost from '../../common/BlogPost/BlogPost'
 
 const ResourcesSwiper = ({ list }) => {

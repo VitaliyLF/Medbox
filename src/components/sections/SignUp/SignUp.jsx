@@ -1,12 +1,13 @@
 'use client'
-import { getSignUp } from '@/app/lib/getSignUp'
+
 import { urlFor } from '@/app/lib/clientSanity'
+import { getSignUp } from '@/app/lib/getSignUp'
+import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
+import Button from '@/components/common/UI/Button/Button'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import classNames from 'classnames'
 import Image from 'next/image'
 import { useForm } from 'react-hook-form'
-import classNames from 'classnames'
-import Button from '@/components/common/UI/Button/Button'
-import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 
 const SignUp = ({ signUpContent }) => {
   const { subtitle, image, text } = signUpContent

@@ -7,19 +7,19 @@ export default {
       name: 'email',
       title: 'Email',
       type: 'string',
-      readOnly: true
+      readOnly: true,
     },
     {
       name: 'createdAt',
       title: 'Created At',
       type: 'datetime',
       options: {
-        dateFormat: 'YYYY-MM-DDTHH:mm:ssZ'
+        dateFormat: 'YYYY-MM-DDTHH:mm:ssZ',
       },
-      readOnly: true
-    }
+      readOnly: true,
+    },
   ],
   initialValue: {
-    createdAt: new Date().toISOString()
-  }
+    createdAt: new Date().toISOString(),
+  },
 }

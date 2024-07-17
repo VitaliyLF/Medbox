@@ -1,7 +1,7 @@
+import { urlFor } from '@/app/lib/clientSanity'
+import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { decodeAssetId } from '@/utils/sanityDecodeImg'
-import { urlFor } from '@/app/lib/clientSanity'
 
 const SupportingList = ({ list }) => {
   return (

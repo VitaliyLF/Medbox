@@ -1,6 +1,6 @@
-import Image from 'next/image'
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import Image from 'next/image'
 
 const StickyListImages = ({ listImages, alt }) => {
   return (

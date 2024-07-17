@@ -1,46 +1,54 @@
 'use client'
+
+import TextSection from '@/components/common/TextSection/TextSection'
+import { useGSAP } from '@gsap/react'
+import classNames from 'classnames/bind'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useGSAP } from '@gsap/react'
 import { useRef } from 'react'
-import TextSection from '@/components/common/TextSection/TextSection'
-import classNames from 'classnames/bind'
 
 const StickyListItems = ({ list }) => {
-  const listItemRefs = useRef({})
-
+  const listItemRefs = useRef([])
   gsap.registerPlugin(ScrollTrigger)
 
-  useGSAP(() => {
-    Object.values(listItemRefs.current).forEach((listItem, index) => {
-      if (listItem) {
-        ScrollTrigger.create({
-          trigger: listItem,
-          start: 'bottom center',
-          end: '200px 15%',
-          onEnter: () => listItem.classList.add('is-active'),
-          onLeave: () => listItem.classList.remove('is-active'),
-          onEnterBack: () => listItem.classList.add('is-active'),
-          onLeaveBack: () => {
-            if (index !== 0) {
-              listItem.classList.remove('is-active')
-            }
+  console.log(listItemRefs)
+
+  useGSAP(
+    () => {
+      listItemRefs.current.forEach((ref) => {
+        gsap.fromTo(
+          ref,
+          {
+            opacity: 0,
           },
-        })
-      }
-    })
-  }, [Object.keys(listItemRefs.current)])
+          {
+            opacity: 1,
+            scrollTrigger: {
+              trigger: ref,
+              markers: true,
+              start: 'center center',
+              toggleActions: 'play play none pause',
+            },
+          },
+        )
+      })
+    },
+    { scope: listItemRefs },
+  )
 
   return (
     <ul className="sticky-list__items">
       {list?.length > 0 &&
-        list?.map((item) => (
+        list?.map((item, index) => (
           <li
-            className={classNames('sticky-list__item', {
-              'is-active': item._key === list[0]._key,
-            })}
+            className="sticky-list__item"
             key={item._key}
-            ref={(el) => (listItemRefs.current[item._key] = el)}>
+            ref={(ref) => {
+              listItemRefs.current[index] = ref
+
+              console.log(listItemRefs)
+              console.log(ref)
+            }}>
             <h4 className="sticky-list__item-subtitle">{item.title}</h4>
             <TextSection>{item.text}</TextSection>
           </li>
@@ -48,4 +56,5 @@ const StickyListItems = ({ list }) => {
     </ul>
   )
 }
+
 export default StickyListItems

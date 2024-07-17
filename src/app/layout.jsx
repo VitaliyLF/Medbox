@@ -1,11 +1,11 @@
+import SkipLink from '@/components/common/SkipLink/SkipLink'
+import Footer from '@/components/sections/Footer/Footer'
+import Header from '@/components/sections/Header/Header'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/next'
-import { getDataHeader } from './lib/getDataHeader'
-import { getDataFooter } from './lib/getDataFooter'
-import Header from '@/components/sections/Header/Header'
-import Footer from '@/components/sections/Footer/Footer'
-import SkipLink from '@/components/common/SkipLink/SkipLink'
 import './globals.scss'
+import { getDataFooter } from './lib/getDataFooter'
+import { getDataHeader } from './lib/getDataHeader'
 
 export const metadata = {
   title: {

@@ -85,7 +85,8 @@
       border-radius: 50%;
       z-index: 10;
       cursor: pointer;
-      transition: background-color var(--timing, 0.3s) ease-out,
+      transition:
+        background-color var(--timing, 0.3s) ease-out,
         color var(--timing, 0.3s) ease-out;
 
       &::before,
@@ -98,7 +99,8 @@
         height: var(--burger-line-height, 3px);
         background-color: currentColor;
         border-radius: var(--border-radius-all-small, 20px);
-        transition: transform var(--timing, 0.3s) ease-in-out,
+        transition:
+          transform var(--timing, 0.3s) ease-in-out,
           top var(--timing, 0.3s) ease-in-out;
       }
 
@@ -127,7 +129,8 @@
           width: 30px;
           top: 48%;
           transform: translateX(-50%) rotate(45deg);
-          transition: transform var(--timing, 0.3s) ease-in-out,
+          transition:
+            transform var(--timing, 0.3s) ease-in-out,
             top var(--timing, 0.3s) ease-in-out;
         }
 
@@ -135,7 +138,8 @@
           width: 30px;
           top: 48%;
           transform: translateX(-50%) rotate(-45deg);
-          transition: transform var(--timing, 0.3s) ease-in-out,
+          transition:
+            transform var(--timing, 0.3s) ease-in-out,
             top var(--timing, 0.3s) ease-in-out;
         }
       }

@@ -10,5 +10,10 @@
   "htmlWhitespaceSensitivity": "ignore",
   "printWidth": 80,
   "tabWidth": 2,
-  "arrowParens": "always"
+  "arrowParens": "always",
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
+  "importOrderSeparation": false,
+  "importOrderSortSpecifiers": false,
+  "importOrderGroupNamespaceSpecifiers": false
 }

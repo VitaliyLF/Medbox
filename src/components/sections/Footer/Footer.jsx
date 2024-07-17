@@ -1,9 +1,9 @@
+import Logotype from '@/components/common/Logotype/Logotype'
 import TextSection from '@/components/common/TextSection/TextSection'
 import FooterContactList from './FooterContactList'
-import FooterSocialList from './FooterSocialList'
-import FooterPolicyList from './FooterPolicyList'
 import FooterPartnersList from './FooterParthersList'
-import Logotype from '@/components/common/Logotype/Logotype'
+import FooterPolicyList from './FooterPolicyList'
+import FooterSocialList from './FooterSocialList'
 
 const Footer = ({ footerContent }) => {
   const { logo, contactList, socialList, policyList, copyright, partnersList } =

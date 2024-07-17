@@ -1,7 +1,7 @@
-import Link from 'next/link'
 import classNames from 'classnames'
-import NavigationList from './NavigationList'
+import Link from 'next/link'
 import Button from '../UI/Button/Button'
+import NavigationList from './NavigationList'
 
 const Navigation = ({ isMenuOpen, links, btnText, btnTextMobile }) => {
   return (

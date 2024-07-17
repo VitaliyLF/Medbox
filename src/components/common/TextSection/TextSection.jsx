@@ -1,5 +1,5 @@
-import { PortableText } from 'next-sanity'
 import classNames from 'classnames/bind'
+import { PortableText } from 'next-sanity'
 import styles from './TextSection.scss'
 
 const TextSection = ({ children, modifier }) => {

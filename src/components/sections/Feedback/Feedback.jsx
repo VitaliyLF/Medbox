@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 import TextSection from '@/components/common/TextSection/TextSection'
+import Link from 'next/link'
 import FeedbackList from './FeedbackList'
 
 const Feedback = ({ feedBackContent }) => {

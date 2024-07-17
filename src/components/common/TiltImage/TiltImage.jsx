@@ -1,9 +1,10 @@
 'use client'
-import Tilt from 'react-parallax-tilt'
-import Image from 'next/image'
+
 import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
+import Image from 'next/image'
 import { useEffect, useState } from 'react'
+import Tilt from 'react-parallax-tilt'
 
 const TiltImage = ({ image, alt, className, priority = false }) => {
   const [isMobile, setIsMobile] = useState(false)

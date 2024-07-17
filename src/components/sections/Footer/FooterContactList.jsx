@@ -1,5 +1,5 @@
-import TitleSection from '@/components/common/TitleSection/TitleSection'
 import TextSection from '@/components/common/TextSection/TextSection'
+import TitleSection from '@/components/common/TitleSection/TitleSection'
 import FooterContactSublist from './FooterContactSublist'
 
 const FooterContactList = ({ contactList }) => (

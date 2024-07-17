@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import TitleSection from '@/components/common/TitleSection/TitleSection'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
+import TitleSection from '@/components/common/TitleSection/TitleSection'
+import Link from 'next/link'
 import FaqList from './FaqList'
 
 const Faq = ({ faqContent }) => {

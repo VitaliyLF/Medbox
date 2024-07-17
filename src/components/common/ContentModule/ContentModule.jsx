@@ -1,6 +1,6 @@
-import TitleSection from '@/components/common/TitleSection/TitleSection'
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 import TextSection from '@/components/common/TextSection/TextSection'
+import TitleSection from '@/components/common/TitleSection/TitleSection'
 import Button from '@/components/common/UI/Button/Button'
 import Link from 'next/link'
 
