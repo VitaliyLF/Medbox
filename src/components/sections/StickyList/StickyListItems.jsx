@@ -2,7 +2,6 @@
 
 import TextSection from '@/components/common/TextSection/TextSection'
 import { useGSAP } from '@gsap/react'
-import classNames from 'classnames/bind'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef } from 'react'
@@ -11,26 +10,20 @@ const StickyListItems = ({ list }) => {
   const listItemRefs = useRef([])
   gsap.registerPlugin(ScrollTrigger)
 
-  console.log(listItemRefs)
-
   useGSAP(
     () => {
-      listItemRefs.current.forEach((ref) => {
-        gsap.fromTo(
-          ref,
-          {
-            opacity: 0,
-          },
-          {
-            opacity: 1,
-            scrollTrigger: {
-              trigger: ref,
-              markers: true,
-              start: 'center center',
-              toggleActions: 'play play none pause',
-            },
-          },
-        )
+      listItemRefs.current.forEach((ref, index) => {
+        if (index === 0) {
+          ref.classList.add('is-active')
+        }
+
+        ScrollTrigger.create({
+          trigger: ref,
+          start: '250px center',
+          end: 'bottom 250px',
+          toggleClass: 'is-active',
+          // markers: true,
+        })
       })
     },
     { scope: listItemRefs },
@@ -45,9 +38,6 @@ const StickyListItems = ({ list }) => {
             key={item._key}
             ref={(ref) => {
               listItemRefs.current[index] = ref
-
-              console.log(listItemRefs)
-              console.log(ref)
             }}>
             <h4 className="sticky-list__item-subtitle">{item.title}</h4>
             <TextSection>{item.text}</TextSection>
