@@ -4,6 +4,21 @@ import TitleSection from '@/components/common/TitleSection/TitleSection'
 import Button from '@/components/common/UI/Button/Button'
 import Link from 'next/link'
 
+interface ContentModuleProps {
+  contentClassName?: any
+  title?: any
+  titleModifier?: any
+  subtitle?: any
+  subtitleModifier?: any
+  btnText?: any
+  btnModifier?: any
+  text?: any
+  textModifier?: any
+  linkModifier?: any
+  linkText?: any
+  url?: any
+}
+
 const ContentModule = ({
   contentClassName,
   title,
@@ -17,7 +32,7 @@ const ContentModule = ({
   linkModifier,
   linkText,
   url,
-}) => (
+}: ContentModuleProps) => (
   <div className={contentClassName || null}>
     {Boolean(title) && (
       <TitleSection modifier={titleModifier}>{title}</TitleSection>

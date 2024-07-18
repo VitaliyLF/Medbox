@@ -1,8 +1,15 @@
 import TiltImage from '@/components/common/TiltImage/TiltImage'
+import { IHeroContent } from '@/interfaces'
 import ContentModule from '../../common/ContentModule/ContentModule'
 
-const Hero = ({ heroContent }) => {
+interface Props {
+  heroContent: IHeroContent
+}
+
+const Hero = ({ heroContent }: Props) => {
   const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}
+
+  console.log(heroContent)
 
   return (
     <section className="hero">
