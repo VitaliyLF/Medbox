@@ -8,21 +8,14 @@ export interface IHeroContent {
   text: ITextBlock[]
 }
 
-// Common interfaces
-export interface IContentModule {
-  contentClassName?: string | undefined
-  title?: string | null
-  titleModifier?: string | null
-  subtitle?: string | null
-  subtitleModifier?: string | null
-  btnText: string | null
-  btnModifier?: string | null
-  text?: ITextBlock[]
-  textModifier?: string | null
-  linkModifier?: string | null
-  linkText?: string | null
-  url?: string | null
+export interface IBanner extends IHeroContent {
+  url?: string
+  linkText?: string
 }
+
+export interface IBenefits extends IHeroContent {}
+
+// Common interfaces
 
 // Partials interfaces
 interface IImage {

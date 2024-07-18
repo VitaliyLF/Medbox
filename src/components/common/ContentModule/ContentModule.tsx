@@ -6,18 +6,18 @@ import { ITextBlock } from '@/interfaces'
 import Link from 'next/link'
 
 interface Props {
-  contentClassName?: string | undefined
+  contentClassName?: string
   title?: string | null
-  titleModifier?: string | null
+  titleModifier?: string
   subtitle?: string | null
-  subtitleModifier: string | null
-  btnText: string | null
-  btnModifier?: string | null
+  subtitleModifier?: string
+  btnText?: string | null
+  btnModifier?: string
   text?: ITextBlock[]
-  textModifier?: string | null
-  linkModifier?: string | null
-  linkText?: string | null
-  url?: string | null
+  textModifier?: string
+  linkModifier?: string
+  linkText?: string
+  url?: string
 }
 
 const ContentModule = ({
@@ -34,7 +34,7 @@ const ContentModule = ({
   linkText,
   url,
 }: Props) => (
-  <div className={contentClassName}>
+  <div className={contentClassName || ''}>
     {Boolean(title) && (
       <TitleSection modifier={titleModifier}>{title}</TitleSection>
     )}

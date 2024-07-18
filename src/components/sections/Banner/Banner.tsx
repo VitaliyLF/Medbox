@@ -1,14 +1,19 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
+import { IBanner } from '@/interfaces'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Review from '../../common/Review/Review'
 
-const Banner = ({ bannerContent }) => {
+interface Props {
+  bannerContent: IBanner
+}
+
+const Banner = ({ bannerContent }: Props) => {
   const { subtitle, text, url, linkText, btnText, image, alt } =
     bannerContent ?? {}
 
-  const imageDimensions = image?.asset
+  const imageDimensions: { width: number; height: number } | null = image?.asset
     ? decodeAssetId(image.asset._ref).dimensions
     : null
 
@@ -30,8 +35,8 @@ const Banner = ({ bannerContent }) => {
               className="banner__image"
               src={urlFor(image).url()}
               alt={alt || ''}
-              width={imageDimensions.width || 0}
-              height={imageDimensions.height || 0}
+              width={imageDimensions?.width || 0}
+              height={imageDimensions?.height || 0}
             />
           )}
         </div>
