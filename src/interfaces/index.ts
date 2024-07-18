@@ -1,21 +1,26 @@
 // Section interfaces
-export interface IHeroContent {
+export interface IContent {
   btnText: string | null
   image: IImage
   alt: string | null
   title: string | null
   subtitle: string | null
   text: ITextBlock[]
-}
-
-export interface IBanner extends IHeroContent {
   url?: string
   linkText?: string
 }
 
-export interface IBenefits extends IHeroContent {}
-
-// Common interfaces
+export interface IFaqLits {
+  list: {
+    linkText: string | null
+    image: IImage
+    alt: string | null
+    _key: string
+    summary: string
+    text: ITextBlock[]
+    url: string | null
+  }[]
+}
 
 // Partials interfaces
 interface IImage {

@@ -1,9 +1,9 @@
 import TiltImage from '@/components/common/TiltImage/TiltImage'
-import { IHeroContent } from '@/interfaces'
+import { IContent } from '@/interfaces'
 import ContentModule from '../../common/ContentModule/ContentModule'
 
 interface Props {
-  heroContent: IHeroContent
+  heroContent: IContent
 }
 
 const Hero = ({ heroContent }: Props) => {

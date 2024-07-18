@@ -1,18 +1,21 @@
 import { urlFor } from '@/app/lib/clientSanity'
-import { IBenefits } from '@/interfaces'
+import { IContent } from '@/interfaces'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import ContentModule from '../../common/ContentModule/ContentModule'
 
 interface Props {
-  benefitsContent: IBenefits
+  benefitsContent: IContent
 }
 
 const Benefits = ({ benefitsContent }: Props) => {
   const { title, subtitle, text, btnText, image, alt } = benefitsContent ?? {}
 
-  const { dimensions }: { dimensions: { width: number; height: number } } =
-    decodeAssetId(image.asset._ref)
+  const {
+    dimensions,
+  }: { dimensions: { width: number; height: number } | null } = decodeAssetId(
+    image.asset._ref,
+  )
 
   return (
     <section className="benefits">

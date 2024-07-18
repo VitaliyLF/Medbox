@@ -1,12 +1,12 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
-import { IBanner } from '@/interfaces'
+import { IContent } from '@/interfaces'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Review from '../../common/Review/Review'
 
 interface Props {
-  bannerContent: IBanner
+  bannerContent: IContent
 }
 
 const Banner = ({ bannerContent }: Props) => {
