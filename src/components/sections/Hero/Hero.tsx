@@ -9,8 +9,6 @@ interface Props {
 const Hero = ({ heroContent }: Props) => {
   const { title, subtitle, text, btnText, image, alt } = heroContent ?? {}
 
-  console.log(heroContent)
-
   return (
     <section className="hero">
       <h1 className="visually-hidden">

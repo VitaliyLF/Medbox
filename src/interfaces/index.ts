@@ -9,6 +9,20 @@ export interface IHeroContent {
 }
 
 // Common interfaces
+export interface IContentModule {
+  contentClassName?: string | undefined
+  title?: string | null
+  titleModifier?: string | null
+  subtitle?: string | null
+  subtitleModifier?: string | null
+  btnText: string | null
+  btnModifier?: string | null
+  text?: ITextBlock[]
+  textModifier?: string | null
+  linkModifier?: string | null
+  linkText?: string | null
+  url?: string | null
+}
 
 // Partials interfaces
 interface IImage {
@@ -26,7 +40,7 @@ interface ITextBlockChild {
   _key: string
 }
 
-interface ITextBlock {
+export interface ITextBlock {
   style: string
   _key: string
   markDefs: any[]
