@@ -6,8 +6,6 @@ import FaqList from './FaqList'
 const Faq = ({ faqContent }: any) => {
   const { title, subtitle, list, linkText } = faqContent ?? {}
 
-  console.log(faqContent)
-
   return (
     <section className="faq">
       <h2 className="visually-hidden">Our FAQ’s</h2>
