@@ -11,11 +11,9 @@ interface Props {
 const Benefits = ({ benefitsContent }: Props) => {
   const { title, subtitle, text, btnText, image, alt } = benefitsContent ?? {}
 
-  const {
-    dimensions,
-  }: { dimensions: { width: number; height: number } | null } = decodeAssetId(
-    image.asset._ref,
-  )
+  const imageDimensions = image?.asset
+    ? decodeAssetId(image.asset._ref).dimensions
+    : null
 
   return (
     <section className="benefits">
@@ -32,8 +30,8 @@ const Benefits = ({ benefitsContent }: Props) => {
             className="benefits__image"
             src={urlFor(image).url()}
             alt={alt || ''}
-            width={dimensions?.width || 0}
-            height={dimensions?.height || 0}
+            width={imageDimensions?.width || 0}
+            height={imageDimensions?.height || 0}
           />
         )}
       </div>

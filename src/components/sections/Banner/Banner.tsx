@@ -13,7 +13,7 @@ const Banner = ({ bannerContent }: Props) => {
   const { subtitle, text, url, linkText, btnText, image, alt } =
     bannerContent ?? {}
 
-  const imageDimensions: { width: number; height: number } | null = image?.asset
+  const imageDimensions = image?.asset
     ? decodeAssetId(image.asset._ref).dimensions
     : null
 

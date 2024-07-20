@@ -12,11 +12,10 @@ import { useForm } from 'react-hook-form'
 const SignUp = ({ signUpContent }) => {
   const { subtitle, image, text } = signUpContent
   const submitTimeOutMs = 2500
-  let dimensions = null
 
-  if (image && image.asset) {
-    dimensions = decodeAssetId(image.asset._ref).dimensions
-  }
+  const imageDimensions = image?.asset
+    ? decodeAssetId(image.asset._ref).dimensions
+    : null
 
   const {
     register,
@@ -74,8 +73,8 @@ const SignUp = ({ signUpContent }) => {
                 className="sign-up__success-image"
                 src={urlFor(image).url()}
                 alt="Success form submitted"
-                width={dimensions.width || 0}
-                height={dimensions.height || 0}
+                width={imageDimensions.width || 0}
+                height={imageDimensions.height || 0}
               />
             )}
             {Boolean(text) && <p className="sign-up__success-text">{text}</p>}
