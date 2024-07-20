@@ -1,7 +1,12 @@
 import classNames from 'classnames/bind'
 import styles from './SubtitleSection.scss'
 
-const SubtitleSection = ({ children, modifier }) => {
+interface Props {
+  modifier?: string
+  children: React.ReactNode
+}
+
+const SubtitleSection = ({ children, modifier }: Props) => {
   const cx = classNames.bind(styles)
 
   const subtitleClassName = cx({

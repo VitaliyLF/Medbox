@@ -3,8 +3,10 @@ import TitleSection from '@/components/common/TitleSection/TitleSection'
 import Link from 'next/link'
 import FaqList from './FaqList'
 
-const Faq = ({ faqContent }) => {
+const Faq = ({ faqContent }: any) => {
   const { title, subtitle, list, linkText } = faqContent ?? {}
+
+  console.log(faqContent)
 
   return (
     <section className="faq">

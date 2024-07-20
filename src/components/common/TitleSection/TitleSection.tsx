@@ -7,7 +7,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef } from 'react'
 import styles from './TitleSection.scss'
 
-const TitleSection = ({ children, modifier, animate = true }) => {
+interface Props {
+  children: React.ReactNode
+  modifier?: string
+  animate?: boolean
+}
+
+const TitleSection = ({ children, modifier, animate = true }: Props) => {
   const container = useRef(null)
   const cx = classNames.bind(styles)
 
