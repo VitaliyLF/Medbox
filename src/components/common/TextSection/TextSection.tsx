@@ -1,8 +1,14 @@
 import classNames from 'classnames/bind'
-import { PortableText } from 'next-sanity'
+import { PortableText, PortableTextBlock } from 'next-sanity'
+import { FC } from 'react'
 import styles from './TextSection.scss'
 
-const TextSection = ({ children, modifier }) => {
+interface Props {
+  children?: PortableTextBlock[]
+  modifier?: string
+}
+
+const TextSection: FC<Props> = ({ children, modifier }) => {
   const cx = classNames.bind(styles)
 
   const textClassName = cx({
@@ -12,7 +18,7 @@ const TextSection = ({ children, modifier }) => {
 
   return (
     <div className={textClassName}>
-      <PortableText value={children} />
+      {children && <PortableText value={children} />}
     </div>
   )
 }

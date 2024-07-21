@@ -4,17 +4,20 @@ import { useGSAP } from '@gsap/react'
 import classNames from 'classnames/bind'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { useRef } from 'react'
+import React, { FC, PropsWithChildren, useRef } from 'react'
 import styles from './TitleSection.scss'
 
 interface Props {
-  children: React.ReactNode
   modifier?: string
   animate?: boolean
 }
 
-const TitleSection = ({ children, modifier, animate = true }: Props) => {
-  const container = useRef(null)
+const TitleSection: FC<PropsWithChildren<Props>> = ({
+  children,
+  modifier,
+  animate = true,
+}) => {
+  const container = useRef<HTMLHeadingElement | null>(null)
   const cx = classNames.bind(styles)
 
   const titleClassName = cx({
