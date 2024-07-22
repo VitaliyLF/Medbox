@@ -10,8 +10,6 @@ const StickyListItems = ({ list }) => {
   const listItemRefs = useRef([])
   gsap.registerPlugin(ScrollTrigger)
 
-  console.log(listItemRefs)
-
   useGSAP(
     () => {
       listItemRefs.current.forEach((ref, index) => {
