@@ -1,26 +1,13 @@
 'use client'
 
+import useMenuToggle from '@/hooks/useMenuToggle'
 import classNames from 'classnames'
 import Link from 'next/link'
-import { useState } from 'react'
 import Button from '../UI/Button/Button'
 import NavigationList from './NavigationList'
 
 const Navigation = ({ links, btnText, btnTextMobile }) => {
-  const [isMenuOpen, setMenuOpen] = useState(false)
-
-  const toggleMenuVisibility = () => {
-    setMenuOpen(!isMenuOpen)
-    toggleScroll()
-  }
-
-  const toggleScroll = () => {
-    const paddingOffset =
-      window.innerWidth - document.documentElement.clientWidth
-    document.body.classList.toggle('scroll-lock')
-    document.body.style.paddingRight = isMenuOpen ? '' : `${paddingOffset}px`
-    document.body.style.scrollBehavior = isMenuOpen ? '' : 'unset'
-  }
+  const { isMenuOpen, toggleMenuVisibility } = useMenuToggle()
 
   return (
     <>
