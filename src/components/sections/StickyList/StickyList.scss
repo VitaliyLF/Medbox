@@ -23,9 +23,14 @@
   &__images {
     // display: flex;
     // overflow: hidden;
+    position: relative;
+    aspect-ratio: 632 / 509;
   }
 
   &__images-item {
+    // position: absolute;
+    // opacity: 0;
+
     // opacity: 0;
     // visibility: hidden;
     // position: sticky;
@@ -38,17 +43,20 @@
     // &:nth-child(3) {
     //   display: none;
     // }
-
-    &.is-active {
-      opacity: 1;
-      visibility: visible;
-    }
   }
 
   &__image {
     max-width: 632px;
     aspect-ratio: 632 / 509;
+
+    position: absolute;
     opacity: 0;
+    transition: 0.3s all;
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 
   &__info {

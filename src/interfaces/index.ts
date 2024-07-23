@@ -1,13 +1,13 @@
 // Section interfaces
 export interface IContent {
-  btnText: string | null
+  btnText: string
   image: IImage
   alt: string | null
   title: string | null
   subtitle: string | null
   text: ITextBlock[]
   url: string
-  linkText?: string
+  linkText: string
 }
 
 export interface IFaq extends IContent {

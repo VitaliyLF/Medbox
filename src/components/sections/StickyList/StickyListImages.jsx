@@ -8,28 +8,39 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Image from 'next/image'
 import { useRef } from 'react'
 
-const StickyListImages = ({ listImages, alt }) => {
+const StickyListImages = ({ listImages, alt, activeIndex }) => {
   gsap.registerPlugin(ScrollTrigger)
   const imageRefs = useRef([])
 
   useGSAP(
     () => {
-      // console.log(imageRefs)
+      console.log(imageRefs)
 
-      gsap.fromTo(
-        imageRefs.current,
-        {
-          duration: 0.25,
-        },
-        {
-          scrollTrigger: {
-            trigger: imageRefs.current,
-            start: '250px center',
-            end: 'bottom 250px',
-            // markers: true,
-          },
-        },
-      )
+      // imageRefs.current.forEach((ref) => {
+      //   ScrollTrigger.create({
+      //     trigger: ref,
+      //     start: '250px center',
+      //     end: 'bottom 250px',
+      //     toggleClass: 'is-active',
+      //     // markers: true,
+      //   })
+      // })
+
+      // gsap.fromTo(
+      //   imageRefs.current,
+      //   {
+      //     duration: 0.25,
+      //   },
+      //   {
+      //     scrollTrigger: {
+      //       trigger: imageRefs.current,
+      //       start: '250px center',
+      //       end: 'bottom 250px',
+      //       markers: true,
+      //       toggleClass: 'is-active',
+      //     },
+      //   },
+      // )
     },
     { scope: imageRefs },
   )
@@ -48,6 +59,7 @@ const StickyListImages = ({ listImages, alt }) => {
               key={item.image.asset._ref}>
               <Image
                 className="sticky-list__image"
+                // {is-active: activeIndex === index}
                 src={urlFor(item.image).url()}
                 alt={alt || ''}
                 width={imageDimensions?.width || 0}

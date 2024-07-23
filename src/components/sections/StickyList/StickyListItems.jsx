@@ -6,7 +6,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef } from 'react'
 
-const StickyListItems = ({ list }) => {
+const StickyListItems = ({ list, setActiveIndex }) => {
   const listItemRefs = useRef([])
   gsap.registerPlugin(ScrollTrigger)
 
@@ -22,6 +22,16 @@ const StickyListItems = ({ list }) => {
           start: '250px center',
           end: 'bottom 250px',
           toggleClass: 'is-active',
+          onUpdate: () => {
+            setActiveIndex(index)
+            // const images = document.querySelectorAll('.sticky-list__image')
+
+            // images.forEach((image) => {
+            //   image.classList.remove('is-active')
+            // })
+
+            // images[index].classList.add('is-active')
+          },
           // markers: true,
         })
       })
