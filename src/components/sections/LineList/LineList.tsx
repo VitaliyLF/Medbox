@@ -1,11 +1,16 @@
 import { urlFor } from '@/app/lib/clientSanity'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
+import { ILineList } from '@/interfaces'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Review from '../../common/Review/Review'
 import LineListItems from './LineListItems'
 
-const LineList = ({ lineListContent }) => {
+interface Props {
+  lineListContent: ILineList
+}
+
+const LineList = ({ lineListContent }: Props) => {
   const { subtitle, text, linkText, list, image } = lineListContent ?? {}
 
   const imageDimensions = image?.asset
@@ -46,8 +51,8 @@ const LineList = ({ lineListContent }) => {
               className="line-list__image"
               src={urlFor(image).url()}
               alt=""
-              width={imageDimensions.width || 0}
-              height={imageDimensions.height || 0}
+              width={imageDimensions?.width || 0}
+              height={imageDimensions?.height || 0}
               aria-hidden="true"
               quality={100}
               sizes="100vw"

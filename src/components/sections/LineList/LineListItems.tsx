@@ -1,4 +1,10 @@
-const LineListItems = ({ list }) => {
+import { ILineListItem } from '@/interfaces'
+
+interface Props {
+  list: ILineListItem[]
+}
+
+const LineListItems = ({ list }: Props) => {
   return (
     <ul className="line-list__items">
       {list?.length > 0 &&

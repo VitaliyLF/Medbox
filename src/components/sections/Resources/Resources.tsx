@@ -1,7 +1,12 @@
 import ContentModule from '@/components/common/ContentModule/ContentModule'
+import { IResources } from '@/interfaces'
 import ResourcesSwiper from './ResourcesSwiper'
 
-const Resources = ({ resourcesContent }) => {
+interface Props {
+  resourcesContent: IResources
+}
+
+const Resources = ({ resourcesContent }: Props) => {
   const { subtitle, text, linkText, url, list } = resourcesContent ?? {}
 
   return (

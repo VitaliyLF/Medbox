@@ -1,6 +1,11 @@
+import { IFeedBackItem } from '@/interfaces'
 import Review from '../../common/Review/Review'
 
-const FeedbackList = ({ list }) => {
+interface Props {
+  list: IFeedBackItem[]
+}
+
+const FeedbackList = ({ list }: Props) => {
   return (
     <ul className="feedback__list">
       {list?.length > 0 &&

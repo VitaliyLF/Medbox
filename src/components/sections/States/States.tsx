@@ -2,12 +2,19 @@ import { urlFor } from '@/app/lib/clientSanity'
 import ContentModule from '@/components/common/ContentModule/ContentModule'
 import TextSection from '@/components/common/TextSection/TextSection'
 import Button from '@/components/common/UI/Button/Button'
+import { IStates } from '@/interfaces'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 
-const States = ({ statesContent }) => {
+interface Props {
+  statesContent: IStates
+}
+
+const States = ({ statesContent }: Props) => {
   const { title, subtitle, text, textContact, btnText, image, alt } =
     statesContent ?? {}
+
+  console.log(textContact)
 
   const imageDimensions = image?.asset
     ? decodeAssetId(image.asset._ref).dimensions
@@ -32,8 +39,8 @@ const States = ({ statesContent }) => {
           <Image
             className="states__image"
             src={urlFor(image).url()}
-            width={imageDimensions.width || 0}
-            height={imageDimensions.height || 0}
+            width={imageDimensions?.width || 0}
+            height={imageDimensions?.height || 0}
             alt={alt || ''}
           />
         )}

@@ -1,6 +1,11 @@
+import { IFaqItem } from '@/interfaces'
 import Details from '../../common/UI/Details/Details'
 
-const FaqList = ({ list }) => {
+interface Props {
+  list: IFaqItem[]
+}
+
+const FaqList = ({ list }: Props) => {
   return (
     <ul className="faq__list">
       {list?.length > 0 &&

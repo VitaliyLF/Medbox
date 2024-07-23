@@ -1,9 +1,14 @@
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 import TitleSection from '@/components/common/TitleSection/TitleSection'
+import { IFaq } from '@/interfaces'
 import Link from 'next/link'
 import FaqList from './FaqList'
 
-const Faq = ({ faqContent }: any) => {
+interface Props {
+  faqContent: IFaq
+}
+
+const Faq = ({ faqContent }: Props) => {
   const { title, subtitle, list, linkText } = faqContent ?? {}
 
   return (

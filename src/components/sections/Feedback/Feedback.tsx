@@ -1,9 +1,14 @@
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 import TextSection from '@/components/common/TextSection/TextSection'
+import { IFeedBack } from '@/interfaces'
 import Link from 'next/link'
 import FeedbackList from './FeedbackList'
 
-const Feedback = ({ feedBackContent }) => {
+interface Props {
+  feedBackContent: IFeedBack
+}
+
+const Feedback = ({ feedBackContent }: Props) => {
   const { subtitle, text, list, subtext, linkText, url } = feedBackContent ?? {}
 
   return (

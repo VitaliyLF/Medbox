@@ -1,12 +1,16 @@
 'use client'
 
+import { IResourcesItem } from '@/interfaces'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import { A11y, Keyboard, Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import BlogPost from '../../common/BlogPost/BlogPost'
 
-const ResourcesSwiper = ({ list }) => {
+interface Props {
+  list: IResourcesItem[]
+}
+const ResourcesSwiper = ({ list }: Props) => {
   return (
     <Swiper
       className="resources__slider"
