@@ -1,6 +1,11 @@
 import Video from '@/components/common/UI/Video/Video'
+import { IVideoBlock } from '@/interfaces'
 
-const VideoBlock = ({ videoBlockContent }) => {
+interface Props {
+  videoBlockContent: IVideoBlock
+}
+
+const VideoBlock = ({ videoBlockContent }: Props) => {
   const { title, file, poster } = videoBlockContent ?? {}
 
   return (

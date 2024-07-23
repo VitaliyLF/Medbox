@@ -1,8 +1,13 @@
 import SubtitleSection from '@/components/common/SubtitleSection/SubtitleSection'
 import TitleSection from '@/components/common/TitleSection/TitleSection'
+import { ISupporting } from '@/interfaces'
 import SupportingList from './SupportingList'
 
-const Supporting = ({ supportingContent }) => {
+interface Props {
+  supportingContent: ISupporting
+}
+
+const Supporting = ({ supportingContent }: Props) => {
   const { title, subtitle, list } = supportingContent ?? {}
 
   return (

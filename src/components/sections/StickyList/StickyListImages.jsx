@@ -14,7 +14,7 @@ const StickyListImages = ({ listImages, alt }) => {
 
   useGSAP(
     () => {
-      console.log(imageRefs)
+      // console.log(imageRefs)
 
       gsap.fromTo(
         imageRefs.current,
@@ -50,8 +50,8 @@ const StickyListImages = ({ listImages, alt }) => {
                 className="sticky-list__image"
                 src={urlFor(item.image).url()}
                 alt={alt || ''}
-                width={imageDimensions.width || 0}
-                height={imageDimensions.height || 0}
+                width={imageDimensions?.width || 0}
+                height={imageDimensions?.height || 0}
                 ref={(ref) => (imageRefs.current[index] = ref)}
               />
             </li>

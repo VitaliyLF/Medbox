@@ -14,8 +14,6 @@ const States = ({ statesContent }: Props) => {
   const { title, subtitle, text, textContact, btnText, image, alt } =
     statesContent ?? {}
 
-  console.log(textContact)
-
   const imageDimensions = image?.asset
     ? decodeAssetId(image.asset._ref).dimensions
     : null

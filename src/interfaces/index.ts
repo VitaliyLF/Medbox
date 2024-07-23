@@ -67,8 +67,28 @@ export interface IStates extends IContent {
   textContact: IPortableText[]
 }
 
-// Partials interfaces
+export interface ISupporting extends IContent {
+  list: ISupportingItem[]
+}
 
+export interface ISupportingItem {
+  _key: string
+  url: string
+  image: IImage
+  alt: string
+}
+
+export interface IVideoBlock {
+  file: {
+    asset: {
+      url: string
+    }
+  }
+  title: string | null
+  poster: IImage
+}
+
+// Partials interface
 interface IImage {
   _type: string
   asset: {

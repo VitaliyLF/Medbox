@@ -1,9 +1,14 @@
 import { urlFor } from '@/app/lib/clientSanity'
+import { ISupportingItem } from '@/interfaces'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
 
-const SupportingList = ({ list }) => {
+interface Props {
+  list: ISupportingItem[]
+}
+
+const SupportingList = ({ list }: Props) => {
   return (
     <ul className="supporting__list">
       {list?.length > 0 &&
