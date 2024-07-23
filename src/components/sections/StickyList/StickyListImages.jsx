@@ -12,9 +12,27 @@ const StickyListImages = ({ listImages, alt }) => {
   gsap.registerPlugin(ScrollTrigger)
   const imageRefs = useRef([])
 
-  console.log(imageRefs)
+  useGSAP(
+    () => {
+      console.log(imageRefs)
 
-  useGSAP(() => {}, { scope: imageRefs })
+      gsap.fromTo(
+        imageRefs.current,
+        {
+          duration: 0.25,
+        },
+        {
+          scrollTrigger: {
+            trigger: imageRefs.current,
+            start: '250px center',
+            end: 'bottom 250px',
+            // markers: true,
+          },
+        },
+      )
+    },
+    { scope: imageRefs },
+  )
 
   return (
     <ul className="sticky-list__images">

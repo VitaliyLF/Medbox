@@ -1,4 +1,4 @@
-import Logotype from '@/components/common/Logotype/Logotype'
+import Logo from '@/components/common/Logo/Logo'
 import Navigation from '@/components/common/Navigation/Navigation'
 import ScrollToTop from '@/components/common/ScrollToTop/ScrollToTop'
 import Button from '@/components/common/UI/Button/Button'
@@ -10,7 +10,7 @@ const Header = ({ headerContent }) => {
     <header className="header" id="scroll-to-top">
       <div className="header__container container">
         <div className="header__wrapper">
-          <Logotype
+          <Logo
             logoImage={logo}
             logoClass="header__logo"
             logoImageClass="header__logo-img"

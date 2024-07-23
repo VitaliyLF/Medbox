@@ -1,4 +1,4 @@
-import Logotype from '@/components/common/Logotype/Logotype'
+import Logo from '@/components/common/Logo/Logo'
 import TextSection from '@/components/common/TextSection/TextSection'
 import FooterContactList from './FooterContactList'
 import FooterPartnersList from './FooterParthersList'
@@ -13,7 +13,7 @@ const Footer = ({ footerContent }) => {
     <footer className="footer">
       <div className="footer__container container">
         <div className="footer__top">
-          <Logotype
+          <Logo
             logoImage={logo}
             logoClass="footer__logo"
             logoImageClass="footer__logo-image"
