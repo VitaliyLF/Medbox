@@ -27,24 +27,16 @@ const TitleSection: FC<Props> = ({ children, modifier, animate = true }) => {
   useGSAP(
     () => {
       if (animate) {
-        gsap.fromTo(
-          container.current,
-          {
-            y: 50,
-            // opacity: 0,
-            duration: 0.25,
+        gsap.to(container.current, {
+          y: 0,
+          opacity: 1,
+          duration: 0.25,
+          scrollTrigger: {
+            trigger: container.current,
+            start: 'center center',
+            toggleActions: 'play play none pause',
           },
-          {
-            y: 0,
-            opacity: 1,
-            scrollTrigger: {
-              trigger: container.current,
-              // markers: true,
-              start: 'center center',
-              toggleActions: 'play play none pause',
-            },
-          },
-        )
+        })
       }
     },
     { scope: container },

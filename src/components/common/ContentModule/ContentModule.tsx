@@ -3,6 +3,7 @@ import TextSection from '@/components/common/TextSection/TextSection'
 import TitleSection from '@/components/common/TitleSection/TitleSection'
 import Button from '@/components/common/UI/Button/Button'
 import { ITextBlock } from '@/interfaces'
+import classNames from 'classnames'
 import Link from 'next/link'
 
 interface Props {
@@ -44,7 +45,10 @@ const ContentModule = ({
     {Boolean(text) && <TextSection modifier={textModifier}>{text}</TextSection>}
     {linkText && url && (
       <Link
-        className={linkModifier ? `link link--${linkModifier}` : 'btn'}
+        className={classNames({
+          [`link link--${linkModifier}`]: linkModifier,
+          btn: !linkModifier,
+        })}
         href={url}>
         {linkText}
       </Link>

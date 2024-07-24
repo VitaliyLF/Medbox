@@ -21,37 +21,17 @@
   }
 
   &__images {
-    // display: flex;
-    // overflow: hidden;
     position: relative;
     aspect-ratio: 632 / 509;
   }
 
-  &__images-item {
-    // position: absolute;
-    // opacity: 0;
-
-    // opacity: 0;
-    // visibility: hidden;
-    // position: sticky;
-    // top: 0;
-
-    // &:nth-child(2) {
-    //   display: none;
-    // }
-
-    // &:nth-child(3) {
-    //   display: none;
-    // }
-  }
-
   &__image {
-    max-width: 632px;
-    aspect-ratio: 632 / 509;
-
     position: absolute;
     opacity: 0;
-    transition: 0.3s all;
+    visibility: hidden;
+    transition:
+      opacity var(--timing, 0.3s) ease,
+      visibility var(--timing, 0.3s) ease;
 
     &.is-active {
       opacity: 1;

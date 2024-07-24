@@ -1,5 +1,6 @@
 'use client'
 
+import classNames from 'classnames'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -16,11 +17,10 @@ const FooterContactSublist = ({ item }) => {
 
               return (
                 <Link
-                  className={
-                    isActive
-                      ? 'link link--nav-footer-active'
-                      : 'link link--light'
-                  }
+                  className={classNames('link', {
+                    'link--light': !isActive,
+                    'link--nav-footer-active': isActive,
+                  })}
                   href={link.href || ''}
                   key={link._key}>
                   {link.linkText}

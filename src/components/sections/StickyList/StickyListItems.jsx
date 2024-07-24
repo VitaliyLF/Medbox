@@ -1,7 +1,6 @@
-'use client'
-
 import TextSection from '@/components/common/TextSection/TextSection'
 import { useGSAP } from '@gsap/react'
+import classNames from 'classnames'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useRef } from 'react'
@@ -12,27 +11,16 @@ const StickyListItems = ({ list, setActiveIndex }) => {
 
   useGSAP(
     () => {
-      listItemRefs.current.forEach((ref, index) => {
-        if (index === 0) {
-          ref.classList.add('is-active')
-        }
-
+      listItemRefs.current.map((ref, index) => {
         ScrollTrigger.create({
           trigger: ref,
           start: '250px center',
           end: 'bottom 250px',
           toggleClass: 'is-active',
+          // markers: true,
           onUpdate: () => {
             setActiveIndex(index)
-            // const images = document.querySelectorAll('.sticky-list__image')
-
-            // images.forEach((image) => {
-            //   image.classList.remove('is-active')
-            // })
-
-            // images[index].classList.add('is-active')
           },
-          // markers: true,
         })
       })
     },
@@ -44,7 +32,9 @@ const StickyListItems = ({ list, setActiveIndex }) => {
       {list?.length > 0 &&
         list?.map((item, index) => (
           <li
-            className="sticky-list__item"
+            className={classNames('sticky-list__item', {
+              'is-active': index === 0,
+            })}
             key={item._key}
             ref={(ref) => {
               listItemRefs.current[index] = ref

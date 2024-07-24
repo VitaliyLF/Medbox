@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -16,9 +17,9 @@ const NavigationList = ({ links }) => {
             <li className="nav__item" key={link._key}>
               {isExternal ? (
                 <Link
-                  className={
-                    isExternal ? 'nav__link link link--nav-external' : ''
-                  }
+                  className={classNames('nav__link link', {
+                    'link--nav-external': isExternal,
+                  })}
                   href={link.href}
                   title="Payment Portal || New window"
                   target="_blank">
@@ -26,11 +27,9 @@ const NavigationList = ({ links }) => {
                 </Link>
               ) : (
                 <Link
-                  className={
-                    isActive
-                      ? 'nav__link link link--nav-active'
-                      : 'nav__link link'
-                  }
+                  className={classNames('nav__link link', {
+                    'link--nav-active': isActive,
+                  })}
                   href={link.href}>
                   {link.text}
                 </Link>

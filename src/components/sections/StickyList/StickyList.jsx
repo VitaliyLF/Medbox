@@ -8,10 +8,9 @@ import StickyListImages from './StickyListImages'
 import StickyListItems from './StickyListItems'
 
 const StickyList = ({ stickyListContent }) => {
+  const [activeIndex, setActiveIndex] = useState(0)
   const { title, subtitle, listImages, alt, list, linkText } =
     stickyListContent ?? {}
-
-  const [activeIndex, setActiveIndex] = useState(0)
 
   return (
     <section className="sticky-list">
