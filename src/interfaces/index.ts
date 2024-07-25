@@ -2,7 +2,7 @@
 export interface IContent {
   btnText: string
   image: IImage
-  alt: string | null
+  alt: string
   title: string | null
   subtitle: string | null
   text: ITextBlock[]
@@ -88,6 +88,17 @@ export interface IVideoBlock {
   poster: IImage
 }
 
+export interface IStickyList extends IContent {
+  list: IStickyListItem[]
+  listImages: IImage[]
+}
+
+export interface IStickyListItem {
+  _key: string
+  title: string
+  text: ITextBlock[]
+}
+
 // Partials interface
 interface IImage {
   _type: string
@@ -98,16 +109,16 @@ interface IImage {
 }
 
 export interface IPortableText {
-  _type: 'block'
+  _type: string
   style: string
   _key: string
   markDefs: {
-    _type: 'link'
+    _type: string
     href: string
     _key: string
   }[]
   children: {
-    _type: 'span'
+    _type: string
     marks: string[]
     text: string
     _key: string

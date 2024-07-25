@@ -12,6 +12,8 @@ const StickyList = ({ stickyListContent }) => {
   const { title, subtitle, listImages, alt, list, linkText } =
     stickyListContent ?? {}
 
+  console.log(list)
+
   return (
     <section className="sticky-list">
       <div className="container">

@@ -1,9 +1,16 @@
 import { urlFor } from '@/app/lib/clientSanity'
+import { IStickyList } from '@/interfaces'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import classNames from 'classnames'
 import Image from 'next/image'
 
-const StickyListImages = ({ listImages, alt, activeIndex }) => {
+interface Props {
+  listImages: IStickyList[]
+  alt: string
+  activeIndex: number
+}
+
+const StickyListImages = ({ listImages, alt, activeIndex }: Props) => {
   return (
     <ul className="sticky-list__images">
       {listImages?.length > 0 &&

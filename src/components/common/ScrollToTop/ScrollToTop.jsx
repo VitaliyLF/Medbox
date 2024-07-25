@@ -1,18 +1,18 @@
 'use client'
 
-import Link from 'next/link'
-import { useEffect } from 'react'
+import classNames from 'classnames'
+import { useEffect, useState } from 'react'
 
 const ScrollToTop = () => {
+  const [isActive, setIsActive] = useState(false)
+
   useEffect(() => {
     const handleScroll = () => {
-      const scrollToTopLink = document.querySelector('.scroll-link')
       const heroSection = document.querySelector('.hero')
-      const y = window.scrollY
 
-      if (scrollToTopLink && heroSection) {
+      if (heroSection) {
         const heroSectionHeight = heroSection.offsetHeight
-        scrollToTopLink.classList.toggle('is-active', y >= heroSectionHeight)
+        setIsActive(window.scrollY >= heroSectionHeight)
       }
     }
 
@@ -41,10 +41,15 @@ const ScrollToTop = () => {
   )
 
   return (
-    <Link className="scroll-link" href="#scroll-to-top" title="Scroll to top">
+    <a
+      className={classNames('scroll-link', {
+        'is-active': isActive,
+      })}
+      href="#scroll-to-top"
+      title="Scroll to top">
       <ScrollIcon />
       Scroll to top
-    </Link>
+    </a>
   )
 }
 export default ScrollToTop
