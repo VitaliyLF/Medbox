@@ -19,6 +19,7 @@ const Logotype = ({ logoImage, logoClass, logoImageClass }) => {
             title="Homepage"
             width={logoDimensions.width || 0}
             height={logoDimensions.height || 0}
+            priority={true}
           />
         </Link>
       )}

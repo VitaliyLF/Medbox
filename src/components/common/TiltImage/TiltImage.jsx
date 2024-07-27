@@ -5,6 +5,7 @@ import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import Tilt from 'react-parallax-tilt'
+import { throttle } from 'throttle-debounce'
 
 const TiltImage = ({ image, alt, className, priority = false }) => {
   const [isMobile, setIsMobile] = useState(false)
@@ -17,7 +18,8 @@ const TiltImage = ({ image, alt, className, priority = false }) => {
     const mediaQuery = window.matchMedia('(max-width: 768px)')
     setIsMobile(mediaQuery.matches)
 
-    const handleResize = () => setIsMobile(mediaQuery.matches)
+    const handleResize = throttle(200, () => setIsMobile(mediaQuery.matches))
+
     mediaQuery.addEventListener('change', handleResize)
 
     return () => mediaQuery.removeEventListener('change', handleResize)

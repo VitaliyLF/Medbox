@@ -3,19 +3,20 @@
 import ScrollIcon from '@/app/assets/img/scroll-icon.svg'
 import classNames from 'classnames'
 import { useEffect, useState } from 'react'
+import { throttle } from 'throttle-debounce'
 
 const ScrollToTop = () => {
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
+    const handleScroll = throttle(300, () => {
       const heroSection = document.querySelector('.hero')
 
       if (heroSection) {
         const heroSectionHeight = heroSection.offsetHeight
         setIsActive(window.scrollY >= heroSectionHeight)
       }
-    }
+    })
 
     window.addEventListener('scroll', handleScroll)
 
