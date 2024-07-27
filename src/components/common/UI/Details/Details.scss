@@ -1,8 +1,6 @@
 .details {
   $root: &;
 
-  // overflow: hidden;
-
   &[open] {
     #{$root}__summary {
       &::after {

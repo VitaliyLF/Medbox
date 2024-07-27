@@ -1,1 +1,10 @@
-<svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_105_1855)"> <path d="M9 4.00024H19V18.0002C19 19.1048 18.1046 20.0002 17 20.0002H9" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> <path d="M12 15.0002L15 12.0002M15 12.0002L12 9.00024M15 12.0002H5" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path> </g> <defs> <clipPath id="clip0_105_1855"> <rect fill="white" height="24" transform="translate(0 0.000244141)" width="24"></rect> </clipPath> </defs> </g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24">
+  <g stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" clip-path="url(#customPrefix__skiplink-enter-icon_svg__a)">
+    <path d="M9 4h10v14a2 2 0 0 1-2 2H9m3-5 3-3m0 0-3-3m3 3H5"/>
+  </g>
+  <defs>
+    <clipPath id="customPrefix__skiplink-enter-icon_svg__a">
+      <path fill="#fff" d="M0 0h24v24H0z"/>
+    </clipPath>
+  </defs>
+</svg>
