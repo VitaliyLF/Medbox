@@ -12,8 +12,7 @@
     }
 
     @include lg {
-      column-gap: 0;
-      row-gap: var(--offset-double-extra-large-medium, 70px);
+      gap: var(--offset-double-extra-large-medium, 70px) 0;
     }
 
     @include sm {

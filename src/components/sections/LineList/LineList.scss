@@ -49,12 +49,11 @@
     --offset-item-list: 20px;
 
     @include fz35-agrandir;
-
     @include marginBottom(calc(var(--offset-item-list, 20px) * 2));
 
     position: relative;
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       top: 50%;

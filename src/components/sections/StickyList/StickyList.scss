@@ -61,7 +61,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      background-color: var(--color-light, #fff);
+      background-color: var(--color-light, #ffffff);
       width: 5px;
       height: 100%;
       z-index: 1;
@@ -80,7 +80,6 @@
 
   &__item-subtitle {
     @include marginBottom(var(--offset-tiny-medium, 20px));
-
     @include fz35-agrandir;
 
     font-weight: 400;

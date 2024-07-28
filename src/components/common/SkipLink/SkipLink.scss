@@ -1,8 +1,8 @@
 .skiplink {
   --skiplink-offset: 20px;
   --skiplink-bg-color: var(--color-medbox-green, #02836f);
-  --skiplink-overlay-color: hsl(0, 0%, 0%);
-  --skiplink-flashing-color: hsl(0, 0%, 100%);
+  --skiplink-overlay-color: hsl(0deg 0% 0%);
+  --skiplink-flashing-color: hsl(0deg 0% 100%);
   --skiplink-overlay-color-mix-a60: color-mix(
     in srgb,
     var(--skiplink-overlay-color),
@@ -20,7 +20,7 @@
   font-family: var(--font-family-additional);
   font-size: var(--skiplink-offset);
   font-weight: 700;
-  background-color: var(--skiplink-overlay-color-mix-a60, hsla(0, 0%, 0%, 0.6));
+  background-color: var(--skiplink-overlay-color-mix-a60, hsl(0deg 0% 0% / 60%));
   color: var(--color-black);
   z-index: var(--skiplink-z-index);
   pointer-events: none;
@@ -37,8 +37,8 @@
     padding: var(--skiplink-offset);
     border-radius: var(--skiplink-offset);
     background-color: var(--skiplink-bg-color);
-    color: var(--color-light, #fff);
-    border: 2px solid var(--color-light, #fff);
+    color: var(--color-light, #ffffff);
+    border: 2px solid var(--color-light, #ffffff);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -47,7 +47,7 @@
     transition: box-shadow var(--timing, 0.3s);
 
     &::before {
-      content: url(../../../app/assets/img/skiplink-enter-icon.svg);
+      content: url("../../../app/assets/img/skiplink-enter-icon.svg");
       margin-left: var(--skiplink-offset);
       order: 2;
       width: var(--skiplink-offset);
@@ -67,8 +67,8 @@
     opacity: 1;
 
     & .skiplink__text {
-      box-shadow: var(--skiplink-flashing-color-mix-a50, hsla(0, 0%, 100%, 0.5))
-        0px 0px 0px 0px;
+      box-shadow: var(--skiplink-flashing-color-mix-a50, hsl(0deg 0% 100% / 50%))
+        0 0 0 0;
     }
   }
 }

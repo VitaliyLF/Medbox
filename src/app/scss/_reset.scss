@@ -69,11 +69,10 @@ cite {
 }
 
 input {
-  -webkit-appearance: none;
   appearance: none;
   border: none;
   border-radius: 0;
-  background-color: #fff;
+  background-color: #ffffff;
   margin: 0;
 
   &::-webkit-search-decoration,
@@ -86,7 +85,7 @@ input {
   }
 
   &[type='number'] {
-    -moz-appearance: textfield;
+    appearance: textfield;
   }
 }
 
@@ -106,5 +105,5 @@ summary {
 
 mark {
   background-color: transparent;
-  color: currentColor;
+  color: currentcolor;
 }

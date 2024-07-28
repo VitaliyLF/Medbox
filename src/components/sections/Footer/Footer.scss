@@ -24,7 +24,7 @@
       transition:
         outline 0.1s ease-in,
         outline-offset 0.1s ease-in;
-      outline: 3px dotted var(--color-light, #fff);
+      outline: 3px dotted var(--color-light, #ffffff);
       outline-offset: calc(3px * 2);
       opacity: 1;
     }
@@ -70,11 +70,11 @@
     align-items: center;
     gap: 10px;
     flex-direction: row-reverse;
-    color: var(--color-light, #fff);
+    color: var(--color-light, #ffffff);
     transition: color var(--timing, 0.3s) ease;
 
     &:focus {
-      outline: 3px dotted currentColor;
+      outline: 3px dotted currentcolor;
       outline-offset: calc(3px * 2);
       opacity: 1;
       transition:
@@ -110,7 +110,7 @@
     transition: scale var(--timing, 0.3s) ease;
 
     &:focus {
-      outline: 3px dotted var(--color-light, #fff);
+      outline: 3px dotted var(--color-light, #ffffff);
       outline-offset: calc(3px * 2);
       transition:
         outline 0.1s ease-in,

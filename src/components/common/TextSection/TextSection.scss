@@ -2,7 +2,6 @@
 
 .text-section {
   @include fz22-atkinson;
-
   @include marginBottom(var(--offset-medium, 35px));
 
   text-wrap: balance;
@@ -34,7 +33,6 @@
 
   @include sm {
     @include fz20-atkinson-mobile;
-
     @include marginBottom(var(--offset-small-medium, 30px));
   }
 
@@ -48,20 +46,19 @@
 
   &--footer {
     @include fz18-atkinson;
-
     @include marginBottom(20px);
 
-    color: var(--color-light, #fff);
+    color: var(--color-light, #ffffff);
 
     p {
       a {
-        color: currentColor;
+        color: currentcolor;
 
         &:focus {
           transition:
             outline 0.1s ease-in,
             outline-offset 0.1s ease-in;
-          outline: 3px dotted currentColor;
+          outline: 3px dotted currentcolor;
           outline-offset: calc(3px * 2);
         }
       }

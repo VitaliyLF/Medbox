@@ -5,9 +5,9 @@
 .page {
   height: 100%;
   font-family: var(--font-family-base);
-  background-color: var(--color-light, #fff);
-  -webkit-text-size-adjust: 100%;
-  text-rendering: optimizeSpeed;
+  background-color: var(--color-light, #ffffff);
+  text-size-adjust: 100%;
+  text-rendering: optimizelegibility;
   scroll-behavior: smooth;
   scrollbar-gutter: stable;
   hyphens: auto;

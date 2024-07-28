@@ -138,7 +138,7 @@
 @mixin pulse-btn-bg {
   @keyframes pulse-btn-bg {
     100% {
-      box-shadow: 0 0 0 20px rgba(193, 244, 246, 0);
+      box-shadow: 0 0 0 20px rgb(193 244 246 / 0%);
     }
   }
 }
@@ -149,9 +149,10 @@
       opacity: 0;
       transform: translate(0, -20px);
     }
+
     100% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translate(0, 0);
     }
   }
 }
@@ -162,6 +163,7 @@
       opacity: 0;
       transform: scale(0);
     }
+
     100% {
       opacity: 1;
       transform: scale(1);
@@ -174,9 +176,11 @@
     0% {
       transform: translate(-100%, -25%) rotate(10deg);
     }
+
     20% {
       transform: translate(100%, -25%) rotate(10deg);
     }
+
     100% {
       transform: translate(100%, -25%) rotate(10deg);
     }
@@ -196,6 +200,7 @@
     from {
       transform: scale(0.5);
     }
+
     to {
       transform: scale(1);
     }

@@ -2,7 +2,6 @@
 
 .subtitle-section {
   @include fz50-agrandir;
-
   @include marginBottom(var(--offset-tiny-medium, 20px));
 
   text-wrap: balance;
@@ -23,7 +22,7 @@
     @include fz35-agrandir;
 
     max-width: 555px;
-    color: var(--color-light, #fff);
+    color: var(--color-light, #ffffff);
     font-weight: 400;
   }
 
@@ -36,7 +35,7 @@
     transition: text-decoration-color var(--timing-animation, 0.5s) ease;
 
     @include hover {
-      text-decoration-color: currentColor;
+      text-decoration-color: currentcolor;
     }
   }
 }

@@ -28,7 +28,7 @@
       display: block;
       width: var(--offset-large-medium, 50px);
       aspect-ratio: 1;
-      background: url(../../../../app/assets/img/details-arrow.svg)
+      background: url("../../../../app/assets/img/details-arrow.svg")
         center/var(--offset-tiny-medium) no-repeat
         var(--color-medbox-green, #02836f);
       border-radius: 50%;

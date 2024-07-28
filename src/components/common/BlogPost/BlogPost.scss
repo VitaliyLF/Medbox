@@ -1,5 +1,6 @@
 .blog-post {
   $root: &;
+
   --blog-post-offset: 10px;
 
   display: block;
@@ -29,7 +30,6 @@
 
   &__meta {
     @include marginBottom(var(--blog-post-offset, 10px));
-
     @include fz18-atkinson;
 
     display: flex;
@@ -53,7 +53,7 @@
       width: 3px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background-color: currentColor;
+      background-color: currentcolor;
     }
   }
 }

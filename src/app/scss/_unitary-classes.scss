@@ -70,7 +70,6 @@
 
   &--phone {
     @include fz22-atkinson;
-
     @include marginBottom(var(--offset-medium, 35px));
 
     display: flex;
@@ -79,7 +78,7 @@
     flex-direction: row-reverse;
 
     &::after {
-      content: url(../assets/img/phone-icon-link.svg);
+      content: url("../assets/img/phone-icon-link.svg");
       width: var(--offset-small-medium, 30px);
       height: var(--offset-small-medium, 30px);
     }
@@ -91,7 +90,6 @@
 
   &--puerto-rico {
     @include fz22-dmsans;
-
     @include marginBottom(var(--offset-medium, 35px));
 
     display: inline-block;
@@ -102,13 +100,13 @@
     @include marginBottom(10px);
 
     display: inline-block;
-    color: var(--color-light, #fff);
+    color: var(--color-light, #ffffff);
 
     &:focus {
       transition:
         outline 0.1s ease-in,
         outline-offset 0.1s ease-in;
-      outline: 3px dotted var(--color-light, #fff);
+      outline: 3px dotted var(--color-light, #ffffff);
       outline-offset: calc(3px * 2);
     }
 
@@ -116,7 +114,7 @@
       color: var(--color-puerto-rico, #27c6b0);
 
       &::before {
-        background-color: currentColor;
+        background-color: currentcolor;
       }
     }
   }
@@ -129,7 +127,7 @@
       transition:
         outline 0.1s ease-in,
         outline-offset 0.1s ease-in;
-      outline: 3px dotted var(--color-light, #fff);
+      outline: 3px dotted var(--color-light, #ffffff);
       outline-offset: calc(3px * 2);
     }
   }

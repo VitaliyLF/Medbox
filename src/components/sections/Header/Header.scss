@@ -23,7 +23,7 @@
     border-radius: var(--border-radius-all-tiny, 10px);
     border: 1px solid var(--color-mint-green, #cce3da);
     padding: var(--offset-tiny-medium, 20px) var(--offset-medium-large, 40px);
-    background-color: var(--color-light, #fff);
+    background-color: var(--color-light, #ffffff);
 
     @include xl {
       min-height: var(--header-height, 85px);
@@ -56,7 +56,7 @@
         background: linear-gradient(
           to left,
           transparent 0%,
-          #fff 40% 60%,
+          #ffffff 40% 60%,
           transparent 100%
         );
         transform: translate(-120%, -25%);
@@ -80,7 +80,7 @@
       position: relative;
       width: var(--burger-width, 45px);
       height: var(--burger-height, 45px);
-      color: var(--color-light, #fff);
+      color: var(--color-light, #ffffff);
       background-color: var(--color-medbox-green, #02836f);
       border-radius: 50%;
       z-index: 10;
@@ -97,7 +97,7 @@
         transform: translateX(-50%);
         width: 20px;
         height: var(--burger-line-height, 3px);
-        background-color: currentColor;
+        background-color: currentcolor;
         border-radius: var(--border-radius-all-small, 20px);
         transition:
           transform var(--timing, 0.3s) ease-in-out,
@@ -121,9 +121,10 @@
 
     &--active {
       & .burger__line {
+        --burger-line-height: 2px;
+
         background-color: transparent;
         color: var(--color-medbox-green, #02836f);
-        --burger-line-height: 2px;
 
         &::before {
           width: 30px;
