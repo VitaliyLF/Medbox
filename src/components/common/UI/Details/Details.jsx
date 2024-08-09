@@ -4,28 +4,17 @@ import { urlFor } from '@/app/lib/clientSanity'
 import { decodeAssetId } from '@/utils/sanityDecodeImg'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useRef } from 'react'
+import { useCallback } from 'react'
 import TextSection from '../../TextSection/TextSection'
 
 const Details = ({
   source: { summary, text, url, linkText, image, alt } = {},
   isOpen = false,
 }) => {
-  const detailsRef = useRef(null)
-
-  useEffect(() => {
-    const summaryElement = detailsRef.current.querySelector('summary')
-
-    const handleClick = () => {
-      if (detailsRef.current && !detailsRef.current.open) {
-        detailsRef.current.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-
-    summaryElement?.addEventListener('click', handleClick)
-
-    return () => {
-      summaryElement?.removeEventListener('click', handleClick)
+    const handleClick = useCallback((event) => {
+    const detailsElement = event.currentTarget.closest('details')
+    if (detailsElement && !detailsElement.open) {
+      detailsElement.scrollIntoView({ behavior: 'smooth' })
     }
   }, [])
 
@@ -34,11 +23,12 @@ const Details = ({
     : null
 
   return (
-    <details ref={detailsRef} className="details" open={isOpen}>
+    <details className="details" open={isOpen}>
       {Boolean(summary) && (
         <summary
           className="details__summary"
-          title={isOpen ? 'Close information' : 'Open information'}>
+          title={isOpen ? 'Close information' : 'Open information'}
+          onClick={handleClick}>
           {summary}
         </summary>
       )}
