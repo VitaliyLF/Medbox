@@ -11,7 +11,7 @@ const Details = ({
   source: { summary, text, url, linkText, image, alt } = {},
   isOpen = false,
 }) => {
-    const handleClick = useCallback((event) => {
+  const handleClick = useCallback((event) => {
     const detailsElement = event.currentTarget.closest('details')
     if (detailsElement && !detailsElement.open) {
       detailsElement.scrollIntoView({ behavior: 'smooth' })
@@ -46,11 +46,11 @@ const Details = ({
             alt={alt || ''}
             width={imageDimensions.width || 0}
             height={imageDimensions.height || 0}
+            priority={true}
           />
         )}
       </div>
     </details>
   )
 }
-
 export default Details
